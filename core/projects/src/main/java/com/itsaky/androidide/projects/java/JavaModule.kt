@@ -1,31 +1,31 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.projects.java
+package com.willow.androidide.ultra.projects.java
 
-import com.itsaky.androidide.builder.model.IJavaCompilerSettings
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.projects.ModuleProject
-import com.itsaky.androidide.tooling.api.ProjectType.Java
-import com.itsaky.androidide.tooling.api.models.GradleTask
-import com.itsaky.androidide.tooling.api.models.JavaContentRoot
-import com.itsaky.androidide.tooling.api.models.JavaModuleDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleExternalDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleProjectDependency
+import com.willow.androidide.ultra.builder.model.IJavaCompilerSettings
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.projects.ModuleProject
+import com.willow.androidide.ultra.tooling.api.ProjectType.Java
+import com.willow.androidide.ultra.tooling.api.models.GradleTask
+import com.willow.androidide.ultra.tooling.api.models.JavaContentRoot
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleExternalDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleProjectDependency
 import java.io.File
 
 /**

@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater
+package com.willow.androidide.ultra.inflater
 
 import android.content.Context
 import android.view.View
 import com.android.SdkConstants
-import com.itsaky.androidide.inflater.internal.AttributeImpl
-import com.itsaky.androidide.inflater.internal.ViewImpl
-import com.itsaky.androidide.inflater.models.UiWidget
+import com.willow.androidide.ultra.inflater.internal.AttributeImpl
+import com.willow.androidide.ultra.inflater.internal.ViewImpl
+import com.willow.androidide.ultra.inflater.models.UiWidget
 
 /**
  * A view adapter provides support for a specific view to the layout inflater and the UI designer.
@@ -34,9 +34,9 @@ import com.itsaky.androidide.inflater.models.UiWidget
  * - Provides list of supported attributes for the view.
  *
  * The following annotations are used to provide metadata about the view adapter implementation :
- * - [ViewAdapter][com.itsaky.androidide.annotations.inflater.ViewAdapter] is used to specify the
+ * - [ViewAdapter][com.willow.androidide.ultra.annotations.inflater.ViewAdapter] is used to specify the
  *   view whose attributes are handled by the view adapter implementation.
- * - [IncludeInDesigner][com.itsaky.androidide.annotations.uidesigner.IncludeInDesigner] is used to
+ * - [IncludeInDesigner][com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner] is used to
  *   indicate that the view adapter provides [UiWidget] models to the UI designer.
  * - [RequiresApi][androidx.annotation.RequiresApi] is used to indicate that the view adapter
  *   implementation provides support for views that can be used only for the given API version (or
@@ -49,7 +49,7 @@ abstract class IViewAdapter<T : View> : AbstractParser() {
   /**
    * The package name or namespace of the module/artifact in which the view that this adapter
    * handles is defined. The value is set to "android" by default unless explicitly specified in the
-   * [ViewAdapter][com.itsaky.androidide.annotations.inflater.ViewAdapter] annotation.
+   * [ViewAdapter][com.willow.androidide.ultra.annotations.inflater.ViewAdapter] annotation.
    *
    * This is used by the UI designer to quickly look for attributes of an inflated view from the
    * resource tables.

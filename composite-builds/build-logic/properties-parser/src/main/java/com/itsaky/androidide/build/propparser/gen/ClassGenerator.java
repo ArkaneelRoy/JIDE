@@ -23,20 +23,20 @@
  * questions.
  */
 
-package com.itsaky.androidide.build.propparser.gen;
+package com.willow.androidide.ultra.build.propparser.gen;
 
 import static java.util.stream.Collectors.toList;
 
-import com.itsaky.androidide.build.propparser.parser.Message;
-import com.itsaky.androidide.build.propparser.parser.MessageFile;
-import com.itsaky.androidide.build.propparser.parser.MessageInfo;
-import com.itsaky.androidide.build.propparser.parser.MessageLine;
-import com.itsaky.androidide.build.propparser.parser.MessageType;
-import com.itsaky.androidide.build.propparser.parser.MessageType.CompoundType;
-import com.itsaky.androidide.build.propparser.parser.MessageType.CustomType;
-import com.itsaky.androidide.build.propparser.parser.MessageType.SimpleType;
-import com.itsaky.androidide.build.propparser.parser.MessageType.UnionType;
-import com.itsaky.androidide.build.propparser.parser.MessageType.Visitor;
+import com.willow.androidide.ultra.build.propparser.parser.Message;
+import com.willow.androidide.ultra.build.propparser.parser.MessageFile;
+import com.willow.androidide.ultra.build.propparser.parser.MessageInfo;
+import com.willow.androidide.ultra.build.propparser.parser.MessageLine;
+import com.willow.androidide.ultra.build.propparser.parser.MessageType;
+import com.willow.androidide.ultra.build.propparser.parser.MessageType.CompoundType;
+import com.willow.androidide.ultra.build.propparser.parser.MessageType.CustomType;
+import com.willow.androidide.ultra.build.propparser.parser.MessageType.SimpleType;
+import com.willow.androidide.ultra.build.propparser.parser.MessageType.UnionType;
+import com.willow.androidide.ultra.build.propparser.parser.MessageType.Visitor;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileWriter;

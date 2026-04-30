@@ -15,7 +15,7 @@
  *
  */
 
-package com.itsaky.androidide.ui.transition;
+package com.willow.androidide.ultra.ui.transition;
 
 /**
  * A Class that takes an angle, start point and end point that it uses to calculate controls points

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater.internal.adapters
+package com.willow.androidide.ultra.inflater.internal.adapters
 
 import android.annotation.SuppressLint
 import android.graphics.Typeface
@@ -24,12 +24,12 @@ import android.text.util.Linkify
 import android.util.TypedValue
 import android.widget.TextView
 import com.blankj.utilcode.util.SizeUtils
-import com.itsaky.androidide.annotations.uidesigner.IncludeInDesigner
-import com.itsaky.androidide.annotations.uidesigner.IncludeInDesigner.Group.WIDGETS
-import com.itsaky.androidide.inflater.AttributeHandlerScope
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.inflater.models.UiWidget
-import com.itsaky.androidide.resources.R
+import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner
+import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner.Group.WIDGETS
+import com.willow.androidide.ultra.inflater.AttributeHandlerScope
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.inflater.models.UiWidget
+import com.willow.androidide.ultra.resources.R
 import java.util.regex.Pattern
 
 /**
@@ -37,7 +37,7 @@ import java.util.regex.Pattern
  *
  * @author Akash Yadav
  */
-@com.itsaky.androidide.annotations.inflater.ViewAdapter(TextView::class)
+@com.willow.androidide.ultra.annotations.inflater.ViewAdapter(TextView::class)
 @IncludeInDesigner(group = WIDGETS)
 open class TextViewAdapter<T : TextView> : ViewAdapter<T>() {
 
@@ -132,7 +132,7 @@ open class TextViewAdapter<T : TextView> : ViewAdapter<T>() {
   @SuppressLint("SetTextI18n")
   override fun applyBasic(view: IView) {
     super.applyBasic(view)
-    (view.view as? TextView)?.text = "AndroidIDE"
+    (view.view as? TextView)?.text = "AndroidIDE Ultra"
   }
 
   protected open fun parseTextStyle(value: String): Int {

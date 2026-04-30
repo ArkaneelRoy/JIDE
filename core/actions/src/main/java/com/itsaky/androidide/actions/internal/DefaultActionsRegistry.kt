@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.actions.internal
+package com.willow.androidide.ultra.actions.internal
 
 import android.view.Menu
 import android.view.MenuItem
 import com.google.auto.service.AutoService
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem
-import com.itsaky.androidide.actions.ActionMenu
-import com.itsaky.androidide.actions.ActionsRegistry
-import com.itsaky.androidide.actions.FillMenuParams
-import com.itsaky.androidide.actions.OnActionClickListener
-import com.itsaky.androidide.actions.locations.CodeActionsMenu
-import com.itsaky.androidide.utils.withStopWatch
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem
+import com.willow.androidide.ultra.actions.ActionMenu
+import com.willow.androidide.ultra.actions.ActionsRegistry
+import com.willow.androidide.ultra.actions.FillMenuParams
+import com.willow.androidide.ultra.actions.OnActionClickListener
+import com.willow.androidide.ultra.actions.locations.CodeActionsMenu
+import com.willow.androidide.ultra.utils.withStopWatch
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

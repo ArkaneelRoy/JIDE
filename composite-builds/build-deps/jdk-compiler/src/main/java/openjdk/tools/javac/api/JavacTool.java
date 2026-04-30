@@ -40,7 +40,7 @@ import java.util.Set;
 import jdkx.lang.model.SourceVersion;
 import jdkx.tools.*;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 import openjdk.source.util.JavacTask;
 import openjdk.tools.javac.file.JavacFileManager;
 import openjdk.tools.javac.main.Arguments;
@@ -217,7 +217,7 @@ public final class JavacTool implements JavaCompiler {
 
     @Override @DefinedBy(Api.COMPILER)
     public Set<SourceVersion> getSourceVersions() {
-        // AndroidIDE changed: Allow overriding latest supported source version.
+        // AndroidIDE Ultra changed: Allow overriding latest supported source version.
         return Collections.unmodifiableSet(EnumSet.range(SourceVersion.RELEASE_3,
                                                          JavacConfigProvider.getLatestSupportedSourceVersion()));
     }

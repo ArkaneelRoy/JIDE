@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.fragments
+package com.willow.androidide.ultra.uidesigner.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,26 +25,26 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
 import com.blankj.utilcode.util.SizeUtils
-import com.itsaky.androidide.fragments.BaseFragment
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.inflater.internal.LayoutFile
-import com.itsaky.androidide.inflater.utils.endParse
-import com.itsaky.androidide.inflater.utils.startParse
-import com.itsaky.androidide.uidesigner.R
-import com.itsaky.androidide.uidesigner.UIDesignerActivity
-import com.itsaky.androidide.uidesigner.databinding.FragmentDesignerWorkspaceBinding
-import com.itsaky.androidide.uidesigner.drag.WidgetDragListener
-import com.itsaky.androidide.uidesigner.drag.WidgetTouchListener
-import com.itsaky.androidide.uidesigner.drawable.UiViewLayeredForeground
-import com.itsaky.androidide.uidesigner.models.CommonUiView
-import com.itsaky.androidide.uidesigner.models.PlaceholderView
-import com.itsaky.androidide.uidesigner.models.RootWorkspaceView
-import com.itsaky.androidide.uidesigner.models.UiViewGroup
-import com.itsaky.androidide.uidesigner.undo.UndoManager
-import com.itsaky.androidide.uidesigner.utils.UiLayoutInflater
-import com.itsaky.androidide.uidesigner.utils.bgDesignerView
-import com.itsaky.androidide.uidesigner.utils.layeredForeground
-import com.itsaky.androidide.uidesigner.viewmodel.WorkspaceViewModel
+import com.willow.androidide.ultra.fragments.BaseFragment
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.inflater.internal.LayoutFile
+import com.willow.androidide.ultra.inflater.utils.endParse
+import com.willow.androidide.ultra.inflater.utils.startParse
+import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.uidesigner.UIDesignerActivity
+import com.willow.androidide.ultra.uidesigner.databinding.FragmentDesignerWorkspaceBinding
+import com.willow.androidide.ultra.uidesigner.drag.WidgetDragListener
+import com.willow.androidide.ultra.uidesigner.drag.WidgetTouchListener
+import com.willow.androidide.ultra.uidesigner.drawable.UiViewLayeredForeground
+import com.willow.androidide.ultra.uidesigner.models.CommonUiView
+import com.willow.androidide.ultra.uidesigner.models.PlaceholderView
+import com.willow.androidide.ultra.uidesigner.models.RootWorkspaceView
+import com.willow.androidide.ultra.uidesigner.models.UiViewGroup
+import com.willow.androidide.ultra.uidesigner.undo.UndoManager
+import com.willow.androidide.ultra.uidesigner.utils.UiLayoutInflater
+import com.willow.androidide.ultra.uidesigner.utils.bgDesignerView
+import com.willow.androidide.ultra.uidesigner.utils.layeredForeground
+import com.willow.androidide.ultra.uidesigner.viewmodel.WorkspaceViewModel
 import org.slf4j.LoggerFactory
 import java.io.File
 

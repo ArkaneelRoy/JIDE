@@ -1,34 +1,34 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.tooling.impl
+package com.willow.androidide.ultra.tooling.impl
 
 import com.android.builder.model.v2.ide.LibraryType
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.tooling.api.IAndroidProject
-import com.itsaky.androidide.tooling.api.IJavaProject
-import com.itsaky.androidide.tooling.api.IProject
-import com.itsaky.androidide.tooling.api.IToolingApiServer
-import com.itsaky.androidide.tooling.api.ProjectType
-import com.itsaky.androidide.tooling.api.models.AndroidProjectMetadata
-import com.itsaky.androidide.tooling.api.models.JavaModuleExternalDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleProjectDependency
-import com.itsaky.androidide.tooling.api.models.JavaProjectMetadata
-import com.itsaky.androidide.tooling.api.models.params.StringParameter
+import com.willow.androidide.ultra.tooling.api.IAndroidProject
+import com.willow.androidide.ultra.tooling.api.IJavaProject
+import com.willow.androidide.ultra.tooling.api.IProject
+import com.willow.androidide.ultra.tooling.api.IToolingApiServer
+import com.willow.androidide.ultra.tooling.api.ProjectType
+import com.willow.androidide.ultra.tooling.api.models.AndroidProjectMetadata
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleExternalDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleProjectDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaProjectMetadata
+import com.willow.androidide.ultra.tooling.api.models.params.StringParameter
 
 internal fun performBasicProjectAssertions(project: IProject, server: IToolingApiServer) {
   assertThat(project).isNotNull()

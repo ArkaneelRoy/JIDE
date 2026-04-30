@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.activities.editor
+package com.willow.androidide.ultra.activities.editor
 
 import android.content.Intent
 import android.content.pm.PackageInstaller.SessionCallback
@@ -60,47 +60,47 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCa
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.Tab
-import com.itsaky.androidide.R
-import com.itsaky.androidide.R.string
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_FILE_TABS
-import com.itsaky.androidide.adapters.DiagnosticsAdapter
-import com.itsaky.androidide.adapters.SearchListAdapter
-import com.itsaky.androidide.app.EdgeToEdgeIDEActivity
-import com.itsaky.androidide.databinding.ActivityEditorBinding
-import com.itsaky.androidide.databinding.ContentEditorBinding
-import com.itsaky.androidide.databinding.LayoutDiagnosticInfoBinding
-import com.itsaky.androidide.events.InstallationResultEvent
-import com.itsaky.androidide.fragments.SearchResultFragment
-import com.itsaky.androidide.fragments.sidebar.EditorSidebarFragment
-import com.itsaky.androidide.fragments.sidebar.FileTreeFragment
-import com.itsaky.androidide.handlers.EditorActivityLifecyclerObserver
-import com.itsaky.androidide.handlers.LspHandler.registerLanguageServers
-import com.itsaky.androidide.interfaces.DiagnosticClickListener
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.lsp.models.DiagnosticItem
-import com.itsaky.androidide.models.DiagnosticGroup
-import com.itsaky.androidide.models.OpenedFile
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.models.SearchResult
-import com.itsaky.androidide.preferences.internal.BuildPreferences
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.tasks.cancelIfActive
-import com.itsaky.androidide.ui.CodeEditorView
-import com.itsaky.androidide.ui.ContentTranslatingDrawerLayout
-import com.itsaky.androidide.ui.SwipeRevealLayout
-import com.itsaky.androidide.uidesigner.UIDesignerActivity
-import com.itsaky.androidide.utils.ActionMenuUtils.createMenu
-import com.itsaky.androidide.utils.ApkInstallationSessionCallback
-import com.itsaky.androidide.utils.DialogUtils.newMaterialDialogBuilder
-import com.itsaky.androidide.utils.InstallationResultHandler.onResult
-import com.itsaky.androidide.utils.IntentUtils
-import com.itsaky.androidide.utils.MemoryUsageWatcher
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.resolveAttr
-import com.itsaky.androidide.viewmodel.EditorViewModel
-import com.itsaky.androidide.xml.resources.ResourceTableRegistry
-import com.itsaky.androidide.xml.versions.ApiVersionsRegistry
-import com.itsaky.androidide.xml.widgets.WidgetTableRegistry
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_FILE_TABS
+import com.willow.androidide.ultra.adapters.DiagnosticsAdapter
+import com.willow.androidide.ultra.adapters.SearchListAdapter
+import com.willow.androidide.ultra.app.EdgeToEdgeIDEActivity
+import com.willow.androidide.ultra.databinding.ActivityEditorBinding
+import com.willow.androidide.ultra.databinding.ContentEditorBinding
+import com.willow.androidide.ultra.databinding.LayoutDiagnosticInfoBinding
+import com.willow.androidide.ultra.events.InstallationResultEvent
+import com.willow.androidide.ultra.fragments.SearchResultFragment
+import com.willow.androidide.ultra.fragments.sidebar.EditorSidebarFragment
+import com.willow.androidide.ultra.fragments.sidebar.FileTreeFragment
+import com.willow.androidide.ultra.handlers.EditorActivityLifecyclerObserver
+import com.willow.androidide.ultra.handlers.LspHandler.registerLanguageServers
+import com.willow.androidide.ultra.interfaces.DiagnosticClickListener
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.lsp.models.DiagnosticItem
+import com.willow.androidide.ultra.models.DiagnosticGroup
+import com.willow.androidide.ultra.models.OpenedFile
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.models.SearchResult
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.tasks.cancelIfActive
+import com.willow.androidide.ultra.ui.CodeEditorView
+import com.willow.androidide.ultra.ui.ContentTranslatingDrawerLayout
+import com.willow.androidide.ultra.ui.SwipeRevealLayout
+import com.willow.androidide.ultra.uidesigner.UIDesignerActivity
+import com.willow.androidide.ultra.utils.ActionMenuUtils.createMenu
+import com.willow.androidide.ultra.utils.ApkInstallationSessionCallback
+import com.willow.androidide.ultra.utils.DialogUtils.newMaterialDialogBuilder
+import com.willow.androidide.ultra.utils.InstallationResultHandler.onResult
+import com.willow.androidide.ultra.utils.IntentUtils
+import com.willow.androidide.ultra.utils.MemoryUsageWatcher
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.resolveAttr
+import com.willow.androidide.ultra.viewmodel.EditorViewModel
+import com.willow.androidide.ultra.xml.resources.ResourceTableRegistry
+import com.willow.androidide.ultra.xml.versions.ApiVersionsRegistry
+import com.willow.androidide.ultra.xml.widgets.WidgetTableRegistry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import org.greenrobot.eventbus.Subscribe

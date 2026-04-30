@@ -1,36 +1,36 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.models
+package com.willow.androidide.ultra.lsp.models
 
-import com.itsaky.androidide.fuzzysearch.FuzzySearch
-import com.itsaky.androidide.lsp.CancellableRequestParams
-import com.itsaky.androidide.lsp.edits.DefaultEditHandler
-import com.itsaky.androidide.lsp.edits.IEditHandler
-import com.itsaky.androidide.lsp.models.CompletionItemKind.NONE
-import com.itsaky.androidide.lsp.models.InsertTextFormat.PLAIN_TEXT
-import com.itsaky.androidide.lsp.models.MatchLevel.CASE_INSENSITIVE_EQUAL
-import com.itsaky.androidide.lsp.models.MatchLevel.CASE_INSENSITIVE_PREFIX
-import com.itsaky.androidide.lsp.models.MatchLevel.CASE_SENSITIVE_EQUAL
-import com.itsaky.androidide.lsp.models.MatchLevel.CASE_SENSITIVE_PREFIX
-import com.itsaky.androidide.lsp.models.MatchLevel.NO_MATCH
-import com.itsaky.androidide.lsp.models.MatchLevel.PARTIAL_MATCH
-import com.itsaky.androidide.models.Position
-import com.itsaky.androidide.progress.ICancelChecker
+import com.willow.androidide.ultra.fuzzysearch.FuzzySearch
+import com.willow.androidide.ultra.lsp.CancellableRequestParams
+import com.willow.androidide.ultra.lsp.edits.DefaultEditHandler
+import com.willow.androidide.ultra.lsp.edits.IEditHandler
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.NONE
+import com.willow.androidide.ultra.lsp.models.InsertTextFormat.PLAIN_TEXT
+import com.willow.androidide.ultra.lsp.models.MatchLevel.CASE_INSENSITIVE_EQUAL
+import com.willow.androidide.ultra.lsp.models.MatchLevel.CASE_INSENSITIVE_PREFIX
+import com.willow.androidide.ultra.lsp.models.MatchLevel.CASE_SENSITIVE_EQUAL
+import com.willow.androidide.ultra.lsp.models.MatchLevel.CASE_SENSITIVE_PREFIX
+import com.willow.androidide.ultra.lsp.models.MatchLevel.NO_MATCH
+import com.willow.androidide.ultra.lsp.models.MatchLevel.PARTIAL_MATCH
+import com.willow.androidide.ultra.models.Position
+import com.willow.androidide.ultra.progress.ICancelChecker
 import io.github.rosemoe.sora.lang.completion.snippet.CodeSnippet
 import io.github.rosemoe.sora.text.CharPosition
 import io.github.rosemoe.sora.text.Content

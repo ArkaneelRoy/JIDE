@@ -1,37 +1,37 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates
+package com.willow.androidide.ultra.templates
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.app.BaseApplication
-import com.itsaky.androidide.templates.ParameterConstraint.CLASS
-import com.itsaky.androidide.templates.ParameterConstraint.CLASS_NAME
-import com.itsaky.androidide.templates.ParameterConstraint.DIRECTORY
-import com.itsaky.androidide.templates.ParameterConstraint.EXISTS
-import com.itsaky.androidide.templates.ParameterConstraint.FILE
-import com.itsaky.androidide.templates.ParameterConstraint.LAYOUT
-import com.itsaky.androidide.templates.ParameterConstraint.MODULE_NAME
-import com.itsaky.androidide.templates.ParameterConstraint.NONEMPTY
-import com.itsaky.androidide.templates.ParameterConstraint.PACKAGE
-import com.itsaky.androidide.templates.base.util.isValidModuleName
-import com.itsaky.androidide.templates.base.util.moduleNameToDirName
-import com.itsaky.androidide.templates.impl.ConstraintVerifier
-import com.itsaky.androidide.utils.FileProvider
+import com.willow.androidide.ultra.app.BaseApplication
+import com.willow.androidide.ultra.templates.ParameterConstraint.CLASS
+import com.willow.androidide.ultra.templates.ParameterConstraint.CLASS_NAME
+import com.willow.androidide.ultra.templates.ParameterConstraint.DIRECTORY
+import com.willow.androidide.ultra.templates.ParameterConstraint.EXISTS
+import com.willow.androidide.ultra.templates.ParameterConstraint.FILE
+import com.willow.androidide.ultra.templates.ParameterConstraint.LAYOUT
+import com.willow.androidide.ultra.templates.ParameterConstraint.MODULE_NAME
+import com.willow.androidide.ultra.templates.ParameterConstraint.NONEMPTY
+import com.willow.androidide.ultra.templates.ParameterConstraint.PACKAGE
+import com.willow.androidide.ultra.templates.base.util.isValidModuleName
+import com.willow.androidide.ultra.templates.base.util.moduleNameToDirName
+import com.willow.androidide.ultra.templates.impl.ConstraintVerifier
+import com.willow.androidide.ultra.utils.FileProvider
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -84,7 +84,7 @@ class UtilTest {
       assertThat(isValid("2invalid.package", listOf(PACKAGE))).isFalse()
       assertThat(isValid("invalid.package", listOf(PACKAGE))).isFalse()
       assertThat(isValid("inval0d.PacKage", listOf(PACKAGE))).isFalse()
-      assertThat(isValid("com.itsaky.androidide", listOf(PACKAGE))).isTrue()
+      assertThat(isValid("com.willow.androidide.ultra", listOf(PACKAGE))).isTrue()
 
       assertThat(isValid("Class", listOf(CLASS))).isTrue()
       assertThat(isValid("pck.name.Class", listOf(CLASS))).isTrue()

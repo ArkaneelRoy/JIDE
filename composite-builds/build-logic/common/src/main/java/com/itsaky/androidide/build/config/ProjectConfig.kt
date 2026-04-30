@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.build.config
+package com.willow.androidide.ultra.build.config
 
 import org.gradle.api.Project
 
@@ -23,8 +23,8 @@ import org.gradle.api.Project
 object ProjectConfig {
 
   const val REPO_HOST = "github.com"
-  const val REPO_OWNER = "AndroidIDEOfficial"
-  const val REPO_NAME = "AndroidIDE"
+  const val REPO_OWNER = "AndroidIDE UltraOfficial"
+  const val REPO_NAME = "AndroidIDE Ultra"
   const val REPO_URL = "https://$REPO_HOST/$REPO_OWNER/$REPO_NAME"
   const val SCM_GIT =
     "scm:git:git://$REPO_HOST/$REPO_OWNER/$REPO_NAME.git"
@@ -45,7 +45,7 @@ val Project.isFDroidBuild: Boolean
     if (!FDroidConfig.hasRead) {
       FDroidConfig.load(this)
     }
-    return com.itsaky.androidide.build.config.FDroidConfig.isFDroidBuild
+    return com.willow.androidide.ultra.build.config.FDroidConfig.isFDroidBuild
   }
 
 val Project.simpleVersionName: String
@@ -134,7 +134,7 @@ val Project.downloadVersion: String
       publishingVersion
     } else {
       // sometimes, when working locally, Gradle fails to download the latest snapshot version
-      // this may cause issues while initializing the project in AndroidIDE
+      // this may cause issues while initializing the project in AndroidIDE Ultra
       VersionUtils.getLatestSnapshotVersion("gradle-plugin")
     }
   }

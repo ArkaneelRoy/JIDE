@@ -1,46 +1,46 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java.actions.generators
+package com.willow.androidide.ultra.lsp.java.actions.generators
 
 import android.content.Context
 import com.blankj.utilcode.util.ThreadUtils
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.hasRequiredData
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.actions.newDialogBuilder
-import com.itsaky.androidide.actions.requireFile
-import com.itsaky.androidide.actions.requirePath
-import com.itsaky.androidide.lsp.java.JavaCompilerProvider
-import com.itsaky.androidide.lsp.java.actions.BaseJavaCodeAction
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.compiler.CompilerProvider
-import com.itsaky.androidide.lsp.java.parser.ParseTask
-import com.itsaky.androidide.lsp.java.rewrite.AddImport
-import com.itsaky.androidide.lsp.java.utils.EditHelper
-import com.itsaky.androidide.lsp.java.utils.FindHelper
-import com.itsaky.androidide.lsp.java.utils.JavaParserUtils
-import com.itsaky.androidide.lsp.java.utils.MethodPtr
-import com.itsaky.androidide.lsp.java.visitors.FindTypeDeclarationAt
-import com.itsaky.androidide.models.Position
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.preferences.utils.indentationString
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.hasRequiredData
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.actions.newDialogBuilder
+import com.willow.androidide.ultra.actions.requireFile
+import com.willow.androidide.ultra.actions.requirePath
+import com.willow.androidide.ultra.lsp.java.JavaCompilerProvider
+import com.willow.androidide.ultra.lsp.java.actions.BaseJavaCodeAction
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.compiler.CompilerProvider
+import com.willow.androidide.ultra.lsp.java.parser.ParseTask
+import com.willow.androidide.ultra.lsp.java.rewrite.AddImport
+import com.willow.androidide.ultra.lsp.java.utils.EditHelper
+import com.willow.androidide.ultra.lsp.java.utils.FindHelper
+import com.willow.androidide.ultra.lsp.java.utils.JavaParserUtils
+import com.willow.androidide.ultra.lsp.java.utils.MethodPtr
+import com.willow.androidide.ultra.lsp.java.visitors.FindTypeDeclarationAt
+import com.willow.androidide.ultra.models.Position
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.preferences.utils.indentationString
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.utils.flashError
 import io.github.rosemoe.sora.widget.CodeEditor
 import jdkx.lang.model.element.ElementKind
 import jdkx.lang.model.element.ExecutableElement
@@ -79,7 +79,7 @@ class OverrideSuperclassMethodsAction : BaseJavaCodeAction() {
     if (
       !visible ||
       !data.hasRequiredData(
-        com.itsaky.androidide.models.Range::class.java,
+        com.willow.androidide.ultra.models.Range::class.java,
         CodeEditor::class.java
       )
     ) {
@@ -92,7 +92,7 @@ class OverrideSuperclassMethodsAction : BaseJavaCodeAction() {
   }
 
   override suspend fun execAction(data: ActionData): Any {
-    val range = data[com.itsaky.androidide.models.Range::class.java]!!
+    val range = data[com.willow.androidide.ultra.models.Range::class.java]!!
     val compiler =
       JavaCompilerProvider.get(
         IProjectManager.getInstance().getWorkspace()?.findModuleForFile(data.requireFile(), false)

@@ -1,38 +1,38 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.impl
+package com.willow.androidide.ultra.templates.impl
 
-import com.itsaky.androidide.templates.BooleanParameter
-import com.itsaky.androidide.templates.EnumParameter
-import com.itsaky.androidide.templates.Language
-import com.itsaky.androidide.templates.ProjectTemplate
-import com.itsaky.androidide.templates.ProjectVersionData
-import com.itsaky.androidide.templates.Sdk
-import com.itsaky.androidide.templates.StringParameter
-import com.itsaky.androidide.templates.base.AndroidModuleTemplateBuilder
-import com.itsaky.androidide.templates.base.ProjectTemplateBuilder
-import com.itsaky.androidide.templates.base.baseProject
-import com.itsaky.androidide.templates.impl.base.createRecipe
-import com.itsaky.androidide.templates.minSdkParameter
-import com.itsaky.androidide.templates.packageNameParameter
-import com.itsaky.androidide.templates.projectLanguageParameter
-import com.itsaky.androidide.templates.projectNameParameter
-import com.itsaky.androidide.templates.useKtsParameter
+import com.willow.androidide.ultra.templates.BooleanParameter
+import com.willow.androidide.ultra.templates.EnumParameter
+import com.willow.androidide.ultra.templates.Language
+import com.willow.androidide.ultra.templates.ProjectTemplate
+import com.willow.androidide.ultra.templates.ProjectVersionData
+import com.willow.androidide.ultra.templates.Sdk
+import com.willow.androidide.ultra.templates.StringParameter
+import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateBuilder
+import com.willow.androidide.ultra.templates.base.ProjectTemplateBuilder
+import com.willow.androidide.ultra.templates.base.baseProject
+import com.willow.androidide.ultra.templates.impl.base.createRecipe
+import com.willow.androidide.ultra.templates.minSdkParameter
+import com.willow.androidide.ultra.templates.packageNameParameter
+import com.willow.androidide.ultra.templates.projectLanguageParameter
+import com.willow.androidide.ultra.templates.projectNameParameter
+import com.willow.androidide.ultra.templates.useKtsParameter
 
 /**
  * Indents the given string for the given [indentation level][level].

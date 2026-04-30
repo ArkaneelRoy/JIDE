@@ -1,26 +1,26 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.javac.services.partial
+package com.willow.androidide.ultra.javac.services.partial
 
-import com.itsaky.androidide.javac.services.compiler.JavacFlowListener
-import com.itsaky.androidide.javac.services.util.ReparserUtils
-import com.itsaky.androidide.javac.services.visitors.FindAnonymousVisitor
-import com.itsaky.androidide.javac.services.visitors.TranslateMethodPositionsVisitor
+import com.willow.androidide.ultra.javac.services.compiler.JavacFlowListener
+import com.willow.androidide.ultra.javac.services.util.ReparserUtils
+import com.willow.androidide.ultra.javac.services.visitors.FindAnonymousVisitor
+import com.willow.androidide.ultra.javac.services.visitors.TranslateMethodPositionsVisitor
 import openjdk.source.tree.BlockTree
 import openjdk.source.tree.ClassTree
 import openjdk.source.tree.CompilationUnitTree
@@ -116,7 +116,7 @@ class PartialReparserImpl : PartialReparser {
     val context = task.context
 
     try {
-      val l = com.itsaky.androidide.javac.services.NBLog.instance(context)
+      val l = com.willow.androidide.ultra.javac.services.NBLog.instance(context)
       l.startPartialReparse(fo)
       val prevLogged = l.useSource(fo)
       val block: JCBlock?
@@ -246,20 +246,20 @@ class PartialReparserImpl : PartialReparser {
     endPositions: EndPosTable?,
   ): JavacParser {
     val factory =
-      com.itsaky.androidide.javac.services.NBParserFactory.instance(context)
-        as com.itsaky.androidide.javac.services.NBParserFactory
+      com.willow.androidide.ultra.javac.services.NBParserFactory.instance(context)
+        as com.willow.androidide.ultra.javac.services.NBParserFactory
     val scannerFactory = ScannerFactory.instance(context)
-    val cancelService = com.itsaky.androidide.javac.services.CancelService.instance(context)
+    val cancelService = com.willow.androidide.ultra.javac.services.CancelService.instance(context)
     val lexer = scannerFactory.newScanner(buf, true)
     if (
       endPositions
-        is com.itsaky.androidide.javac.services.NBParserFactory.NBJavacParser.EndPosTableImpl
+        is com.willow.androidide.ultra.javac.services.NBParserFactory.NBJavacParser.EndPosTableImpl
     ) {
       endPositions.resetErrorEndPos()
     }
 
     return object :
-      com.itsaky.androidide.javac.services.NBParserFactory.NBJavacParser(
+      com.willow.androidide.ultra.javac.services.NBParserFactory.NBJavacParser(
         factory,
         lexer,
         true,

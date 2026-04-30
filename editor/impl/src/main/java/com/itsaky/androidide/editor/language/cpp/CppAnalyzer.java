@@ -1,35 +1,35 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.language.cpp;
+package com.willow.androidide.ultra.editor.language.cpp;
 
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.LITERAL;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.OPERATOR;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.TEXT_NORMAL;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.TYPE_NAME;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.forComment;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.forKeyword;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.forString;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.LITERAL;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.OPERATOR;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.TEXT_NORMAL;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.TYPE_NAME;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.forComment;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.forKeyword;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.forString;
 import static io.github.rosemoe.sora.lang.styling.TextStyle.makeStyle;
 
-import com.itsaky.androidide.editor.language.incremental.BaseIncrementalAnalyzeManager;
-import com.itsaky.androidide.editor.language.incremental.IncrementalToken;
-import com.itsaky.androidide.editor.language.incremental.LineState;
-import com.itsaky.androidide.lexers.cpp.CPP14Lexer;
+import com.willow.androidide.ultra.editor.language.incremental.BaseIncrementalAnalyzeManager;
+import com.willow.androidide.ultra.editor.language.incremental.IncrementalToken;
+import com.willow.androidide.ultra.editor.language.incremental.LineState;
+import com.willow.androidide.ultra.lexers.cpp.CPP14Lexer;
 import io.github.rosemoe.sora.lang.styling.Span;
 import java.util.ArrayList;
 import java.util.List;

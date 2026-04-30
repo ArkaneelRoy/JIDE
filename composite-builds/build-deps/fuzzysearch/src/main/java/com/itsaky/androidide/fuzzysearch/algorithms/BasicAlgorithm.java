@@ -1,7 +1,7 @@
-package com.itsaky.androidide.fuzzysearch.algorithms;
+package com.willow.androidide.ultra.fuzzysearch.algorithms;
 
-import com.itsaky.androidide.fuzzysearch.Applicable;
-import com.itsaky.androidide.fuzzysearch.ToStringFunction;
+import com.willow.androidide.ultra.fuzzysearch.Applicable;
+import com.willow.androidide.ultra.fuzzysearch.ToStringFunction;
 
 public abstract class BasicAlgorithm implements Applicable {
 

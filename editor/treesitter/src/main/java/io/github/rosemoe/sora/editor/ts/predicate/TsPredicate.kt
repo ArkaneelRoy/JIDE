@@ -24,8 +24,8 @@
 
 package io.github.rosemoe.sora.editor.ts.predicate
 
-import com.itsaky.androidide.treesitter.TSQuery
-import com.itsaky.androidide.treesitter.TSQueryMatch
+import com.willow.androidide.ultra.treesitter.TSQuery
+import com.willow.androidide.ultra.treesitter.TSQueryMatch
 
 /**
  * Predicate client-side implementation

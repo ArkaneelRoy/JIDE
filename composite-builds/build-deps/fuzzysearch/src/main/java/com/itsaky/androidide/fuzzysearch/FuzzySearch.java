@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.fuzzysearch;
+package com.willow.androidide.ultra.fuzzysearch;
 
-import com.itsaky.androidide.fuzzysearch.algorithms.TokenSet;
-import com.itsaky.androidide.fuzzysearch.algorithms.TokenSort;
-import com.itsaky.androidide.fuzzysearch.algorithms.WeightedRatio;
-import com.itsaky.androidide.fuzzysearch.model.BoundExtractedResult;
-import com.itsaky.androidide.fuzzysearch.model.ExtractedResult;
-import com.itsaky.androidide.fuzzysearch.ratios.PartialRatio;
-import com.itsaky.androidide.fuzzysearch.ratios.SimpleRatio;
+import com.willow.androidide.ultra.fuzzysearch.algorithms.TokenSet;
+import com.willow.androidide.ultra.fuzzysearch.algorithms.TokenSort;
+import com.willow.androidide.ultra.fuzzysearch.algorithms.WeightedRatio;
+import com.willow.androidide.ultra.fuzzysearch.model.BoundExtractedResult;
+import com.willow.androidide.ultra.fuzzysearch.model.ExtractedResult;
+import com.willow.androidide.ultra.fuzzysearch.ratios.PartialRatio;
+import com.willow.androidide.ultra.fuzzysearch.ratios.SimpleRatio;
 
 import java.util.Collection;
 import java.util.List;

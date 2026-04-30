@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.tooling.impl
+package com.willow.androidide.ultra.tooling.impl
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.builder.model.IDESyncIssue
-import com.itsaky.androidide.buildinfo.BuildInfo
-import com.itsaky.androidide.testing.common.CIOnlyTestRule
-import com.itsaky.androidide.testing.tooling.ToolingApiTestLauncher
-import com.itsaky.androidide.tooling.api.util.ToolingProps
-import com.itsaky.androidide.utils.AndroidPluginVersion
+import com.willow.androidide.ultra.builder.model.IDESyncIssue
+import com.willow.androidide.ultra.buildinfo.BuildInfo
+import com.willow.androidide.ultra.testing.common.CIOnlyTestRule
+import com.willow.androidide.ultra.testing.tooling.ToolingApiTestLauncher
+import com.willow.androidide.ultra.tooling.api.util.ToolingProps
+import com.willow.androidide.ultra.utils.AndroidPluginVersion
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -100,7 +100,7 @@ class CIOnlyToolingApiTests {
       agpVersion = agpVersion,
       gradleVersion = "7.2",
       outputValidator = { line ->
-        line.contains("Android Gradle Plugin version $agpVersion is not supported by AndroidIDE.")
+        line.contains("Android Gradle Plugin version $agpVersion is not supported by AndroidIDE Ultra.")
       }
     )
 

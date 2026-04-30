@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.plugins.conf
+package com.willow.androidide.ultra.plugins.conf
 
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.variant.AndroidComponentsExtension
@@ -23,12 +23,12 @@ import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.android.build.api.variant.FilterConfiguration
 import com.android.build.api.variant.impl.getFilter
 import com.android.build.gradle.BaseExtension
-import com.itsaky.androidide.build.config.BuildConfig
-import com.itsaky.androidide.build.config.FDroidConfig
-import com.itsaky.androidide.build.config.isFDroidBuild
-import com.itsaky.androidide.build.config.projectVersionCode
-import com.itsaky.androidide.plugins.NoDesugarPlugin
-import com.itsaky.androidide.plugins.util.SdkUtils.getAndroidJar
+import com.willow.androidide.ultra.build.config.BuildConfig
+import com.willow.androidide.ultra.build.config.FDroidConfig
+import com.willow.androidide.ultra.build.config.isFDroidBuild
+import com.willow.androidide.ultra.build.config.projectVersionCode
+import com.willow.androidide.ultra.plugins.NoDesugarPlugin
+import com.willow.androidide.ultra.plugins.util.SdkUtils.getAndroidJar
 import org.gradle.api.Project
 import org.gradle.api.artifacts.MinimalExternalModuleDependency
 import org.gradle.api.provider.Provider
@@ -118,7 +118,7 @@ fun Project.configureAndroidModule(
 
     configureCoreLibDesugaring(this, coreLibDesugDep)
 
-    if (project.plugins.hasPlugin("com.itsaky.androidide.core-app")) {
+    if (project.plugins.hasPlugin("com.willow.androidide.ultra.core-app")) {
       packagingOptions {
         jniLibs {
           useLegacyPackaging = true

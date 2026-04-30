@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.impl.emptyActivity
+package com.willow.androidide.ultra.templates.impl.emptyActivity
 
-import com.itsaky.androidide.templates.ProjectTemplate
-import com.itsaky.androidide.templates.base.AndroidModuleTemplateBuilder
-import com.itsaky.androidide.templates.base.modules.android.defaultAppModule
-import com.itsaky.androidide.templates.base.util.AndroidModuleResManager.ResourceType.LAYOUT
-import com.itsaky.androidide.templates.base.util.SourceWriter
-import com.itsaky.androidide.templates.impl.R
-import com.itsaky.androidide.templates.impl.base.createRecipe
-import com.itsaky.androidide.templates.impl.base.emptyThemesAndColors
-import com.itsaky.androidide.templates.impl.base.writeMainActivity
-import com.itsaky.androidide.templates.impl.baseProjectImpl
+import com.willow.androidide.ultra.templates.ProjectTemplate
+import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateBuilder
+import com.willow.androidide.ultra.templates.base.modules.android.defaultAppModule
+import com.willow.androidide.ultra.templates.base.util.AndroidModuleResManager.ResourceType.LAYOUT
+import com.willow.androidide.ultra.templates.base.util.SourceWriter
+import com.willow.androidide.ultra.templates.impl.R
+import com.willow.androidide.ultra.templates.impl.base.createRecipe
+import com.willow.androidide.ultra.templates.impl.base.emptyThemesAndColors
+import com.willow.androidide.ultra.templates.impl.base.writeMainActivity
+import com.willow.androidide.ultra.templates.impl.baseProjectImpl
 
 fun emptyActivityProject(): ProjectTemplate = baseProjectImpl {
   templateName = R.string.template_empty

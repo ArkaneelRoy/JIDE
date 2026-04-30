@@ -1,6 +1,6 @@
-package com.itsaky.androidide.logsender;
+package com.willow.androidide.ultra.logsender;
 
-import com.itsaky.androidide.logsender.ILogSender;
+import com.willow.androidide.ultra.logsender.ILogSender;
 
 /**
  * The LogReceiver interface.
@@ -13,12 +13,12 @@ oneway interface ILogReceiver {
   void ping();
 
   /**
-   * Called by the client applications to connect to log receiver in AndroidIDE.
+   * Called by the client applications to connect to log receiver in AndroidIDE Ultra.
    */
   void connect(ILogSender sender);
 
   /**
-   * Called by the client applications to disconnect from the log receiver in AndroidIDE.
+   * Called by the client applications to disconnect from the log receiver in AndroidIDE Ultra.
    */
   void disconnect(String packageName, String senderId);
 }

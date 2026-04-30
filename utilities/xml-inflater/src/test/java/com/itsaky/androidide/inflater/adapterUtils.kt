@@ -1,23 +1,23 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 @file:Suppress("DEPRECATION")
 
-package com.itsaky.androidide.inflater
+package com.willow.androidide.ultra.inflater
 
 import android.gesture.GestureOverlayView
 import android.view.SurfaceView
@@ -50,31 +50,31 @@ import android.widget.Spinner
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.ToggleButton
-import com.itsaky.androidide.inflater.internal.adapters.AbsoluteLayoutAdapter
-import com.itsaky.androidide.inflater.internal.adapters.AutoCompleteTextViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ButtonAdapter
-import com.itsaky.androidide.inflater.internal.adapters.CheckBoxAdapter
-import com.itsaky.androidide.inflater.internal.adapters.CheckedTextViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.EditTextAdapter
-import com.itsaky.androidide.inflater.internal.adapters.FrameLayoutAdapter
-import com.itsaky.androidide.inflater.internal.adapters.GestureOverlayViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.GridLayoutAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ImageButtonAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ImageViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.LinearLayoutAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ListViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ProgressBarAdapter
-import com.itsaky.androidide.inflater.internal.adapters.RadioButtonAdapter
-import com.itsaky.androidide.inflater.internal.adapters.RelativeLayoutAdapter
-import com.itsaky.androidide.inflater.internal.adapters.SeekBarAdapter
-import com.itsaky.androidide.inflater.internal.adapters.SpinnerAdapter
-import com.itsaky.androidide.inflater.internal.adapters.SurfaceViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.SwitchAdapter
-import com.itsaky.androidide.inflater.internal.adapters.TextViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.TextureViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ToggleButtonAdapter
-import com.itsaky.androidide.inflater.internal.adapters.ViewAdapter
-import com.itsaky.androidide.inflater.internal.adapters.WebViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.AbsoluteLayoutAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.AutoCompleteTextViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ButtonAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.CheckBoxAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.CheckedTextViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.EditTextAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.FrameLayoutAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.GestureOverlayViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.GridLayoutAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ImageButtonAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ImageViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.LinearLayoutAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ListViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ProgressBarAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.RadioButtonAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.RelativeLayoutAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.SeekBarAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.SpinnerAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.SurfaceViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.SwitchAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.TextViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.TextureViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ToggleButtonAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.ViewAdapter
+import com.willow.androidide.ultra.inflater.internal.adapters.WebViewAdapter
 
 internal fun viewDeclTemplate(name: String) : String =
   """

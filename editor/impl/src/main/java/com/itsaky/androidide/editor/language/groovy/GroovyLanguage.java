@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.editor.language.groovy;
+package com.willow.androidide.ultra.editor.language.groovy;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-import com.itsaky.androidide.editor.language.IDELanguage;
-import com.itsaky.androidide.editor.language.newline.BracketsNewlineHandler;
-import com.itsaky.androidide.editor.language.utils.CommonSymbolPairs;
-import com.itsaky.androidide.lexers.groovy.GroovyLexer;
-import com.itsaky.androidide.utils.CharSequenceReader;
+import com.willow.androidide.ultra.editor.language.IDELanguage;
+import com.willow.androidide.ultra.editor.language.newline.BracketsNewlineHandler;
+import com.willow.androidide.ultra.editor.language.utils.CommonSymbolPairs;
+import com.willow.androidide.ultra.lexers.groovy.GroovyLexer;
+import com.willow.androidide.ultra.utils.CharSequenceReader;
 import io.github.rosemoe.sora.lang.analysis.AnalyzeManager;
 import io.github.rosemoe.sora.lang.completion.CompletionCancelledException;
 import io.github.rosemoe.sora.lang.completion.CompletionPublisher;

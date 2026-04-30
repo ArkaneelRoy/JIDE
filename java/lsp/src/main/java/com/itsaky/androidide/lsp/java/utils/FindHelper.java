@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.utils;
+package com.willow.androidide.ultra.lsp.java.utils;
 
 import androidx.annotation.Nullable;
-import com.itsaky.androidide.lsp.java.compiler.CompileTask;
-import com.itsaky.androidide.lsp.java.parser.ParseTask;
-import com.itsaky.androidide.lsp.java.visitors.FindTypeDeclarationNamed;
-import com.itsaky.androidide.models.Location;
-import com.itsaky.androidide.models.Position;
-import com.itsaky.androidide.models.Range;
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask;
+import com.willow.androidide.ultra.lsp.java.parser.ParseTask;
+import com.willow.androidide.ultra.lsp.java.visitors.FindTypeDeclarationNamed;
+import com.willow.androidide.ultra.models.Location;
+import com.willow.androidide.ultra.models.Position;
+import com.willow.androidide.ultra.models.Range;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Paths;

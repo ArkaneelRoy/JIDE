@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.flashbar
+package com.willow.androidide.ultra.flashbar
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -45,18 +45,18 @@ import androidx.core.view.marginTop
 import androidx.core.view.updateLayoutParams
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.progressindicator.CircularProgressIndicator
-import com.itsaky.androidide.flashbar.Flashbar.Gravity
-import com.itsaky.androidide.flashbar.Flashbar.Gravity.BOTTOM
-import com.itsaky.androidide.flashbar.Flashbar.Gravity.TOP
-import com.itsaky.androidide.flashbar.Flashbar.OnActionTapListener
-import com.itsaky.androidide.flashbar.Flashbar.OnTapListener
-import com.itsaky.androidide.flashbar.Flashbar.ProgressPosition
-import com.itsaky.androidide.flashbar.Flashbar.ProgressPosition.LEFT
-import com.itsaky.androidide.flashbar.Flashbar.ProgressPosition.RIGHT
-import com.itsaky.androidide.flashbar.SwipeDismissTouchListener.DismissCallbacks
-import com.itsaky.androidide.flashbar.anim.FlashAnimIconBuilder
-import com.itsaky.androidide.flashbar.databinding.FlashBarViewBinding
-import com.itsaky.androidide.flashbar.util.getStatusBarHeightInPx
+import com.willow.androidide.ultra.flashbar.Flashbar.Gravity
+import com.willow.androidide.ultra.flashbar.Flashbar.Gravity.BOTTOM
+import com.willow.androidide.ultra.flashbar.Flashbar.Gravity.TOP
+import com.willow.androidide.ultra.flashbar.Flashbar.OnActionTapListener
+import com.willow.androidide.ultra.flashbar.Flashbar.OnTapListener
+import com.willow.androidide.ultra.flashbar.Flashbar.ProgressPosition
+import com.willow.androidide.ultra.flashbar.Flashbar.ProgressPosition.LEFT
+import com.willow.androidide.ultra.flashbar.Flashbar.ProgressPosition.RIGHT
+import com.willow.androidide.ultra.flashbar.SwipeDismissTouchListener.DismissCallbacks
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimIconBuilder
+import com.willow.androidide.ultra.flashbar.databinding.FlashBarViewBinding
+import com.willow.androidide.ultra.flashbar.util.getStatusBarHeightInPx
 
 /**
  * The actual Flashbar withView representation that can consist of the title, message, button, icon,

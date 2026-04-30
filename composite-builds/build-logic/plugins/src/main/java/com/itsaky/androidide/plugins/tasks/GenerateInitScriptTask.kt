@@ -1,23 +1,23 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.plugins.tasks
+package com.willow.androidide.ultra.plugins.tasks
 
-import com.itsaky.androidide.build.config.VersionUtils
+import com.willow.androidide.ultra.build.config.VersionUtils
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.provider.Property
@@ -26,7 +26,7 @@ import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 
 /**
- * Generates the Gradle init script for AndroidIDE.
+ * Generates the Gradle init script for AndroidIDE Ultra.
  */
 abstract class GenerateInitScriptTask : DefaultTask() {
 
@@ -56,12 +56,12 @@ abstract class GenerateInitScriptTask : DefaultTask() {
               
               // Always specify the snapshots repository first
               maven {
-                  // Add snapshots repository for AndroidIDE CI builds
+                  // Add snapshots repository for AndroidIDE Ultra CI builds
                   url "${VersionUtils.SONATYPE_SNAPSHOTS_REPO}"
               }
               
               maven {
-                  // Add public repository for AndroidIDE release builds
+                  // Add public repository for AndroidIDE Ultra release builds
                   url "${VersionUtils.SONATYPE_PUBLIC_REPO}"
               }
               
@@ -76,7 +76,7 @@ abstract class GenerateInitScriptTask : DefaultTask() {
           }
       }
       
-      apply plugin: com.itsaky.androidide.gradle.AndroidIDEInitScriptPlugin
+      apply plugin: com.willow.androidide.ultra.gradle.AndroidIDE UltraInitScriptPlugin
     """
           .trimIndent()
       )

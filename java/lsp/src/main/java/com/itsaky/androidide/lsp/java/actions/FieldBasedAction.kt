@@ -1,34 +1,34 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.actions
+package com.willow.androidide.ultra.lsp.java.actions
 
 import android.content.Context
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.hasRequiredData
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.actions.newDialogBuilder
-import com.itsaky.androidide.actions.requirePath
-import com.itsaky.androidide.lsp.java.JavaCompilerProvider
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.visitors.FindTypeDeclarationAt
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.utils.flashInfo
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.hasRequiredData
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.actions.newDialogBuilder
+import com.willow.androidide.ultra.actions.requirePath
+import com.willow.androidide.ultra.lsp.java.JavaCompilerProvider
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.visitors.FindTypeDeclarationAt
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.utils.flashInfo
 import io.github.rosemoe.sora.widget.CodeEditor
 import jdkx.lang.model.element.Modifier.STATIC
 import openjdk.source.tree.ClassTree
@@ -57,7 +57,7 @@ abstract class FieldBasedAction : BaseJavaCodeAction() {
     if (
       !visible ||
       !data.hasRequiredData(
-        com.itsaky.androidide.models.Range::class.java,
+        com.willow.androidide.ultra.models.Range::class.java,
         CodeEditor::class.java
       ) ||
       IProjectManager.getInstance().getWorkspace() == null
@@ -71,7 +71,7 @@ abstract class FieldBasedAction : BaseJavaCodeAction() {
   }
 
   override suspend fun execAction(data: ActionData): Any {
-    val range = data[com.itsaky.androidide.models.Range::class.java]!!
+    val range = data[com.willow.androidide.ultra.models.Range::class.java]!!
     val file = data.requirePath()
     val module =
       IProjectManager.getInstance().getWorkspace()?.findModuleForFile(file, false) ?: return Any()
@@ -91,7 +91,7 @@ abstract class FieldBasedAction : BaseJavaCodeAction() {
   protected fun findFields(
     task: CompileTask,
     file: Path,
-    range: com.itsaky.androidide.models.Range
+    range: com.willow.androidide.ultra.models.Range
   ): Triple<FindTypeDeclarationAt, ClassTree, MutableList<VariableTree>> {
     // 1-based line and column index
     val startLine = range.start.line + 1

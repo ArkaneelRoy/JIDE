@@ -1,69 +1,69 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java
+package com.willow.androidide.ultra.lsp.java
 
 import androidx.annotation.RestrictTo
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentCloseEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentOpenEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentSelectedEvent
-import com.itsaky.androidide.javac.services.fs.CacheFSInfoSingleton
-import com.itsaky.androidide.javac.services.fs.CachingJarFileSystemProvider.clearCache
-import com.itsaky.androidide.javac.services.fs.CachingJarFileSystemProvider.clearCachesForPaths
-import com.itsaky.androidide.lsp.api.ILanguageClient
-import com.itsaky.androidide.lsp.api.ILanguageServer
-import com.itsaky.androidide.lsp.api.IServerSettings
-import com.itsaky.androidide.lsp.internal.model.CachedCompletion
-import com.itsaky.androidide.lsp.java.actions.JavaCodeActionsMenu
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.compiler.SourceFileManager
-import com.itsaky.androidide.lsp.java.models.JavaServerSettings
-import com.itsaky.androidide.lsp.java.providers.CodeFormatProvider
-import com.itsaky.androidide.lsp.java.providers.CompletionProvider
-import com.itsaky.androidide.lsp.java.providers.DefinitionProvider
-import com.itsaky.androidide.lsp.java.providers.JavaDiagnosticProvider
-import com.itsaky.androidide.lsp.java.providers.JavaSelectionProvider
-import com.itsaky.androidide.lsp.java.providers.ReferenceProvider
-import com.itsaky.androidide.lsp.java.providers.SignatureProvider
-import com.itsaky.androidide.lsp.java.providers.snippet.JavaSnippetRepository.init
-import com.itsaky.androidide.lsp.java.utils.AnalyzeTimer
-import com.itsaky.androidide.lsp.java.utils.CancelChecker.Companion.isCancelled
-import com.itsaky.androidide.lsp.models.CodeFormatResult
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.DefinitionParams
-import com.itsaky.androidide.lsp.models.DefinitionResult
-import com.itsaky.androidide.lsp.models.DiagnosticResult
-import com.itsaky.androidide.lsp.models.ExpandSelectionParams
-import com.itsaky.androidide.lsp.models.FailureType
-import com.itsaky.androidide.lsp.models.FormatCodeParams
-import com.itsaky.androidide.lsp.models.LSPFailure
-import com.itsaky.androidide.lsp.models.ReferenceParams
-import com.itsaky.androidide.lsp.models.ReferenceResult
-import com.itsaky.androidide.lsp.models.SignatureHelp
-import com.itsaky.androidide.lsp.models.SignatureHelpParams
-import com.itsaky.androidide.lsp.util.LSPEditorActions
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.projects.FileManager.getActiveDocumentCount
-import com.itsaky.androidide.projects.IProjectManager.Companion.getInstance
-import com.itsaky.androidide.projects.IWorkspace
-import com.itsaky.androidide.projects.ModuleProject
-import com.itsaky.androidide.utils.DocumentUtils
-import com.itsaky.androidide.utils.VMUtils
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentCloseEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentOpenEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentSelectedEvent
+import com.willow.androidide.ultra.javac.services.fs.CacheFSInfoSingleton
+import com.willow.androidide.ultra.javac.services.fs.CachingJarFileSystemProvider.clearCache
+import com.willow.androidide.ultra.javac.services.fs.CachingJarFileSystemProvider.clearCachesForPaths
+import com.willow.androidide.ultra.lsp.api.ILanguageClient
+import com.willow.androidide.ultra.lsp.api.ILanguageServer
+import com.willow.androidide.ultra.lsp.api.IServerSettings
+import com.willow.androidide.ultra.lsp.internal.model.CachedCompletion
+import com.willow.androidide.ultra.lsp.java.actions.JavaCodeActionsMenu
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.compiler.SourceFileManager
+import com.willow.androidide.ultra.lsp.java.models.JavaServerSettings
+import com.willow.androidide.ultra.lsp.java.providers.CodeFormatProvider
+import com.willow.androidide.ultra.lsp.java.providers.CompletionProvider
+import com.willow.androidide.ultra.lsp.java.providers.DefinitionProvider
+import com.willow.androidide.ultra.lsp.java.providers.JavaDiagnosticProvider
+import com.willow.androidide.ultra.lsp.java.providers.JavaSelectionProvider
+import com.willow.androidide.ultra.lsp.java.providers.ReferenceProvider
+import com.willow.androidide.ultra.lsp.java.providers.SignatureProvider
+import com.willow.androidide.ultra.lsp.java.providers.snippet.JavaSnippetRepository.init
+import com.willow.androidide.ultra.lsp.java.utils.AnalyzeTimer
+import com.willow.androidide.ultra.lsp.java.utils.CancelChecker.Companion.isCancelled
+import com.willow.androidide.ultra.lsp.models.CodeFormatResult
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.DefinitionParams
+import com.willow.androidide.ultra.lsp.models.DefinitionResult
+import com.willow.androidide.ultra.lsp.models.DiagnosticResult
+import com.willow.androidide.ultra.lsp.models.ExpandSelectionParams
+import com.willow.androidide.ultra.lsp.models.FailureType
+import com.willow.androidide.ultra.lsp.models.FormatCodeParams
+import com.willow.androidide.ultra.lsp.models.LSPFailure
+import com.willow.androidide.ultra.lsp.models.ReferenceParams
+import com.willow.androidide.ultra.lsp.models.ReferenceResult
+import com.willow.androidide.ultra.lsp.models.SignatureHelp
+import com.willow.androidide.ultra.lsp.models.SignatureHelpParams
+import com.willow.androidide.ultra.lsp.util.LSPEditorActions
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.projects.FileManager.getActiveDocumentCount
+import com.willow.androidide.ultra.projects.IProjectManager.Companion.getInstance
+import com.willow.androidide.ultra.projects.IWorkspace
+import com.willow.androidide.ultra.projects.ModuleProject
+import com.willow.androidide.ultra.utils.DocumentUtils
+import com.willow.androidide.ultra.utils.VMUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

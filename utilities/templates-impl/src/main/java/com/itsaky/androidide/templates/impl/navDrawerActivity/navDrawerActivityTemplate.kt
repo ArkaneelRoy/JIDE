@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.impl.navDrawerActivity
+package com.willow.androidide.ultra.templates.impl.navDrawerActivity
 
-import com.itsaky.androidide.templates.Language.Kotlin
-import com.itsaky.androidide.templates.base.AndroidModuleTemplateBuilder
-import com.itsaky.androidide.templates.base.models.Dependency
-import com.itsaky.androidide.templates.base.modules.android.defaultAppModule
-import com.itsaky.androidide.templates.base.util.AndroidModuleResManager.ResourceType.NAVIGATION
-import com.itsaky.androidide.templates.impl.R
-import com.itsaky.androidide.templates.impl.base.createRecipe
-import com.itsaky.androidide.templates.impl.base.emptyThemesAndColors
-import com.itsaky.androidide.templates.impl.base.writeMainActivity
-import com.itsaky.androidide.templates.impl.baseProjectImpl
-import com.itsaky.androidide.templates.impl.templateAsset
+import com.willow.androidide.ultra.templates.Language.Kotlin
+import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateBuilder
+import com.willow.androidide.ultra.templates.base.models.Dependency
+import com.willow.androidide.ultra.templates.base.modules.android.defaultAppModule
+import com.willow.androidide.ultra.templates.base.util.AndroidModuleResManager.ResourceType.NAVIGATION
+import com.willow.androidide.ultra.templates.impl.R
+import com.willow.androidide.ultra.templates.impl.base.createRecipe
+import com.willow.androidide.ultra.templates.impl.base.emptyThemesAndColors
+import com.willow.androidide.ultra.templates.impl.base.writeMainActivity
+import com.willow.androidide.ultra.templates.impl.baseProjectImpl
+import com.willow.androidide.ultra.templates.impl.templateAsset
 
 fun navDrawerActivityProject() = baseProjectImpl {
   templateName = R.string.template_navigation_drawer
@@ -47,7 +47,7 @@ fun navDrawerActivityProject() = baseProjectImpl {
 
         putStringRes("navigation_drawer_open", "Open navigation drawer")
         putStringRes("navigation_drawer_close", "Close navigation drawer")
-        putStringRes("nav_header_title", "AndroidIDE")
+        putStringRes("nav_header_title", "AndroidIDE Ultra")
         putStringRes("nav_header_subtitle", "contact@androidide.com")
         putStringRes("nav_header_desc", "Navigation header")
         putStringRes("action_settings", "Settings")

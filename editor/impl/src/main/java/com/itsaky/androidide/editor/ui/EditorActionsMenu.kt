@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.ui
+package com.willow.androidide.ultra.editor.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -37,21 +37,21 @@ import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import com.blankj.utilcode.util.SizeUtils
 import com.google.android.material.button.MaterialButton
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem
-import com.itsaky.androidide.actions.ActionsRegistry
-import com.itsaky.androidide.actions.ActionsRegistry.Companion.getInstance
-import com.itsaky.androidide.actions.EditorActionItem
-import com.itsaky.androidide.actions.FillMenuParams
-import com.itsaky.androidide.editor.R.layout
-import com.itsaky.androidide.editor.databinding.LayoutPopupMenuItemBinding
-import com.itsaky.androidide.editor.ui.EditorActionsMenu.ActionsListAdapter.VH
-import com.itsaky.androidide.lsp.api.ILanguageServerRegistry
-import com.itsaky.androidide.lsp.java.JavaLanguageServer
-import com.itsaky.androidide.lsp.models.DiagnosticItem
-import com.itsaky.androidide.lsp.xml.XMLLanguageServer
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.utils.resolveAttr
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem
+import com.willow.androidide.ultra.actions.ActionsRegistry
+import com.willow.androidide.ultra.actions.ActionsRegistry.Companion.getInstance
+import com.willow.androidide.ultra.actions.EditorActionItem
+import com.willow.androidide.ultra.actions.FillMenuParams
+import com.willow.androidide.ultra.editor.R.layout
+import com.willow.androidide.ultra.editor.databinding.LayoutPopupMenuItemBinding
+import com.willow.androidide.ultra.editor.ui.EditorActionsMenu.ActionsListAdapter.VH
+import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
+import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
+import com.willow.androidide.ultra.lsp.models.DiagnosticItem
+import com.willow.androidide.ultra.lsp.xml.XMLLanguageServer
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.utils.resolveAttr
 import io.github.rosemoe.sora.event.HandleStateChangeEvent
 import io.github.rosemoe.sora.event.ScrollEvent
 import io.github.rosemoe.sora.event.SelectionChangeEvent
@@ -306,7 +306,7 @@ open class EditorActionsMenu(val editor: IDEEditor) :
     ) // For LSP actions, as they cannot access IDEEditor class
     data.put(File::class.java, editor.file)
     data.put(DiagnosticItem::class.java, getDiagnosticAtCursor())
-    data.put(com.itsaky.androidide.models.Range::class.java, editor.cursorLSPRange)
+    data.put(com.willow.androidide.ultra.models.Range::class.java, editor.cursorLSPRange)
     data.put(
       JavaLanguageServer::class.java,
       ILanguageServerRegistry.getDefault().getServer(JavaLanguageServer.SERVER_ID)

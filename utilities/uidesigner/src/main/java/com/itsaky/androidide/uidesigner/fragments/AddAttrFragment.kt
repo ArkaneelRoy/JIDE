@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.fragments
+package com.willow.androidide.ultra.uidesigner.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,15 +24,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.itsaky.androidide.inflater.utils.newAttribute
-import com.itsaky.androidide.inflater.viewAdapter
-import com.itsaky.androidide.uidesigner.R
-import com.itsaky.androidide.uidesigner.R.string
-import com.itsaky.androidide.uidesigner.adapters.AddAttrListAdapter
-import com.itsaky.androidide.uidesigner.databinding.LayoutAddAttrBinding
-import com.itsaky.androidide.uidesigner.databinding.LayoutViewInfoHeaderBinding
-import com.itsaky.androidide.uidesigner.models.UiAttribute
-import com.itsaky.androidide.uidesigner.viewmodel.WorkspaceViewModel
+import com.willow.androidide.ultra.inflater.utils.newAttribute
+import com.willow.androidide.ultra.inflater.viewAdapter
+import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.uidesigner.R.string
+import com.willow.androidide.ultra.uidesigner.adapters.AddAttrListAdapter
+import com.willow.androidide.ultra.uidesigner.databinding.LayoutAddAttrBinding
+import com.willow.androidide.ultra.uidesigner.databinding.LayoutViewInfoHeaderBinding
+import com.willow.androidide.ultra.uidesigner.models.UiAttribute
+import com.willow.androidide.ultra.uidesigner.viewmodel.WorkspaceViewModel
 
 /**
  * A fragment that shows a list of attributes that can be added to the selected attribute in the UI

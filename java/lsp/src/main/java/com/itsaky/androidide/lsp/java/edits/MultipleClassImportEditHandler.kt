@@ -1,24 +1,24 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.edits
+package com.willow.androidide.ultra.lsp.java.edits
 
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.utils.EditHelper
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.utils.EditHelper
 import io.github.rosemoe.sora.widget.CodeEditor
 import org.slf4j.LoggerFactory
 import java.nio.file.Path
@@ -44,9 +44,9 @@ class MultipleClassImportEditHandler(
   override fun performEdits(
     compiler: JavaCompilerService,
     editor: CodeEditor,
-    completionItem: com.itsaky.androidide.lsp.models.CompletionItem
+    completionItem: com.willow.androidide.ultra.lsp.models.CompletionItem
   ) {
-    val edits = mutableListOf<com.itsaky.androidide.lsp.models.TextEdit>()
+    val edits = mutableListOf<com.willow.androidide.ultra.lsp.models.TextEdit>()
     for (className in classes) {
       try {
         edits.addAll(EditHelper.addImportIfNeeded(compiler, file, imported, className))
@@ -54,6 +54,6 @@ class MultipleClassImportEditHandler(
         log.error("Unable to compute edits to perform import for class: {}", className)
       }
     }
-    com.itsaky.androidide.lsp.util.RewriteHelper.performEdits(edits, editor)
+    com.willow.androidide.ultra.lsp.util.RewriteHelper.performEdits(edits, editor)
   }
 }

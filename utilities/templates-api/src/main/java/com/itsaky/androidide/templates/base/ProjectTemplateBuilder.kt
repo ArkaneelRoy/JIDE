@@ -1,34 +1,34 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.base
+package com.willow.androidide.ultra.templates.base
 
-import com.itsaky.androidide.managers.ToolsManager
-import com.itsaky.androidide.templates.ModuleTemplate
-import com.itsaky.androidide.templates.ModuleTemplateData
-import com.itsaky.androidide.templates.ProjectTemplate
-import com.itsaky.androidide.templates.ProjectTemplateData
-import com.itsaky.androidide.templates.ProjectTemplateRecipeResult
-import com.itsaky.androidide.templates.base.root.buildGradleSrcGroovy
-import com.itsaky.androidide.templates.base.root.buildGradleSrcKts
-import com.itsaky.androidide.templates.base.root.gradleWrapperProps
-import com.itsaky.androidide.templates.base.root.settingsGradleSrcStr
-import com.itsaky.androidide.templates.base.util.optonallyKts
-import com.itsaky.androidide.utils.transferToStream
+import com.willow.androidide.ultra.managers.ToolsManager
+import com.willow.androidide.ultra.templates.ModuleTemplate
+import com.willow.androidide.ultra.templates.ModuleTemplateData
+import com.willow.androidide.ultra.templates.ProjectTemplate
+import com.willow.androidide.ultra.templates.ProjectTemplateData
+import com.willow.androidide.ultra.templates.ProjectTemplateRecipeResult
+import com.willow.androidide.ultra.templates.base.root.buildGradleSrcGroovy
+import com.willow.androidide.ultra.templates.base.root.buildGradleSrcKts
+import com.willow.androidide.ultra.templates.base.root.gradleWrapperProps
+import com.willow.androidide.ultra.templates.base.root.settingsGradleSrcStr
+import com.willow.androidide.ultra.templates.base.util.optonallyKts
+import com.willow.androidide.ultra.utils.transferToStream
 import java.io.File
 import java.util.zip.ZipEntry
 import java.util.zip.ZipInputStream
@@ -66,10 +66,10 @@ class ProjectTemplateBuilder :
    * Get the asset path for base root project template.
    *
    * @param path The path to the asset.
-   * @see com.itsaky.androidide.templates.base.baseAsset
+   * @see com.willow.androidide.ultra.templates.base.baseAsset
    */
   fun baseAsset(path: String) =
-    com.itsaky.androidide.templates.base.util.baseAsset("root", path)
+    com.willow.androidide.ultra.templates.base.util.baseAsset("root", path)
 
   /**
    * Get the `build.gradle[.kts] file for the project.

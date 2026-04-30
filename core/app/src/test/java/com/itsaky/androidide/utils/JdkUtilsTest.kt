@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.utils
+package com.willow.androidide.ultra.utils
 
 import android.app.Application
 import com.google.common.truth.Truth.assertThat
@@ -40,10 +40,10 @@ class JdkUtilsTest {
     file.separator = /
     java.class.path =
     java.class.version = 61.0
-    java.home = /data/data/com.itsaky.androidide/files/usr/opt/openjdk-17.0
-    java.io.tmpdir = /data/data/com.itsaky.androidide/files/usr/tmp/
-    java.library.path = /data/data/com.itsaky.androidide/files/usr/java/packages/lib
-        /data/data/com.itsaky.androidide/files/usr/lib
+    java.home = /data/data/com.willow.androidide.ultra/files/usr/opt/openjdk-17.0
+    java.io.tmpdir = /data/data/com.willow.androidide.ultra/files/usr/tmp/
+    java.library.path = /data/data/com.willow.androidide.ultra/files/usr/java/packages/lib
+        /data/data/com.willow.androidide.ultra/files/usr/lib
     java.runtime.name = OpenJDK Runtime Environment
     java.runtime.version = 17-internal+0-adhoc.root.src
     java.specification.name = Java Platform API Specification
@@ -70,7 +70,7 @@ class JdkUtilsTest {
     os.version = 4.9.305-ððð
     path.separator = :
     sun.arch.data.model = 64
-    sun.boot.library.path = /data/data/com.itsaky.androidide/files/usr/opt/openjdk-17.0/lib
+    sun.boot.library.path = /data/data/com.willow.androidide.ultra/files/usr/opt/openjdk-17.0/lib
     sun.cpu.endian = little
     sun.io.unicode.encoding = UnicodeLittle
     sun.java.launcher = SUN_STANDARD
@@ -78,8 +78,8 @@ class JdkUtilsTest {
     sun.management.compiler = HotSpot 64-Bit Tiered Compilers
     sun.stderr.encoding = UTF-8
     sun.stdout.encoding = UTF-8
-    user.dir = /data/data/com.itsaky.androidide/files/home
-    user.home = /data/data/com.itsaky.androidide/files/home
+    user.dir = /data/data/com.willow.androidide.ultra/files/home
+    user.home = /data/data/com.willow.androidide.ultra/files/home
     user.language = en
     user.name = u0_a248
 
@@ -95,10 +95,10 @@ OpenJDK 64-Bit Server VM (build 17-internal+0-adhoc.root.src, mixed mode)
     file.separator = /
     java.class.path =
     java.class.version = 65.0
-    java.home = /data/data/com.itsaky.androidide/files/usr/opt/openjdk-21.0.1
-    java.io.tmpdir = /data/data/com.itsaky.androidide/files/usr/tmp/
-    java.library.path = /data/data/com.itsaky.androidide/files/usr/java/packages/lib
-        /data/data/com.itsaky.androidide/files/usr/lib
+    java.home = /data/data/com.willow.androidide.ultra/files/usr/opt/openjdk-21.0.1
+    java.io.tmpdir = /data/data/com.willow.androidide.ultra/files/usr/tmp/
+    java.library.path = /data/data/com.willow.androidide.ultra/files/usr/java/packages/lib
+        /data/data/com.willow.androidide.ultra/files/usr/lib
     java.runtime.name = OpenJDK Runtime Environment
     java.runtime.version = 21.0.1-internal-adhoc.root.src
     java.specification.name = Java Platform API Specification
@@ -127,14 +127,14 @@ OpenJDK 64-Bit Server VM (build 17-internal+0-adhoc.root.src, mixed mode)
     stderr.encoding = UTF-8
     stdout.encoding = UTF-8
     sun.arch.data.model = 64
-    sun.boot.library.path = /data/data/com.itsaky.androidide/files/usr/opt/openjdk-21.0.1/lib
+    sun.boot.library.path = /data/data/com.willow.androidide.ultra/files/usr/opt/openjdk-21.0.1/lib
     sun.cpu.endian = little
     sun.io.unicode.encoding = UnicodeLittle
     sun.java.launcher = SUN_STANDARD
     sun.jnu.encoding = UTF-8
     sun.management.compiler = HotSpot 64-Bit Tiered Compilers
-    user.dir = /data/data/com.itsaky.androidide/files/home
-    user.home = /data/data/com.itsaky.androidide/files/home
+    user.dir = /data/data/com.willow.androidide.ultra/files/home
+    user.home = /data/data/com.willow.androidide.ultra/files/home
     user.language = en
     user.name = u0_a248
 
@@ -157,7 +157,7 @@ OpenJDK 64-Bit Server VM (build 21.0.1-internal-adhoc.root.src, mixed mode)
     assertThat(dist).isNotNull()
     assertThat(dist!!.javaVersion).isEqualTo("17-internal")
     assertThat(dist.javaHome).isEqualTo(
-      "/data/data/com.itsaky.androidide/files/usr/opt/openjdk-17.0"
+      "/data/data/com.willow.androidide.ultra/files/usr/opt/openjdk-17.0"
     )
   }
 
@@ -167,7 +167,7 @@ OpenJDK 64-Bit Server VM (build 21.0.1-internal-adhoc.root.src, mixed mode)
     assertThat(dist).isNotNull()
     assertThat(dist!!.javaVersion).isEqualTo("21.0.1-internal")
     assertThat(dist.javaHome).isEqualTo(
-      "/data/data/com.itsaky.androidide/files/usr/opt/openjdk-21.0.1"
+      "/data/data/com.willow.androidide.ultra/files/usr/opt/openjdk-21.0.1"
     )
   }
 

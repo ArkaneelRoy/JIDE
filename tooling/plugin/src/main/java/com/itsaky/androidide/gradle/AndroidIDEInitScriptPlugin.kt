@@ -1,25 +1,25 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.gradle
+package com.willow.androidide.ultra.gradle
 
-import com.itsaky.androidide.buildinfo.BuildInfo
-import com.itsaky.androidide.tooling.api.LogSenderConfig._PROPERTY_IS_TEST_ENV
-import com.itsaky.androidide.tooling.api.LogSenderConfig._PROPERTY_MAVEN_LOCAL_REPOSITORY
+import com.willow.androidide.ultra.buildinfo.BuildInfo
+import com.willow.androidide.ultra.tooling.api.LogSenderConfig._PROPERTY_IS_TEST_ENV
+import com.willow.androidide.ultra.tooling.api.LogSenderConfig._PROPERTY_MAVEN_LOCAL_REPOSITORY
 import org.gradle.StartParameter
 import org.gradle.api.Plugin
 import org.gradle.api.artifacts.ExternalModuleDependency
@@ -32,15 +32,15 @@ import java.io.FileNotFoundException
 import java.net.URI
 
 /**
- * Plugin for the AndroidIDE's Gradle Init Script.
+ * Plugin for the AndroidIDE Ultra's Gradle Init Script.
  *
  * @author Akash Yadav
  */
-class AndroidIDEInitScriptPlugin : Plugin<Gradle> {
+class AndroidIDE UltraInitScriptPlugin : Plugin<Gradle> {
 
   companion object {
 
-    private val logger = Logging.getLogger(AndroidIDEInitScriptPlugin::class.java)
+    private val logger = Logging.getLogger(AndroidIDE UltraInitScriptPlugin::class.java)
   }
 
   override fun apply(target: Gradle) {
@@ -122,7 +122,7 @@ class AndroidIDEInitScriptPlugin : Plugin<Gradle> {
 
     if (!isMavenLocalEnabled) {
 
-      // For AndroidIDE CI builds
+      // For AndroidIDE Ultra CI builds
       maven { repository ->
         repository.url = URI.create(BuildInfo.SNAPSHOTS_REPOSITORY)
       }

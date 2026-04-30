@@ -77,7 +77,7 @@ import jdkx.tools.StandardJavaFileManager;
 import jdkx.tools.StandardJavaFileManager.PathFactory;
 import jdkx.tools.StandardLocation;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 
 import openjdk.tools.javac.code.Lint;
 import openjdk.tools.javac.code.Lint.LintCategory;
@@ -134,7 +134,7 @@ public class Locations {
 
     private PathFactory pathFactory = Paths::get;
 
-    // AndroidIDE changed: Allow overriding java home.
+    // AndroidIDE Ultra changed: Allow overriding java home.
 //    static final Path javaHome = 
 //    static final Path thisSystemModules = 
 
@@ -1931,7 +1931,7 @@ public class Locations {
                     FileSystem jrtfs;
 
                     if (openjdk.tools.javac.util.PlatformUtils.isAndroid()) {
-                        jrtfs = com.itsaky.androidide.zipfs2.AndroidFsProvider.INSTANCE.jrtFileSystem();
+                        jrtfs = com.willow.androidide.ultra.zipfs2.AndroidFsProvider.INSTANCE.jrtFileSystem();
                     } else if (isCurrentPlatform(systemJavaHome)) {
                         jrtfs = FileSystems.getFileSystem(jrtURI);
                     } else {

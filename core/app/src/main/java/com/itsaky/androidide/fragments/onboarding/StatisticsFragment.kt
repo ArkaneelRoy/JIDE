@@ -1,11 +1,11 @@
-package com.itsaky.androidide.fragments.onboarding
+package com.willow.androidide.ultra.fragments.onboarding
 
 import android.content.Context
 import android.os.Bundle
 import android.view.ViewGroup
-import com.itsaky.androidide.R
-import com.itsaky.androidide.app.IDEApplication
-import com.itsaky.androidide.databinding.LayoutOnboardingStatisticsBinding
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.app.IDEApplication
+import com.willow.androidide.ultra.databinding.LayoutOnboardingStatisticsBinding
 
 class StatisticsFragment : OnboardingFragment() {
 
@@ -39,7 +39,7 @@ class StatisticsFragment : OnboardingFragment() {
   }
 
   fun updateStatOptInStatus() {
-    com.itsaky.androidide.preferences.internal.StatPreferences.statOptIn =
+    com.willow.androidide.ultra.preferences.internal.StatPreferences.statOptIn =
       _content?.statOptIn?.isChecked ?: false
 
     IDEApplication.instance.reportStatsIfNecessary()

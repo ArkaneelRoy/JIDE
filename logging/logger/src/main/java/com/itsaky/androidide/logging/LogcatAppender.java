@@ -11,15 +11,15 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.itsaky.androidide.logging;
+package com.willow.androidide.ultra.logging;
 
 import android.util.Log;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
-import com.itsaky.androidide.logging.encoder.IDELogFormatEncoder;
-import com.itsaky.androidide.logging.utils.LogUtils;
+import com.willow.androidide.ultra.logging.encoder.IDELogFormatEncoder;
+import com.willow.androidide.ultra.logging.utils.LogUtils;
 
 /**
  * An appender that wraps the native Android logging mechanism (<i>logcat</i>); redirects all
@@ -42,9 +42,9 @@ public class LogcatAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private IDELogFormatEncoder encoder = null;
   private boolean checkLoggable = false;
 
-  // AndroidIDE Changed: Appender is enabled only when running on Android.
+  // AndroidIDE Ultra Changed: Appender is enabled only when running on Android.
   private boolean isAndroid = false;
-  // AndroidIDE Changed
+  // AndroidIDE Ultra Changed
 
   /**
    * Checks that required parameters are set, and if everything is in order, activates this

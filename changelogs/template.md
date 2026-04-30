@@ -1,4 +1,4 @@
-# AndroidIDE Version `VersionName` Changelog
+# AndroidIDE Ultra Version `VersionName` Changelog
 
 _This is a template changelog_
 
@@ -22,4 +22,4 @@ _No bug fixes_
 
 _No improvements_
 
-We believe that you'll have a delightful experience using AndroidIDE `VersionName`!
+We believe that you'll have a delightful experience using AndroidIDE Ultra `VersionName`!

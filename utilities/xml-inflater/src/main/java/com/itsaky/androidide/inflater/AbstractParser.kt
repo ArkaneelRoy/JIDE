@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater
+package com.willow.androidide.ultra.inflater
 
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.Drawable
-import com.itsaky.androidide.inflater.internal.utils.defaultGravity
-import com.itsaky.androidide.inflater.internal.utils.unknownDrawable
+import com.willow.androidide.ultra.inflater.internal.utils.defaultGravity
+import com.willow.androidide.ultra.inflater.internal.utils.unknownDrawable
 
 /**
  * Abstract class which provides access to the internal parsing utility methods to its subclasses.
@@ -39,7 +39,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseId(resName: String, value: String, def: Int = 0): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseId(resName, value, def)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseId(resName, value, def)
   }
 
   /**
@@ -50,7 +50,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseFloat(value: String, def: Float = 0f): Float {
-    return com.itsaky.androidide.inflater.internal.utils.parseFloat(value = value, def = def)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseFloat(value = value, def = def)
   }
 
   /**
@@ -61,7 +61,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseLong(value: String, def: Long = 0L): Long {
-    return com.itsaky.androidide.inflater.internal.utils.parseLong(value = value, def = def)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseLong(value = value, def = def)
   }
 
   /**
@@ -73,7 +73,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseInteger(value: String, def: Int = 0): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseInteger(value = value, def = def)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseInteger(value = value, def = def)
   }
 
   /**
@@ -83,7 +83,7 @@ abstract class AbstractParser {
    * @param value The string value. Usually value from attributes.
    */
   protected open fun parseIntegerArray(value: String): IntArray {
-    return com.itsaky.androidide.inflater.internal.utils.parseIntegerArray(value) ?: intArrayOf()
+    return com.willow.androidide.ultra.inflater.internal.utils.parseIntegerArray(value) ?: intArrayOf()
   }
 
   /**
@@ -95,7 +95,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseBoolean(value: String, def: Boolean = false): Boolean {
-    return com.itsaky.androidide.inflater.internal.utils.parseBoolean(value = value, def = def)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseBoolean(value = value, def = def)
   }
 
   /**
@@ -105,7 +105,7 @@ abstract class AbstractParser {
    * @param value The string value. Usually value from attributes.
    */
   protected open fun parseString(value: String): String {
-    return com.itsaky.androidide.inflater.internal.utils.parseString(value)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseString(value)
   }
 
   /**
@@ -115,7 +115,7 @@ abstract class AbstractParser {
    * @param value The string value. Usually value from attributes.
    */
   protected open fun parseStringArray(value: String): Array<String> {
-    return com.itsaky.androidide.inflater.internal.utils.parseStringArray(value) ?: emptyArray()
+    return com.willow.androidide.ultra.inflater.internal.utils.parseStringArray(value) ?: emptyArray()
   }
 
   /**
@@ -131,7 +131,7 @@ abstract class AbstractParser {
     value: String,
     def: Drawable = unknownDrawable()
   ): Drawable {
-    return com.itsaky.androidide.inflater.internal.utils.parseDrawable(
+    return com.willow.androidide.ultra.inflater.internal.utils.parseDrawable(
       context = context,
       value = value,
       def = def
@@ -147,7 +147,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseGravity(value: String, def: Int = defaultGravity()): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseGravity(value = value, def = def)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseGravity(value = value, def = def)
   }
 
   /**
@@ -171,7 +171,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   protected open fun parseDimensionF(context: Context, value: String, def: Float = 0f): Float {
-    return com.itsaky.androidide.inflater.internal.utils.parseDimension(
+    return com.willow.androidide.ultra.inflater.internal.utils.parseDimension(
       context = context,
       value = value,
       def = def
@@ -191,7 +191,7 @@ abstract class AbstractParser {
     value: String,
     def: Int = Color.TRANSPARENT
   ): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseColor(
+    return com.willow.androidide.ultra.inflater.internal.utils.parseColor(
       context = context,
       value = value,
       def = def
@@ -211,7 +211,7 @@ abstract class AbstractParser {
     value: String,
     def: ColorStateList = ColorStateList.valueOf(Color.TRANSPARENT)
   ): ColorStateList {
-    return com.itsaky.androidide.inflater.internal.utils.parseColorStateList(
+    return com.willow.androidide.ultra.inflater.internal.utils.parseColorStateList(
       context = context,
       value = value,
       def = def
@@ -227,7 +227,7 @@ abstract class AbstractParser {
    */
   @JvmOverloads
   fun parseDate(value: String, format: String = "MM/dd/yyyy", def: Long = 0L): Long {
-    return com.itsaky.androidide.inflater.internal.utils.parseDate(
+    return com.willow.androidide.ultra.inflater.internal.utils.parseDate(
       value = value,
       format = format,
       def = def

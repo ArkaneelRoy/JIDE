@@ -1,41 +1,41 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.actions
+package com.willow.androidide.ultra.lsp.java.actions
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem
-import com.itsaky.androidide.actions.EditorActionItem
-import com.itsaky.androidide.actions.hasRequiredData
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.actions.requireFile
-import com.itsaky.androidide.lsp.api.ILanguageClient
-import com.itsaky.androidide.lsp.api.ILanguageServerRegistry
-import com.itsaky.androidide.lsp.java.JavaCompilerProvider
-import com.itsaky.androidide.lsp.java.JavaLanguageServer
-import com.itsaky.androidide.lsp.java.R
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.rewrite.Rewrite
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.utils.DocumentUtils
-import com.itsaky.androidide.utils.ILogger
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem
+import com.willow.androidide.ultra.actions.EditorActionItem
+import com.willow.androidide.ultra.actions.hasRequiredData
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.actions.requireFile
+import com.willow.androidide.ultra.lsp.api.ILanguageClient
+import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
+import com.willow.androidide.ultra.lsp.java.JavaCompilerProvider
+import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
+import com.willow.androidide.ultra.lsp.java.R
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.rewrite.Rewrite
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.utils.DocumentUtils
+import com.willow.androidide.ultra.utils.ILogger
+import com.willow.androidide.ultra.utils.flashError
 import java.io.File
 
 /**

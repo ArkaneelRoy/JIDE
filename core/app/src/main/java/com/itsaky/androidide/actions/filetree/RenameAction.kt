@@ -1,36 +1,36 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.actions.filetree
+package com.willow.androidide.ultra.actions.filetree
 
 import android.content.Context
 import android.view.LayoutInflater
 import com.blankj.utilcode.util.FileUtils
-import com.itsaky.androidide.R
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.requireFile
-import com.itsaky.androidide.adapters.viewholders.FileTreeViewHolder
-import com.itsaky.androidide.eventbus.events.file.FileRenameEvent
-import com.itsaky.androidide.preferences.databinding.LayoutDialogTextInputBinding
-import com.itsaky.androidide.projects.FileManager
-import com.itsaky.androidide.tasks.launchAsyncWithProgress
-import com.itsaky.androidide.utils.DialogUtils
-import com.itsaky.androidide.utils.FlashType
-import com.itsaky.androidide.utils.flashMessage
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.requireFile
+import com.willow.androidide.ultra.adapters.viewholders.FileTreeViewHolder
+import com.willow.androidide.ultra.eventbus.events.file.FileRenameEvent
+import com.willow.androidide.ultra.preferences.databinding.LayoutDialogTextInputBinding
+import com.willow.androidide.ultra.projects.FileManager
+import com.willow.androidide.ultra.tasks.launchAsyncWithProgress
+import com.willow.androidide.ultra.utils.DialogUtils
+import com.willow.androidide.ultra.utils.FlashType
+import com.willow.androidide.ultra.utils.flashMessage
 import com.unnamed.b.atv.model.TreeNode
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -58,19 +58,19 @@ class RenameAction(context: Context, override val order: Int) :
     val binding = LayoutDialogTextInputBinding.inflate(LayoutInflater.from(context))
     val builder = DialogUtils.newMaterialDialogBuilder(context)
     binding.name.editText!!.hint =
-      context.getString(com.itsaky.androidide.resources.R.string.new_name)
+      context.getString(com.willow.androidide.ultra.resources.R.string.new_name)
     binding.name.editText!!.setText(file.name)
-    builder.setTitle(com.itsaky.androidide.resources.R.string.rename_file)
-    builder.setMessage(com.itsaky.androidide.resources.R.string.msg_rename_file)
+    builder.setTitle(com.willow.androidide.ultra.resources.R.string.rename_file)
+    builder.setMessage(com.willow.androidide.ultra.resources.R.string.msg_rename_file)
     builder.setView(binding.root)
     builder.setNegativeButton(android.R.string.cancel, null)
-    builder.setPositiveButton(com.itsaky.androidide.resources.R.string.rename_file) {
+    builder.setPositiveButton(com.willow.androidide.ultra.resources.R.string.rename_file) {
       dialogInterface,
       _ ->
       dialogInterface.dismiss()
       actionScope.launchAsyncWithProgress(
           configureFlashbar = { builder, cancelChecker ->
-            builder.message(com.itsaky.androidide.resources.R.string.please_wait)
+            builder.message(com.willow.androidide.ultra.resources.R.string.please_wait)
           },
           action = { _, _ ->
             val name: String = binding.name.editText!!.text.toString().trim()
@@ -82,8 +82,8 @@ class RenameAction(context: Context, override val order: Int) :
 
             withContext(Dispatchers.Main) {
               flashMessage(
-                  if (renamed) com.itsaky.androidide.resources.R.string.renamed
-                  else com.itsaky.androidide.resources.R.string.rename_failed,
+                  if (renamed) com.willow.androidide.ultra.resources.R.string.renamed
+                  else com.willow.androidide.ultra.resources.R.string.rename_failed,
                   if (renamed) FlashType.SUCCESS else FlashType.ERROR)
               if (!renamed) {
                 return@withContext

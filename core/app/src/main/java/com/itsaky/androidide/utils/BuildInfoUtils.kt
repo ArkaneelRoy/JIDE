@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.utils
+package com.willow.androidide.ultra.utils
 
 import android.content.Context
 import android.os.Build
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.DeviceUtils
-import com.itsaky.androidide.BuildConfig
-import com.itsaky.androidide.app.IDEApplication
-import com.itsaky.androidide.app.configuration.IDEBuildConfigProvider
-import com.itsaky.androidide.buildinfo.BuildInfo
+import com.willow.androidide.ultra.BuildConfig
+import com.willow.androidide.ultra.app.IDEApplication
+import com.willow.androidide.ultra.app.configuration.IDEBuildConfigProvider
+import com.willow.androidide.ultra.buildinfo.BuildInfo
 import com.termux.shared.android.PackageUtils
 import com.termux.shared.termux.TermuxConstants
 import com.termux.shared.termux.TermuxUtils
@@ -63,7 +63,7 @@ object BuildInfoUtils {
   fun getBuildType(context: Context) = if (isOfficialBuild(context)) "OFFICIAL" else "UNOFFICIAL"
 
   /**
-   * Whether the AndroidIDE build is official or not. This checks the signature digest of the
+   * Whether the AndroidIDE Ultra build is official or not. This checks the signature digest of the
    * APK against the signature digest of the official signing key.
    */
   @JvmStatic

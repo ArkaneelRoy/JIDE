@@ -1,37 +1,37 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers.completion
+package com.willow.androidide.ultra.lsp.java.providers.completion
 
-import com.itsaky.androidide.lsp.api.IServerSettings
-import com.itsaky.androidide.lsp.api.describeSnippet
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.edits.MultipleClassImportEditHandler
-import com.itsaky.androidide.lsp.java.models.JavaCompletionItem
-import com.itsaky.androidide.lsp.java.utils.JavaPoetUtils.Companion.buildMethod
-import com.itsaky.androidide.lsp.java.utils.JavaPoetUtils.Companion.print
-import com.itsaky.androidide.lsp.java.utils.ScopeHelper
-import com.itsaky.androidide.lsp.models.CompletionItem
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.InsertTextFormat.SNIPPET
-import com.itsaky.androidide.lsp.models.MatchLevel
-import com.itsaky.androidide.lsp.models.MatchLevel.NO_MATCH
-import com.itsaky.androidide.progress.ProgressManager.Companion.abortIfCancelled
+import com.willow.androidide.ultra.lsp.api.IServerSettings
+import com.willow.androidide.ultra.lsp.api.describeSnippet
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.edits.MultipleClassImportEditHandler
+import com.willow.androidide.ultra.lsp.java.models.JavaCompletionItem
+import com.willow.androidide.ultra.lsp.java.utils.JavaPoetUtils.Companion.buildMethod
+import com.willow.androidide.ultra.lsp.java.utils.JavaPoetUtils.Companion.print
+import com.willow.androidide.ultra.lsp.java.utils.ScopeHelper
+import com.willow.androidide.ultra.lsp.models.CompletionItem
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.InsertTextFormat.SNIPPET
+import com.willow.androidide.ultra.lsp.models.MatchLevel
+import com.willow.androidide.ultra.lsp.models.MatchLevel.NO_MATCH
+import com.willow.androidide.ultra.progress.ProgressManager.Companion.abortIfCancelled
 import com.squareup.javapoet.MethodSpec.Builder
 import jdkx.lang.model.element.ElementKind.METHOD
 import jdkx.lang.model.element.ExecutableElement
@@ -170,7 +170,7 @@ class ScopeCompletionProvider(
 
     val item = JavaCompletionItem()
     item.ideLabel = methodSpec.name
-    item.completionKind = com.itsaky.androidide.lsp.models.CompletionItemKind.METHOD
+    item.completionKind = com.willow.androidide.ultra.lsp.models.CompletionItemKind.METHOD
     item.detail = method.returnType.toString() + " " + method
     item.ideSortText = item.ideLabel
     item.insertText = insertText

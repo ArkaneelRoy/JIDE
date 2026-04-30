@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.indexing
+package com.willow.androidide.ultra.lsp.java.indexing
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.indexing.core.platform.ApiInfo
-import com.itsaky.androidide.lsp.java.indexing.classfile.ArrayAnnotationElementValue
-import com.itsaky.androidide.lsp.java.indexing.classfile.ClassAnnotationElementValue
-import com.itsaky.androidide.lsp.java.indexing.classfile.EnumAnnotationElementValue
-import com.itsaky.androidide.lsp.java.indexing.classfile.IAnnotationElementValue
-import com.itsaky.androidide.lsp.java.indexing.classfile.JavaConstant
-import com.itsaky.androidide.lsp.java.utils.JavaType
-import com.itsaky.androidide.lsp.java.indexing.classfile.PrimitiveAnnotationElementValue
-import com.itsaky.androidide.testing.android.rules.RealmDBTestRule
+import com.willow.androidide.ultra.indexing.core.platform.ApiInfo
+import com.willow.androidide.ultra.lsp.java.indexing.classfile.ArrayAnnotationElementValue
+import com.willow.androidide.ultra.lsp.java.indexing.classfile.ClassAnnotationElementValue
+import com.willow.androidide.ultra.lsp.java.indexing.classfile.EnumAnnotationElementValue
+import com.willow.androidide.ultra.lsp.java.indexing.classfile.IAnnotationElementValue
+import com.willow.androidide.ultra.lsp.java.indexing.classfile.JavaConstant
+import com.willow.androidide.ultra.lsp.java.utils.JavaType
+import com.willow.androidide.ultra.lsp.java.indexing.classfile.PrimitiveAnnotationElementValue
+import com.willow.androidide.ultra.testing.android.rules.RealmDBTestRule
 import io.realm.RealmAny
 import io.realm.RealmList
 import io.realm.exceptions.RealmPrimaryKeyConstraintException
@@ -48,7 +48,7 @@ class SharedModelCRUDTest {
   @Test
   fun testApiInfoCreate() {
     dbTestRule.withDb("api-info") {
-      val apiInfo = com.itsaky.androidide.indexing.core.platform.ApiInfo.newInstance(since = 1, deprecatedIn = 21, removedIn = 23)
+      val apiInfo = com.willow.androidide.ultra.indexing.core.platform.ApiInfo.newInstance(since = 1, deprecatedIn = 21, removedIn = 23)
       assertInsertUnique(apiInfo)
 
       val apiInfo2 = apiInfo.clone().update(removedIn = 26)
@@ -62,7 +62,7 @@ class SharedModelCRUDTest {
   @Test(expected = RealmPrimaryKeyConstraintException::class)
   fun testApiInfoDuplicationError() {
     dbTestRule.withDb("api-info-duplication-error") {
-      val apiInfo = com.itsaky.androidide.indexing.core.platform.ApiInfo.newInstance(since = 1, deprecatedIn = 21, removedIn = 23)
+      val apiInfo = com.willow.androidide.ultra.indexing.core.platform.ApiInfo.newInstance(since = 1, deprecatedIn = 21, removedIn = 23)
       assertInsertSingle(apiInfo)
       assertInsertSingle(apiInfo)
     }

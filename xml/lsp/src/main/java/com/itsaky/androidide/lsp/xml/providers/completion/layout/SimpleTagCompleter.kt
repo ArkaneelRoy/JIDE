@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.xml.providers.completion.layout
+package com.willow.androidide.ultra.lsp.xml.providers.completion.layout
 
 import com.android.aaptcompiler.ResourcePathData
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.lsp.api.ICompletionProvider
-import com.itsaky.androidide.lsp.models.CompletionItem
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils.NodeType
-import com.itsaky.androidide.projects.ModuleProject
-import com.itsaky.androidide.utils.ClassTrie
-import com.itsaky.androidide.xml.widgets.WidgetTable
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.lsp.api.ICompletionProvider
+import com.willow.androidide.ultra.lsp.models.CompletionItem
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils.NodeType
+import com.willow.androidide.ultra.projects.ModuleProject
+import com.willow.androidide.ultra.utils.ClassTrie
+import com.willow.androidide.ultra.xml.widgets.WidgetTable
 import org.eclipse.lemminx.dom.DOMDocument
 
 /**

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.views
+package com.willow.androidide.ultra.uidesigner.views
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -31,9 +31,9 @@ import androidx.core.view.updateMarginsRelative
 import androidx.core.view.updatePaddingRelative
 import com.blankj.utilcode.util.SizeUtils
 import com.google.android.material.textview.MaterialTextView
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.uidesigner.R
-import com.itsaky.androidide.utils.resolveAttr
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.utils.resolveAttr
 
 /**
  * A view that shows component hierarchy in the UI Designer.
@@ -85,7 +85,7 @@ constructor(
       }
     addView(text)
 
-    if (view is com.itsaky.androidide.inflater.IViewGroup) {
+    if (view is com.willow.androidide.ultra.inflater.IViewGroup) {
       text.childCount = computeChildCount(view)
       view.forEach { addViews(it, depth + 1) }
     }
@@ -93,10 +93,10 @@ constructor(
     textToIView[text] = view
   }
 
-  private fun computeChildCount(view: com.itsaky.androidide.inflater.IViewGroup): Int {
+  private fun computeChildCount(view: com.willow.androidide.ultra.inflater.IViewGroup): Int {
     var count = view.childCount
     view.forEachIndexed { index, child ->
-      if (index != view.childCount - 1 && child is com.itsaky.androidide.inflater.IViewGroup) {
+      if (index != view.childCount - 1 && child is com.willow.androidide.ultra.inflater.IViewGroup) {
         count += computeChildCount(child)
       }
     }

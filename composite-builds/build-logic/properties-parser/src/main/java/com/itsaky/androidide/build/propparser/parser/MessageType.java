@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.itsaky.androidide.build.propparser.parser;
+package com.willow.androidide.ultra.build.propparser.parser;
 
 /**
  * Common interface to all kinds of diagnostic argument types.

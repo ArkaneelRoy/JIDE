@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater
+package com.willow.androidide.ultra.inflater
 
 import android.view.View
 import android.widget.FrameLayout
@@ -23,14 +23,14 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.inflater.internal.IncludeView
-import com.itsaky.androidide.inflater.internal.LayoutInflaterImpl
-import com.itsaky.androidide.inflater.internal.ViewGroupImpl
-import com.itsaky.androidide.inflater.internal.ViewImpl
-import com.itsaky.androidide.inflater.internal.utils.IDTable
-import com.itsaky.androidide.inflater.utils.newAttribute
-import com.itsaky.androidide.projects.android.AndroidModule
-import com.itsaky.androidide.projects.util.findAppModule
+import com.willow.androidide.ultra.inflater.internal.IncludeView
+import com.willow.androidide.ultra.inflater.internal.LayoutInflaterImpl
+import com.willow.androidide.ultra.inflater.internal.ViewGroupImpl
+import com.willow.androidide.ultra.inflater.internal.ViewImpl
+import com.willow.androidide.ultra.inflater.internal.utils.IDTable
+import com.willow.androidide.ultra.inflater.utils.newAttribute
+import com.willow.androidide.ultra.projects.android.AndroidModule
+import com.willow.androidide.ultra.projects.util.findAppModule
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -172,14 +172,14 @@ class LayoutInflaterTest {
         assertThat(root.printHierarchy())
           .isEqualTo(
             "android.widget.LinearLayout\n" +
-              "    com.itsaky.androidide.inflater.unsupported.UnsupportedView\n" +
-              "    com.itsaky.androidide.inflater.unsupported.UnsupportedLayout\n" +
-              "    com.itsaky.androidide.inflater.unsupported.UnsupportedLayout\n" +
+              "    com.willow.androidide.ultra.inflater.unsupported.UnsupportedView\n" +
+              "    com.willow.androidide.ultra.inflater.unsupported.UnsupportedLayout\n" +
+              "    com.willow.androidide.ultra.inflater.unsupported.UnsupportedLayout\n" +
               "        android.widget.ImageView\n" +
               "        android.widget.ImageView\n" +
-              "    com.itsaky.androidide.inflater.unsupported.UnsupportedLayout\n" +
-              "        com.itsaky.androidide.inflater.unsupported.UnsupportedView\n" +
-              "        com.itsaky.androidide.inflater.unsupported.UnsupportedView\n"
+              "    com.willow.androidide.ultra.inflater.unsupported.UnsupportedLayout\n" +
+              "        com.willow.androidide.ultra.inflater.unsupported.UnsupportedView\n" +
+              "        com.willow.androidide.ultra.inflater.unsupported.UnsupportedView\n"
           )
 
         // TextView is used to inflate unsupported views

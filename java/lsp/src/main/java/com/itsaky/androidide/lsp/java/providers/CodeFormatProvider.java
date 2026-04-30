@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers;
+package com.willow.androidide.ultra.lsp.java.providers;
 
 import static com.google.common.collect.Range.closedOpen;
 
@@ -24,13 +24,13 @@ import com.google.common.collect.ImmutableList;
 import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;
 import com.google.googlejavaformat.java.Replacement;
-import com.itsaky.androidide.lsp.api.IServerSettings;
-import com.itsaky.androidide.lsp.java.models.JavaServerSettings;
-import com.itsaky.androidide.lsp.models.CodeFormatResult;
-import com.itsaky.androidide.lsp.models.FormatCodeParams;
-import com.itsaky.androidide.lsp.models.IndexedTextEdit;
-import com.itsaky.androidide.models.Range;
-import com.itsaky.androidide.utils.StopWatch;
+import com.willow.androidide.ultra.lsp.api.IServerSettings;
+import com.willow.androidide.ultra.lsp.java.models.JavaServerSettings;
+import com.willow.androidide.ultra.lsp.models.CodeFormatResult;
+import com.willow.androidide.ultra.lsp.models.FormatCodeParams;
+import com.willow.androidide.ultra.lsp.models.IndexedTextEdit;
+import com.willow.androidide.ultra.models.Range;
+import com.willow.androidide.ultra.utils.StopWatch;
 import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.itsaky.androidide.test;
+package com.willow.androidide.ultra.test;
 
 public class AddImportAction_template {
     public static void main(String[] args) {

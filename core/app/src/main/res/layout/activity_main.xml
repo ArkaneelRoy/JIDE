@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:title="@string/app_name"
-        app:titleTextAppearance="@style/TextAppearance.AndroidIDE.TitleLarge.Bold"
+        app:titleTextAppearance="@style/TextAppearance.AndroidIDE Ultra.TitleLarge.Bold"
         app:titleCentered="true" />
 
   </com.google.android.material.appbar.AppBarLayout>
@@ -39,19 +39,19 @@
 
     <androidx.fragment.app.FragmentContainerView
       android:id="@+id/main"
-      android:name="com.itsaky.androidide.fragments.MainFragment"
+      android:name="com.willow.androidide.ultra.fragments.MainFragment"
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
 
     <androidx.fragment.app.FragmentContainerView
       android:id="@+id/template_list"
-      android:name="com.itsaky.androidide.fragments.TemplateListFragment"
+      android:name="com.willow.androidide.ultra.fragments.TemplateListFragment"
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
 
     <androidx.fragment.app.FragmentContainerView
       android:id="@+id/template_details"
-      android:name="com.itsaky.androidide.fragments.TemplateDetailsFragment"
+      android:name="com.willow.androidide.ultra.fragments.TemplateDetailsFragment"
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
 

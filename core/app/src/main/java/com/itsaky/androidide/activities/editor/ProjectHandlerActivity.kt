@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.activities.editor
+package com.willow.androidide.ultra.activities.editor
 
 import android.content.Intent
 import android.os.Bundle
@@ -27,44 +27,44 @@ import androidx.annotation.GravityInt
 import androidx.appcompat.app.AlertDialog
 import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.ThreadUtils
-import com.itsaky.androidide.R
-import com.itsaky.androidide.R.string
-import com.itsaky.androidide.databinding.LayoutSearchProjectBinding
-import com.itsaky.androidide.flashbar.Flashbar
-import com.itsaky.androidide.fragments.sheets.ProgressSheet
-import com.itsaky.androidide.handlers.EditorBuildEventListener
-import com.itsaky.androidide.handlers.LspHandler.connectClient
-import com.itsaky.androidide.handlers.LspHandler.destroyLanguageServers
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.lsp.IDELanguageClientImpl
-import com.itsaky.androidide.lsp.java.utils.CancelChecker
-import com.itsaky.androidide.preferences.internal.GeneralPreferences
-import com.itsaky.androidide.projects.GradleProject
-import com.itsaky.androidide.projects.builder.BuildService
-import com.itsaky.androidide.projects.internal.ProjectManagerImpl
-import com.itsaky.androidide.services.builder.GradleBuildService
-import com.itsaky.androidide.services.builder.GradleBuildServiceConnnection
-import com.itsaky.androidide.services.builder.gradleDistributionParams
-import com.itsaky.androidide.tasks.executeAsyncProvideError
-import com.itsaky.androidide.tasks.executeWithProgress
-import com.itsaky.androidide.tooling.api.messages.AndroidInitializationParams
-import com.itsaky.androidide.tooling.api.messages.InitializeProjectParams
-import com.itsaky.androidide.tooling.api.messages.result.InitializeResult
-import com.itsaky.androidide.tooling.api.messages.result.TaskExecutionResult
-import com.itsaky.androidide.tooling.api.messages.result.TaskExecutionResult.Failure.PROJECT_DIRECTORY_INACCESSIBLE
-import com.itsaky.androidide.tooling.api.messages.result.TaskExecutionResult.Failure.PROJECT_NOT_DIRECTORY
-import com.itsaky.androidide.tooling.api.messages.result.TaskExecutionResult.Failure.PROJECT_NOT_FOUND
-import com.itsaky.androidide.tooling.api.models.BuildVariantInfo
-import com.itsaky.androidide.tooling.api.models.mapToSelectedVariants
-import com.itsaky.androidide.utils.DURATION_INDEFINITE
-import com.itsaky.androidide.utils.DialogUtils.newMaterialDialogBuilder
-import com.itsaky.androidide.utils.RecursiveFileSearcher
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.flashbarBuilder
-import com.itsaky.androidide.utils.resolveAttr
-import com.itsaky.androidide.utils.showOnUiThread
-import com.itsaky.androidide.utils.withIcon
-import com.itsaky.androidide.viewmodel.BuildVariantsViewModel
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.databinding.LayoutSearchProjectBinding
+import com.willow.androidide.ultra.flashbar.Flashbar
+import com.willow.androidide.ultra.fragments.sheets.ProgressSheet
+import com.willow.androidide.ultra.handlers.EditorBuildEventListener
+import com.willow.androidide.ultra.handlers.LspHandler.connectClient
+import com.willow.androidide.ultra.handlers.LspHandler.destroyLanguageServers
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.lsp.IDELanguageClientImpl
+import com.willow.androidide.ultra.lsp.java.utils.CancelChecker
+import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
+import com.willow.androidide.ultra.projects.GradleProject
+import com.willow.androidide.ultra.projects.builder.BuildService
+import com.willow.androidide.ultra.projects.internal.ProjectManagerImpl
+import com.willow.androidide.ultra.services.builder.GradleBuildService
+import com.willow.androidide.ultra.services.builder.GradleBuildServiceConnnection
+import com.willow.androidide.ultra.services.builder.gradleDistributionParams
+import com.willow.androidide.ultra.tasks.executeAsyncProvideError
+import com.willow.androidide.ultra.tasks.executeWithProgress
+import com.willow.androidide.ultra.tooling.api.messages.AndroidInitializationParams
+import com.willow.androidide.ultra.tooling.api.messages.InitializeProjectParams
+import com.willow.androidide.ultra.tooling.api.messages.result.InitializeResult
+import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult
+import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult.Failure.PROJECT_DIRECTORY_INACCESSIBLE
+import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult.Failure.PROJECT_NOT_DIRECTORY
+import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult.Failure.PROJECT_NOT_FOUND
+import com.willow.androidide.ultra.tooling.api.models.BuildVariantInfo
+import com.willow.androidide.ultra.tooling.api.models.mapToSelectedVariants
+import com.willow.androidide.ultra.utils.DURATION_INDEFINITE
+import com.willow.androidide.ultra.utils.DialogUtils.newMaterialDialogBuilder
+import com.willow.androidide.ultra.utils.RecursiveFileSearcher
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.flashbarBuilder
+import com.willow.androidide.ultra.utils.resolveAttr
+import com.willow.androidide.ultra.utils.showOnUiThread
+import com.willow.androidide.ultra.utils.withIcon
+import com.willow.androidide.ultra.viewmodel.BuildVariantsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
@@ -295,7 +295,7 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
   fun initializeProject(buildVariantsProvider: () -> Map<String, String>) {
     executeWithProgress { progress ->
       executeAsyncProvideError(buildVariantsProvider::invoke) { result, error ->
-        com.itsaky.androidide.tasks.runOnUiThread {
+        com.willow.androidide.ultra.tasks.runOnUiThread {
           progress.dismiss()
         }
 
@@ -306,7 +306,7 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
           return@executeAsyncProvideError
         }
 
-        com.itsaky.androidide.tasks.runOnUiThread {
+        com.willow.androidide.ultra.tasks.runOnUiThread {
           initializeProject(result)
         }
       }
@@ -499,7 +499,7 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
       manager.notifyProjectUpdate()
       updateBuildVariants(manager.requireWorkspace().getAndroidVariantSelections())
 
-      com.itsaky.androidide.tasks.runOnUiThread {
+      com.willow.androidide.ultra.tasks.runOnUiThread {
         postProjectInit(true, null)
       }
     }
@@ -546,7 +546,7 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
 
   private fun updateBuildVariants(buildVariants: Map<String, BuildVariantInfo>) {
     // avoid using the 'runOnUiThread' method defined in the activity
-    com.itsaky.androidide.tasks.runOnUiThread {
+    com.willow.androidide.ultra.tasks.runOnUiThread {
       buildVariantsViewModel.buildVariants = buildVariants
       buildVariantsViewModel.resetUpdatedSelections()
     }

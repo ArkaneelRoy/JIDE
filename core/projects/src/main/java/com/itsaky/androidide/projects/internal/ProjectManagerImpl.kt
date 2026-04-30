@@ -1,49 +1,49 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.projects.internal
+package com.willow.androidide.ultra.projects.internal
 
 import androidx.annotation.RestrictTo
 import com.android.builder.model.v2.models.ProjectSyncIssues
 import com.google.auto.service.AutoService
 import com.google.common.collect.ImmutableList
-import com.itsaky.androidide.eventbus.events.EventReceiver
-import com.itsaky.androidide.eventbus.events.editor.DocumentSaveEvent
-import com.itsaky.androidide.eventbus.events.file.FileCreationEvent
-import com.itsaky.androidide.eventbus.events.file.FileDeletionEvent
-import com.itsaky.androidide.eventbus.events.file.FileEvent
-import com.itsaky.androidide.eventbus.events.file.FileRenameEvent
-import com.itsaky.androidide.eventbus.events.project.ProjectInitializedEvent
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.projects.CachingProject
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.projects.IWorkspace
-import com.itsaky.androidide.projects.ModuleProject
-import com.itsaky.androidide.projects.R
-import com.itsaky.androidide.projects.android.AndroidModule
-import com.itsaky.androidide.projects.builder.BuildService
-import com.itsaky.androidide.tasks.executeAsync
-import com.itsaky.androidide.tooling.api.IAndroidProject
-import com.itsaky.androidide.tooling.api.IProject
-import com.itsaky.androidide.tooling.api.messages.result.InitializeResult
-import com.itsaky.androidide.tooling.api.models.BuildVariantInfo
-import com.itsaky.androidide.utils.DocumentUtils
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.withStopWatch
+import com.willow.androidide.ultra.eventbus.events.EventReceiver
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentSaveEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileCreationEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileDeletionEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileRenameEvent
+import com.willow.androidide.ultra.eventbus.events.project.ProjectInitializedEvent
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.projects.CachingProject
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.projects.IWorkspace
+import com.willow.androidide.ultra.projects.ModuleProject
+import com.willow.androidide.ultra.projects.R
+import com.willow.androidide.ultra.projects.android.AndroidModule
+import com.willow.androidide.ultra.projects.builder.BuildService
+import com.willow.androidide.ultra.tasks.executeAsync
+import com.willow.androidide.ultra.tooling.api.IAndroidProject
+import com.willow.androidide.ultra.tooling.api.IProject
+import com.willow.androidide.ultra.tooling.api.messages.result.InitializeResult
+import com.willow.androidide.ultra.tooling.api.models.BuildVariantInfo
+import com.willow.androidide.ultra.utils.DocumentUtils
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.withStopWatch
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

@@ -1,7 +1,7 @@
-package com.itsaky.androidide.desugaring.internal.dsl
+package com.willow.androidide.ultra.desugaring.internal.dsl
 
-import com.itsaky.androidide.desugaring.dsl.MethodOpcode
-import com.itsaky.androidide.desugaring.dsl.ReplaceMethodInsn
+import com.willow.androidide.ultra.desugaring.dsl.MethodOpcode
+import com.willow.androidide.ultra.desugaring.dsl.ReplaceMethodInsn
 import java.io.Serializable
 
 /**

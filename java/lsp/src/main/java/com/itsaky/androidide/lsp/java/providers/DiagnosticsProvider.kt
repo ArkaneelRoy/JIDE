@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java.providers
+package com.willow.androidide.ultra.lsp.java.providers
 
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.models.DiagnosticCode
-import com.itsaky.androidide.lsp.java.models.DiagnosticCode.EMPTY_BLOCK
-import com.itsaky.androidide.lsp.java.models.DiagnosticCode.UNUSED_THROWS
-import com.itsaky.androidide.lsp.java.visitors.DiagnosticVisitor
-import com.itsaky.androidide.lsp.models.DiagnosticItem
-import com.itsaky.androidide.lsp.models.DiagnosticSeverity
-import com.itsaky.androidide.lsp.models.DiagnosticSeverity.WARNING
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.progress.ProgressManager.Companion.abortIfCancelled
-import com.itsaky.androidide.projects.FileManager
-import com.itsaky.androidide.utils.DocumentUtils.isSameFile
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.models.DiagnosticCode
+import com.willow.androidide.ultra.lsp.java.models.DiagnosticCode.EMPTY_BLOCK
+import com.willow.androidide.ultra.lsp.java.models.DiagnosticCode.UNUSED_THROWS
+import com.willow.androidide.ultra.lsp.java.visitors.DiagnosticVisitor
+import com.willow.androidide.ultra.lsp.models.DiagnosticItem
+import com.willow.androidide.ultra.lsp.models.DiagnosticSeverity
+import com.willow.androidide.ultra.lsp.models.DiagnosticSeverity.WARNING
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.progress.ProgressManager.Companion.abortIfCancelled
+import com.willow.androidide.ultra.projects.FileManager
+import com.willow.androidide.ultra.utils.DocumentUtils.isSameFile
 import jdkx.lang.model.element.Element
 import jdkx.tools.Diagnostic
 import jdkx.tools.JavaFileObject
@@ -296,13 +296,13 @@ object DiagnosticsProvider {
     return Range(start, end)
   }
 
-  private fun getPosition(position: Long, lines: LineMap): com.itsaky.androidide.models.Position {
+  private fun getPosition(position: Long, lines: LineMap): com.willow.androidide.ultra.models.Position {
     abortIfCancelled()
     // decrement the numbers
     // to convert 1-based indexes to 0-based
     val line = (lines.getLineNumber(position) - 1).toInt()
     val column = (lines.getColumnNumber(position) - 1).toInt()
-    return com.itsaky.androidide.models.Position(line, column)
+    return com.willow.androidide.ultra.models.Position(line, column)
   }
 
   private fun severityFor(kind: Diagnostic.Kind): DiagnosticSeverity {

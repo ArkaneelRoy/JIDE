@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.ui
+package com.willow.androidide.ultra.editor.ui
 
 import android.content.Context
 import android.graphics.Rect
@@ -27,51 +27,51 @@ import android.view.inputmethod.EditorInfo
 import androidx.annotation.StringRes
 import com.blankj.utilcode.util.FileUtils
 import com.blankj.utilcode.util.SizeUtils
-import com.itsaky.androidide.editor.R.string
-import com.itsaky.androidide.editor.adapters.CompletionListAdapter
-import com.itsaky.androidide.editor.api.IEditor
-import com.itsaky.androidide.editor.api.ILspEditor
-import com.itsaky.androidide.editor.language.IDELanguage
-import com.itsaky.androidide.editor.language.cpp.CppLanguage
-import com.itsaky.androidide.editor.language.groovy.GroovyLanguage
-import com.itsaky.androidide.editor.language.treesitter.TreeSitterLanguage
-import com.itsaky.androidide.editor.language.treesitter.TreeSitterLanguageProvider
-import com.itsaky.androidide.editor.schemes.IDEColorScheme
-import com.itsaky.androidide.editor.schemes.IDEColorSchemeProvider
-import com.itsaky.androidide.editor.snippets.AbstractSnippetVariableResolver
-import com.itsaky.androidide.editor.snippets.FileVariableResolver
-import com.itsaky.androidide.editor.snippets.WorkspaceVariableResolver
-import com.itsaky.androidide.eventbus.events.editor.ChangeType
-import com.itsaky.androidide.eventbus.events.editor.ColorSchemeInvalidatedEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentCloseEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentOpenEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentSaveEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentSelectedEvent
-import com.itsaky.androidide.flashbar.Flashbar
-import com.itsaky.androidide.lsp.api.ILanguageClient
-import com.itsaky.androidide.lsp.api.ILanguageServer
-import com.itsaky.androidide.lsp.java.utils.CancelChecker
-import com.itsaky.androidide.lsp.models.Command
-import com.itsaky.androidide.lsp.models.DefinitionParams
-import com.itsaky.androidide.lsp.models.DefinitionResult
-import com.itsaky.androidide.lsp.models.ExpandSelectionParams
-import com.itsaky.androidide.lsp.models.ReferenceParams
-import com.itsaky.androidide.lsp.models.ReferenceResult
-import com.itsaky.androidide.lsp.models.ShowDocumentParams
-import com.itsaky.androidide.lsp.models.SignatureHelp
-import com.itsaky.androidide.lsp.models.SignatureHelpParams
-import com.itsaky.androidide.models.Position
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.progress.ICancelChecker
-import com.itsaky.androidide.syntax.colorschemes.DynamicColorScheme
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE
-import com.itsaky.androidide.tasks.JobCancelChecker
-import com.itsaky.androidide.tasks.cancelIfActive
-import com.itsaky.androidide.tasks.launchAsyncWithProgress
-import com.itsaky.androidide.utils.DocumentUtils
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.editor.R.string
+import com.willow.androidide.ultra.editor.adapters.CompletionListAdapter
+import com.willow.androidide.ultra.editor.api.IEditor
+import com.willow.androidide.ultra.editor.api.ILspEditor
+import com.willow.androidide.ultra.editor.language.IDELanguage
+import com.willow.androidide.ultra.editor.language.cpp.CppLanguage
+import com.willow.androidide.ultra.editor.language.groovy.GroovyLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.TreeSitterLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.TreeSitterLanguageProvider
+import com.willow.androidide.ultra.editor.schemes.IDEColorScheme
+import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider
+import com.willow.androidide.ultra.editor.snippets.AbstractSnippetVariableResolver
+import com.willow.androidide.ultra.editor.snippets.FileVariableResolver
+import com.willow.androidide.ultra.editor.snippets.WorkspaceVariableResolver
+import com.willow.androidide.ultra.eventbus.events.editor.ChangeType
+import com.willow.androidide.ultra.eventbus.events.editor.ColorSchemeInvalidatedEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentCloseEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentOpenEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentSaveEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentSelectedEvent
+import com.willow.androidide.ultra.flashbar.Flashbar
+import com.willow.androidide.ultra.lsp.api.ILanguageClient
+import com.willow.androidide.ultra.lsp.api.ILanguageServer
+import com.willow.androidide.ultra.lsp.java.utils.CancelChecker
+import com.willow.androidide.ultra.lsp.models.Command
+import com.willow.androidide.ultra.lsp.models.DefinitionParams
+import com.willow.androidide.ultra.lsp.models.DefinitionResult
+import com.willow.androidide.ultra.lsp.models.ExpandSelectionParams
+import com.willow.androidide.ultra.lsp.models.ReferenceParams
+import com.willow.androidide.ultra.lsp.models.ReferenceResult
+import com.willow.androidide.ultra.lsp.models.ShowDocumentParams
+import com.willow.androidide.ultra.lsp.models.SignatureHelp
+import com.willow.androidide.ultra.lsp.models.SignatureHelpParams
+import com.willow.androidide.ultra.models.Position
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.progress.ICancelChecker
+import com.willow.androidide.ultra.syntax.colorschemes.DynamicColorScheme
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.tasks.JobCancelChecker
+import com.willow.androidide.ultra.tasks.cancelIfActive
+import com.willow.androidide.ultra.tasks.launchAsyncWithProgress
+import com.willow.androidide.ultra.utils.DocumentUtils
+import com.willow.androidide.ultra.utils.flashError
 import io.github.rosemoe.sora.event.ContentChangeEvent
 import io.github.rosemoe.sora.event.SelectionChangeEvent
 import io.github.rosemoe.sora.lang.EmptyLanguage
@@ -577,12 +577,12 @@ open class IDEEditor @JvmOverloads constructor(
    * Applies the given [TreeSitterLanguage] and the [color scheme][scheme] for the given [file type][type].
    */
   open fun applyTreeSitterLang(language: TreeSitterLanguage, type: String,
-    scheme: SchemeAndroidIDE?) {
+    scheme: SchemeAndroidIDE Ultra?) {
     applyTreeSitterLangInternal(language, type, scheme)
   }
 
   private fun applyTreeSitterLangInternal(language: TreeSitterLanguage, type: String,
-    scheme: SchemeAndroidIDE?) {
+    scheme: SchemeAndroidIDE Ultra?) {
     if (isReleased) {
       return
     }
@@ -590,7 +590,7 @@ open class IDEEditor @JvmOverloads constructor(
       scheme
     } else {
       log.error("Failed to read current color scheme")
-      SchemeAndroidIDE.newInstance(context)
+      SchemeAndroidIDE Ultra.newInstance(context)
     }
 
     if (finalScheme is IDEColorScheme) {
@@ -599,7 +599,7 @@ open class IDEEditor @JvmOverloads constructor(
 
       if (finalScheme.getLanguageScheme(type) == null) {
         log.warn("Color scheme does not support file type '{}'", type)
-        finalScheme = SchemeAndroidIDE.newInstance(context)
+        finalScheme = SchemeAndroidIDE Ultra.newInstance(context)
       }
     }
 
@@ -663,7 +663,7 @@ open class IDEEditor @JvmOverloads constructor(
     markUnmodified()
 
     searcher = IDEEditorSearcher(this)
-    colorScheme = SchemeAndroidIDE.newInstance(context)
+    colorScheme = SchemeAndroidIDE Ultra.newInstance(context)
     inputType = createInputTypeFlags()
 
     val window = EditorCompletionWindow(this)

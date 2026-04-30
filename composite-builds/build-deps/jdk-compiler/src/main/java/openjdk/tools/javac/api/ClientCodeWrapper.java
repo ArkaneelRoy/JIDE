@@ -129,7 +129,7 @@ public class ClientCodeWrapper {
         return new WrappedFileObject(fo);
     }
 
-    // AndroidIDE Changed: Make public
+    // AndroidIDE Ultra Changed: Make public
     public FileObject unwrap(FileObject fo) {
         if (fo instanceof WrappedFileObject)
             return ((WrappedFileObject) fo).clientFileObject;
@@ -150,7 +150,7 @@ public class ClientCodeWrapper {
         return Collections.unmodifiableList(wrapped);
     }
     
-    // AndroidIDE Changed: Make public
+    // AndroidIDE Ultra Changed: Make public
     public JavaFileObject unwrap(JavaFileObject fo) {
           if (fo instanceof WrappedJavaFileObject)
             return ((JavaFileObject) ((WrappedJavaFileObject) fo).clientFileObject);
@@ -184,7 +184,7 @@ public class ClientCodeWrapper {
         return c;
     }
     
-    // AndroidIDE Changed: Make public
+    // AndroidIDE Ultra Changed: Make public
     @SuppressWarnings("unchecked")
     public  <T> Diagnostic<T> unwrap(final Diagnostic<T> diagnostic) {
         if (diagnostic instanceof JCDiagnostic) {

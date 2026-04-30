@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.fragments.output
+package com.willow.androidide.ultra.fragments.output
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -24,13 +24,13 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.view.View
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.itsaky.androidide.R
-import com.itsaky.androidide.preferences.internal.DevOpsPreferences
-import com.itsaky.androidide.services.log.ConnectionObserverParams
-import com.itsaky.androidide.services.log.LogReceiverImpl
-import com.itsaky.androidide.services.log.LogReceiverService
-import com.itsaky.androidide.services.log.LogReceiverServiceConnection
-import com.itsaky.androidide.services.log.lookupLogService
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.preferences.internal.DevOpsPreferences
+import com.willow.androidide.ultra.services.log.ConnectionObserverParams
+import com.willow.androidide.ultra.services.log.LogReceiverImpl
+import com.willow.androidide.ultra.services.log.LogReceiverService
+import com.willow.androidide.ultra.services.log.LogReceiverServiceConnection
+import com.willow.androidide.ultra.services.log.lookupLogService
 import org.slf4j.LoggerFactory
 import java.util.concurrent.atomic.AtomicBoolean
 

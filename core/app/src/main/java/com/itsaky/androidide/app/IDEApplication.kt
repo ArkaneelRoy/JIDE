@@ -1,22 +1,22 @@
 /*
- * This file is part of AndroidIDE.
+ * This file is part of AndroidIDE Ultra.
  *
- * AndroidIDE is free software: you can redistribute it and/or modify
+ * AndroidIDE Ultra is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * AndroidIDE is distributed in the hope that it will be useful,
+ * AndroidIDE Ultra is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ * along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
-package com.itsaky.androidide.app
+package com.willow.androidide.ultra.app
 
 import android.content.Intent
 import android.net.Uri
@@ -32,29 +32,29 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.blankj.utilcode.util.ThrowableUtils.getFullStackTrace
 import com.google.android.material.color.DynamicColors
-import com.itsaky.androidide.BuildConfig
-import com.itsaky.androidide.activities.CrashHandlerActivity
-import com.itsaky.androidide.activities.editor.IDELogcatReader
-import com.itsaky.androidide.buildinfo.BuildInfo
-import com.itsaky.androidide.editor.schemes.IDEColorSchemeProvider
-import com.itsaky.androidide.eventbus.events.preferences.PreferenceChangeEvent
-import com.itsaky.androidide.events.AppEventsIndex
-import com.itsaky.androidide.events.EditorEventsIndex
-import com.itsaky.androidide.events.LspApiEventsIndex
-import com.itsaky.androidide.events.LspJavaEventsIndex
-import com.itsaky.androidide.preferences.internal.DevOpsPreferences
-import com.itsaky.androidide.preferences.internal.GeneralPreferences
-import com.itsaky.androidide.preferences.internal.StatPreferences
-import com.itsaky.androidide.resources.localization.LocaleProvider
-import com.itsaky.androidide.stats.AndroidIDEStats
-import com.itsaky.androidide.stats.StatUploadWorker
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE
-import com.itsaky.androidide.treesitter.TreeSitter
-import com.itsaky.androidide.ui.themes.IDETheme
-import com.itsaky.androidide.ui.themes.IThemeManager
-import com.itsaky.androidide.utils.RecyclableObjectPool
-import com.itsaky.androidide.utils.VMUtils
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.BuildConfig
+import com.willow.androidide.ultra.activities.CrashHandlerActivity
+import com.willow.androidide.ultra.activities.editor.IDELogcatReader
+import com.willow.androidide.ultra.buildinfo.BuildInfo
+import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider
+import com.willow.androidide.ultra.eventbus.events.preferences.PreferenceChangeEvent
+import com.willow.androidide.ultra.events.AppEventsIndex
+import com.willow.androidide.ultra.events.EditorEventsIndex
+import com.willow.androidide.ultra.events.LspApiEventsIndex
+import com.willow.androidide.ultra.events.LspJavaEventsIndex
+import com.willow.androidide.ultra.preferences.internal.DevOpsPreferences
+import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
+import com.willow.androidide.ultra.preferences.internal.StatPreferences
+import com.willow.androidide.ultra.resources.localization.LocaleProvider
+import com.willow.androidide.ultra.stats.AndroidIDE UltraStats
+import com.willow.androidide.ultra.stats.StatUploadWorker
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.treesitter.TreeSitter
+import com.willow.androidide.ultra.ui.themes.IDETheme
+import com.willow.androidide.ultra.ui.themes.IThemeManager
+import com.willow.androidide.ultra.utils.RecyclableObjectPool
+import com.willow.androidide.ultra.utils.VMUtils
+import com.willow.androidide.ultra.utils.flashError
 import com.termux.app.TermuxApplication
 import com.termux.shared.reflection.ReflectionUtils
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme
@@ -115,7 +115,7 @@ class IDEApplication : TermuxApplication() {
       DynamicColors.applyToActivitiesIfAvailable(this)
     }
 
-    EditorColorScheme.setDefault(SchemeAndroidIDE.newInstance(null))
+    EditorColorScheme.setDefault(SchemeAndroidIDE Ultra.newInstance(null))
 
     ReflectionUtils.bypassHiddenAPIReflectionRestrictions()
     GlobalScope.launch {
@@ -148,7 +148,7 @@ class IDEApplication : TermuxApplication() {
 
     val constraints = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
     val request = PeriodicWorkRequestBuilder<StatUploadWorker>(Duration.ofHours(24)).setInputData(
-      AndroidIDEStats.statData.toInputData()
+      AndroidIDE UltraStats.statData.toInputData()
     ).setConstraints(constraints)
       .addTag(StatUploadWorker.WORKER_WORK_NAME).build()
 

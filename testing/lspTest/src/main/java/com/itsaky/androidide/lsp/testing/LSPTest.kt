@@ -1,48 +1,48 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.testing
+package com.willow.androidide.ultra.lsp.testing
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.eventbus.events.EventReceiver
-import com.itsaky.androidide.eventbus.events.editor.ChangeType.DELETE
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentCloseEvent
-import com.itsaky.androidide.eventbus.events.editor.DocumentOpenEvent
-import com.itsaky.androidide.eventbus.events.file.FileDeletionEvent
-import com.itsaky.androidide.eventbus.events.file.FileRenameEvent
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.lsp.api.ILanguageServerRegistry
-import com.itsaky.androidide.managers.PreferenceManager
-import com.itsaky.androidide.models.Position
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.preferences.internal.prefManager
-import com.itsaky.androidide.projects.FileManager
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.projects.builder.BuildService
-import com.itsaky.androidide.testing.tooling.ToolingApiTestLauncher
-import com.itsaky.androidide.testing.tooling.models.ToolingApiTestLauncherParams
-import com.itsaky.androidide.tooling.api.IProject
-import com.itsaky.androidide.tooling.api.IToolingApiServer
-import com.itsaky.androidide.utils.Environment
-import com.itsaky.androidide.utils.FileProvider
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.eventbus.events.EventReceiver
+import com.willow.androidide.ultra.eventbus.events.editor.ChangeType.DELETE
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentCloseEvent
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentOpenEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileDeletionEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileRenameEvent
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
+import com.willow.androidide.ultra.managers.PreferenceManager
+import com.willow.androidide.ultra.models.Position
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.preferences.internal.prefManager
+import com.willow.androidide.ultra.projects.FileManager
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.projects.builder.BuildService
+import com.willow.androidide.ultra.testing.tooling.ToolingApiTestLauncher
+import com.willow.androidide.ultra.testing.tooling.models.ToolingApiTestLauncherParams
+import com.willow.androidide.ultra.tooling.api.IProject
+import com.willow.androidide.ultra.tooling.api.IToolingApiServer
+import com.willow.androidide.ultra.utils.Environment
+import com.willow.androidide.ultra.utils.FileProvider
 import io.github.rosemoe.sora.text.Content
 import io.mockk.every
 import io.mockk.mockkStatic

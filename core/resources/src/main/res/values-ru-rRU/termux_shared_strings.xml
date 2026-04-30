@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~  This file is part of AndroidIDE.
+  ~  This file is part of AndroidIDE Ultra.
   ~
-  ~  AndroidIDE is free software: you can redistribute it and/or modify
+  ~  AndroidIDE Ultra is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
   ~  the Free Software Foundation, either version 3 of the License, or
   ~  (at your option) any later version.
   ~
-  ~  AndroidIDE is distributed in the hope that it will be useful,
+  ~  AndroidIDE Ultra is distributed in the hope that it will be useful,
   ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~  GNU General Public License for more details.
   ~
   ~  You should have received a copy of the GNU General Public License
-  ~   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+  ~   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
   -->
 <resources>
   <string name="msg_directory_absolute_path">%1$s абсолютный путь: %2$s</string>
@@ -47,12 +47,12 @@
         \n\nЕсли вы выкладываете отчет об ошибке Termux, расскажите, что привело к ошибке и как мы можем её воссоздать (повторить), если это возможно.
         \n\nЕсли вы создаете Issue на GitHub, то его создавайте его в соответствующем репозитории. Issue или электронные письма, содержащие только **(частичные) скриншоты** вместо скопированного текста или файла с этим отчетом, скорее всего **будут оавтоматически отклонены**. Вы можетее вручную удалить информацию о девайсе или любую другую информацию, которую считатете приватной или не релевантной, из данного отчета.
         \n\nМы не предоставляем поддержку касательно любых инструментов (скриптов) для хакинга (взлома). Подобные вопросы, заданные посредствам GitHub, по электронной почте или на официальных форумах Termux, скорее всего **будут автоматически отклонены**, а также могут повлечь за собой **временную или перманентную блокировку (бан)**. Посетите %1$s/wiki/Hacking, чтобы узнать больше.</string>
-  <string name="msg_termux_app_required_by_app">AndroidIDE требуется приложению %1$s для запуска команд Termux.</string>
-  <string name="error_termux_app_package_context_not_accessible">Приложение AndroidIDE недоступно.</string>
-  <string name="error_termux_prefix_dir_path_not_accessible">The AndroidIDE app $PREFIX directory is not accessible by the %1$s app.
-        This may be because you have not installed or setup AndroidIDE app or
-    AndroidIDE app and %1$s app both have different APK signatures because you have managed to install both apps from different sources.
-        It may also be because AndroidIDE $PREFIX directory \"/data/data/com.itsaky.androidide/files/usr\" does not exist or does not have read,
+  <string name="msg_termux_app_required_by_app">AndroidIDE Ultra требуется приложению %1$s для запуска команд Termux.</string>
+  <string name="error_termux_app_package_context_not_accessible">Приложение AndroidIDE Ultra недоступно.</string>
+  <string name="error_termux_prefix_dir_path_not_accessible">The AndroidIDE Ultra app $PREFIX directory is not accessible by the %1$s app.
+        This may be because you have not installed or setup AndroidIDE Ultra app or
+    AndroidIDE Ultra app and %1$s app both have different APK signatures because you have managed to install both apps from different sources.
+        It may also be because AndroidIDE Ultra $PREFIX directory \"/data/data/com.willow.androidide.ultra/files/usr\" does not exist or does not have read,
         write and execute permissions.</string>
   <!-- Miscellaneous -->
   <string name="action_share">Поделиться</string>

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.logsender;
+package com.willow.androidide.ultra.logsender;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,8 +25,8 @@ import android.os.IBinder;
 import android.os.Process;
 import android.os.RemoteException;
 import android.util.Log;
-import com.itsaky.androidide.logsender.utils.LogReader;
-import com.itsaky.androidide.logsender.utils.Logger;
+import com.willow.androidide.ultra.logsender.utils.LogReader;
+import com.willow.androidide.ultra.logsender.utils.Logger;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -53,7 +53,7 @@ public final class LogSender extends ILogSender.Stub implements ServiceConnectio
   /**
    * Action for the LogSender service.
    */
-  public static final String SERVICE_ACTION = "com.itsaky.androidide.LOG_SERVICE_ACTION";
+  public static final String SERVICE_ACTION = "com.willow.androidide.ultra.LOG_SERVICE_ACTION";
 
   /**
    * Constant used to indicate that the package name of the application cannot be determined.
@@ -61,9 +61,9 @@ public final class LogSender extends ILogSender.Stub implements ServiceConnectio
   public static final String PACKAGE_UNKNOWN = "<unknown-package-name>";
 
   /**
-   * AndroidIDE's package name.
+   * AndroidIDE Ultra's package name.
    */
-  public static final String PACKAGE_ANDROIDIDE = "com.itsaky.androidide";
+  public static final String PACKAGE_ANDROIDIDE = "com.willow.androidide.ultra";
 
   LogSender() {
     this.senderId = UUID.randomUUID().toString();
@@ -143,7 +143,7 @@ public final class LogSender extends ILogSender.Stub implements ServiceConnectio
   }
 
   /**
-   * @return Whether the log sender is bound to the log receiver service in AndroidIDE.
+   * @return Whether the log sender is bound to the log receiver service in AndroidIDE Ultra.
    */
   boolean isBinding() {
     return isBinding.get();
@@ -157,7 +157,7 @@ public final class LogSender extends ILogSender.Stub implements ServiceConnectio
   }
 
   /**
-   * Binds to the log receiver service in AndroidIDE.
+   * Binds to the log receiver service in AndroidIDE Ultra.
    *
    * @param context The context used to bind to the service.
    * @return Whether the binding was successful or not. This returns <code>true</code> if

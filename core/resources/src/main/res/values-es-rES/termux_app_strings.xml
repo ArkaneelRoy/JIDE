@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~  This file is part of AndroidIDE.
+  ~  This file is part of AndroidIDE Ultra.
   ~
-  ~  AndroidIDE is free software: you can redistribute it and/or modify
+  ~  AndroidIDE Ultra is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
   ~  the Free Software Foundation, either version 3 of the License, or
   ~  (at your option) any later version.
   ~
-  ~  AndroidIDE is distributed in the hope that it will be useful,
+  ~  AndroidIDE Ultra is distributed in the hope that it will be useful,
   ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~  GNU General Public License for more details.
   ~
   ~  You should have received a copy of the GNU General Public License
-  ~   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+  ~   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
   -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="UnusedResources">
   <!-- Termux Bootstrap Packages Installation -->
   <string name="bootstrap_installer_body">Installing bootstrap packages…</string>
   <string name="bootstrap_error_title">Unable to install bootstrap</string>
-  <string name="bootstrap_error_body">AndroidIDE was unable to install the bootstrap packages.</string>
+  <string name="bootstrap_error_body">AndroidIDE Ultra was unable to install the bootstrap packages.</string>
   <string name="bootstrap_error_abort">Abort</string>
   <string name="bootstrap_error_try_again">Try again</string>
-  <string name="bootstrap_error_not_primary_user_message">AndroidIDE can only be run as the primary user.\nBootstrap binaries compiled for AndroidIDE have hardcoded $PREFIX path and cannot be installed under any path other than:\n%1$s.</string>
-  <string name="bootstrap_error_installed_on_portable_sd">AndroidIDE cannot be installed on portable/external/removable sd card on your device.\nBootstrap binaries compiled for AndroidIDE have hardcoded $PREFIX path and cannot be installed under any path other than:\n%1$s.</string>
+  <string name="bootstrap_error_not_primary_user_message">AndroidIDE Ultra can only be run as the primary user.\nBootstrap binaries compiled for AndroidIDE Ultra have hardcoded $PREFIX path and cannot be installed under any path other than:\n%1$s.</string>
+  <string name="bootstrap_error_installed_on_portable_sd">AndroidIDE Ultra cannot be installed on portable/external/removable sd card on your device.\nBootstrap binaries compiled for AndroidIDE Ultra have hardcoded $PREFIX path and cannot be installed under any path other than:\n%1$s.</string>
   <!-- Terminal Sidebar and Shortcuts -->
   <string name="action_new_session">New session</string>
   <string name="action_new_session_failsafe">Failsafe</string>
@@ -62,7 +62,7 @@
   <string name="notification_action_wake_lock">Acquire wakelock</string>
   <string name="notification_action_wake_unlock">Release wakelock</string>
   <!-- TermuxService -->
-  <string name="error_display_over_other_apps_permission_not_granted_to_start_terminal">AndroidIDE requires \"Display over other apps\" permission to start terminal sessions from background on Android &gt;= 10. Grants it from Settings -&gt; Apps -&gt; AndroidIDE -&gt; Advanced</string>
+  <string name="error_display_over_other_apps_permission_not_granted_to_start_terminal">AndroidIDE Ultra requires \"Display over other apps\" permission to start terminal sessions from background on Android &gt;= 10. Grants it from Settings -&gt; Apps -&gt; AndroidIDE Ultra -&gt; Advanced</string>
   <!-- Termux File Receiver -->
   <string name="title_file_received">Save file in ~/downloads/</string>
   <string name="action_file_received_edit">Edit</string>

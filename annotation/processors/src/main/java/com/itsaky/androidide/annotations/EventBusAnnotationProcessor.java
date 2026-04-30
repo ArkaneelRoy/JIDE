@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.itsaky.androidide.annotations;
+package com.willow.androidide.ultra.annotations;
 
 import com.google.auto.service.AutoService;
 import javax.annotation.processing.Processor;

@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.fragments.onboarding
+package com.willow.androidide.ultra.fragments.onboarding
 
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.text.method.LinkMovementMethodCompat
 import androidx.core.view.updateLayoutParams
-import com.itsaky.androidide.databinding.FragmentOnboardingBinding
-import com.itsaky.androidide.fragments.FragmentWithBinding
+import com.willow.androidide.ultra.databinding.FragmentOnboardingBinding
+import com.willow.androidide.ultra.fragments.FragmentWithBinding
 
 open class OnboardingFragment :
   FragmentWithBinding<FragmentOnboardingBinding>(FragmentOnboardingBinding::inflate) {

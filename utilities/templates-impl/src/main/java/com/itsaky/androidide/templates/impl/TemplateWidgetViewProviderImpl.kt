@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.impl
+package com.willow.androidide.ultra.templates.impl
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -24,23 +24,23 @@ import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputLayout
 import com.google.auto.service.AutoService
-import com.itsaky.androidide.templates.BooleanParameter
-import com.itsaky.androidide.templates.CheckBoxWidget
-import com.itsaky.androidide.templates.EnumParameter
-import com.itsaky.androidide.templates.ITemplateWidgetViewProvider
-import com.itsaky.androidide.templates.Parameter
-import com.itsaky.androidide.templates.Parameter.DefaultObserver
-import com.itsaky.androidide.templates.ParameterWidget
-import com.itsaky.androidide.templates.SpinnerWidget
-import com.itsaky.androidide.templates.StringParameter
-import com.itsaky.androidide.templates.TextFieldParameter
-import com.itsaky.androidide.templates.TextFieldWidget
-import com.itsaky.androidide.templates.Widget
-import com.itsaky.androidide.templates.impl.databinding.LayoutCheckboxBinding
-import com.itsaky.androidide.templates.impl.databinding.LayoutSpinnerBinding
-import com.itsaky.androidide.templates.impl.databinding.LayoutTextfieldBinding
-import com.itsaky.androidide.utils.ServiceLoader
-import com.itsaky.androidide.utils.SingleTextWatcher
+import com.willow.androidide.ultra.templates.BooleanParameter
+import com.willow.androidide.ultra.templates.CheckBoxWidget
+import com.willow.androidide.ultra.templates.EnumParameter
+import com.willow.androidide.ultra.templates.ITemplateWidgetViewProvider
+import com.willow.androidide.ultra.templates.Parameter
+import com.willow.androidide.ultra.templates.Parameter.DefaultObserver
+import com.willow.androidide.ultra.templates.ParameterWidget
+import com.willow.androidide.ultra.templates.SpinnerWidget
+import com.willow.androidide.ultra.templates.StringParameter
+import com.willow.androidide.ultra.templates.TextFieldParameter
+import com.willow.androidide.ultra.templates.TextFieldWidget
+import com.willow.androidide.ultra.templates.Widget
+import com.willow.androidide.ultra.templates.impl.databinding.LayoutCheckboxBinding
+import com.willow.androidide.ultra.templates.impl.databinding.LayoutSpinnerBinding
+import com.willow.androidide.ultra.templates.impl.databinding.LayoutTextfieldBinding
+import com.willow.androidide.ultra.utils.ServiceLoader
+import com.willow.androidide.ultra.utils.SingleTextWatcher
 
 
 /**

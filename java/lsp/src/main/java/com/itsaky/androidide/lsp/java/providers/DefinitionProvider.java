@@ -1,38 +1,38 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers;
+package com.willow.androidide.ultra.lsp.java.providers;
 
 import android.text.TextUtils;
 import androidx.annotation.NonNull;
-import com.itsaky.androidide.lsp.api.IServerSettings;
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService;
-import com.itsaky.androidide.lsp.java.compiler.SynchronizedTask;
-import com.itsaky.androidide.lsp.java.providers.definition.ErroneousDefinitionProvider;
-import com.itsaky.androidide.lsp.java.providers.definition.IJavaDefinitionProvider;
-import com.itsaky.androidide.lsp.java.providers.definition.LocalDefinitionProvider;
-import com.itsaky.androidide.lsp.java.providers.definition.RemoteDefinitionProvider;
-import com.itsaky.androidide.lsp.java.utils.NavigationHelper;
-import com.itsaky.androidide.lsp.models.DefinitionParams;
-import com.itsaky.androidide.lsp.models.DefinitionResult;
-import com.itsaky.androidide.models.Location;
-import com.itsaky.androidide.models.Position;
-import com.itsaky.androidide.progress.ICancelChecker;
-import com.itsaky.androidide.utils.DocumentUtils;
+import com.willow.androidide.ultra.lsp.api.IServerSettings;
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService;
+import com.willow.androidide.ultra.lsp.java.compiler.SynchronizedTask;
+import com.willow.androidide.ultra.lsp.java.providers.definition.ErroneousDefinitionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.definition.IJavaDefinitionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.definition.LocalDefinitionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.definition.RemoteDefinitionProvider;
+import com.willow.androidide.ultra.lsp.java.utils.NavigationHelper;
+import com.willow.androidide.ultra.lsp.models.DefinitionParams;
+import com.willow.androidide.ultra.lsp.models.DefinitionResult;
+import com.willow.androidide.ultra.models.Location;
+import com.willow.androidide.ultra.models.Position;
+import com.willow.androidide.ultra.progress.ICancelChecker;
+import com.willow.androidide.ultra.utils.DocumentUtils;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;

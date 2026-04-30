@@ -1,18 +1,18 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -47,21 +47,21 @@ dependencies {
 
 gradlePlugin {
   plugins {
-    create("com.itsaky.androidide.build") {
-      id = "com.itsaky.androidide.build"
-      implementationClass = "com.itsaky.androidide.plugins.AndroidIDEPlugin"
+    create("com.willow.androidide.ultra.build") {
+      id = "com.willow.androidide.ultra.build"
+      implementationClass = "com.willow.androidide.ultra.plugins.AndroidIDE UltraPlugin"
     }
-    create("com.itsaky.androidide.core-app") {
-      id = "com.itsaky.androidide.core-app"
-      implementationClass = "com.itsaky.androidide.plugins.AndroidIDECoreAppPlugin"
+    create("com.willow.androidide.ultra.core-app") {
+      id = "com.willow.androidide.ultra.core-app"
+      implementationClass = "com.willow.androidide.ultra.plugins.AndroidIDE UltraCoreAppPlugin"
     }
-    create("com.itsaky.androidide.build.propsparser") {
-      id = "com.itsaky.androidide.build.propsparser"
-      implementationClass = "com.itsaky.androidide.plugins.PropertiesParserPlugin"
+    create("com.willow.androidide.ultra.build.propsparser") {
+      id = "com.willow.androidide.ultra.build.propsparser"
+      implementationClass = "com.willow.androidide.ultra.plugins.PropertiesParserPlugin"
     }
-    create("com.itsaky.androidide.build.lexergenerator") {
-      id = "com.itsaky.androidide.build.lexergenerator"
-      implementationClass = "com.itsaky.androidide.plugins.LexerGeneratorPlugin"
+    create("com.willow.androidide.ultra.build.lexergenerator") {
+      id = "com.willow.androidide.ultra.build.lexergenerator"
+      implementationClass = "com.willow.androidide.ultra.plugins.LexerGeneratorPlugin"
     }
   }
 }

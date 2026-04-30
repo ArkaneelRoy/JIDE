@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater.vectormaster;
+package com.willow.androidide.ultra.inflater.vectormaster;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -27,11 +27,11 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.FileIOUtils;
-import com.itsaky.androidide.inflater.vectormaster.models.ClipPathModel;
-import com.itsaky.androidide.inflater.vectormaster.models.GroupModel;
-import com.itsaky.androidide.inflater.vectormaster.models.PathModel;
-import com.itsaky.androidide.inflater.vectormaster.models.VectorModel;
-import com.itsaky.androidide.inflater.vectormaster.utilities.Utils;
+import com.willow.androidide.ultra.inflater.vectormaster.models.ClipPathModel;
+import com.willow.androidide.ultra.inflater.vectormaster.models.GroupModel;
+import com.willow.androidide.ultra.inflater.vectormaster.models.PathModel;
+import com.willow.androidide.ultra.inflater.vectormaster.models.VectorModel;
+import com.willow.androidide.ultra.inflater.vectormaster.utilities.Utils;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;

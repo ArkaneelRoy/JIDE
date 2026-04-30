@@ -1,36 +1,36 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.javac.services.compiler
+package com.willow.androidide.ultra.javac.services.compiler
 
-import com.itsaky.androidide.javac.services.CancelService
-import com.itsaky.androidide.javac.services.NBAttr
-import com.itsaky.androidide.javac.services.NBClassFinder
-import com.itsaky.androidide.javac.services.NBClassReader
-import com.itsaky.androidide.javac.services.NBEnter
-import com.itsaky.androidide.javac.services.NBJavacTrees
-import com.itsaky.androidide.javac.services.NBMemberEnter
-import com.itsaky.androidide.javac.services.NBParserFactory
-import com.itsaky.androidide.javac.services.NBResolve
-import com.itsaky.androidide.javac.services.NBTreeMaker
-import com.itsaky.androidide.javac.services.fs.CacheFSInfoSingleton
-import com.itsaky.androidide.javac.services.fs.JarPackageProviderImpl
-import com.itsaky.androidide.utils.VMUtils
-import com.itsaky.androidide.zipfs2.JarPackageProvider
+import com.willow.androidide.ultra.javac.services.CancelService
+import com.willow.androidide.ultra.javac.services.NBAttr
+import com.willow.androidide.ultra.javac.services.NBClassFinder
+import com.willow.androidide.ultra.javac.services.NBClassReader
+import com.willow.androidide.ultra.javac.services.NBEnter
+import com.willow.androidide.ultra.javac.services.NBJavacTrees
+import com.willow.androidide.ultra.javac.services.NBMemberEnter
+import com.willow.androidide.ultra.javac.services.NBParserFactory
+import com.willow.androidide.ultra.javac.services.NBResolve
+import com.willow.androidide.ultra.javac.services.NBTreeMaker
+import com.willow.androidide.ultra.javac.services.fs.CacheFSInfoSingleton
+import com.willow.androidide.ultra.javac.services.fs.JarPackageProviderImpl
+import com.willow.androidide.ultra.utils.VMUtils
+import com.willow.androidide.ultra.zipfs2.JarPackageProvider
 import jdkx.tools.DiagnosticListener
 import jdkx.tools.JavaFileManager
 import jdkx.tools.JavaFileObject

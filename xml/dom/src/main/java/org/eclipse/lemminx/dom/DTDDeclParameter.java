@@ -13,7 +13,7 @@
  *******************************************************************************/
 package org.eclipse.lemminx.dom;
 
-import com.itsaky.androidide.models.Range;
+import com.willow.androidide.ultra.models.Range;
 
 import org.eclipse.lemminx.utils.XMLPositionUtility;
 

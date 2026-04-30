@@ -1,4 +1,4 @@
-package com.itsaky.androidide.fuzzysearch.model;
+package com.willow.androidide.ultra.fuzzysearch.model;
 
 public class ExtractedResult implements Comparable<ExtractedResult> {
 

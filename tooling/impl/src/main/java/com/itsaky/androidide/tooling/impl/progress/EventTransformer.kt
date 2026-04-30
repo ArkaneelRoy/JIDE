@@ -1,48 +1,48 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.tooling.impl.progress
+package com.willow.androidide.ultra.tooling.impl.progress
 
-import com.itsaky.androidide.tooling.events.StatusEvent
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationResult.PluginApplicationResult
-import com.itsaky.androidide.tooling.events.download.FileDownloadFinishEvent
-import com.itsaky.androidide.tooling.events.download.FileDownloadProgressEvent
-import com.itsaky.androidide.tooling.events.download.FileDownloadStartEvent
-import com.itsaky.androidide.tooling.events.internal.DefaultFinishEvent
-import com.itsaky.androidide.tooling.events.internal.DefaultOperationDescriptor
-import com.itsaky.androidide.tooling.events.internal.DefaultOperationResult
-import com.itsaky.androidide.tooling.events.internal.DefaultProgressEvent
-import com.itsaky.androidide.tooling.events.internal.DefaultStartEvent
-import com.itsaky.androidide.tooling.events.task.TaskFinishEvent
-import com.itsaky.androidide.tooling.events.task.TaskProgressEvent
-import com.itsaky.androidide.tooling.events.task.TaskStartEvent
-import com.itsaky.androidide.tooling.events.test.TestFinishEvent
-import com.itsaky.androidide.tooling.events.test.TestOperationResult
-import com.itsaky.androidide.tooling.events.test.TestProgressEvent
-import com.itsaky.androidide.tooling.events.test.TestStartEvent
-import com.itsaky.androidide.tooling.events.transform.TransformFinishEvent
-import com.itsaky.androidide.tooling.events.transform.TransformOperationDescriptor.SubjectDescriptor
-import com.itsaky.androidide.tooling.events.transform.TransformOperationResult
-import com.itsaky.androidide.tooling.events.transform.TransformStartEvent
-import com.itsaky.androidide.tooling.events.work.WorkItemFinishEvent
-import com.itsaky.androidide.tooling.events.work.WorkItemOperationResult
-import com.itsaky.androidide.tooling.events.work.WorkItemProgressEvent
-import com.itsaky.androidide.tooling.events.work.WorkItemStartEvent
-import com.itsaky.androidide.tooling.model.PluginIdentifier
+import com.willow.androidide.ultra.tooling.events.StatusEvent
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationResult.PluginApplicationResult
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadFinishEvent
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadProgressEvent
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadStartEvent
+import com.willow.androidide.ultra.tooling.events.internal.DefaultFinishEvent
+import com.willow.androidide.ultra.tooling.events.internal.DefaultOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.internal.DefaultOperationResult
+import com.willow.androidide.ultra.tooling.events.internal.DefaultProgressEvent
+import com.willow.androidide.ultra.tooling.events.internal.DefaultStartEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskFinishEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskProgressEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskStartEvent
+import com.willow.androidide.ultra.tooling.events.test.TestFinishEvent
+import com.willow.androidide.ultra.tooling.events.test.TestOperationResult
+import com.willow.androidide.ultra.tooling.events.test.TestProgressEvent
+import com.willow.androidide.ultra.tooling.events.test.TestStartEvent
+import com.willow.androidide.ultra.tooling.events.transform.TransformFinishEvent
+import com.willow.androidide.ultra.tooling.events.transform.TransformOperationDescriptor.SubjectDescriptor
+import com.willow.androidide.ultra.tooling.events.transform.TransformOperationResult
+import com.willow.androidide.ultra.tooling.events.transform.TransformStartEvent
+import com.willow.androidide.ultra.tooling.events.work.WorkItemFinishEvent
+import com.willow.androidide.ultra.tooling.events.work.WorkItemOperationResult
+import com.willow.androidide.ultra.tooling.events.work.WorkItemProgressEvent
+import com.willow.androidide.ultra.tooling.events.work.WorkItemStartEvent
+import com.willow.androidide.ultra.tooling.model.PluginIdentifier
 import org.gradle.tooling.events.OperationDescriptor
 import org.gradle.tooling.events.ProgressEvent
 import org.gradle.tooling.events.configuration.ProjectConfigurationFinishEvent
@@ -74,7 +74,7 @@ class EventTransformer {
     // ------------------------ COMMON -------------------------
     private fun operationDescriptor(
       descriptor: OperationDescriptor?
-    ): com.itsaky.androidide.tooling.events.OperationDescriptor? =
+    ): com.willow.androidide.ultra.tooling.events.OperationDescriptor? =
       when (descriptor) {
         null -> null
         is ProjectConfigurationOperationDescriptor -> projectConfigurationDescriptor(descriptor)
@@ -90,8 +90,8 @@ class EventTransformer {
     @JvmStatic
     fun projectConfigurationStart(
       event: ProjectConfigurationStartEvent
-    ): com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationProgressEvent =
-      com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationStartEvent(
+    ): com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationProgressEvent =
+      com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationStartEvent(
         displayName = event.displayName,
         eventTime = event.eventTime,
         descriptor = projectConfigurationDescriptor(event.descriptor)
@@ -100,8 +100,8 @@ class EventTransformer {
     @JvmStatic
     fun projectConfigurationProgress(
       event: ProjectConfigurationProgressEvent
-    ): com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationProgressEvent =
-      com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationProgressEvent(
+    ): com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationProgressEvent =
+      com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationProgressEvent(
         displayName = event.displayName,
         eventTime = event.eventTime,
         descriptor = projectConfigurationDescriptor(event.descriptor)
@@ -110,8 +110,8 @@ class EventTransformer {
     @JvmStatic
     fun projectConfigurationFinish(
       event: ProjectConfigurationFinishEvent
-    ): com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationProgressEvent =
-      com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationFinishEvent(
+    ): com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationProgressEvent =
+      com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationFinishEvent(
         displayName = event.displayName,
         eventTime = event.eventTime,
         descriptor = projectConfigurationDescriptor(event.descriptor),
@@ -120,8 +120,8 @@ class EventTransformer {
 
     private fun projectConfigurationResult(
       result: ProjectConfigurationOperationResult
-    ): com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationResult =
-      com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationResult(
+    ): com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationResult =
+      com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationResult(
         pluginApplicationResults =
           result.pluginApplicationResults.map {
             PluginApplicationResult(
@@ -136,8 +136,8 @@ class EventTransformer {
 
     private fun projectConfigurationDescriptor(
       descriptor: ProjectConfigurationOperationDescriptor
-    ): com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationDescriptor =
-      com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationDescriptor(
+    ): com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationDescriptor =
+      com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationDescriptor(
         project = projectIdentifier(descriptor.project),
         name = descriptor.name,
         displayName = descriptor.displayName
@@ -145,11 +145,11 @@ class EventTransformer {
 
     private fun projectIdentifier(
       project: ProjectIdentifier
-    ): com.itsaky.androidide.tooling.model.ProjectIdentifier =
-      com.itsaky.androidide.tooling.model.ProjectIdentifier(
+    ): com.willow.androidide.ultra.tooling.model.ProjectIdentifier =
+      com.willow.androidide.ultra.tooling.model.ProjectIdentifier(
         projectPath = project.projectPath,
         buildIdentifier =
-          com.itsaky.androidide.tooling.model.BuildIdentifier(project.buildIdentifier.rootDir)
+          com.willow.androidide.ultra.tooling.model.BuildIdentifier(project.buildIdentifier.rootDir)
       )
 
     // ---------------------- FILE DOWNLOAD ---------------------------------
@@ -186,8 +186,8 @@ class EventTransformer {
 
     private fun fileDownloadResult(
       result: FileDownloadResult
-    ): com.itsaky.androidide.tooling.events.download.FileDownloadResult =
-      com.itsaky.androidide.tooling.events.download.FileDownloadResult(
+    ): com.willow.androidide.ultra.tooling.events.download.FileDownloadResult =
+      com.willow.androidide.ultra.tooling.events.download.FileDownloadResult(
         bytesDownloaded = result.bytesDownloaded,
         startTime = result.startTime,
         endTime = result.endTime
@@ -195,8 +195,8 @@ class EventTransformer {
 
     private fun fileDownloadDescriptor(
       descriptor: FileDownloadOperationDescriptor
-    ): com.itsaky.androidide.tooling.events.download.FileDownloadOperationDescriptor =
-      com.itsaky.androidide.tooling.events.download.FileDownloadOperationDescriptor(
+    ): com.willow.androidide.ultra.tooling.events.download.FileDownloadOperationDescriptor =
+      com.willow.androidide.ultra.tooling.events.download.FileDownloadOperationDescriptor(
         descriptor.uri,
         descriptor.name,
         descriptor.displayName
@@ -230,12 +230,12 @@ class EventTransformer {
 
     private fun taskResult(
       result: TaskOperationResult
-    ): com.itsaky.androidide.tooling.events.task.TaskOperationResult {
+    ): com.willow.androidide.ultra.tooling.events.task.TaskOperationResult {
 
       // The order of conditions must not change here.
 
       if (result is TaskSuccessResult) {
-        return com.itsaky.androidide.tooling.events.task.TaskSuccessResult(
+        return com.willow.androidide.ultra.tooling.events.task.TaskSuccessResult(
           result.isUpToDate,
           result.isFromCache,
           result.startTime,
@@ -246,14 +246,14 @@ class EventTransformer {
       }
 
       if (result is TaskFailureResult) {
-        return com.itsaky.androidide.tooling.events.task.TaskFailureResult(
+        return com.willow.androidide.ultra.tooling.events.task.TaskFailureResult(
           result.startTime,
           result.endTime
         )
       }
 
       if (result is TaskExecutionResult) {
-        return com.itsaky.androidide.tooling.events.task.TaskExecutionResult(
+        return com.willow.androidide.ultra.tooling.events.task.TaskExecutionResult(
           result.startTime,
           result.endTime,
           result.isIncremental,
@@ -262,14 +262,14 @@ class EventTransformer {
       }
 
       if (result is TaskSkippedResult) {
-        return com.itsaky.androidide.tooling.events.task.TaskSkippedResult(
+        return com.willow.androidide.ultra.tooling.events.task.TaskSkippedResult(
           result.skipMessage,
           result.startTime,
           result.endTime
         )
       }
 
-      return com.itsaky.androidide.tooling.events.task.TaskOperationResult(
+      return com.willow.androidide.ultra.tooling.events.task.TaskOperationResult(
         startTime = result.startTime,
         endTime = result.endTime
       )
@@ -277,8 +277,8 @@ class EventTransformer {
 
     private fun taskDescriptor(
       descriptor: TaskOperationDescriptor
-    ): com.itsaky.androidide.tooling.events.task.TaskOperationDescriptor =
-      com.itsaky.androidide.tooling.events.task.TaskOperationDescriptor(
+    ): com.willow.androidide.ultra.tooling.events.task.TaskOperationDescriptor =
+      com.willow.androidide.ultra.tooling.events.task.TaskOperationDescriptor(
         dependencies =
           descriptor.dependencies.filterNotNull().mapNotNull { operationDescriptor(it) }.toSet(),
         originPlugin = PluginIdentifier(descriptor.originPlugin?.displayName ?: "Unknown plugin"),
@@ -324,8 +324,8 @@ class EventTransformer {
 
     private fun testDescriptor(
       descriptor: TestOperationDescriptor
-    ): com.itsaky.androidide.tooling.events.test.TestOperationDescriptor =
-      com.itsaky.androidide.tooling.events.test.TestOperationDescriptor(
+    ): com.willow.androidide.ultra.tooling.events.test.TestOperationDescriptor =
+      com.willow.androidide.ultra.tooling.events.test.TestOperationDescriptor(
         name = descriptor.name,
         displayName = descriptor.displayName
       )
@@ -373,13 +373,13 @@ class EventTransformer {
 
     private fun transformDescriptor(
       descriptor: TransformOperationDescriptor
-    ): com.itsaky.androidide.tooling.events.transform.TransformOperationDescriptor =
-      com.itsaky.androidide.tooling.events.transform.TransformOperationDescriptor(
+    ): com.willow.androidide.ultra.tooling.events.transform.TransformOperationDescriptor =
+      com.willow.androidide.ultra.tooling.events.transform.TransformOperationDescriptor(
         name = descriptor.name,
         displayName = descriptor.displayName,
         subject = SubjectDescriptor(descriptor.subject.displayName),
         transformer =
-          com.itsaky.androidide.tooling.events.transform.TransformOperationDescriptor
+          com.willow.androidide.ultra.tooling.events.transform.TransformOperationDescriptor
             .TransformerDescriptor(descriptor.transformer.displayName),
         dependencies = descriptor.dependencies.mapNotNull { operationDescriptor(it) }.toSet()
       )
@@ -423,8 +423,8 @@ class EventTransformer {
 
     private fun workDescriptor(
       descriptor: WorkItemOperationDescriptor
-    ): com.itsaky.androidide.tooling.events.work.WorkItemOperationDescriptor =
-      com.itsaky.androidide.tooling.events.work.WorkItemOperationDescriptor(
+    ): com.willow.androidide.ultra.tooling.events.work.WorkItemOperationDescriptor =
+      com.willow.androidide.ultra.tooling.events.work.WorkItemOperationDescriptor(
         name = descriptor.name,
         displayName = descriptor.displayName,
         className = descriptor.className
@@ -442,7 +442,7 @@ class EventTransformer {
       )
 
     // ----------------------- DEFAULT ----------------------------------
-    fun progress(event: ProgressEvent): com.itsaky.androidide.tooling.events.ProgressEvent =
+    fun progress(event: ProgressEvent): com.willow.androidide.ultra.tooling.events.ProgressEvent =
       DefaultProgressEvent(
         eventTime = event.eventTime,
         displayName = event.displayName,
@@ -451,7 +451,7 @@ class EventTransformer {
 
     fun start(
       event: org.gradle.tooling.events.StartEvent
-    ): com.itsaky.androidide.tooling.events.ProgressEvent =
+    ): com.willow.androidide.ultra.tooling.events.ProgressEvent =
       DefaultStartEvent(
         eventTime = event.eventTime,
         displayName = event.displayName,
@@ -460,7 +460,7 @@ class EventTransformer {
 
     fun finish(
       event: org.gradle.tooling.events.FinishEvent
-    ): com.itsaky.androidide.tooling.events.ProgressEvent =
+    ): com.willow.androidide.ultra.tooling.events.ProgressEvent =
       DefaultFinishEvent(
         eventTime = event.eventTime,
         displayName = event.displayName,

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.adapters
+package com.willow.androidide.ultra.uidesigner.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -23,13 +23,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.itsaky.androidide.inflater.IView.SingleAttributeChangeListener
-import com.itsaky.androidide.uidesigner.R
-import com.itsaky.androidide.uidesigner.adapters.ViewAttrListAdapter.VH
-import com.itsaky.androidide.uidesigner.databinding.LayoutViewattrItemBinding
-import com.itsaky.androidide.uidesigner.models.UiAttribute
-import com.itsaky.androidide.uidesigner.viewmodel.WorkspaceViewModel
-import com.itsaky.androidide.utils.DialogUtils
+import com.willow.androidide.ultra.inflater.IView.SingleAttributeChangeListener
+import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.uidesigner.adapters.ViewAttrListAdapter.VH
+import com.willow.androidide.ultra.uidesigner.databinding.LayoutViewattrItemBinding
+import com.willow.androidide.ultra.uidesigner.models.UiAttribute
+import com.willow.androidide.ultra.uidesigner.viewmodel.WorkspaceViewModel
+import com.willow.androidide.ultra.utils.DialogUtils
 
 /**
  * A [RecyclerView.Adapter] which shows the list of attributes of the selected view in the UI
@@ -38,10 +38,10 @@ import com.itsaky.androidide.utils.DialogUtils
  * @author Akash Yadav
  */
 internal class ViewAttrListAdapter(
-  attributes: List<com.itsaky.androidide.inflater.IAttribute>,
+  attributes: List<com.willow.androidide.ultra.inflater.IAttribute>,
   private val viewModel: WorkspaceViewModel?,
-  private val onDeleteAttr: (com.itsaky.androidide.inflater.IAttribute) -> Boolean,
-  private val onClick: (com.itsaky.androidide.inflater.IAttribute) -> Unit
+  private val onDeleteAttr: (com.willow.androidide.ultra.inflater.IAttribute) -> Boolean,
+  private val onClick: (com.willow.androidide.ultra.inflater.IAttribute) -> Unit
 ) : RecyclerView.Adapter<VH>() {
 
   private val attributes = attributes.sortedBy { it.name }.toMutableList()
@@ -77,7 +77,7 @@ internal class ViewAttrListAdapter(
       val viewModel = this.viewModel ?: return@setOnClickListener
       val attrUpdateListener =
         object : SingleAttributeChangeListener() {
-          override fun onAttributeUpdated(view: com.itsaky.androidide.inflater.IView, attribute: com.itsaky.androidide.inflater.IAttribute, oldValue: String) {
+          override fun onAttributeUpdated(view: com.willow.androidide.ultra.inflater.IView, attribute: com.willow.androidide.ultra.inflater.IAttribute, oldValue: String) {
             binding.attrValue.text = attribute.value
           }
         }

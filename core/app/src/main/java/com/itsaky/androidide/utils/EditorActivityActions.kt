@@ -1,53 +1,53 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.utils
+package com.willow.androidide.ultra.utils
 
 import android.content.Context
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_FILE_TABS
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_FILE_TREE
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_TOOLBAR
-import com.itsaky.androidide.actions.ActionsRegistry
-import com.itsaky.androidide.actions.build.ProjectSyncAction
-import com.itsaky.androidide.actions.build.QuickRunWithCancellationAction
-import com.itsaky.androidide.actions.build.RunTasksAction
-import com.itsaky.androidide.actions.editor.CopyAction
-import com.itsaky.androidide.actions.editor.CutAction
-import com.itsaky.androidide.actions.editor.ExpandSelectionAction
-import com.itsaky.androidide.actions.editor.LongSelectAction
-import com.itsaky.androidide.actions.editor.PasteAction
-import com.itsaky.androidide.actions.editor.SelectAllAction
-import com.itsaky.androidide.actions.etc.DisconnectLogSendersAction
-import com.itsaky.androidide.actions.etc.FindActionMenu
-import com.itsaky.androidide.actions.etc.LaunchAppAction
-import com.itsaky.androidide.actions.etc.PreviewLayoutAction
-import com.itsaky.androidide.actions.etc.ReloadColorSchemesAction
-import com.itsaky.androidide.actions.file.CloseAllFilesAction
-import com.itsaky.androidide.actions.file.CloseFileAction
-import com.itsaky.androidide.actions.file.CloseOtherFilesAction
-import com.itsaky.androidide.actions.file.FormatCodeAction
-import com.itsaky.androidide.actions.file.SaveFileAction
-import com.itsaky.androidide.actions.filetree.CopyPathAction
-import com.itsaky.androidide.actions.filetree.DeleteAction
-import com.itsaky.androidide.actions.filetree.NewFileAction
-import com.itsaky.androidide.actions.filetree.NewFolderAction
-import com.itsaky.androidide.actions.filetree.OpenWithAction
-import com.itsaky.androidide.actions.filetree.RenameAction
-import com.itsaky.androidide.actions.text.RedoAction
-import com.itsaky.androidide.actions.text.UndoAction
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_FILE_TABS
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_FILE_TREE
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_TOOLBAR
+import com.willow.androidide.ultra.actions.ActionsRegistry
+import com.willow.androidide.ultra.actions.build.ProjectSyncAction
+import com.willow.androidide.ultra.actions.build.QuickRunWithCancellationAction
+import com.willow.androidide.ultra.actions.build.RunTasksAction
+import com.willow.androidide.ultra.actions.editor.CopyAction
+import com.willow.androidide.ultra.actions.editor.CutAction
+import com.willow.androidide.ultra.actions.editor.ExpandSelectionAction
+import com.willow.androidide.ultra.actions.editor.LongSelectAction
+import com.willow.androidide.ultra.actions.editor.PasteAction
+import com.willow.androidide.ultra.actions.editor.SelectAllAction
+import com.willow.androidide.ultra.actions.etc.DisconnectLogSendersAction
+import com.willow.androidide.ultra.actions.etc.FindActionMenu
+import com.willow.androidide.ultra.actions.etc.LaunchAppAction
+import com.willow.androidide.ultra.actions.etc.PreviewLayoutAction
+import com.willow.androidide.ultra.actions.etc.ReloadColorSchemesAction
+import com.willow.androidide.ultra.actions.file.CloseAllFilesAction
+import com.willow.androidide.ultra.actions.file.CloseFileAction
+import com.willow.androidide.ultra.actions.file.CloseOtherFilesAction
+import com.willow.androidide.ultra.actions.file.FormatCodeAction
+import com.willow.androidide.ultra.actions.file.SaveFileAction
+import com.willow.androidide.ultra.actions.filetree.CopyPathAction
+import com.willow.androidide.ultra.actions.filetree.DeleteAction
+import com.willow.androidide.ultra.actions.filetree.NewFileAction
+import com.willow.androidide.ultra.actions.filetree.NewFolderAction
+import com.willow.androidide.ultra.actions.filetree.OpenWithAction
+import com.willow.androidide.ultra.actions.filetree.RenameAction
+import com.willow.androidide.ultra.actions.text.RedoAction
+import com.willow.androidide.ultra.actions.text.UndoAction
 
 /**
  * Takes care of registering actions to the actions registry for the editor activity.

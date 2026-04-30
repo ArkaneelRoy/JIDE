@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates
+package com.willow.androidide.ultra.templates
 
 import androidx.test.core.app.ApplicationProvider
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.managers.PreferenceManager
-import com.itsaky.androidide.preferences.internal.prefManager
-import com.itsaky.androidide.utils.Environment
-import com.itsaky.androidide.utils.FileProvider
+import com.willow.androidide.ultra.managers.PreferenceManager
+import com.willow.androidide.ultra.preferences.internal.prefManager
+import com.willow.androidide.ultra.utils.Environment
+import com.willow.androidide.ultra.utils.FileProvider
 import io.mockk.every
 import io.mockk.mockkConstructor
 import io.mockk.mockkStatic
@@ -91,7 +91,7 @@ private fun generateTemplateProject(name: String, languages: Array<Language>,
                                     template: Template<*>
 ) {
   for (language in languages) {
-    val packageName = "com.itsaky.androidide.template.${language.lang}"
+    val packageName = "com.willow.androidide.ultra.template.${language.lang}"
     run {
       val projectName = "${name}GradleProject${language.name}WithoutKts"
 
@@ -125,7 +125,7 @@ private fun generateTemplateProject(name: String, languages: Array<Language>,
 }
 
 fun Template<*>.setupRootProjectParams(name: String = "TestTemplate",
-                                       packageName: String = "com.itsaky.androidide.template",
+                                       packageName: String = "com.willow.androidide.ultra.template",
                                        language: Language = Language.Kotlin,
                                        minSdk: Sdk = Sdk.Lollipop
 ) {

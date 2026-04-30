@@ -1,81 +1,81 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.tooling.api.util
+package com.willow.androidide.ultra.tooling.api.util
 
 import com.google.gson.GsonBuilder
-import com.itsaky.androidide.builder.model.DefaultJavaCompileOptions
-import com.itsaky.androidide.builder.model.IJavaCompilerSettings
-import com.itsaky.androidide.tooling.api.IProject
-import com.itsaky.androidide.tooling.api.IToolingApiClient
-import com.itsaky.androidide.tooling.api.IToolingApiServer
-import com.itsaky.androidide.tooling.api.models.AndroidProjectMetadata
-import com.itsaky.androidide.tooling.api.models.AndroidVariantMetadata
-import com.itsaky.androidide.tooling.api.models.BasicAndroidVariantMetadata
-import com.itsaky.androidide.tooling.api.models.BasicProjectMetadata
-import com.itsaky.androidide.tooling.api.models.GradleTask
-import com.itsaky.androidide.tooling.api.models.JavaModuleCompilerSettings
-import com.itsaky.androidide.tooling.api.models.JavaModuleDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleExternalDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleProjectDependency
-import com.itsaky.androidide.tooling.api.models.JavaProjectMetadata
-import com.itsaky.androidide.tooling.api.models.Launchable
-import com.itsaky.androidide.tooling.api.models.ProjectMetadata
-import com.itsaky.androidide.tooling.events.OperationDescriptor
-import com.itsaky.androidide.tooling.events.OperationResult
-import com.itsaky.androidide.tooling.events.ProgressEvent
-import com.itsaky.androidide.tooling.events.StatusEvent
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationFinishEvent
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationDescriptor
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationOperationResult
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationProgressEvent
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationStartEvent
-import com.itsaky.androidide.tooling.events.download.FileDownloadFinishEvent
-import com.itsaky.androidide.tooling.events.download.FileDownloadOperationDescriptor
-import com.itsaky.androidide.tooling.events.download.FileDownloadProgressEvent
-import com.itsaky.androidide.tooling.events.download.FileDownloadResult
-import com.itsaky.androidide.tooling.events.download.FileDownloadStartEvent
-import com.itsaky.androidide.tooling.events.internal.DefaultFinishEvent
-import com.itsaky.androidide.tooling.events.internal.DefaultOperationDescriptor
-import com.itsaky.androidide.tooling.events.internal.DefaultOperationResult
-import com.itsaky.androidide.tooling.events.internal.DefaultProgressEvent
-import com.itsaky.androidide.tooling.events.internal.DefaultStartEvent
-import com.itsaky.androidide.tooling.events.task.TaskExecutionResult
-import com.itsaky.androidide.tooling.events.task.TaskFailureResult
-import com.itsaky.androidide.tooling.events.task.TaskFinishEvent
-import com.itsaky.androidide.tooling.events.task.TaskOperationDescriptor
-import com.itsaky.androidide.tooling.events.task.TaskOperationResult
-import com.itsaky.androidide.tooling.events.task.TaskProgressEvent
-import com.itsaky.androidide.tooling.events.task.TaskSkippedResult
-import com.itsaky.androidide.tooling.events.task.TaskStartEvent
-import com.itsaky.androidide.tooling.events.task.TaskSuccessResult
-import com.itsaky.androidide.tooling.events.test.TestFinishEvent
-import com.itsaky.androidide.tooling.events.test.TestOperationDescriptor
-import com.itsaky.androidide.tooling.events.test.TestOperationResult
-import com.itsaky.androidide.tooling.events.test.TestProgressEvent
-import com.itsaky.androidide.tooling.events.test.TestStartEvent
-import com.itsaky.androidide.tooling.events.transform.TransformFinishEvent
-import com.itsaky.androidide.tooling.events.transform.TransformOperationDescriptor
-import com.itsaky.androidide.tooling.events.transform.TransformProgressEvent
-import com.itsaky.androidide.tooling.events.transform.TransformStartEvent
-import com.itsaky.androidide.tooling.events.work.WorkItemFinishEvent
-import com.itsaky.androidide.tooling.events.work.WorkItemOperationDescriptor
-import com.itsaky.androidide.tooling.events.work.WorkItemOperationResult
-import com.itsaky.androidide.tooling.events.work.WorkItemProgressEvent
-import com.itsaky.androidide.tooling.events.work.WorkItemStartEvent
+import com.willow.androidide.ultra.builder.model.DefaultJavaCompileOptions
+import com.willow.androidide.ultra.builder.model.IJavaCompilerSettings
+import com.willow.androidide.ultra.tooling.api.IProject
+import com.willow.androidide.ultra.tooling.api.IToolingApiClient
+import com.willow.androidide.ultra.tooling.api.IToolingApiServer
+import com.willow.androidide.ultra.tooling.api.models.AndroidProjectMetadata
+import com.willow.androidide.ultra.tooling.api.models.AndroidVariantMetadata
+import com.willow.androidide.ultra.tooling.api.models.BasicAndroidVariantMetadata
+import com.willow.androidide.ultra.tooling.api.models.BasicProjectMetadata
+import com.willow.androidide.ultra.tooling.api.models.GradleTask
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleCompilerSettings
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleExternalDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleProjectDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaProjectMetadata
+import com.willow.androidide.ultra.tooling.api.models.Launchable
+import com.willow.androidide.ultra.tooling.api.models.ProjectMetadata
+import com.willow.androidide.ultra.tooling.events.OperationDescriptor
+import com.willow.androidide.ultra.tooling.events.OperationResult
+import com.willow.androidide.ultra.tooling.events.ProgressEvent
+import com.willow.androidide.ultra.tooling.events.StatusEvent
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationFinishEvent
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationOperationResult
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationProgressEvent
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationStartEvent
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadFinishEvent
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadProgressEvent
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadResult
+import com.willow.androidide.ultra.tooling.events.download.FileDownloadStartEvent
+import com.willow.androidide.ultra.tooling.events.internal.DefaultFinishEvent
+import com.willow.androidide.ultra.tooling.events.internal.DefaultOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.internal.DefaultOperationResult
+import com.willow.androidide.ultra.tooling.events.internal.DefaultProgressEvent
+import com.willow.androidide.ultra.tooling.events.internal.DefaultStartEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskExecutionResult
+import com.willow.androidide.ultra.tooling.events.task.TaskFailureResult
+import com.willow.androidide.ultra.tooling.events.task.TaskFinishEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.task.TaskOperationResult
+import com.willow.androidide.ultra.tooling.events.task.TaskProgressEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskSkippedResult
+import com.willow.androidide.ultra.tooling.events.task.TaskStartEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskSuccessResult
+import com.willow.androidide.ultra.tooling.events.test.TestFinishEvent
+import com.willow.androidide.ultra.tooling.events.test.TestOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.test.TestOperationResult
+import com.willow.androidide.ultra.tooling.events.test.TestProgressEvent
+import com.willow.androidide.ultra.tooling.events.test.TestStartEvent
+import com.willow.androidide.ultra.tooling.events.transform.TransformFinishEvent
+import com.willow.androidide.ultra.tooling.events.transform.TransformOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.transform.TransformProgressEvent
+import com.willow.androidide.ultra.tooling.events.transform.TransformStartEvent
+import com.willow.androidide.ultra.tooling.events.work.WorkItemFinishEvent
+import com.willow.androidide.ultra.tooling.events.work.WorkItemOperationDescriptor
+import com.willow.androidide.ultra.tooling.events.work.WorkItemOperationResult
+import com.willow.androidide.ultra.tooling.events.work.WorkItemProgressEvent
+import com.willow.androidide.ultra.tooling.events.work.WorkItemStartEvent
 import org.eclipse.lsp4j.jsonrpc.Launcher
 import java.io.File
 import java.io.InputStream

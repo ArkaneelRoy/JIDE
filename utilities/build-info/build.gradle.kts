@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 
 import com.android.SdkConstants
-import com.itsaky.androidide.build.config.AGP_VERSION_MINIMUM
-import com.itsaky.androidide.build.config.BuildConfig
-import com.itsaky.androidide.build.config.CI
-import com.itsaky.androidide.build.config.FDroidConfig
-import com.itsaky.androidide.build.config.ProjectConfig
-import com.itsaky.androidide.build.config.VersionUtils
-import com.itsaky.androidide.build.config.downloadVersion
-import com.itsaky.androidide.build.config.publishingVersion
-import com.itsaky.androidide.build.config.replaceContents
-import com.itsaky.androidide.build.config.simpleVersionName
+import com.willow.androidide.ultra.build.config.AGP_VERSION_MINIMUM
+import com.willow.androidide.ultra.build.config.BuildConfig
+import com.willow.androidide.ultra.build.config.CI
+import com.willow.androidide.ultra.build.config.FDroidConfig
+import com.willow.androidide.ultra.build.config.ProjectConfig
+import com.willow.androidide.ultra.build.config.VersionUtils
+import com.willow.androidide.ultra.build.config.downloadVersion
+import com.willow.androidide.ultra.build.config.publishingVersion
+import com.willow.androidide.ultra.build.config.replaceContents
+import com.willow.androidide.ultra.build.config.simpleVersionName
 import org.jetbrains.kotlin.incremental.createDirectory
 
 plugins {
@@ -35,7 +35,7 @@ plugins {
   id("com.vanniktech.maven.publish.base")
 }
 
-description = "Information about the AndroidIDE build"
+description = "Information about the AndroidIDE Ultra build"
 
 val buildInfoGenDir: Provider<Directory> = project.layout.buildDirectory.dir("generated/buildInfo")
   .also { it.get().asFile.createDirectory() }

@@ -1,54 +1,54 @@
 /*
- * This file is part of AndroidIDE.
+ * This file is part of AndroidIDE Ultra.
  *
  *
  *
- * AndroidIDE is free software: you can redistribute it and/or modify
+ * AndroidIDE Ultra is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * AndroidIDE is distributed in the hope that it will be useful,
+ * AndroidIDE Ultra is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ * along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
-package com.itsaky.androidide.lsp;
+package com.willow.androidide.ultra.lsp;
 
-import static com.itsaky.androidide.resources.R.drawable;
-import static com.itsaky.androidide.resources.R.string;
+import static com.willow.androidide.ultra.resources.R.drawable;
+import static com.willow.androidide.ultra.resources.R.string;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.FileIOUtils;
 import com.blankj.utilcode.util.FileUtils;
-import com.itsaky.androidide.activities.editor.EditorHandlerActivity;
-import com.itsaky.androidide.adapters.DiagnosticsAdapter;
-import com.itsaky.androidide.adapters.SearchListAdapter;
-import com.itsaky.androidide.editor.ui.IDEEditor;
-import com.itsaky.androidide.fragments.sheets.ProgressSheet;
-import com.itsaky.androidide.lsp.api.ILanguageClient;
-import com.itsaky.androidide.lsp.models.CodeActionItem;
-import com.itsaky.androidide.lsp.models.DiagnosticItem;
-import com.itsaky.androidide.lsp.models.DiagnosticResult;
-import com.itsaky.androidide.lsp.models.PerformCodeActionParams;
-import com.itsaky.androidide.lsp.models.ShowDocumentParams;
-import com.itsaky.androidide.lsp.models.ShowDocumentResult;
-import com.itsaky.androidide.lsp.models.TextEdit;
-import com.itsaky.androidide.lsp.util.DiagnosticUtil;
-import com.itsaky.androidide.models.DiagnosticGroup;
-import com.itsaky.androidide.models.Location;
-import com.itsaky.androidide.models.Range;
-import com.itsaky.androidide.models.SearchResult;
-import com.itsaky.androidide.tasks.TaskExecutor;
-import com.itsaky.androidide.ui.CodeEditorView;
-import com.itsaky.androidide.utils.FlashbarActivityUtilsKt;
-import com.itsaky.androidide.utils.FlashbarUtilsKt;
-import com.itsaky.androidide.utils.LSPUtils;
+import com.willow.androidide.ultra.activities.editor.EditorHandlerActivity;
+import com.willow.androidide.ultra.adapters.DiagnosticsAdapter;
+import com.willow.androidide.ultra.adapters.SearchListAdapter;
+import com.willow.androidide.ultra.editor.ui.IDEEditor;
+import com.willow.androidide.ultra.fragments.sheets.ProgressSheet;
+import com.willow.androidide.ultra.lsp.api.ILanguageClient;
+import com.willow.androidide.ultra.lsp.models.CodeActionItem;
+import com.willow.androidide.ultra.lsp.models.DiagnosticItem;
+import com.willow.androidide.ultra.lsp.models.DiagnosticResult;
+import com.willow.androidide.ultra.lsp.models.PerformCodeActionParams;
+import com.willow.androidide.ultra.lsp.models.ShowDocumentParams;
+import com.willow.androidide.ultra.lsp.models.ShowDocumentResult;
+import com.willow.androidide.ultra.lsp.models.TextEdit;
+import com.willow.androidide.ultra.lsp.util.DiagnosticUtil;
+import com.willow.androidide.ultra.models.DiagnosticGroup;
+import com.willow.androidide.ultra.models.Location;
+import com.willow.androidide.ultra.models.Range;
+import com.willow.androidide.ultra.models.SearchResult;
+import com.willow.androidide.ultra.tasks.TaskExecutor;
+import com.willow.androidide.ultra.ui.CodeEditorView;
+import com.willow.androidide.ultra.utils.FlashbarActivityUtilsKt;
+import com.willow.androidide.ultra.utils.FlashbarUtilsKt;
+import com.willow.androidide.ultra.utils.LSPUtils;
 import io.github.rosemoe.sora.lang.diagnostic.DiagnosticsContainer;
 import io.github.rosemoe.sora.text.Content;
 import java.io.File;
@@ -67,7 +67,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * AndroidIDE specific implementation of the LanguageClient
+ * AndroidIDE Ultra specific implementation of the LanguageClient
  */
 public class IDELanguageClientImpl implements ILanguageClient {
 

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~  This file is part of AndroidIDE.
+  ~  This file is part of AndroidIDE Ultra.
   ~
-  ~  AndroidIDE is free software: you can redistribute it and/or modify
+  ~  AndroidIDE Ultra is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
   ~  the Free Software Foundation, either version 3 of the License, or
   ~  (at your option) any later version.
   ~
-  ~  AndroidIDE is distributed in the hope that it will be useful,
+  ~  AndroidIDE Ultra is distributed in the hope that it will be useful,
   ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~  GNU General Public License for more details.
   ~
   ~  You should have received a copy of the GNU General Public License
-  ~   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+  ~   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
 <resources>
@@ -49,7 +49,7 @@
   <color name="_blue_wave_light_colorOnSurfaceVariant">#ff44464f</color>
   <color name="_blue_wave_light_colorOutline">#ff74767f</color>
 
-  <style name="Theme.AndroidIDE.BlueWave" parent="Theme.AndroidIDE">
+  <style name="Theme.AndroidIDE Ultra.BlueWave" parent="Theme.AndroidIDE Ultra">
     <item name="colorPrimary">@color/_blue_wave_light_colorPrimary</item>
     <item name="colorPrimaryContainer">@color/_blue_wave_light_colorPrimaryContainer</item>
     <item name="colorPrimaryDark">@color/_blue_wave_light_colorPrimaryDark</item>
@@ -118,7 +118,7 @@
   <color name="_blue_wave_dark_colorOnSurfaceVariant">#ffc5c6d0</color>
   <color name="_blue_wave_dark_colorOutline">#ff8f9099</color>
 
-  <style name="Theme.AndroidIDE.BlueWave.Dark" parent="Theme.AndroidIDE.BlueWave">
+  <style name="Theme.AndroidIDE Ultra.BlueWave.Dark" parent="Theme.AndroidIDE Ultra.BlueWave">
     <item name="colorPrimary">@color/_blue_wave_dark_colorPrimary</item>
     <item name="colorPrimaryContainer">@color/_blue_wave_dark_colorPrimaryContainer</item>
     <item name="colorPrimaryDark">@color/_blue_wave_dark_colorPrimaryDark</item>

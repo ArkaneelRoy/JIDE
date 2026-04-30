@@ -1,31 +1,31 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.plugins
+package com.willow.androidide.ultra.plugins
 
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.itsaky.androidide.build.config.BuildConfig
-import com.itsaky.androidide.build.config.downloadVersion
-import com.itsaky.androidide.plugins.tasks.AddAndroidJarToAssetsTask
-import com.itsaky.androidide.plugins.tasks.AddFileToAssetsTask
-import com.itsaky.androidide.plugins.tasks.GenerateInitScriptTask
-import com.itsaky.androidide.plugins.tasks.GradleWrapperGeneratorTask
-import com.itsaky.androidide.plugins.tasks.SetupAapt2Task
-import com.itsaky.androidide.plugins.util.SdkUtils.getAndroidJar
+import com.willow.androidide.ultra.build.config.BuildConfig
+import com.willow.androidide.ultra.build.config.downloadVersion
+import com.willow.androidide.ultra.plugins.tasks.AddAndroidJarToAssetsTask
+import com.willow.androidide.ultra.plugins.tasks.AddFileToAssetsTask
+import com.willow.androidide.ultra.plugins.tasks.GenerateInitScriptTask
+import com.willow.androidide.ultra.plugins.tasks.GradleWrapperGeneratorTask
+import com.willow.androidide.ultra.plugins.tasks.SetupAapt2Task
+import com.willow.androidide.ultra.plugins.util.SdkUtils.getAndroidJar
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.configurationcache.extensions.capitalized
@@ -35,7 +35,7 @@ import org.gradle.configurationcache.extensions.capitalized
  *
  * @author Akash Yadav
  */
-class AndroidIDEAssetsPlugin : Plugin<Project> {
+class AndroidIDE UltraAssetsPlugin : Plugin<Project> {
 
   override fun apply(target: Project) {
     target.run {

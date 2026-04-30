@@ -1,37 +1,37 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.actions.diagnostics
+package com.willow.androidide.ultra.lsp.java.actions.diagnostics
 
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.requireContext
-import com.itsaky.androidide.actions.requirePath
-import com.itsaky.androidide.lsp.java.R
-import com.itsaky.androidide.lsp.java.actions.BaseJavaCodeAction
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.models.DiagnosticCode
-import com.itsaky.androidide.lsp.java.utils.positionForImports
-import com.itsaky.androidide.lsp.models.CodeActionItem
-import com.itsaky.androidide.lsp.models.CodeActionKind
-import com.itsaky.androidide.lsp.models.DocumentChange
-import com.itsaky.androidide.lsp.models.TextEdit
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.utils.DialogUtils
-import com.itsaky.androidide.utils.flashInfo
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.requireContext
+import com.willow.androidide.ultra.actions.requirePath
+import com.willow.androidide.ultra.lsp.java.R
+import com.willow.androidide.ultra.lsp.java.actions.BaseJavaCodeAction
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.models.DiagnosticCode
+import com.willow.androidide.ultra.lsp.java.utils.positionForImports
+import com.willow.androidide.ultra.lsp.models.CodeActionItem
+import com.willow.androidide.ultra.lsp.models.CodeActionKind
+import com.willow.androidide.ultra.lsp.models.DocumentChange
+import com.willow.androidide.ultra.lsp.models.TextEdit
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.utils.DialogUtils
+import com.willow.androidide.ultra.utils.flashInfo
 import org.slf4j.LoggerFactory
 import java.nio.file.Path
 

@@ -1,4 +1,4 @@
-package com.itsaky.androidide.lsp.java.test;
+package com.willow.androidide.ultra.lsp.java.test;
 
 import java.util.*;
 

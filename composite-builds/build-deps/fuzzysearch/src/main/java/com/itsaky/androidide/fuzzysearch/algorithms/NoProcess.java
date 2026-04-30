@@ -1,6 +1,6 @@
-package com.itsaky.androidide.fuzzysearch.algorithms;
+package com.willow.androidide.ultra.fuzzysearch.algorithms;
 
-import com.itsaky.androidide.fuzzysearch.StringProcessor;
+import com.willow.androidide.ultra.fuzzysearch.StringProcessor;
 
 /**
  * @deprecated Use {@code ToStringFunction#NO_PROCESS} instead.

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.ui
+package com.willow.androidide.ultra.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -25,27 +25,27 @@ import android.view.LayoutInflater
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.isVisible
 import com.blankj.utilcode.util.SizeUtils
-import com.itsaky.androidide.activities.editor.BaseEditorActivity
-import com.itsaky.androidide.app.BaseApplication
-import com.itsaky.androidide.editor.api.IEditor
-import com.itsaky.androidide.editor.databinding.LayoutCodeEditorBinding
-import com.itsaky.androidide.editor.ui.EditorSearchLayout
-import com.itsaky.androidide.editor.ui.IDEEditor
-import com.itsaky.androidide.editor.ui.IDEEditor.Companion.createInputTypeFlags
-import com.itsaky.androidide.editor.utils.ContentReadWrite.readContent
-import com.itsaky.androidide.editor.utils.ContentReadWrite.writeTo
-import com.itsaky.androidide.eventbus.events.preferences.PreferenceChangeEvent
-import com.itsaky.androidide.lsp.IDELanguageClientImpl
-import com.itsaky.androidide.lsp.api.ILanguageServer
-import com.itsaky.androidide.lsp.api.ILanguageServerRegistry
-import com.itsaky.androidide.lsp.java.JavaLanguageServer
-import com.itsaky.androidide.lsp.xml.XMLLanguageServer
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE
-import com.itsaky.androidide.tasks.cancelIfActive
-import com.itsaky.androidide.tasks.runOnUiThread
-import com.itsaky.androidide.utils.customOrJBMono
+import com.willow.androidide.ultra.activities.editor.BaseEditorActivity
+import com.willow.androidide.ultra.app.BaseApplication
+import com.willow.androidide.ultra.editor.api.IEditor
+import com.willow.androidide.ultra.editor.databinding.LayoutCodeEditorBinding
+import com.willow.androidide.ultra.editor.ui.EditorSearchLayout
+import com.willow.androidide.ultra.editor.ui.IDEEditor
+import com.willow.androidide.ultra.editor.ui.IDEEditor.Companion.createInputTypeFlags
+import com.willow.androidide.ultra.editor.utils.ContentReadWrite.readContent
+import com.willow.androidide.ultra.editor.utils.ContentReadWrite.writeTo
+import com.willow.androidide.ultra.eventbus.events.preferences.PreferenceChangeEvent
+import com.willow.androidide.ultra.lsp.IDELanguageClientImpl
+import com.willow.androidide.ultra.lsp.api.ILanguageServer
+import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
+import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
+import com.willow.androidide.ultra.lsp.xml.XMLLanguageServer
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.tasks.cancelIfActive
+import com.willow.androidide.ultra.tasks.runOnUiThread
+import com.willow.androidide.ultra.utils.customOrJBMono
 import io.github.rosemoe.sora.text.Content
 import io.github.rosemoe.sora.text.LineSeparator
 import io.github.rosemoe.sora.widget.CodeEditor
@@ -130,7 +130,7 @@ class CodeEditorView(
       isHighlightCurrentBlock = true
       props.autoCompletionOnComposing = true
       dividerWidth = SizeUtils.dp2px(2f).toFloat()
-      colorScheme = SchemeAndroidIDE.newInstance(context)
+      colorScheme = SchemeAndroidIDE Ultra.newInstance(context)
       lineSeparator = LineSeparator.LF
     }
 

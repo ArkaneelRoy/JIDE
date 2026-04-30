@@ -16,7 +16,7 @@ install_dir=$HOME
 sdkver_org=34.0.4
 with_cmdline=true
 assume_yes=false
-manifest="https://raw.githubusercontent.com/AndroidIDEOfficial/androidide-tools/main/manifest.json"
+manifest="https://raw.githubusercontent.com/AndroidIDE UltraOfficial/androidide-tools/main/manifest.json"
 pkgm="pkg"
 pkg_curl="libcurl"
 pkgs="jq tar"
@@ -90,8 +90,8 @@ install_packages() {
 }
 
 print_help() {
-  echo "AndroidIDE build tools installer"
-  echo "This script helps you easily install build tools in AndroidIDE."
+  echo "AndroidIDE Ultra build tools installer"
+  echo "This script helps you easily install build tools in AndroidIDE Ultra."
   echo ""
   echo "Usage:"
   echo "${0} -s 34.0.4 -c -j 17"
@@ -266,7 +266,7 @@ fi
 check_command_exists "$pkgm"
 
 if [ "$jdk_version" == "21" ]; then
-  print_warn "OpenJDK 21 support in AndroidIDE is experimental. It may or may not work properly."
+  print_warn "OpenJDK 21 support in AndroidIDE Ultra is experimental. It may or may not work properly."
   print_warn "Also, OpenJDK 21 is only supported in Gradle v8.4 and newer. Older versions of Gradle will NOT work!"
   if ! is_yes "Do you still want to install OpenJDK 21?"; then
     jdk_version="17"

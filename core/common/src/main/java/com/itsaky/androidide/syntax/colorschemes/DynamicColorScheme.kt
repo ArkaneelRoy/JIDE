@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.syntax.colorschemes
+package com.willow.androidide.ultra.syntax.colorschemes
 
 import android.content.Context
-import com.itsaky.androidide.common.R.attr
-import com.itsaky.androidide.utils.isSystemInDarkMode
-import com.itsaky.androidide.utils.resolveAttr
+import com.willow.androidide.ultra.common.R.attr
+import com.willow.androidide.ultra.utils.isSystemInDarkMode
+import com.willow.androidide.ultra.utils.resolveAttr
 
 /**
- * [SchemeAndroidIDE] implementation that uses dynamic colors.
+ * [SchemeAndroidIDE Ultra] implementation that uses dynamic colors.
  *
  * @author Akash Yadav
  */
-open class DynamicColorScheme : SchemeAndroidIDE() {
+open class DynamicColorScheme : SchemeAndroidIDE Ultra() {
 
   private var isInDarkMode: Boolean = true
 

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.utils
+package com.willow.androidide.ultra.utils
 
 import android.content.Context
 import android.os.Bundle
@@ -35,24 +35,24 @@ import com.google.android.material.navigation.NavigationBarMenuView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem
-import com.itsaky.androidide.actions.ActionsRegistry
-import com.itsaky.androidide.actions.FillMenuParams
-import com.itsaky.androidide.actions.SidebarActionItem
-import com.itsaky.androidide.actions.internal.DefaultActionsRegistry
-import com.itsaky.androidide.actions.sidebar.BuildVariantsSidebarAction
-import com.itsaky.androidide.actions.sidebar.CloseProjectSidebarAction
-import com.itsaky.androidide.actions.sidebar.FileTreeSidebarAction
-import com.itsaky.androidide.actions.sidebar.PreferencesSidebarAction
-import com.itsaky.androidide.actions.sidebar.TerminalSidebarAction
-import com.itsaky.androidide.fragments.sidebar.EditorSidebarFragment
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem
+import com.willow.androidide.ultra.actions.ActionsRegistry
+import com.willow.androidide.ultra.actions.FillMenuParams
+import com.willow.androidide.ultra.actions.SidebarActionItem
+import com.willow.androidide.ultra.actions.internal.DefaultActionsRegistry
+import com.willow.androidide.ultra.actions.sidebar.BuildVariantsSidebarAction
+import com.willow.androidide.ultra.actions.sidebar.CloseProjectSidebarAction
+import com.willow.androidide.ultra.actions.sidebar.FileTreeSidebarAction
+import com.willow.androidide.ultra.actions.sidebar.PreferencesSidebarAction
+import com.willow.androidide.ultra.actions.sidebar.TerminalSidebarAction
+import com.willow.androidide.ultra.fragments.sidebar.EditorSidebarFragment
 import java.lang.ref.WeakReference
 
 
 /**
  * Sets up the actions that are shown in the
- * [EditorActivityKt][com.itsaky.androidide.activities.editor.EditorActivityKt]'s drawer's sidebar.
+ * [EditorActivityKt][com.willow.androidide.ultra.activities.editor.EditorActivityKt]'s drawer's sidebar.
  *
  * @author Akash Yadav
  */

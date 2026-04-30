@@ -1,43 +1,43 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.handlers
+package com.willow.androidide.ultra.handlers
 
 import android.content.Context
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import com.itsaky.androidide.eventbus.events.Event
-import com.itsaky.androidide.eventbus.events.EventReceiver
-import com.itsaky.androidide.eventbus.events.editor.OnCreateEvent
-import com.itsaky.androidide.eventbus.events.editor.OnDestroyEvent
-import com.itsaky.androidide.eventbus.events.editor.OnPauseEvent
-import com.itsaky.androidide.eventbus.events.editor.OnResumeEvent
-import com.itsaky.androidide.eventbus.events.editor.OnStartEvent
-import com.itsaky.androidide.eventbus.events.editor.OnStopEvent
-import com.itsaky.androidide.projects.internal.ProjectManagerImpl
-import com.itsaky.androidide.projects.util.BootClasspathProvider
-import com.itsaky.androidide.utils.EditorActivityActions
-import com.itsaky.androidide.utils.EditorSidebarActions
-import com.itsaky.androidide.utils.Environment
+import com.willow.androidide.ultra.eventbus.events.Event
+import com.willow.androidide.ultra.eventbus.events.EventReceiver
+import com.willow.androidide.ultra.eventbus.events.editor.OnCreateEvent
+import com.willow.androidide.ultra.eventbus.events.editor.OnDestroyEvent
+import com.willow.androidide.ultra.eventbus.events.editor.OnPauseEvent
+import com.willow.androidide.ultra.eventbus.events.editor.OnResumeEvent
+import com.willow.androidide.ultra.eventbus.events.editor.OnStartEvent
+import com.willow.androidide.ultra.eventbus.events.editor.OnStopEvent
+import com.willow.androidide.ultra.projects.internal.ProjectManagerImpl
+import com.willow.androidide.ultra.projects.util.BootClasspathProvider
+import com.willow.androidide.ultra.utils.EditorActivityActions
+import com.willow.androidide.ultra.utils.EditorSidebarActions
+import com.willow.androidide.ultra.utils.Environment
 import org.greenrobot.eventbus.EventBus
 import java.util.concurrent.CompletableFuture
 
 /**
- * Observes lifecycle events if [com.itsaky.androidide.EditorActivityKt].
+ * Observes lifecycle events if [com.willow.androidide.ultra.EditorActivityKt].
  *
  * @author Akash Yadav
  */

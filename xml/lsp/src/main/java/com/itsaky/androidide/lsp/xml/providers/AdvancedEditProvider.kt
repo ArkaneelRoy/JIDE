@@ -1,41 +1,41 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.xml.providers
+package com.willow.androidide.ultra.lsp.xml.providers
 
-import com.itsaky.androidide.eventbus.events.editor.ChangeType
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.lsp.api.ILanguageServerRegistry
-import com.itsaky.androidide.lsp.models.CodeActionItem
-import com.itsaky.androidide.lsp.models.CodeActionKind
-import com.itsaky.androidide.lsp.models.DocumentChange
-import com.itsaky.androidide.lsp.models.PerformCodeActionParams
-import com.itsaky.androidide.lsp.models.TextEdit
-import com.itsaky.androidide.lsp.xml.XMLLanguageServer
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.projects.FileManager
-import com.itsaky.androidide.treesitter.TSParser
-import com.itsaky.androidide.treesitter.TSQuery
-import com.itsaky.androidide.treesitter.TSQueryCapture
-import com.itsaky.androidide.treesitter.TSQueryCursor
-import com.itsaky.androidide.treesitter.TSQueryError
-import com.itsaky.androidide.treesitter.TSQueryMatch
-import com.itsaky.androidide.treesitter.TSTree
-import com.itsaky.androidide.treesitter.xml.TSLanguageXml
+import com.willow.androidide.ultra.eventbus.events.editor.ChangeType
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
+import com.willow.androidide.ultra.lsp.models.CodeActionItem
+import com.willow.androidide.ultra.lsp.models.CodeActionKind
+import com.willow.androidide.ultra.lsp.models.DocumentChange
+import com.willow.androidide.ultra.lsp.models.PerformCodeActionParams
+import com.willow.androidide.ultra.lsp.models.TextEdit
+import com.willow.androidide.ultra.lsp.xml.XMLLanguageServer
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.projects.FileManager
+import com.willow.androidide.ultra.treesitter.TSParser
+import com.willow.androidide.ultra.treesitter.TSQuery
+import com.willow.androidide.ultra.treesitter.TSQueryCapture
+import com.willow.androidide.ultra.treesitter.TSQueryCursor
+import com.willow.androidide.ultra.treesitter.TSQueryError
+import com.willow.androidide.ultra.treesitter.TSQueryMatch
+import com.willow.androidide.ultra.treesitter.TSTree
+import com.willow.androidide.ultra.treesitter.xml.TSLanguageXml
 
 /** @author Akash Yadav */
 object AdvancedEditProvider {

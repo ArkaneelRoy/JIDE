@@ -1,35 +1,35 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner
+package com.willow.androidide.ultra.uidesigner
 
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import com.itsaky.androidide.app.BaseIDEActivity
-import com.itsaky.androidide.editor.language.treesitter.XMLLanguage
-import com.itsaky.androidide.editor.schemes.IDEColorSchemeProvider
-import com.itsaky.androidide.editor.ui.IDEEditor
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE
-import com.itsaky.androidide.uidesigner.databinding.ActivityShowXmlBinding
-import com.itsaky.androidide.utils.flashInfo
-import com.itsaky.androidide.utils.jetbrainsMono
+import com.willow.androidide.ultra.app.BaseIDEActivity
+import com.willow.androidide.ultra.editor.language.treesitter.XMLLanguage
+import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider
+import com.willow.androidide.ultra.editor.ui.IDEEditor
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.uidesigner.databinding.ActivityShowXmlBinding
+import com.willow.androidide.ultra.utils.flashInfo
+import com.willow.androidide.ultra.utils.jetbrainsMono
 import io.github.rosemoe.sora.event.Unsubscribe
 import io.github.rosemoe.sora.widget.CodeEditor
 import org.slf4j.LoggerFactory
@@ -62,7 +62,7 @@ class ShowXmlActivity : BaseIDEActivity() {
     this.binding!!.toolbar.setNavigationOnClickListener { finish() }
 
     this.editor?.let { editor ->
-      editor.colorScheme = SchemeAndroidIDE.newInstance(this@ShowXmlActivity)
+      editor.colorScheme = SchemeAndroidIDE Ultra.newInstance(this@ShowXmlActivity)
       editor.editable = false
       editor.typefaceText = jetbrainsMono()
       editor.typefaceLineNumber = jetbrainsMono()

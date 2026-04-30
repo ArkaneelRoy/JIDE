@@ -23,10 +23,10 @@
  * questions.
  */
 
-package com.itsaky.androidide.build.propparser;
+package com.willow.androidide.ultra.build.propparser;
 
-import com.itsaky.androidide.build.propparser.gen.ClassGenerator;
-import com.itsaky.androidide.build.propparser.parser.MessageFile;
+import com.willow.androidide.ultra.build.propparser.gen.ClassGenerator;
+import com.willow.androidide.ultra.build.propparser.parser.MessageFile;
 import java.io.File;
 import java.io.PrintStream;
 import java.util.Map;

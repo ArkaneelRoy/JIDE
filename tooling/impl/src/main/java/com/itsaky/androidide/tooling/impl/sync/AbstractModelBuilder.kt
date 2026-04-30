@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.tooling.impl.sync
+package com.willow.androidide.ultra.tooling.impl.sync
 
 import com.android.builder.model.v2.ide.SyncIssue
 import com.android.builder.model.v2.models.Versions
-import com.itsaky.androidide.builder.model.DefaultSyncIssue
-import com.itsaky.androidide.builder.model.IDESyncIssue
-import com.itsaky.androidide.tooling.api.messages.InitializeProjectParams
-import com.itsaky.androidide.tooling.api.util.ToolingProps
-import com.itsaky.androidide.utils.AndroidPluginVersion
-import com.itsaky.androidide.utils.AndroidPluginVersion.Companion.MINIMUM_SUPPORTED
-import com.itsaky.androidide.utils.ILogger
-import com.itsaky.androidide.utils.LogUtils
-import com.itsaky.androidide.utils.StopWatch
+import com.willow.androidide.ultra.builder.model.DefaultSyncIssue
+import com.willow.androidide.ultra.builder.model.IDESyncIssue
+import com.willow.androidide.ultra.tooling.api.messages.InitializeProjectParams
+import com.willow.androidide.ultra.tooling.api.util.ToolingProps
+import com.willow.androidide.ultra.utils.AndroidPluginVersion
+import com.willow.androidide.ultra.utils.AndroidPluginVersion.Companion.MINIMUM_SUPPORTED
+import com.willow.androidide.ultra.utils.ILogger
+import com.willow.androidide.ultra.utils.LogUtils
+import com.willow.androidide.ultra.utils.StopWatch
 import org.gradle.api.Action
 import org.gradle.tooling.BuildController
 import org.gradle.tooling.UnknownModelException
@@ -71,7 +71,7 @@ abstract class AbstractModelBuilder<P, R>(
       if (agpVersion < MINIMUM_SUPPORTED) {
         throw ModelBuilderException(
           agpVersion.toString()
-              + " is not supported by AndroidIDE. "
+              + " is not supported by AndroidIDE Ultra. "
               + "Please update your project to use at least "
               + MINIMUM_SUPPORTED
               + " to build this project.")
@@ -81,7 +81,7 @@ abstract class AbstractModelBuilder<P, R>(
       if (!newerAgpWarned.get() && agpVersion > ToolingProps.latestTestedAgpVersion) {
         val syncIssue = DefaultSyncIssue(
           data = "${agpVersion.toStringSimple()}:${ToolingProps.latestTestedAgpVersion.toStringSimple()}",
-          message = "You are using Android Gradle Plugin version that has not been tested with AndroidIDE.",
+          message = "You are using Android Gradle Plugin version that has not been tested with AndroidIDE Ultra.",
           multiLineMessage = null,
           severity = SyncIssue.SEVERITY_WARNING,
           type = IDESyncIssue.TYPE_AGP_VERSION_TOO_NEW
@@ -195,7 +195,7 @@ abstract class AbstractModelBuilder<P, R>(
 
     /**
      * Generates the log message for the given objects. This works similar to
-     * [ generateMessage(Object...)][com.itsaky.androidide.utils.ILogger.generateMessage] in [ILogger][com.itsaky.androidide.utils.ILogger].
+     * [ generateMessage(Object...)][com.willow.androidide.ultra.utils.ILogger.generateMessage] in [ILogger][com.willow.androidide.ultra.utils.ILogger].
      *
      * @param objects The objects to print in the message.
      * @return The generated message.

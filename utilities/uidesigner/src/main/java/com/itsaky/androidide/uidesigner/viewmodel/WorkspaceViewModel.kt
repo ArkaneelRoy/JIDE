@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.viewmodel
+package com.willow.androidide.ultra.uidesigner.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.itsaky.androidide.uidesigner.models.UiAttribute
-import com.itsaky.androidide.uidesigner.undo.UndoManager
+import com.willow.androidide.ultra.uidesigner.models.UiAttribute
+import com.willow.androidide.ultra.uidesigner.undo.UndoManager
 import java.io.File
 
 internal class WorkspaceViewModel : ViewModel() {
   internal val _drawerOpened = MutableLiveData(false)
   internal val _errText = MutableLiveData("")
   internal val _workspaceScreen = MutableLiveData(SCREEN_WORKSPACE)
-  internal val _view = MutableLiveData<com.itsaky.androidide.inflater.IView>(null)
+  internal val _view = MutableLiveData<com.willow.androidide.ultra.inflater.IView>(null)
   internal val _selectedAttr = MutableLiveData<UiAttribute>(null)
   internal val _addAttrMode = MutableLiveData(false)
   internal val _undoManager = MutableLiveData(UndoManager())
@@ -68,7 +68,7 @@ internal class WorkspaceViewModel : ViewModel() {
       _workspaceScreen.value = value
     }
 
-  var view: com.itsaky.androidide.inflater.IView?
+  var view: com.willow.androidide.ultra.inflater.IView?
     get() = this._view.value
     set(value) {
       this._view.value = value

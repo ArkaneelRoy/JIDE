@@ -1,4 +1,4 @@
-package com.itsaky.androidide.logsender;
+package com.willow.androidide.ultra.logsender;
 
 /**
  * The LogSender interface.

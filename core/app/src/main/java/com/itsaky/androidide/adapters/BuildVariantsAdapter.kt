@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.adapters
+package com.willow.androidide.ultra.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
-import com.itsaky.androidide.R
-import com.itsaky.androidide.databinding.LayoutBuildVariantItemBinding
-import com.itsaky.androidide.tooling.api.IAndroidProject
-import com.itsaky.androidide.tooling.api.models.BuildVariantInfo
-import com.itsaky.androidide.tooling.api.models.BuildVariantInfo.Companion.withSelection
-import com.itsaky.androidide.viewmodel.BuildVariantsViewModel
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.databinding.LayoutBuildVariantItemBinding
+import com.willow.androidide.ultra.tooling.api.IAndroidProject
+import com.willow.androidide.ultra.tooling.api.models.BuildVariantInfo
+import com.willow.androidide.ultra.tooling.api.models.BuildVariantInfo.Companion.withSelection
+import com.willow.androidide.ultra.viewmodel.BuildVariantsViewModel
 import java.util.Objects
 
 /**

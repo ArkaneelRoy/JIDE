@@ -1,4 +1,4 @@
-package com.itsaky.androidide.flashbar.anim
+package com.willow.androidide.ultra.flashbar.anim
 
 import android.animation.Animator
 import android.animation.AnimatorSet
@@ -9,13 +9,13 @@ import android.view.animation.AnticipateInterpolator
 import android.view.animation.Interpolator
 import android.view.animation.OvershootInterpolator
 import androidx.annotation.InterpolatorRes
-import com.itsaky.androidide.flashbar.Flashbar
-import com.itsaky.androidide.flashbar.Flashbar.Gravity.BOTTOM
-import com.itsaky.androidide.flashbar.Flashbar.Gravity.TOP
-import com.itsaky.androidide.flashbar.anim.FlashAnimBarBuilder.Direction.LEFT
-import com.itsaky.androidide.flashbar.anim.FlashAnimBarBuilder.Direction.RIGHT
-import com.itsaky.androidide.flashbar.anim.FlashAnimBarBuilder.Type.ENTER
-import com.itsaky.androidide.flashbar.anim.FlashAnimBarBuilder.Type.EXIT
+import com.willow.androidide.ultra.flashbar.Flashbar
+import com.willow.androidide.ultra.flashbar.Flashbar.Gravity.BOTTOM
+import com.willow.androidide.ultra.flashbar.Flashbar.Gravity.TOP
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimBarBuilder.Direction.LEFT
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimBarBuilder.Direction.RIGHT
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimBarBuilder.Type.ENTER
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimBarBuilder.Type.EXIT
 
 class FlashAnimBarBuilder(context: Context) : BaseFlashAnimBuilder(context) {
 

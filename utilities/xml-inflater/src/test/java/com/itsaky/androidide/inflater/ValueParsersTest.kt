@@ -1,35 +1,35 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater
+package com.willow.androidide.ultra.inflater
 
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.inflater.internal.utils.parseBoolean
-import com.itsaky.androidide.inflater.internal.utils.parseColor
-import com.itsaky.androidide.inflater.internal.utils.parseDimension
-import com.itsaky.androidide.inflater.internal.utils.parseDrawable
-import com.itsaky.androidide.inflater.internal.utils.parseInteger
-import com.itsaky.androidide.inflater.internal.utils.parseIntegerArray
-import com.itsaky.androidide.inflater.internal.utils.parseString
-import com.itsaky.androidide.inflater.internal.utils.parseStringArray
+import com.willow.androidide.ultra.inflater.internal.utils.parseBoolean
+import com.willow.androidide.ultra.inflater.internal.utils.parseColor
+import com.willow.androidide.ultra.inflater.internal.utils.parseDimension
+import com.willow.androidide.ultra.inflater.internal.utils.parseDrawable
+import com.willow.androidide.ultra.inflater.internal.utils.parseInteger
+import com.willow.androidide.ultra.inflater.internal.utils.parseIntegerArray
+import com.willow.androidide.ultra.inflater.internal.utils.parseString
+import com.willow.androidide.ultra.inflater.internal.utils.parseStringArray
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

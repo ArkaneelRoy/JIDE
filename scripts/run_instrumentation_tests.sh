@@ -1,20 +1,20 @@
 #!/bin/bash
 
 #
-#  This file is part of AndroidIDE.
+#  This file is part of AndroidIDE Ultra.
 #
-#  AndroidIDE is free software: you can redistribute it and/or modify
+#  AndroidIDE Ultra is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation, either version 3 of the License, or
 #  (at your option) any later version.
 #
-#  AndroidIDE is distributed in the hope that it will be useful,
+#  AndroidIDE Ultra is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+#   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
 #
 
 # Fail on error and print out commands
@@ -31,7 +31,7 @@ DEVICE=true
 # The task for installing the tools in the emulator
 INSTALLER_TEST_TASK_NAME=":app:connectedArm64-v8aDebugAndroidTest"
 # Fully qualified name of the class which install installs the build tools
-INSTALLER_TEST_CLASS_NAME="com.itsaky.androidide.BuildToolsInstallerTest"
+INSTALLER_TEST_CLASS_NAME="com.willow.androidide.ultra.BuildToolsInstallerTest"
 
 # Common Gradle invocation arguments
 GRADLE_INVOCATION_ARGS="--scan --continue --no-configuration-cache --stacktrace"

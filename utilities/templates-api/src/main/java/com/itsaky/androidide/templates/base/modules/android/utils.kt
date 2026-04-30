@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.base.modules.android
+package com.willow.androidide.ultra.templates.base.modules.android
 
-import com.itsaky.androidide.templates.ModuleTemplate
-import com.itsaky.androidide.templates.base.AndroidModuleTemplateBuilder
-import com.itsaky.androidide.templates.base.AndroidModuleTemplateConfigurator
-import com.itsaky.androidide.templates.base.ProjectTemplateBuilder
-import com.itsaky.androidide.templates.base.baseAndroidXDependencies
-import com.itsaky.androidide.templates.base.util.AndroidManifestBuilder.ConfigurationType.APPLICATION_ATTR
+import com.willow.androidide.ultra.templates.ModuleTemplate
+import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateBuilder
+import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateConfigurator
+import com.willow.androidide.ultra.templates.base.ProjectTemplateBuilder
+import com.willow.androidide.ultra.templates.base.baseAndroidXDependencies
+import com.willow.androidide.ultra.templates.base.util.AndroidManifestBuilder.ConfigurationType.APPLICATION_ATTR
 
 /**
  * Configure the default template for the project.

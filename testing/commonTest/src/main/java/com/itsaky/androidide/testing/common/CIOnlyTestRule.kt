@@ -1,4 +1,4 @@
-package com.itsaky.androidide.testing.common
+package com.willow.androidide.ultra.testing.common
 
 import org.junit.rules.TestRule
 import org.junit.runner.Description

@@ -1,4 +1,4 @@
-package com.itsaky.androidide.flashbar.anim
+package com.willow.androidide.ultra.flashbar.anim
 
 import android.animation.Animator
 import android.animation.AnimatorSet

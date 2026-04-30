@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner
+package com.willow.androidide.ultra.uidesigner
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -29,18 +29,18 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem.Location.UI_DESIGNER_TOOLBAR
-import com.itsaky.androidide.actions.ActionsRegistry
-import com.itsaky.androidide.actions.FillMenuParams
-import com.itsaky.androidide.app.BaseIDEActivity
-import com.itsaky.androidide.uidesigner.actions.clearUiDesignerActions
-import com.itsaky.androidide.uidesigner.actions.registerUiDesignerActions
-import com.itsaky.androidide.uidesigner.databinding.ActivityUiDesignerBinding
-import com.itsaky.androidide.uidesigner.fragments.DesignerWorkspaceFragment
-import com.itsaky.androidide.uidesigner.utils.ViewToXml
-import com.itsaky.androidide.uidesigner.viewmodel.WorkspaceViewModel
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem.Location.UI_DESIGNER_TOOLBAR
+import com.willow.androidide.ultra.actions.ActionsRegistry
+import com.willow.androidide.ultra.actions.FillMenuParams
+import com.willow.androidide.ultra.app.BaseIDEActivity
+import com.willow.androidide.ultra.uidesigner.actions.clearUiDesignerActions
+import com.willow.androidide.ultra.uidesigner.actions.registerUiDesignerActions
+import com.willow.androidide.ultra.uidesigner.databinding.ActivityUiDesignerBinding
+import com.willow.androidide.ultra.uidesigner.fragments.DesignerWorkspaceFragment
+import com.willow.androidide.ultra.uidesigner.utils.ViewToXml
+import com.willow.androidide.ultra.uidesigner.viewmodel.WorkspaceViewModel
+import com.willow.androidide.ultra.utils.flashError
 import org.slf4j.LoggerFactory
 import java.io.File
 
@@ -205,7 +205,7 @@ class UIDesignerActivity : BaseIDEActivity() {
     return workspace
   }
 
-  fun setupHierarchy(view: com.itsaky.androidide.inflater.IView) {
+  fun setupHierarchy(view: com.willow.androidide.ultra.inflater.IView) {
     binding?.hierarchy?.setupWithView(view) { workspace()?.showViewInfo(it) }
   }
 

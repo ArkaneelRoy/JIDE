@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.language.incremental;
+package com.willow.androidide.ultra.editor.language.incremental;
 
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.FIXME_COMMENT;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.TODO_COMMENT;
-import static com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.withoutCompletion;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.FIXME_COMMENT;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.TODO_COMMENT;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.withoutCompletion;
 
 import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.ArrayUtils;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.EvictingQueue;
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE;
-import com.itsaky.androidide.utils.CharSequenceReader;
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra;
+import com.willow.androidide.ultra.utils.CharSequenceReader;
 import io.github.rosemoe.sora.lang.analysis.AsyncIncrementalAnalyzeManager;
 import io.github.rosemoe.sora.lang.styling.CodeBlock;
 import io.github.rosemoe.sora.lang.styling.Span;
@@ -46,7 +46,7 @@ import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.Token;
 
 /**
- * Base class for implementing an {@link AsyncIncrementalAnalyzeManager} in AndroidIDE.
+ * Base class for implementing an {@link AsyncIncrementalAnalyzeManager} in AndroidIDE Ultra.
  *
  * @author Akash Yadav
  */
@@ -170,7 +170,7 @@ public abstract class BaseIncrementalAnalyzeManager extends
     Objects.requireNonNull(result);
 
     if (result.isEmpty()) {
-      result.add(Span.obtain(0, TextStyle.makeStyle(SchemeAndroidIDE.TEXT_NORMAL)));
+      result.add(Span.obtain(0, TextStyle.makeStyle(SchemeAndroidIDE Ultra.TEXT_NORMAL)));
     }
 
     return result;
@@ -292,7 +292,7 @@ public abstract class BaseIncrementalAnalyzeManager extends
   protected void handleLineCommentSpan(@NonNull IncrementalToken token, @NonNull List<Span> spans,
                                        int offset
   ) {
-    var commentType = SchemeAndroidIDE.COMMENT;
+    var commentType = SchemeAndroidIDE Ultra.COMMENT;
 
     // highlight special line comments
     var commentText = token.getText();

@@ -1,27 +1,27 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.app.configuration
+package com.willow.androidide.ultra.app.configuration
 
 import com.google.auto.service.AutoService
-import com.itsaky.androidide.models.JdkDistribution
-import com.itsaky.androidide.preferences.internal.BuildPreferences
-import com.itsaky.androidide.utils.Environment
-import com.itsaky.androidide.utils.JdkUtils
+import com.willow.androidide.ultra.models.JdkDistribution
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences
+import com.willow.androidide.ultra.utils.Environment
+import com.willow.androidide.ultra.utils.JdkUtils
 import org.slf4j.LoggerFactory
 import java.io.File
 

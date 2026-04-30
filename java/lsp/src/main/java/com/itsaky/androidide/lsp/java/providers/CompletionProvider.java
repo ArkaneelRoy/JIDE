@@ -1,52 +1,52 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers;
+package com.willow.androidide.ultra.lsp.java.providers;
 
-import static com.itsaky.androidide.lsp.api.HelpersKt.describeSnippet;
-import static com.itsaky.androidide.progress.ProgressManager.abortIfCancelled;
+import static com.willow.androidide.ultra.lsp.api.HelpersKt.describeSnippet;
+import static com.willow.androidide.ultra.progress.ProgressManager.abortIfCancelled;
 
 import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.ReflectUtils;
-import com.itsaky.androidide.lsp.api.AbstractServiceProvider;
-import com.itsaky.androidide.lsp.api.ICompletionProvider;
-import com.itsaky.androidide.lsp.api.IServerSettings;
-import com.itsaky.androidide.lsp.internal.model.CachedCompletion;
-import com.itsaky.androidide.lsp.java.compiler.CompileTask;
-import com.itsaky.androidide.lsp.java.compiler.CompletionInfo;
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerConfig;
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService;
-import com.itsaky.androidide.lsp.java.compiler.SourceFileObject;
-import com.itsaky.androidide.lsp.java.compiler.SynchronizedTask;
-import com.itsaky.androidide.lsp.java.models.CompilationRequest;
-import com.itsaky.androidide.lsp.java.models.PartialReparseRequest;
-import com.itsaky.androidide.lsp.java.providers.completion.IJavaCompletionProvider;
-import com.itsaky.androidide.lsp.java.providers.completion.IdentifierCompletionProvider;
-import com.itsaky.androidide.lsp.java.providers.completion.ImportCompletionProvider;
-import com.itsaky.androidide.lsp.java.providers.completion.KeywordCompletionProvider;
-import com.itsaky.androidide.lsp.java.providers.completion.MemberReferenceCompletionProvider;
-import com.itsaky.androidide.lsp.java.providers.completion.MemberSelectCompletionProvider;
-import com.itsaky.androidide.lsp.java.providers.completion.SwitchConstantCompletionProvider;
-import com.itsaky.androidide.lsp.java.utils.ASTFixer;
-import com.itsaky.androidide.lsp.java.utils.CancelChecker;
-import com.itsaky.androidide.lsp.java.visitors.FindCompletionsAt;
-import com.itsaky.androidide.lsp.models.CompletionParams;
-import com.itsaky.androidide.lsp.models.CompletionResult;
-import com.itsaky.androidide.utils.DocumentUtils;
+import com.willow.androidide.ultra.lsp.api.AbstractServiceProvider;
+import com.willow.androidide.ultra.lsp.api.ICompletionProvider;
+import com.willow.androidide.ultra.lsp.api.IServerSettings;
+import com.willow.androidide.ultra.lsp.internal.model.CachedCompletion;
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask;
+import com.willow.androidide.ultra.lsp.java.compiler.CompletionInfo;
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerConfig;
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService;
+import com.willow.androidide.ultra.lsp.java.compiler.SourceFileObject;
+import com.willow.androidide.ultra.lsp.java.compiler.SynchronizedTask;
+import com.willow.androidide.ultra.lsp.java.models.CompilationRequest;
+import com.willow.androidide.ultra.lsp.java.models.PartialReparseRequest;
+import com.willow.androidide.ultra.lsp.java.providers.completion.IJavaCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.completion.IdentifierCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.completion.ImportCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.completion.KeywordCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.completion.MemberReferenceCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.completion.MemberSelectCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.providers.completion.SwitchConstantCompletionProvider;
+import com.willow.androidide.ultra.lsp.java.utils.ASTFixer;
+import com.willow.androidide.ultra.lsp.java.utils.CancelChecker;
+import com.willow.androidide.ultra.lsp.java.visitors.FindCompletionsAt;
+import com.willow.androidide.ultra.lsp.models.CompletionParams;
+import com.willow.androidide.ultra.lsp.models.CompletionResult;
+import com.willow.androidide.ultra.utils.DocumentUtils;
 import io.github.rosemoe.sora.lang.completion.snippet.CodeSnippet;
 import java.nio.file.Path;
 import java.time.Duration;

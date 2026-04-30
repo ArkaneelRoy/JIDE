@@ -1,39 +1,39 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.language.treesitter
+package com.willow.androidide.ultra.editor.language.treesitter
 
 import androidx.collection.MutableLongObjectMap
 import androidx.collection.mutableIntObjectMapOf
 import androidx.collection.mutableLongObjectMapOf
 import androidx.core.text.trimmedLength
-import com.itsaky.androidide.editor.utils.getFirstNodeAtLine
-import com.itsaky.androidide.editor.utils.getLastNodeAtLine
-import com.itsaky.androidide.editor.utils.previousNonBlankLine
-import com.itsaky.androidide.treesitter.TSNode
-import com.itsaky.androidide.treesitter.TSParser
-import com.itsaky.androidide.treesitter.TSPoint
-import com.itsaky.androidide.treesitter.TSQuery
-import com.itsaky.androidide.treesitter.TSQueryCapture
-import com.itsaky.androidide.treesitter.TSQueryCursor
-import com.itsaky.androidide.treesitter.TSQueryMatch
-import com.itsaky.androidide.treesitter.TSTree
-import com.itsaky.androidide.treesitter.predicate.SetDirectiveHandler
-import com.itsaky.androidide.utils.IntPair
+import com.willow.androidide.ultra.editor.utils.getFirstNodeAtLine
+import com.willow.androidide.ultra.editor.utils.getLastNodeAtLine
+import com.willow.androidide.ultra.editor.utils.previousNonBlankLine
+import com.willow.androidide.ultra.treesitter.TSNode
+import com.willow.androidide.ultra.treesitter.TSParser
+import com.willow.androidide.ultra.treesitter.TSPoint
+import com.willow.androidide.ultra.treesitter.TSQuery
+import com.willow.androidide.ultra.treesitter.TSQueryCapture
+import com.willow.androidide.ultra.treesitter.TSQueryCursor
+import com.willow.androidide.ultra.treesitter.TSQueryMatch
+import com.willow.androidide.ultra.treesitter.TSTree
+import com.willow.androidide.ultra.treesitter.predicate.SetDirectiveHandler
+import com.willow.androidide.ultra.utils.IntPair
 import io.github.rosemoe.sora.editor.ts.TsAnalyzeWorker
 import io.github.rosemoe.sora.text.Content
 import io.github.rosemoe.sora.text.TextUtils

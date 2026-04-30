@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java.providers
+package com.willow.androidide.ultra.lsp.java.providers
 
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.providers.DiagnosticsProvider.findDiagnostics
-import com.itsaky.androidide.lsp.java.utils.CancelChecker
-import com.itsaky.androidide.lsp.models.DiagnosticResult
-import com.itsaky.androidide.progress.ProgressManager
-import com.itsaky.androidide.progress.ProgressManager.Companion.abortIfCancelled
-import com.itsaky.androidide.projects.FileManager
-import com.itsaky.androidide.projects.IProjectManager
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.providers.DiagnosticsProvider.findDiagnostics
+import com.willow.androidide.ultra.lsp.java.utils.CancelChecker
+import com.willow.androidide.ultra.lsp.models.DiagnosticResult
+import com.willow.androidide.ultra.progress.ProgressManager
+import com.willow.androidide.ultra.progress.ProgressManager.Companion.abortIfCancelled
+import com.willow.androidide.ultra.projects.FileManager
+import com.willow.androidide.ultra.projects.IProjectManager
 import org.slf4j.LoggerFactory
 import java.nio.file.Path
 import java.time.Instant

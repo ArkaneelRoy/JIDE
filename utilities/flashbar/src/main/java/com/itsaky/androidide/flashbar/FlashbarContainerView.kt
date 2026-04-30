@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.flashbar
+package com.willow.androidide.ultra.flashbar
 
 import android.app.Activity
 import android.content.Context
@@ -27,24 +27,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.RelativeLayout
-import com.itsaky.androidide.flashbar.Flashbar.Companion.DURATION_INDEFINITE
-import com.itsaky.androidide.flashbar.Flashbar.DismissEvent
-import com.itsaky.androidide.flashbar.Flashbar.DismissEvent.*
-import com.itsaky.androidide.flashbar.Flashbar.Vibration.DISMISS
-import com.itsaky.androidide.flashbar.SwipeDismissTouchListener.DismissCallbacks
-import com.itsaky.androidide.flashbar.anim.FlashAnim
-import com.itsaky.androidide.flashbar.Flashbar.OnBarDismissListener
-import com.itsaky.androidide.flashbar.Flashbar.OnBarShowListener
-import com.itsaky.androidide.flashbar.Flashbar.OnTapListener
-import com.itsaky.androidide.flashbar.Flashbar.Vibration
-import com.itsaky.androidide.flashbar.Flashbar.Vibration.SHOW
-import com.itsaky.androidide.flashbar.anim.FlashAnimBarBuilder
-import com.itsaky.androidide.flashbar.anim.FlashAnimIconBuilder
-import com.itsaky.androidide.flashbar.util.NavigationBarPosition.*
-import com.itsaky.androidide.flashbar.util.afterMeasured
-import com.itsaky.androidide.flashbar.util.getNavigationBarPosition
-import com.itsaky.androidide.flashbar.util.getNavigationBarSizeInPx
-import com.itsaky.androidide.flashbar.util.getRootView
+import com.willow.androidide.ultra.flashbar.Flashbar.Companion.DURATION_INDEFINITE
+import com.willow.androidide.ultra.flashbar.Flashbar.DismissEvent
+import com.willow.androidide.ultra.flashbar.Flashbar.DismissEvent.*
+import com.willow.androidide.ultra.flashbar.Flashbar.Vibration.DISMISS
+import com.willow.androidide.ultra.flashbar.SwipeDismissTouchListener.DismissCallbacks
+import com.willow.androidide.ultra.flashbar.anim.FlashAnim
+import com.willow.androidide.ultra.flashbar.Flashbar.OnBarDismissListener
+import com.willow.androidide.ultra.flashbar.Flashbar.OnBarShowListener
+import com.willow.androidide.ultra.flashbar.Flashbar.OnTapListener
+import com.willow.androidide.ultra.flashbar.Flashbar.Vibration
+import com.willow.androidide.ultra.flashbar.Flashbar.Vibration.SHOW
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimBarBuilder
+import com.willow.androidide.ultra.flashbar.anim.FlashAnimIconBuilder
+import com.willow.androidide.ultra.flashbar.util.NavigationBarPosition.*
+import com.willow.androidide.ultra.flashbar.util.afterMeasured
+import com.willow.androidide.ultra.flashbar.util.getNavigationBarPosition
+import com.willow.androidide.ultra.flashbar.util.getNavigationBarSizeInPx
+import com.willow.androidide.ultra.flashbar.util.getRootView
 
 /**
  * Container withView matching the height and width of the parent to hold a FlashbarView.

@@ -28,7 +28,7 @@ package openjdk.tools.jdeps;
 import static openjdk.tools.jdeps.Module.trace;
 import static java.util.stream.Collectors.*;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 
 import openjdk.tools.classfile.Dependency;
 
@@ -306,7 +306,7 @@ public class JdepsConfiguration implements AutoCloseable {
     }
 
     static class SystemModuleFinder implements ModuleFinder {
-        // AndroidIDE changed: Allow overriding java home.
+        // AndroidIDE Ultra changed: Allow overriding java home.
         private static final String JAVA_HOME = JavacConfigProvider.getJavaHome();
 
         private final FileSystem fileSystem;

@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package io.github.rosemoe.sora.editor.ts
 
-import com.itsaky.androidide.treesitter.TSInputEdit
-import com.itsaky.androidide.treesitter.TSQueryCursor
-import com.itsaky.androidide.treesitter.TSTree
-import com.itsaky.androidide.treesitter.api.TreeSitterInputEdit
-import com.itsaky.androidide.treesitter.api.TreeSitterQueryCapture
-import com.itsaky.androidide.treesitter.api.safeExecQueryCursor
-import com.itsaky.androidide.treesitter.string.UTF16String
+import com.willow.androidide.ultra.treesitter.TSInputEdit
+import com.willow.androidide.ultra.treesitter.TSQueryCursor
+import com.willow.androidide.ultra.treesitter.TSTree
+import com.willow.androidide.ultra.treesitter.api.TreeSitterInputEdit
+import com.willow.androidide.ultra.treesitter.api.TreeSitterQueryCapture
+import com.willow.androidide.ultra.treesitter.api.safeExecQueryCursor
+import com.willow.androidide.ultra.treesitter.string.UTF16String
 import io.github.rosemoe.sora.data.ObjectAllocator
 import io.github.rosemoe.sora.editor.ts.spans.TsSpanFactory
 import io.github.rosemoe.sora.lang.analysis.StyleReceiver

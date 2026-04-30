@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.language.treesitter
+package com.willow.androidide.ultra.editor.language.treesitter
 
 import android.content.Context
-import com.itsaky.androidide.editor.language.IDELanguage
-import com.itsaky.androidide.editor.language.newline.TSBracketsHandler
-import com.itsaky.androidide.editor.language.utils.CommonSymbolPairs
-import com.itsaky.androidide.editor.schemes.IDEColorScheme
-import com.itsaky.androidide.editor.schemes.LanguageScheme
-import com.itsaky.androidide.editor.schemes.LanguageSpecProvider.getLanguageSpec
-import com.itsaky.androidide.editor.schemes.LocalCaptureSpecProvider.newLocalCaptureSpec
-import com.itsaky.androidide.editor.utils.isNonBlankLine
-import com.itsaky.androidide.treesitter.TSLanguage
-import com.itsaky.androidide.utils.IntPair
+import com.willow.androidide.ultra.editor.language.IDELanguage
+import com.willow.androidide.ultra.editor.language.newline.TSBracketsHandler
+import com.willow.androidide.ultra.editor.language.utils.CommonSymbolPairs
+import com.willow.androidide.ultra.editor.schemes.IDEColorScheme
+import com.willow.androidide.ultra.editor.schemes.LanguageScheme
+import com.willow.androidide.ultra.editor.schemes.LanguageSpecProvider.getLanguageSpec
+import com.willow.androidide.ultra.editor.schemes.LocalCaptureSpecProvider.newLocalCaptureSpec
+import com.willow.androidide.ultra.editor.utils.isNonBlankLine
+import com.willow.androidide.ultra.treesitter.TSLanguage
+import com.willow.androidide.ultra.utils.IntPair
 import io.github.rosemoe.sora.editor.ts.TsTheme
 import io.github.rosemoe.sora.lang.Language.INTERRUPTION_LEVEL_STRONG
 import io.github.rosemoe.sora.lang.analysis.AnalyzeManager

@@ -1,40 +1,40 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.handlers
+package com.willow.androidide.ultra.handlers
 
 import android.content.Context
 import androidx.core.view.GravityCompat
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_FILE_TREE
-import com.itsaky.androidide.actions.ActionMenu
-import com.itsaky.androidide.actions.ActionsRegistry
-import com.itsaky.androidide.actions.internal.DefaultActionsRegistry
-import com.itsaky.androidide.activities.editor.EditorHandlerActivity
-import com.itsaky.androidide.eventbus.events.filetree.FileClickEvent
-import com.itsaky.androidide.eventbus.events.filetree.FileLongClickEvent
-import com.itsaky.androidide.events.ExpandTreeNodeRequestEvent
-import com.itsaky.androidide.events.FileContextMenuItemClickEvent
-import com.itsaky.androidide.events.ListProjectFilesRequestEvent
-import com.itsaky.androidide.fragments.sheets.OptionsListFragment
-import com.itsaky.androidide.models.SheetOption
-import com.itsaky.androidide.utils.ApkInstaller
-import com.itsaky.androidide.utils.InstallationResultHandler
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_FILE_TREE
+import com.willow.androidide.ultra.actions.ActionMenu
+import com.willow.androidide.ultra.actions.ActionsRegistry
+import com.willow.androidide.ultra.actions.internal.DefaultActionsRegistry
+import com.willow.androidide.ultra.activities.editor.EditorHandlerActivity
+import com.willow.androidide.ultra.eventbus.events.filetree.FileClickEvent
+import com.willow.androidide.ultra.eventbus.events.filetree.FileLongClickEvent
+import com.willow.androidide.ultra.events.ExpandTreeNodeRequestEvent
+import com.willow.androidide.ultra.events.FileContextMenuItemClickEvent
+import com.willow.androidide.ultra.events.ListProjectFilesRequestEvent
+import com.willow.androidide.ultra.fragments.sheets.OptionsListFragment
+import com.willow.androidide.ultra.models.SheetOption
+import com.willow.androidide.ultra.utils.ApkInstaller
+import com.willow.androidide.ultra.utils.InstallationResultHandler
+import com.willow.androidide.ultra.utils.flashError
 import com.unnamed.b.atv.model.TreeNode
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

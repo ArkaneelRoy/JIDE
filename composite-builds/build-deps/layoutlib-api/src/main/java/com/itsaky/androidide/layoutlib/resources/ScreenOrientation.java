@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.itsaky.androidide.layoutlib.resources;
+package com.willow.androidide.ultra.layoutlib.resources;
 
 /**
  * Screen Orientation enum.

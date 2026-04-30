@@ -47,8 +47,8 @@ import java.util.Set;
 
 import jdkx.tools.FileObject;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
-import com.itsaky.androidide.zipfs2.AndroidFsProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.zipfs2.AndroidFsProvider;
 import openjdk.tools.javac.file.RelativePath.RelativeDirectory;
 import openjdk.tools.javac.util.Context;
 import openjdk.tools.javac.util.PlatformUtils;
@@ -83,7 +83,7 @@ public class JRTIndex {
     }
 
     public static boolean isAvailable() {
-        // AndroidIDE changed: Available only if modules are enabled.
+        // AndroidIDE Ultra changed: Available only if modules are enabled.
         if (!JavacConfigProvider.isModulesEnabled()) {
             return false;
         }

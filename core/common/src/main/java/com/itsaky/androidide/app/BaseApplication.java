@@ -1,42 +1,42 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.app;
+package com.willow.androidide.ultra.app;
 
 import android.app.Application;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import com.blankj.utilcode.util.ThrowableUtils;
-import com.itsaky.androidide.buildinfo.BuildInfo;
-import com.itsaky.androidide.common.R;
-import com.itsaky.androidide.managers.PreferenceManager;
-import com.itsaky.androidide.managers.ToolsManager;
-import com.itsaky.androidide.utils.Environment;
-import com.itsaky.androidide.utils.FileUtil;
-import com.itsaky.androidide.utils.FlashbarUtilsKt;
-import com.itsaky.androidide.utils.JavaCharacter;
-import com.itsaky.androidide.utils.VMUtils;
+import com.willow.androidide.ultra.buildinfo.BuildInfo;
+import com.willow.androidide.ultra.common.R;
+import com.willow.androidide.ultra.managers.PreferenceManager;
+import com.willow.androidide.ultra.managers.ToolsManager;
+import com.willow.androidide.ultra.utils.Environment;
+import com.willow.androidide.ultra.utils.FileUtil;
+import com.willow.androidide.ultra.utils.FlashbarUtilsKt;
+import com.willow.androidide.ultra.utils.JavaCharacter;
+import com.willow.androidide.ultra.utils.VMUtils;
 import java.io.File;
 
 public class BaseApplication extends Application {
 
   public static final String NOTIFICATION_GRADLE_BUILD_SERVICE = "17571";
   public static final String TELEGRAM_GROUP_URL = "https://t.me/androidide_discussions";
-  public static final String TELEGRAM_CHANNEL_URL = "https://t.me/AndroidIDEOfficial";
+  public static final String TELEGRAM_CHANNEL_URL = "https://t.me/AndroidIDE UltraOfficial";
   public static final String SPONSOR_URL = BuildInfo.PROJECT_SITE + "/donate";
   public static final String DOCS_URL = "https://docs.androidide.com";
   public static final String CONTRIBUTOR_GUIDE_URL =

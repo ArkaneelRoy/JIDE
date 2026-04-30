@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.utils
+package com.willow.androidide.ultra.utils
 
 import android.app.Activity
 import android.graphics.Color
@@ -29,12 +29,12 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.FloatRange
 import androidx.annotation.StringRes
 import com.blankj.utilcode.util.ThreadUtils
-import com.itsaky.androidide.flashbar.Flashbar
-import com.itsaky.androidide.flashbar.Flashbar.Gravity.TOP
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.utils.FlashType.ERROR
-import com.itsaky.androidide.utils.FlashType.INFO
-import com.itsaky.androidide.utils.FlashType.SUCCESS
+import com.willow.androidide.ultra.flashbar.Flashbar
+import com.willow.androidide.ultra.flashbar.Flashbar.Gravity.TOP
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.utils.FlashType.ERROR
+import com.willow.androidide.ultra.utils.FlashType.INFO
+import com.willow.androidide.ultra.utils.FlashType.SUCCESS
 
 const val DURATION_SHORT = 2000L
 const val DURATION_LONG = 3500L

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.fragments
+package com.willow.androidide.ultra.fragments
 
 import android.app.Dialog
 import android.os.Build
@@ -37,23 +37,23 @@ import com.blankj.utilcode.util.ThreadUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.transition.MaterialSharedAxis
-import com.itsaky.androidide.R.string
-import com.itsaky.androidide.adapters.RunTasksListAdapter
-import com.itsaky.androidide.databinding.LayoutRunTaskBinding
-import com.itsaky.androidide.databinding.LayoutRunTaskDialogBinding
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.models.Checkable
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.projects.GradleProject
-import com.itsaky.androidide.projects.builder.BuildService
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.tasks.executeAsync
-import com.itsaky.androidide.tooling.api.models.GradleTask
-import com.itsaky.androidide.utils.SingleTextWatcher
-import com.itsaky.androidide.utils.doOnApplyWindowInsets
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.flashInfo
-import com.itsaky.androidide.viewmodel.RunTasksViewModel
+import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.adapters.RunTasksListAdapter
+import com.willow.androidide.ultra.databinding.LayoutRunTaskBinding
+import com.willow.androidide.ultra.databinding.LayoutRunTaskDialogBinding
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.models.Checkable
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.projects.GradleProject
+import com.willow.androidide.ultra.projects.builder.BuildService
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.tasks.executeAsync
+import com.willow.androidide.ultra.tooling.api.models.GradleTask
+import com.willow.androidide.ultra.utils.SingleTextWatcher
+import com.willow.androidide.ultra.utils.doOnApplyWindowInsets
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.flashInfo
+import com.willow.androidide.ultra.viewmodel.RunTasksViewModel
 import org.slf4j.LoggerFactory
 
 /**

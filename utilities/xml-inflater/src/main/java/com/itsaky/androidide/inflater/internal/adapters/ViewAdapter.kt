@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater.internal.adapters
+package com.willow.androidide.ultra.inflater.internal.adapters
 
 import android.content.Context
 import android.graphics.PorterDuff
@@ -51,18 +51,18 @@ import android.widget.RelativeLayout.START_OF
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.core.view.updatePadding
 import androidx.core.view.updatePaddingRelative
-import com.itsaky.androidide.annotations.inflater.ViewAdapter
-import com.itsaky.androidide.annotations.uidesigner.IncludeInDesigner
-import com.itsaky.androidide.annotations.uidesigner.IncludeInDesigner.Group.WIDGETS
-import com.itsaky.androidide.inflater.AttributeHandlerScope
-import com.itsaky.androidide.inflater.IAttribute
-import com.itsaky.androidide.inflater.INamespace
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.inflater.IViewAdapter
-import com.itsaky.androidide.inflater.internal.IncludeView
-import com.itsaky.androidide.inflater.models.UiWidget
-import com.itsaky.androidide.inflater.utils.newAttribute
-import com.itsaky.androidide.resources.R
+import com.willow.androidide.ultra.annotations.inflater.ViewAdapter
+import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner
+import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner.Group.WIDGETS
+import com.willow.androidide.ultra.inflater.AttributeHandlerScope
+import com.willow.androidide.ultra.inflater.IAttribute
+import com.willow.androidide.ultra.inflater.INamespace
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.inflater.IViewAdapter
+import com.willow.androidide.ultra.inflater.internal.IncludeView
+import com.willow.androidide.ultra.inflater.models.UiWidget
+import com.willow.androidide.ultra.inflater.utils.newAttribute
+import com.willow.androidide.ultra.resources.R
 
 /**
  * Attribute adapter for [View].
@@ -288,23 +288,23 @@ open class ViewAdapter<T : View> : IViewAdapter<T>() {
   }
 
   protected open fun parseDrawingCacheQuality(value: String): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseDrawingCacheQuality(value)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseDrawingCacheQuality(value)
   }
 
   protected open fun parseVisibility(value: String): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseVisibility(value)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseVisibility(value)
   }
 
   protected open fun parseTextAlignment(value: String): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseTextAlignment(value)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseTextAlignment(value)
   }
 
   protected open fun parseTextDirection(value: String): Int {
-    return com.itsaky.androidide.inflater.internal.utils.parseTextDirection(value)
+    return com.willow.androidide.ultra.inflater.internal.utils.parseTextDirection(value)
   }
 
   protected open fun parsePorterDuffMode(mode: String): PorterDuff.Mode {
-    return com.itsaky.androidide.inflater.internal.utils.parsePorterDuffMode(mode)
+    return com.willow.androidide.ultra.inflater.internal.utils.parsePorterDuffMode(mode)
   }
 
   @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.Q)

@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.projects.api
+package com.willow.androidide.ultra.projects.api
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.projects.android.AndroidModule
-import com.itsaky.androidide.projects.builder.BuildService
-import com.itsaky.androidide.projects.java.JavaModule
-import com.itsaky.androidide.testing.tooling.ToolingApiTestLauncher
-import com.itsaky.androidide.testing.tooling.models.ToolingApiTestLauncherParams
-import com.itsaky.androidide.tooling.api.IAndroidProject
-import com.itsaky.androidide.utils.FileProvider
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.projects.android.AndroidModule
+import com.willow.androidide.ultra.projects.builder.BuildService
+import com.willow.androidide.ultra.projects.java.JavaModule
+import com.willow.androidide.ultra.testing.tooling.ToolingApiTestLauncher
+import com.willow.androidide.ultra.testing.tooling.models.ToolingApiTestLauncherParams
+import com.willow.androidide.ultra.tooling.api.IAndroidProject
+import com.willow.androidide.ultra.utils.FileProvider
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -174,7 +174,7 @@ class ModuleWorkspaceTest {
       assertThat(classes).isNotEmpty()
 
       for (klass in arrayOf(
-        "com.itsaky.androidide.tooling.test.Main",
+        "com.willow.androidide.ultra.tooling.test.Main",
         "com.itsaky.test.app.MainActivity"
       )
       ) {

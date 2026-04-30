@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.utils
+package com.willow.androidide.ultra.uidesigner.utils
 
 import android.text.Editable
 import com.blankj.utilcode.util.ThreadUtils
-import com.itsaky.androidide.inflater.internal.ViewImpl
-import com.itsaky.androidide.lsp.util.setupLookupForCompletion
-import com.itsaky.androidide.lsp.xml.models.XMLServerSettings
-import com.itsaky.androidide.lsp.xml.providers.XmlCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.AttrValueCompletionProvider
-import com.itsaky.androidide.utils.SingleTextWatcher
+import com.willow.androidide.ultra.inflater.internal.ViewImpl
+import com.willow.androidide.ultra.lsp.util.setupLookupForCompletion
+import com.willow.androidide.ultra.lsp.xml.models.XMLServerSettings
+import com.willow.androidide.ultra.lsp.xml.providers.XmlCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.AttrValueCompletionProvider
+import com.willow.androidide.ultra.utils.SingleTextWatcher
 import org.slf4j.LoggerFactory
 import java.io.File
 
@@ -36,7 +36,7 @@ import java.io.File
 internal class ValueCompletionProvider(
   private val file: File,
   private val view: ViewImpl,
-  private val attribute: com.itsaky.androidide.inflater.IAttribute,
+  private val attribute: com.willow.androidide.ultra.inflater.IAttribute,
   private val onComplete: (List<String>) -> Unit
 ) : SingleTextWatcher() {
 
@@ -70,7 +70,7 @@ internal class ValueCompletionProvider(
   ) : Thread("AttributeValueCompletionThread") {
 
     var prefix: String = ""
-    var attribute: com.itsaky.androidide.inflater.IAttribute? = null
+    var attribute: com.willow.androidide.ultra.inflater.IAttribute? = null
 
     companion object {
 

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.itsaky.androidide.utils;
+package com.willow.androidide.ultra.utils;
 
 import androidx.annotation.NonNull;
 import java.io.Reader;

@@ -1,38 +1,38 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lexers.xml
+package com.willow.androidide.ultra.lexers.xml
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.lexers.BaseLexerTest
-import com.itsaky.androidide.lexers.xml.XMLLexer.CLOSE
-import com.itsaky.androidide.lexers.xml.XMLLexer.COMMENT
-import com.itsaky.androidide.lexers.xml.XMLLexer.COMMENT_END
-import com.itsaky.androidide.lexers.xml.XMLLexer.COMMENT_MODE
-import com.itsaky.androidide.lexers.xml.XMLLexer.COMMENT_START
-import com.itsaky.androidide.lexers.xml.XMLLexer.CommentModeEnd
-import com.itsaky.androidide.lexers.xml.XMLLexer.CommentText
-import com.itsaky.androidide.lexers.xml.XMLLexer.DEFAULT_MODE
-import com.itsaky.androidide.lexers.xml.XMLLexer.EQUALS
-import com.itsaky.androidide.lexers.xml.XMLLexer.Name
-import com.itsaky.androidide.lexers.xml.XMLLexer.OPEN
-import com.itsaky.androidide.lexers.xml.XMLLexer.OPEN_SLASH
-import com.itsaky.androidide.lexers.xml.XMLLexer.SLASH_CLOSE
-import com.itsaky.androidide.lexers.xml.XMLLexer.STRING
-import com.itsaky.androidide.lexers.xml.XMLLexer.TEXT
+import com.willow.androidide.ultra.lexers.BaseLexerTest
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.CLOSE
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.COMMENT
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.COMMENT_END
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.COMMENT_MODE
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.COMMENT_START
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.CommentModeEnd
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.CommentText
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.DEFAULT_MODE
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.EQUALS
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.Name
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.OPEN
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.OPEN_SLASH
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.SLASH_CLOSE
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.STRING
+import com.willow.androidide.ultra.lexers.xml.XMLLexer.TEXT
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4

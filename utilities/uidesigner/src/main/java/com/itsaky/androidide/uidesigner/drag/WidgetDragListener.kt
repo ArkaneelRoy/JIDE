@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.drag
+package com.willow.androidide.ultra.uidesigner.drag
 
 import android.view.DragEvent
 import android.view.View
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.inflater.models.UiWidget
-import com.itsaky.androidide.inflater.viewGroup
-import com.itsaky.androidide.uidesigner.fragments.DesignerWorkspaceFragment.Companion.DRAGGING_WIDGET_MIME
-import com.itsaky.androidide.uidesigner.models.UiView
-import com.itsaky.androidide.uidesigner.models.UiViewGroup
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.inflater.models.UiWidget
+import com.willow.androidide.ultra.inflater.viewGroup
+import com.willow.androidide.ultra.uidesigner.fragments.DesignerWorkspaceFragment.Companion.DRAGGING_WIDGET_MIME
+import com.willow.androidide.ultra.uidesigner.models.UiView
+import com.willow.androidide.ultra.uidesigner.models.UiViewGroup
 import kotlin.math.absoluteValue
 import kotlin.math.max
 import kotlin.math.min

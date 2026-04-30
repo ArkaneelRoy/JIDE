@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.ui
+package com.willow.androidide.ultra.ui
 
 import android.app.Activity
 import android.content.Context
@@ -45,20 +45,20 @@ import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.Tab
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.MaterialSharedAxis
-import com.itsaky.androidide.R
-import com.itsaky.androidide.adapters.DiagnosticsAdapter
-import com.itsaky.androidide.adapters.EditorBottomSheetTabAdapter
-import com.itsaky.androidide.adapters.SearchListAdapter
-import com.itsaky.androidide.databinding.LayoutEditorBottomSheetBinding
-import com.itsaky.androidide.fragments.output.ShareableOutputFragment
-import com.itsaky.androidide.models.LogLine
-import com.itsaky.androidide.resources.R.string
-import com.itsaky.androidide.tasks.TaskExecutor.CallbackWithError
-import com.itsaky.androidide.tasks.TaskExecutor.executeAsync
-import com.itsaky.androidide.tasks.TaskExecutor.executeAsyncProvideError
-import com.itsaky.androidide.utils.IntentUtils.shareFile
-import com.itsaky.androidide.utils.Symbols.forFile
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.adapters.DiagnosticsAdapter
+import com.willow.androidide.ultra.adapters.EditorBottomSheetTabAdapter
+import com.willow.androidide.ultra.adapters.SearchListAdapter
+import com.willow.androidide.ultra.databinding.LayoutEditorBottomSheetBinding
+import com.willow.androidide.ultra.fragments.output.ShareableOutputFragment
+import com.willow.androidide.ultra.models.LogLine
+import com.willow.androidide.ultra.resources.R.string
+import com.willow.androidide.ultra.tasks.TaskExecutor.CallbackWithError
+import com.willow.androidide.ultra.tasks.TaskExecutor.executeAsync
+import com.willow.androidide.ultra.tasks.TaskExecutor.executeAsyncProvideError
+import com.willow.androidide.ultra.utils.IntentUtils.shareFile
+import com.willow.androidide.ultra.utils.Symbols.forFile
+import com.willow.androidide.ultra.utils.flashError
 import org.slf4j.LoggerFactory
 import java.io.File
 import java.io.IOException

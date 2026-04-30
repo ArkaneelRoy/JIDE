@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java.providers
+package com.willow.androidide.ultra.lsp.java.providers
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.eventbus.events.editor.ChangeType.NEW_TEXT
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.lsp.java.JavaLSPTest
-import com.itsaky.androidide.lsp.models.ExpandSelectionParams
-import com.itsaky.androidide.models.Position
-import com.itsaky.androidide.models.Range
+import com.willow.androidide.ultra.eventbus.events.editor.ChangeType.NEW_TEXT
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.lsp.java.JavaLSPTest
+import com.willow.androidide.ultra.lsp.models.ExpandSelectionParams
+import com.willow.androidide.ultra.models.Position
+import com.willow.androidide.ultra.models.Range
 import io.github.rosemoe.sora.text.Content
 import kotlinx.coroutines.runBlocking
 import org.junit.Before

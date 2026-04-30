@@ -1,50 +1,50 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers.completion
+package com.willow.androidide.ultra.lsp.java.providers.completion
 
-import com.itsaky.androidide.lsp.api.IServerSettings
-import com.itsaky.androidide.lsp.api.describeSnippet
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.edits.ClassImportEditHandler
-import com.itsaky.androidide.lsp.java.models.JavaCompletionItem
-import com.itsaky.androidide.lsp.java.providers.BaseJavaServiceProvider
-import com.itsaky.androidide.lsp.java.utils.EditHelper
-import com.itsaky.androidide.lsp.models.ClassCompletionData
-import com.itsaky.androidide.lsp.models.Command
-import com.itsaky.androidide.lsp.models.CompletionItem
-import com.itsaky.androidide.lsp.models.CompletionItemKind
-import com.itsaky.androidide.lsp.models.CompletionItemKind.ENUM_MEMBER
-import com.itsaky.androidide.lsp.models.CompletionItemKind.FUNCTION
-import com.itsaky.androidide.lsp.models.CompletionItemKind.KEYWORD
-import com.itsaky.androidide.lsp.models.CompletionItemKind.MODULE
-import com.itsaky.androidide.lsp.models.CompletionItemKind.NONE
-import com.itsaky.androidide.lsp.models.CompletionItemKind.PROPERTY
-import com.itsaky.androidide.lsp.models.CompletionItemKind.VARIABLE
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.FieldCompletionData
-import com.itsaky.androidide.lsp.models.ICompletionData
-import com.itsaky.androidide.lsp.models.InsertTextFormat.SNIPPET
-import com.itsaky.androidide.lsp.models.MatchLevel
-import com.itsaky.androidide.lsp.models.MethodCompletionData
-import com.itsaky.androidide.lsp.snippets.ISnippet
-import com.itsaky.androidide.preferences.utils.indentationString
-import com.itsaky.androidide.progress.ProgressManager.Companion.abortIfCancelled
+import com.willow.androidide.ultra.lsp.api.IServerSettings
+import com.willow.androidide.ultra.lsp.api.describeSnippet
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.edits.ClassImportEditHandler
+import com.willow.androidide.ultra.lsp.java.models.JavaCompletionItem
+import com.willow.androidide.ultra.lsp.java.providers.BaseJavaServiceProvider
+import com.willow.androidide.ultra.lsp.java.utils.EditHelper
+import com.willow.androidide.ultra.lsp.models.ClassCompletionData
+import com.willow.androidide.ultra.lsp.models.Command
+import com.willow.androidide.ultra.lsp.models.CompletionItem
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.ENUM_MEMBER
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.FUNCTION
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.KEYWORD
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.MODULE
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.NONE
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.PROPERTY
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.VARIABLE
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.FieldCompletionData
+import com.willow.androidide.ultra.lsp.models.ICompletionData
+import com.willow.androidide.ultra.lsp.models.InsertTextFormat.SNIPPET
+import com.willow.androidide.ultra.lsp.models.MatchLevel
+import com.willow.androidide.ultra.lsp.models.MethodCompletionData
+import com.willow.androidide.ultra.lsp.snippets.ISnippet
+import com.willow.androidide.ultra.preferences.utils.indentationString
+import com.willow.androidide.ultra.progress.ProgressManager.Companion.abortIfCancelled
 import jdkx.lang.model.element.Element
 import jdkx.lang.model.element.ElementKind.ANNOTATION_TYPE
 import jdkx.lang.model.element.ElementKind.CLASS

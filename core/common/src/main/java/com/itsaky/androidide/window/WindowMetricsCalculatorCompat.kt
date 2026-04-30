@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.itsaky.androidide.window
+package com.willow.androidide.ultra.window
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -28,14 +28,14 @@ import android.view.Display
 import android.view.DisplayCutout
 import androidx.annotation.RequiresApi
 import androidx.annotation.VisibleForTesting
-import com.itsaky.androidide.window.ActivityCompatHelperApi24.isInMultiWindowMode
-import com.itsaky.androidide.window.ActivityCompatHelperApi30.currentWindowBounds
-import com.itsaky.androidide.window.ActivityCompatHelperApi30.maximumWindowBounds
-import com.itsaky.androidide.window.DisplayCompatHelperApi17.getRealSize
-import com.itsaky.androidide.window.DisplayCompatHelperApi28.safeInsetBottom
-import com.itsaky.androidide.window.DisplayCompatHelperApi28.safeInsetLeft
-import com.itsaky.androidide.window.DisplayCompatHelperApi28.safeInsetRight
-import com.itsaky.androidide.window.DisplayCompatHelperApi28.safeInsetTop
+import com.willow.androidide.ultra.window.ActivityCompatHelperApi24.isInMultiWindowMode
+import com.willow.androidide.ultra.window.ActivityCompatHelperApi30.currentWindowBounds
+import com.willow.androidide.ultra.window.ActivityCompatHelperApi30.maximumWindowBounds
+import com.willow.androidide.ultra.window.DisplayCompatHelperApi17.getRealSize
+import com.willow.androidide.ultra.window.DisplayCompatHelperApi28.safeInsetBottom
+import com.willow.androidide.ultra.window.DisplayCompatHelperApi28.safeInsetLeft
+import com.willow.androidide.ultra.window.DisplayCompatHelperApi28.safeInsetRight
+import com.willow.androidide.ultra.window.DisplayCompatHelperApi28.safeInsetTop
 import java.lang.reflect.InvocationTargetException
 
 /**

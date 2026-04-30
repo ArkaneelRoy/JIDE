@@ -1,6 +1,6 @@
-package com.itsaky.androidide.fuzzysearch.algorithms;
+package com.willow.androidide.ultra.fuzzysearch.algorithms;
 
-import com.itsaky.androidide.fuzzysearch.ToStringFunction;
+import com.willow.androidide.ultra.fuzzysearch.ToStringFunction;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

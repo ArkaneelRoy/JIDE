@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.actions.file
+package com.willow.androidide.ultra.actions.file
 
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem.Location
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_FILE_TABS
-import com.itsaky.androidide.actions.EditorActivityAction
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.activities.editor.EditorHandlerActivity
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem.Location
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_FILE_TABS
+import com.willow.androidide.ultra.actions.EditorActivityAction
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.activities.editor.EditorHandlerActivity
 
 /**
  * Action related to file tabs. Shown only when there is at least one file opened.

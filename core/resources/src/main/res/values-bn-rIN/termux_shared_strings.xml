@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~  This file is part of AndroidIDE.
+  ~  This file is part of AndroidIDE Ultra.
   ~
-  ~  AndroidIDE is free software: you can redistribute it and/or modify
+  ~  AndroidIDE Ultra is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
   ~  the Free Software Foundation, either version 3 of the License, or
   ~  (at your option) any later version.
   ~
-  ~  AndroidIDE is distributed in the hope that it will be useful,
+  ~  AndroidIDE Ultra is distributed in the hope that it will be useful,
   ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~  GNU General Public License for more details.
   ~
   ~  You should have received a copy of the GNU General Public License
-  ~   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+  ~   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
   -->
 <resources>
   <string name="msg_directory_absolute_path">%1$s ডিরেক্টরির পরম পথ: \"%2$s\"</string>
@@ -59,12 +59,12 @@
         \n\nWe do not provide support for any hacking related tools/scripts. Any questions asked about them over email,
         on GitHub or other official termux community forums **will likely be automatically closed/deleted** and may
         even result in **temporary or permanent** ban. Check %1$s/wiki/Hacking for details.</string>
-  <string name="msg_termux_app_required_by_app">Termux কমান্ড চালানোর জন্য %1$s অ্যাপের AndroidIDE প্রয়োজন.</string>
-  <string name="error_termux_app_package_context_not_accessible">AndroidIDE অ্যাপ (প্যাকেজ প্রসঙ্গ) অ্যাক্সেসযোগ্য নয়।.</string>
-  <string name="error_termux_prefix_dir_path_not_accessible">AndroidIDE অ্যাপ $PREFIX ডিরেক্টরিটি %1$s অ্যাপ দ্বারা অ্যাক্সেসযোগ্য নয়৷
-        আপনি AndroidIDE অ্যাপ ইনস্টল বা সেটআপ করেননি বলে এটি হতে পারে
-    AndroidIDE অ্যাপ্লিকেশান এবং %1$s অ্যাপ্লিকেশান উভয়েরই আলাদা APK স্বাক্ষর রয়েছে কারণ আপনি বিভিন্ন উত্স থেকে উভয় অ্যাপ ইনস্টল করতে পরিচালনা করেছেন৷
-        এটাও হতে পারে কারণ AndroidIDE $PREFIX ডিরেক্টরি \"/data/data/com.itsaky.androidide/files/usr\" নেই বা পড়া নেই,
+  <string name="msg_termux_app_required_by_app">Termux কমান্ড চালানোর জন্য %1$s অ্যাপের AndroidIDE Ultra প্রয়োজন.</string>
+  <string name="error_termux_app_package_context_not_accessible">AndroidIDE Ultra অ্যাপ (প্যাকেজ প্রসঙ্গ) অ্যাক্সেসযোগ্য নয়।.</string>
+  <string name="error_termux_prefix_dir_path_not_accessible">AndroidIDE Ultra অ্যাপ $PREFIX ডিরেক্টরিটি %1$s অ্যাপ দ্বারা অ্যাক্সেসযোগ্য নয়৷
+        আপনি AndroidIDE Ultra অ্যাপ ইনস্টল বা সেটআপ করেননি বলে এটি হতে পারে
+    AndroidIDE Ultra অ্যাপ্লিকেশান এবং %1$s অ্যাপ্লিকেশান উভয়েরই আলাদা APK স্বাক্ষর রয়েছে কারণ আপনি বিভিন্ন উত্স থেকে উভয় অ্যাপ ইনস্টল করতে পরিচালনা করেছেন৷
+        এটাও হতে পারে কারণ AndroidIDE Ultra $PREFIX ডিরেক্টরি \"/data/data/com.willow.androidide.ultra/files/usr\" নেই বা পড়া নেই,
         লিখুন এবং অনুমতি কার্যকর করুন।.</string>
   <!-- Miscellaneous -->
   <string name="action_share">শেয়ার করুন</string>

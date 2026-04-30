@@ -1,20 +1,20 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.fragments.sidebar
+package com.willow.androidide.ultra.fragments.sidebar
 
 import android.content.Context
 import android.os.Bundle
@@ -29,20 +29,20 @@ import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import com.blankj.utilcode.util.SizeUtils
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.itsaky.androidide.adapters.viewholders.FileTreeViewHolder
-import com.itsaky.androidide.databinding.LayoutEditorFileTreeBinding
-import com.itsaky.androidide.eventbus.events.filetree.FileClickEvent
-import com.itsaky.androidide.eventbus.events.filetree.FileLongClickEvent
-import com.itsaky.androidide.events.ExpandTreeNodeRequestEvent
-import com.itsaky.androidide.events.ListProjectFilesRequestEvent
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.resources.R.drawable
-import com.itsaky.androidide.tasks.TaskExecutor.executeAsync
-import com.itsaky.androidide.tasks.callables.FileTreeCallable
-import com.itsaky.androidide.tasks.callables.FileTreeCallable.SortFileName
-import com.itsaky.androidide.tasks.callables.FileTreeCallable.SortFolder
-import com.itsaky.androidide.utils.doOnApplyWindowInsets
-import com.itsaky.androidide.viewmodel.FileTreeViewModel
+import com.willow.androidide.ultra.adapters.viewholders.FileTreeViewHolder
+import com.willow.androidide.ultra.databinding.LayoutEditorFileTreeBinding
+import com.willow.androidide.ultra.eventbus.events.filetree.FileClickEvent
+import com.willow.androidide.ultra.eventbus.events.filetree.FileLongClickEvent
+import com.willow.androidide.ultra.events.ExpandTreeNodeRequestEvent
+import com.willow.androidide.ultra.events.ListProjectFilesRequestEvent
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.resources.R.drawable
+import com.willow.androidide.ultra.tasks.TaskExecutor.executeAsync
+import com.willow.androidide.ultra.tasks.callables.FileTreeCallable
+import com.willow.androidide.ultra.tasks.callables.FileTreeCallable.SortFileName
+import com.willow.androidide.ultra.tasks.callables.FileTreeCallable.SortFolder
+import com.willow.androidide.ultra.utils.doOnApplyWindowInsets
+import com.willow.androidide.ultra.viewmodel.FileTreeViewModel
 import com.unnamed.b.atv.model.TreeNode
 import com.unnamed.b.atv.model.TreeNode.TreeNodeClickListener
 import com.unnamed.b.atv.model.TreeNode.TreeNodeLongClickListener

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.xml.internal.resources
+package com.willow.androidide.ultra.xml.internal.resources
 
 import com.android.SdkConstants
 import com.android.SdkConstants.FN_INTENT_ACTIONS_ACTIVITY
@@ -33,16 +33,16 @@ import com.android.aaptcompiler.TableExtractor
 import com.android.aaptcompiler.TableExtractorOptions
 import com.android.aaptcompiler.extractPathData
 import com.google.auto.service.AutoService
-import com.itsaky.androidide.aapt.logging.IDELogger
-import com.itsaky.androidide.layoutlib.resources.ResourceVisibility.PUBLIC
-import com.itsaky.androidide.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.ACTIVITY_ACTIONS
-import com.itsaky.androidide.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.BROADCAST_ACTIONS
-import com.itsaky.androidide.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.CATEGORIES
-import com.itsaky.androidide.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.FEATURES
-import com.itsaky.androidide.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.SERVICE_ACTIONS
-import com.itsaky.androidide.xml.res.IResourceTable
-import com.itsaky.androidide.xml.resources.ResourceTableRegistry
-import com.itsaky.androidide.xml.resources.ResourceTableRegistry.Companion.PCK_ANDROID
+import com.willow.androidide.ultra.aapt.logging.IDELogger
+import com.willow.androidide.ultra.layoutlib.resources.ResourceVisibility.PUBLIC
+import com.willow.androidide.ultra.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.ACTIVITY_ACTIONS
+import com.willow.androidide.ultra.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.BROADCAST_ACTIONS
+import com.willow.androidide.ultra.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.CATEGORIES
+import com.willow.androidide.ultra.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.FEATURES
+import com.willow.androidide.ultra.xml.internal.resources.DefaultResourceTableRegistry.SingleLineValueEntryType.SERVICE_ACTIONS
+import com.willow.androidide.ultra.xml.res.IResourceTable
+import com.willow.androidide.ultra.xml.resources.ResourceTableRegistry
+import com.willow.androidide.ultra.xml.resources.ResourceTableRegistry.Companion.PCK_ANDROID
 import org.slf4j.LoggerFactory
 import java.io.File
 import java.util.concurrent.ConcurrentHashMap

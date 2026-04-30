@@ -1,25 +1,25 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.internal.model
+package com.willow.androidide.ultra.lsp.internal.model
 
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.progress.ICancelChecker
-import com.itsaky.androidide.utils.DocumentUtils
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.progress.ICancelChecker
+import com.willow.androidide.ultra.utils.DocumentUtils
 import org.slf4j.LoggerFactory
 import java.nio.file.Paths
 
@@ -31,7 +31,7 @@ import java.nio.file.Paths
 class CachedCompletion
 private constructor(
   val params: CompletionParams,
-  val result: com.itsaky.androidide.lsp.models.CompletionResult
+  val result: com.willow.androidide.ultra.lsp.models.CompletionResult
 ) {
 
   companion object {
@@ -43,10 +43,10 @@ private constructor(
     val EMPTY =
       cache(
         CompletionParams(
-          com.itsaky.androidide.models.Position.NONE,
+          com.willow.androidide.ultra.models.Position.NONE,
           Paths.get(""), ICancelChecker.CANCELLED
         ),
-        com.itsaky.androidide.lsp.models.CompletionResult.EMPTY
+        com.willow.androidide.ultra.lsp.models.CompletionResult.EMPTY
       )
 
     /**
@@ -59,7 +59,7 @@ private constructor(
     @JvmStatic
     fun cache(
       _params: CompletionParams,
-      result: com.itsaky.androidide.lsp.models.CompletionResult
+      result: com.willow.androidide.ultra.lsp.models.CompletionResult
     ): CachedCompletion {
       val params =
         CompletionParams(_params.position, _params.file, ICancelChecker.CANCELLED).apply {

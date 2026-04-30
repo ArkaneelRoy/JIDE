@@ -62,7 +62,7 @@ import jdkx.tools.StandardJavaFileManager;
 import jdkx.tools.StandardLocation;
 import jdkx.tools.ToolProvider;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 import openjdk.tools.javac.file.JavacFileManager;
 import openjdk.tools.javac.platform.JDKPlatformProvider;
 
@@ -377,12 +377,12 @@ public class Main implements DiagnosticListener<JavaFileObject> {
             hasJavaSE_EE = false;
         }
 
-        // AndroidIDE changed: Has modules only when enabled.
+        // AndroidIDE Ultra changed: Has modules only when enabled.
         hasModules = JavacConfigProvider.isModulesEnabled() && hasModules;
 
         options.addAll(List.of("--release", release));
 
-        // AndroidIDE changed: No module support!
+        // AndroidIDE Ultra changed: No module support!
         if (hasModules) {
             List<String> rootMods = hasJavaSE_EE ? List.of("java.se", "java.se.ee")
                     : List.of("java.se");

@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.annotations.ksp.inflater
+package com.willow.androidide.ultra.annotations.ksp.inflater
 
 import androidx.annotation.RequiresApi
 import com.google.devtools.ksp.KspExperimental
@@ -26,9 +26,9 @@ import com.google.devtools.ksp.symbol.KSAnnotation
 import com.google.devtools.ksp.symbol.KSClassDeclaration
 import com.google.devtools.ksp.symbol.KSFunctionDeclaration
 import com.google.devtools.ksp.symbol.KSType
-import com.itsaky.androidide.annotations.inflater.ViewAdapter
-import com.itsaky.androidide.annotations.ksp.getKSAnnotationsByType
-import com.itsaky.androidide.annotations.uidesigner.IncludeInDesigner
+import com.willow.androidide.ultra.annotations.inflater.ViewAdapter
+import com.willow.androidide.ultra.annotations.ksp.getKSAnnotationsByType
+import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner
 import com.squareup.javapoet.ClassName
 import com.squareup.javapoet.CodeBlock
 import com.squareup.javapoet.FieldSpec

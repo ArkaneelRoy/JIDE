@@ -1,35 +1,35 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers.completion
+package com.willow.androidide.ultra.lsp.java.providers.completion
 
-import com.itsaky.androidide.lsp.api.IServerSettings
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.compiler.JavaCompilerService
-import com.itsaky.androidide.lsp.java.providers.CompletionProvider.MAX_COMPLETION_ITEMS
-import com.itsaky.androidide.lsp.models.CompletionItem
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.MatchLevel.CASE_SENSITIVE_EQUAL
-import com.itsaky.androidide.lsp.models.MatchLevel.NO_MATCH
-import com.itsaky.androidide.progress.ProgressManager.Companion.abortIfCancelled
-import com.itsaky.androidide.projects.ModuleProject
-import com.itsaky.androidide.projects.util.BootClasspathProvider
-import com.itsaky.androidide.utils.ClassTrie
-import com.itsaky.androidide.utils.ClassTrie.Node
+import com.willow.androidide.ultra.lsp.api.IServerSettings
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
+import com.willow.androidide.ultra.lsp.java.providers.CompletionProvider.MAX_COMPLETION_ITEMS
+import com.willow.androidide.ultra.lsp.models.CompletionItem
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.MatchLevel.CASE_SENSITIVE_EQUAL
+import com.willow.androidide.ultra.lsp.models.MatchLevel.NO_MATCH
+import com.willow.androidide.ultra.progress.ProgressManager.Companion.abortIfCancelled
+import com.willow.androidide.ultra.projects.ModuleProject
+import com.willow.androidide.ultra.projects.util.BootClasspathProvider
+import com.willow.androidide.ultra.utils.ClassTrie
+import com.willow.androidide.ultra.utils.ClassTrie.Node
 import jdkx.lang.model.element.Element
 import jdkx.lang.model.element.ElementKind
 import jdkx.lang.model.element.ElementKind.ANNOTATION_TYPE
@@ -236,7 +236,7 @@ class ImportCompletionProvider(
    * @param pkgName The package name of the package to find node for.
    * @return The found package name. Or `null` if no package can be found.
    */
-  private fun collectPackageNode(trie: com.itsaky.androidide.utils.ClassTrie, pkgName: String): Node? {
+  private fun collectPackageNode(trie: com.willow.androidide.ultra.utils.ClassTrie, pkgName: String): Node? {
     val segments = trie.segments(pkgName)
     var node: Node? = trie.root
     for (segment in segments) {

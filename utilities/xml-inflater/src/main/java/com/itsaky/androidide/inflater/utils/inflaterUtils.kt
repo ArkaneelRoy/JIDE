@@ -1,38 +1,38 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater.utils
+package com.willow.androidide.ultra.inflater.utils
 
 import com.android.aaptcompiler.AaptResourceType
 import com.android.aaptcompiler.ResourceFile.Type.ProtoXml
 import com.android.aaptcompiler.XmlProcessor
 import com.android.aaptcompiler.extractPathData
-import com.itsaky.androidide.aapt.logging.IDELogger
-import com.itsaky.androidide.inflater.IAttribute
-import com.itsaky.androidide.inflater.IComponentFactory
-import com.itsaky.androidide.inflater.ILayoutInflater
-import com.itsaky.androidide.inflater.ILayoutInflater.Companion
-import com.itsaky.androidide.inflater.INamespace
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.inflater.InflateException
-import com.itsaky.androidide.inflater.internal.AttributeImpl
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.projects.android.AndroidModule
+import com.willow.androidide.ultra.aapt.logging.IDELogger
+import com.willow.androidide.ultra.inflater.IAttribute
+import com.willow.androidide.ultra.inflater.IComponentFactory
+import com.willow.androidide.ultra.inflater.ILayoutInflater
+import com.willow.androidide.ultra.inflater.ILayoutInflater.Companion
+import com.willow.androidide.ultra.inflater.INamespace
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.inflater.InflateException
+import com.willow.androidide.ultra.inflater.internal.AttributeImpl
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.projects.android.AndroidModule
 import java.io.File
 
 /** Get the [ILayoutInflater] registered with [Lookup]. */

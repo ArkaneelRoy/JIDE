@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.api;
+package com.willow.androidide.ultra.lsp.api;
 
 import androidx.annotation.Nullable;
-import com.itsaky.androidide.lsp.models.CodeActionItem;
-import com.itsaky.androidide.lsp.models.DiagnosticItem;
-import com.itsaky.androidide.lsp.models.DiagnosticResult;
-import com.itsaky.androidide.lsp.models.PerformCodeActionParams;
-import com.itsaky.androidide.lsp.models.ShowDocumentParams;
-import com.itsaky.androidide.lsp.models.ShowDocumentResult;
-import com.itsaky.androidide.models.Location;
+import com.willow.androidide.ultra.lsp.models.CodeActionItem;
+import com.willow.androidide.ultra.lsp.models.DiagnosticItem;
+import com.willow.androidide.ultra.lsp.models.DiagnosticResult;
+import com.willow.androidide.ultra.lsp.models.PerformCodeActionParams;
+import com.willow.androidide.ultra.lsp.models.ShowDocumentParams;
+import com.willow.androidide.ultra.lsp.models.ShowDocumentResult;
+import com.willow.androidide.ultra.models.Location;
 import java.io.File;
 import java.util.List;
 

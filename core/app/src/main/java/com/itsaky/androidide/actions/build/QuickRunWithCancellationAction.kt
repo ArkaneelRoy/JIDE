@@ -1,44 +1,44 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.actions.build
+package com.willow.androidide.ultra.actions.build
 
 import android.content.Context
 import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import androidx.core.content.ContextCompat
-import com.itsaky.androidide.R.string
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.BaseBuildAction
-import com.itsaky.androidide.actions.getContext
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.actions.openApplicationModuleChooser
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.models.ApkMetadata
-import com.itsaky.androidide.projects.android.AndroidModule
-import com.itsaky.androidide.projects.builder.BuildService
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.tooling.api.messages.result.TaskExecutionResult
-import com.itsaky.androidide.tooling.api.models.BasicAndroidVariantMetadata
-import com.itsaky.androidide.utils.ApkInstaller
-import com.itsaky.androidide.utils.InstallationResultHandler
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.resolveAttr
+import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.BaseBuildAction
+import com.willow.androidide.ultra.actions.getContext
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.actions.openApplicationModuleChooser
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.models.ApkMetadata
+import com.willow.androidide.ultra.projects.android.AndroidModule
+import com.willow.androidide.ultra.projects.builder.BuildService
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult
+import com.willow.androidide.ultra.tooling.api.models.BasicAndroidVariantMetadata
+import com.willow.androidide.ultra.utils.ApkInstaller
+import com.willow.androidide.ultra.utils.InstallationResultHandler
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.resolveAttr
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -179,7 +179,7 @@ class QuickRunWithCancellationAction(context: Context, override val order: Int) 
     log.info("Sending build cancellation request...")
     val builder = Lookup.getDefault().lookup(BuildService.KEY_BUILD_SERVICE)
     if (builder?.isToolingServerStarted() != true) {
-      flashError(com.itsaky.androidide.projects.R.string.msg_tooling_server_unavailable)
+      flashError(com.willow.androidide.ultra.projects.R.string.msg_tooling_server_unavailable)
       return false
     }
 

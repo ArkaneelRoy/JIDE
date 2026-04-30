@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.xml.providers
+package com.willow.androidide.ultra.lsp.xml.providers
 
 import com.android.SdkConstants.ANDROID_MANIFEST_XML
 import com.android.aaptcompiler.AaptResourceType.ANIM
@@ -26,38 +26,38 @@ import com.android.aaptcompiler.AaptResourceType.MENU
 import com.android.aaptcompiler.AaptResourceType.TRANSITION
 import com.android.aaptcompiler.ResourcePathData
 import com.android.aaptcompiler.extractPathData
-import com.itsaky.androidide.lsp.api.AbstractServiceProvider
-import com.itsaky.androidide.lsp.api.ICompletionProvider
-import com.itsaky.androidide.lsp.api.IServerSettings
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.CompletionResult.Companion.EMPTY
-import com.itsaky.androidide.lsp.xml.providers.completion.AttrValueCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.IXmlCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.canCompleteManifest
-import com.itsaky.androidide.lsp.xml.providers.completion.common.CommonAttrCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.etc.InheritingAttrCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.layout.LayoutAttrCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.layout.LayoutTagCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.manifest.ManifestAttrCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.manifest.ManifestAttrValueCompletionProvider
-import com.itsaky.androidide.lsp.xml.providers.completion.manifest.ManifestTagCompletionProvider
-import com.itsaky.androidide.lsp.xml.utils.AnimTagTransformer
-import com.itsaky.androidide.lsp.xml.utils.AnimatorTagTransformer
-import com.itsaky.androidide.lsp.xml.utils.DrawableTagTransformer
-import com.itsaky.androidide.lsp.xml.utils.ITagTransformer
-import com.itsaky.androidide.lsp.xml.utils.MenuTagTransformer
-import com.itsaky.androidide.lsp.xml.utils.NoOpTagTransformer
-import com.itsaky.androidide.lsp.xml.utils.TransitionTagTransformer
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils.NodeType
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils.NodeType.ATTRIBUTE
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils.NodeType.ATTRIBUTE_VALUE
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils.NodeType.TAG
-import com.itsaky.androidide.lsp.xml.utils.XmlUtils.NodeType.UNKNOWN
-import com.itsaky.androidide.lsp.xml.utils.forTransitionAttr
-import com.itsaky.androidide.utils.CharSequenceReader
-import com.itsaky.androidide.utils.StopWatch
+import com.willow.androidide.ultra.lsp.api.AbstractServiceProvider
+import com.willow.androidide.ultra.lsp.api.ICompletionProvider
+import com.willow.androidide.ultra.lsp.api.IServerSettings
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.CompletionResult.Companion.EMPTY
+import com.willow.androidide.ultra.lsp.xml.providers.completion.AttrValueCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.IXmlCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.canCompleteManifest
+import com.willow.androidide.ultra.lsp.xml.providers.completion.common.CommonAttrCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.etc.InheritingAttrCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.layout.LayoutAttrCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.layout.LayoutTagCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.manifest.ManifestAttrCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.manifest.ManifestAttrValueCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.providers.completion.manifest.ManifestTagCompletionProvider
+import com.willow.androidide.ultra.lsp.xml.utils.AnimTagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.AnimatorTagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.DrawableTagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.ITagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.MenuTagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.NoOpTagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.TransitionTagTransformer
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils.NodeType
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils.NodeType.ATTRIBUTE
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils.NodeType.ATTRIBUTE_VALUE
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils.NodeType.TAG
+import com.willow.androidide.ultra.lsp.xml.utils.XmlUtils.NodeType.UNKNOWN
+import com.willow.androidide.ultra.lsp.xml.utils.forTransitionAttr
+import com.willow.androidide.ultra.utils.CharSequenceReader
+import com.willow.androidide.ultra.utils.StopWatch
 import io.github.rosemoe.sora.text.ContentReference
 import org.eclipse.lemminx.dom.DOMParser
 import org.eclipse.lemminx.uriresolver.URIResolverExtensionManager

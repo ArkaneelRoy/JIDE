@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.fragments
+package com.willow.androidide.ultra.fragments
 
 import android.os.Bundle
 import android.view.View
@@ -23,20 +23,20 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionManager
-import com.itsaky.androidide.R
-import com.itsaky.androidide.R.string
-import com.itsaky.androidide.activities.MainActivity
-import com.itsaky.androidide.adapters.TemplateWidgetsListAdapter
-import com.itsaky.androidide.databinding.FragmentTemplateDetailsBinding
-import com.itsaky.androidide.tasks.executeAsyncProvideError
-import com.itsaky.androidide.templates.ProjectTemplateRecipeResult
-import com.itsaky.androidide.templates.StringParameter
-import com.itsaky.androidide.templates.Template
-import com.itsaky.androidide.templates.impl.ConstraintVerifier
-import com.itsaky.androidide.utils.TemplateRecipeExecutor
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.flashSuccess
-import com.itsaky.androidide.viewmodel.MainViewModel
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.activities.MainActivity
+import com.willow.androidide.ultra.adapters.TemplateWidgetsListAdapter
+import com.willow.androidide.ultra.databinding.FragmentTemplateDetailsBinding
+import com.willow.androidide.ultra.tasks.executeAsyncProvideError
+import com.willow.androidide.ultra.templates.ProjectTemplateRecipeResult
+import com.willow.androidide.ultra.templates.StringParameter
+import com.willow.androidide.ultra.templates.Template
+import com.willow.androidide.ultra.templates.impl.ConstraintVerifier
+import com.willow.androidide.ultra.utils.TemplateRecipeExecutor
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.flashSuccess
+import com.willow.androidide.ultra.viewmodel.MainViewModel
 import org.slf4j.LoggerFactory
 
 /**

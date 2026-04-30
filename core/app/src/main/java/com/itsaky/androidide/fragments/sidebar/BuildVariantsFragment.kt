@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.fragments.sidebar
+package com.willow.androidide.ultra.fragments.sidebar
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.itsaky.androidide.activities.editor.ProjectHandlerActivity
-import com.itsaky.androidide.adapters.BuildVariantsAdapter
-import com.itsaky.androidide.databinding.FragmentBuildVariantsBinding
-import com.itsaky.androidide.fragments.EmptyStateFragment
-import com.itsaky.androidide.tooling.api.models.BuildVariantInfo
-import com.itsaky.androidide.viewmodel.BuildVariantsViewModel
-import com.itsaky.androidide.viewmodel.EditorViewModel
+import com.willow.androidide.ultra.activities.editor.ProjectHandlerActivity
+import com.willow.androidide.ultra.adapters.BuildVariantsAdapter
+import com.willow.androidide.ultra.databinding.FragmentBuildVariantsBinding
+import com.willow.androidide.ultra.fragments.EmptyStateFragment
+import com.willow.androidide.ultra.tooling.api.models.BuildVariantInfo
+import com.willow.androidide.ultra.viewmodel.BuildVariantsViewModel
+import com.willow.androidide.ultra.viewmodel.EditorViewModel
 
 /**
  * A fragment to show the list of Android modules and its build variants.

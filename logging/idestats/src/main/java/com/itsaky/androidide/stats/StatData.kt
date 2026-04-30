@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.stats
+package com.willow.androidide.ultra.stats
 
 import android.os.Build
 import androidx.work.Data
 import androidx.work.workDataOf
 import com.google.gson.annotations.SerializedName
-import com.itsaky.androidide.stats.StatUploadWorker.Companion.KEY_ANDROID_VERSION
-import com.itsaky.androidide.stats.StatUploadWorker.Companion.KEY_APP_CPU_ARCH
-import com.itsaky.androidide.stats.StatUploadWorker.Companion.KEY_APP_VERSION
-import com.itsaky.androidide.stats.StatUploadWorker.Companion.KEY_DEVICE_COUNTRY
-import com.itsaky.androidide.stats.StatUploadWorker.Companion.KEY_DEVICE_ID
-import com.itsaky.androidide.stats.StatUploadWorker.Companion.KEY_DEVICE_NAME
+import com.willow.androidide.ultra.stats.StatUploadWorker.Companion.KEY_ANDROID_VERSION
+import com.willow.androidide.ultra.stats.StatUploadWorker.Companion.KEY_APP_CPU_ARCH
+import com.willow.androidide.ultra.stats.StatUploadWorker.Companion.KEY_APP_VERSION
+import com.willow.androidide.ultra.stats.StatUploadWorker.Companion.KEY_DEVICE_COUNTRY
+import com.willow.androidide.ultra.stats.StatUploadWorker.Companion.KEY_DEVICE_ID
+import com.willow.androidide.ultra.stats.StatUploadWorker.Companion.KEY_DEVICE_NAME
 
 /**
  * Data that is uploaded to the server.

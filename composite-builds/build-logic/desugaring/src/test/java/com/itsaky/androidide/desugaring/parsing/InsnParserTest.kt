@@ -1,10 +1,10 @@
-package com.itsaky.androidide.desugaring.parsing
+package com.willow.androidide.ultra.desugaring.parsing
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.desugaring.dsl.MethodOpcode
-import com.itsaky.androidide.desugaring.internal.parsing.InsnLexer
-import com.itsaky.androidide.desugaring.internal.parsing.InsnParser
-import com.itsaky.androidide.desugaring.internal.parsing.InsnParser.ParseException
+import com.willow.androidide.ultra.desugaring.dsl.MethodOpcode
+import com.willow.androidide.ultra.desugaring.internal.parsing.InsnLexer
+import com.willow.androidide.ultra.desugaring.internal.parsing.InsnParser
+import com.willow.androidide.ultra.desugaring.internal.parsing.InsnParser.ParseException
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
@@ -287,7 +287,7 @@ class InsnParserTest {
     assertThat(insn.methodDescriptor).isEqualTo("(I)[B")
     assertThat(insn.toOpcode).isEqualTo(MethodOpcode.INVOKESTATIC)
     assertThat(insn.toClass).isEqualTo(
-      "com.itsaky.androidide.desugaring.sample.java.io.DesugaredInputStream")
+      "com.willow.androidide.ultra.desugaring.sample.java.io.DesugaredInputStream")
     assertThat(insn.toMethod).isEqualTo("readNBytes")
     assertThat(insn.toMethodDescriptor).isEqualTo("(Ljava/io/InputStream;I)V")
   }
@@ -318,7 +318,7 @@ class InsnParserTest {
       assertThat(insn.methodDescriptor).isEqualTo("(I)[B")
       assertThat(insn.toOpcode).isEqualTo(MethodOpcode.INVOKESTATIC)
       assertThat(insn.toClass).isEqualTo(
-        "com.itsaky.androidide.desugaring.sample.java.io.DesugaredInputStream")
+        "com.willow.androidide.ultra.desugaring.sample.java.io.DesugaredInputStream")
       assertThat(insn.toMethod).isEqualTo("readNBytes")
       assertThat(insn.toMethodDescriptor).isEqualTo(
         "([Ljava/io/InputStream;I)V")
@@ -332,7 +332,7 @@ class InsnParserTest {
       assertThat(insn.methodDescriptor).isEqualTo("()D")
       assertThat(insn.toOpcode).isEqualTo(MethodOpcode.INVOKESTATIC)
       assertThat(insn.toClass).isEqualTo(
-        "com.itsaky.androidide.desugaring.sample.java.util.DesugaredMath")
+        "com.willow.androidide.ultra.desugaring.sample.java.util.DesugaredMath")
       assertThat(insn.toMethod).isEqualTo("random")
       assertThat(insn.toMethodDescriptor).isEqualTo("()D")
     }

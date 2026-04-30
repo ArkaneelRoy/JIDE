@@ -24,7 +24,7 @@
  */
 package openjdk.tools.javac.file;
 
-import com.itsaky.androidide.zipfs2.JarPackageProvider;
+import com.willow.androidide.ultra.zipfs2.JarPackageProvider;
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -339,8 +339,8 @@ public class JavacFileManager extends BaseFileManager implements StandardJavaFil
 
         BasicFileAttributes attr = null;
 
-        // AndroidIDE changed: Prefer cached attributes as computing file attributes is a bit expensive
-        // 'else' part is mostly not reached in AndroidIDE
+        // AndroidIDE Ultra changed: Prefer cached attributes as computing file attributes is a bit expensive
+        // 'else' part is mostly not reached in AndroidIDE Ultra
         if (fsInfo instanceof CacheFSInfo) {
             Optional<BasicFileAttributes> attrs = ((CacheFSInfo) fsInfo).getAttributes(realPath);
             if (attrs.isPresent()) {

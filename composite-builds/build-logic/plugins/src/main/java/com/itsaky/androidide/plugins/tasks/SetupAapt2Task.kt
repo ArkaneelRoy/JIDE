@@ -1,26 +1,26 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.plugins.tasks
+package com.willow.androidide.ultra.plugins.tasks
 
-import com.itsaky.androidide.build.config.FDroidConfig
-import com.itsaky.androidide.plugins.util.DownloadUtils
-import com.itsaky.androidide.plugins.util.ELFUtils
-import com.itsaky.androidide.build.config.isFDroidBuild
+import com.willow.androidide.ultra.build.config.FDroidConfig
+import com.willow.androidide.ultra.plugins.util.DownloadUtils
+import com.willow.androidide.ultra.plugins.util.ELFUtils
+import com.willow.androidide.ultra.build.config.isFDroidBuild
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.tasks.OutputDirectory
@@ -47,7 +47,7 @@ abstract class SetupAapt2Task : DefaultTask() {
     )
 
     private const val DEFAULT_VERSION = "34.0.4"
-    private const val AAPT2_DOWNLOAD_URL = "https://github.com/AndroidIDEOfficial/platform-tools/releases/download/v%1\$s/aapt2-%2\$s"
+    private const val AAPT2_DOWNLOAD_URL = "https://github.com/AndroidIDE UltraOfficial/platform-tools/releases/download/v%1\$s/aapt2-%2\$s"
   }
 
   @TaskAction

@@ -37,7 +37,7 @@ import java.security.PrivilegedAction;
 import javac.internal.jimage.ImageReader;
 import javac.internal.jimage.ImageReader.Node;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 
 /**
  * @implNote This class needs to maintain JDK 8 source compatibility.
@@ -109,7 +109,7 @@ abstract class SystemImage {
      * otherwise the JDK home is located relative to jrt-fs.jar.
      */
     private static String findHome() {
-        // AndroidIDE changed: Allow overriding java home.
+        // AndroidIDE Ultra changed: Allow overriding java home.
         return JavacConfigProvider.getJavaHome();
     }
 }

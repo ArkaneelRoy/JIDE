@@ -1,4 +1,4 @@
-package com.itsaky.androidide.zipfs2;
+package com.willow.androidide.ultra.zipfs2;
 
 import java.io.IOException;
 import java.net.URI;

@@ -1,18 +1,18 @@
-package com.itsaky.androidide.build.config/*
- *  This file is part of AndroidIDE.
+package com.willow.androidide.ultra.build.config/*
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import org.gradle.api.Project
@@ -28,7 +28,7 @@ const val KEY_URL = "IDE_SIGNING_URL"
 const val KEY_BIN = "IDE_SIGNING_KEY_BIN"
 
 /**
- * The minimum Android Gradle Plugin version which is supported by AndroidIDE.
+ * The minimum Android Gradle Plugin version which is supported by AndroidIDE Ultra.
  */
 const val AGP_VERSION_MINIMUM = "7.2.0"
 

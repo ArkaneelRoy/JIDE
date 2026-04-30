@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.tooling.api.util
+package com.willow.androidide.ultra.tooling.api.util
 
 import com.android.builder.model.v2.CustomSourceDirectory
 import com.android.builder.model.v2.ide.AndroidGradlePluginProjectFlags
@@ -34,22 +34,22 @@ import com.android.builder.model.v2.ide.SyncIssue
 import com.android.builder.model.v2.ide.UnresolvedDependency
 import com.android.builder.model.v2.ide.ViewBindingOptions
 import com.android.builder.model.v2.models.ProjectSyncIssues
-import com.itsaky.androidide.builder.model.DefaultAndroidGradlePluginProjectFlags
-import com.itsaky.androidide.builder.model.DefaultAndroidLibraryData
-import com.itsaky.androidide.builder.model.DefaultApiVersion
-import com.itsaky.androidide.builder.model.DefaultArtifactDependencies
-import com.itsaky.androidide.builder.model.DefaultCustomSourceDirectory
-import com.itsaky.androidide.builder.model.DefaultGraphItem
-import com.itsaky.androidide.builder.model.DefaultJavaCompileOptions
-import com.itsaky.androidide.builder.model.DefaultLibrary
-import com.itsaky.androidide.builder.model.DefaultLibraryInfo
-import com.itsaky.androidide.builder.model.DefaultProjectInfo
-import com.itsaky.androidide.builder.model.DefaultProjectSyncIssues
-import com.itsaky.androidide.builder.model.DefaultSourceProvider
-import com.itsaky.androidide.builder.model.DefaultSourceSetContainer
-import com.itsaky.androidide.builder.model.DefaultSyncIssue
-import com.itsaky.androidide.builder.model.DefaultUnresolvedDependency
-import com.itsaky.androidide.builder.model.DefaultViewBindingOptions
+import com.willow.androidide.ultra.builder.model.DefaultAndroidGradlePluginProjectFlags
+import com.willow.androidide.ultra.builder.model.DefaultAndroidLibraryData
+import com.willow.androidide.ultra.builder.model.DefaultApiVersion
+import com.willow.androidide.ultra.builder.model.DefaultArtifactDependencies
+import com.willow.androidide.ultra.builder.model.DefaultCustomSourceDirectory
+import com.willow.androidide.ultra.builder.model.DefaultGraphItem
+import com.willow.androidide.ultra.builder.model.DefaultJavaCompileOptions
+import com.willow.androidide.ultra.builder.model.DefaultLibrary
+import com.willow.androidide.ultra.builder.model.DefaultLibraryInfo
+import com.willow.androidide.ultra.builder.model.DefaultProjectInfo
+import com.willow.androidide.ultra.builder.model.DefaultProjectSyncIssues
+import com.willow.androidide.ultra.builder.model.DefaultSourceProvider
+import com.willow.androidide.ultra.builder.model.DefaultSourceSetContainer
+import com.willow.androidide.ultra.builder.model.DefaultSyncIssue
+import com.willow.androidide.ultra.builder.model.DefaultUnresolvedDependency
+import com.willow.androidide.ultra.builder.model.DefaultViewBindingOptions
 
 /**
  * As the data is sent over streams, and the instances of properties specified in [AndroidModule]

@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.editor.language
+package com.willow.androidide.ultra.editor.language
 
-import com.itsaky.androidide.editor.language.utils.CompletionHelper
-import com.itsaky.androidide.lsp.api.ILanguageServer
-import com.itsaky.androidide.lsp.models.CompletionItem
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.FailureType.COMPLETION
-import com.itsaky.androidide.lsp.models.LSPFailure
-import com.itsaky.androidide.lsp.util.setupLookupForCompletion
-import com.itsaky.androidide.models.Position
+import com.willow.androidide.ultra.editor.language.utils.CompletionHelper
+import com.willow.androidide.ultra.lsp.api.ILanguageServer
+import com.willow.androidide.ultra.lsp.models.CompletionItem
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.FailureType.COMPLETION
+import com.willow.androidide.ultra.lsp.models.LSPFailure
+import com.willow.androidide.ultra.lsp.util.setupLookupForCompletion
+import com.willow.androidide.ultra.models.Position
 import io.github.rosemoe.sora.lang.completion.CompletionCancelledException
 import io.github.rosemoe.sora.text.CharPosition
 import io.github.rosemoe.sora.text.ContentReference

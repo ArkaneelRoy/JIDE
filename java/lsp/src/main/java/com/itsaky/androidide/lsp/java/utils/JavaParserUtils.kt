@@ -1,22 +1,22 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 @file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
-package com.itsaky.androidide.lsp.java.utils
+package com.willow.androidide.ultra.lsp.java.utils
 
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
@@ -76,8 +76,8 @@ import com.github.javaparser.ast.type.TypeParameter
 import com.github.javaparser.printer.DefaultPrettyPrinter
 import com.github.javaparser.printer.configuration.DefaultPrinterConfiguration
 import com.github.javaparser.printer.configuration.PrinterConfiguration
-import com.itsaky.androidide.lsp.java.utils.TypeUtils.toType
-import com.itsaky.androidide.lsp.java.visitors.PrettyPrintingVisitor
+import com.willow.androidide.ultra.lsp.java.utils.TypeUtils.toType
+import com.willow.androidide.ultra.lsp.java.visitors.PrettyPrintingVisitor
 import jdkx.lang.model.element.ExecutableElement
 import jdkx.lang.model.element.Modifier
 import jdkx.lang.model.element.TypeParameterElement

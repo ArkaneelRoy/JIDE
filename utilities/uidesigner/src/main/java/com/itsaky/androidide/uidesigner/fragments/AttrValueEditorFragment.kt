@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.uidesigner.fragments
+package com.willow.androidide.ultra.uidesigner.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -26,11 +26,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.itsaky.androidide.inflater.internal.ViewImpl
-import com.itsaky.androidide.uidesigner.databinding.LayoutAttrValueEditorBinding
-import com.itsaky.androidide.uidesigner.databinding.LayoutViewInfoHeaderBinding
-import com.itsaky.androidide.uidesigner.utils.ValueCompletionProvider
-import com.itsaky.androidide.uidesigner.viewmodel.WorkspaceViewModel
+import com.willow.androidide.ultra.inflater.internal.ViewImpl
+import com.willow.androidide.ultra.uidesigner.databinding.LayoutAttrValueEditorBinding
+import com.willow.androidide.ultra.uidesigner.databinding.LayoutViewInfoHeaderBinding
+import com.willow.androidide.ultra.uidesigner.utils.ValueCompletionProvider
+import com.willow.androidide.ultra.uidesigner.viewmodel.WorkspaceViewModel
 
 /**
  * Fragment to allow the user to edit the value of the selected fragment.

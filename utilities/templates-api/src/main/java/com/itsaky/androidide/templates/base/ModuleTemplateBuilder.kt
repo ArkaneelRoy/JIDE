@@ -1,34 +1,34 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.base
+package com.willow.androidide.ultra.templates.base
 
-import com.itsaky.androidide.templates.Language
-import com.itsaky.androidide.templates.ModuleTemplate
-import com.itsaky.androidide.templates.ModuleTemplateData
-import com.itsaky.androidide.templates.ModuleTemplateRecipeResult
-import com.itsaky.androidide.templates.RecipeExecutor
-import com.itsaky.androidide.templates.SrcSet
-import com.itsaky.androidide.templates.TemplateBuilder
-import com.itsaky.androidide.templates.TemplateRecipeConfigurator
-import com.itsaky.androidide.templates.TemplateRecipeFinalizer
-import com.itsaky.androidide.templates.base.models.Dependency
-import com.itsaky.androidide.templates.base.models.defaultDependency
-import com.itsaky.androidide.templates.base.util.SourceWriter
+import com.willow.androidide.ultra.templates.Language
+import com.willow.androidide.ultra.templates.ModuleTemplate
+import com.willow.androidide.ultra.templates.ModuleTemplateData
+import com.willow.androidide.ultra.templates.ModuleTemplateRecipeResult
+import com.willow.androidide.ultra.templates.RecipeExecutor
+import com.willow.androidide.ultra.templates.SrcSet
+import com.willow.androidide.ultra.templates.TemplateBuilder
+import com.willow.androidide.ultra.templates.TemplateRecipeConfigurator
+import com.willow.androidide.ultra.templates.TemplateRecipeFinalizer
+import com.willow.androidide.ultra.templates.base.models.Dependency
+import com.willow.androidide.ultra.templates.base.models.defaultDependency
+import com.willow.androidide.ultra.templates.base.util.SourceWriter
 import java.io.File
 
 /**
@@ -59,10 +59,10 @@ abstract class ModuleTemplateBuilder :
    * Get the asset path for base module project template.
    *
    * @param path The path for the asset.
-   * @see com.itsaky.androidide.templates.base.baseAsset
+   * @see com.willow.androidide.ultra.templates.base.baseAsset
    */
   open fun baseAsset(path: String) =
-    com.itsaky.androidide.templates.base.util.baseAsset("module", path)
+    com.willow.androidide.ultra.templates.base.util.baseAsset("module", path)
 
   /**
    * Get the `build.gradle[.kts]` file for this module.l
@@ -173,7 +173,7 @@ abstract class ModuleTemplateBuilder :
 
   /**
    * Add the dependency with the given maven coordinates to this module with the
-   * [Implementation][com.itsaky.androidide.templates.base.models.DependencyConfiguration.Implementation]
+   * [Implementation][com.willow.androidide.ultra.templates.base.models.DependencyConfiguration.Implementation]
    * configuration.
    *
    * @param group The group ID of the dependency.

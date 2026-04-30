@@ -25,7 +25,7 @@
 
 package openjdk.tools.javac.platform;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -394,7 +394,7 @@ public class JDKPlatformProvider implements PlatformProvider {
     }
 
     static Path findCtSym() {
-        // AndroidIDE changed: Allow overriding java home.
+        // AndroidIDE Ultra changed: Allow overriding java home.
         String javaHome = JavacConfigProvider.getJavaHome();
         Path file = Paths.get(javaHome);
         // file == ${jdk.home}

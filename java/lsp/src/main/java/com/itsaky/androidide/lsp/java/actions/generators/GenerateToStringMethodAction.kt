@@ -1,20 +1,20 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java.actions.generators
+package com.willow.androidide.ultra.lsp.java.actions.generators
 
 import android.content.Context
 import com.blankj.utilcode.util.ThreadUtils
@@ -22,19 +22,19 @@ import com.github.javaparser.StaticJavaParser
 import com.github.javaparser.ast.Modifier
 import com.github.javaparser.ast.body.MethodDeclaration
 import com.github.javaparser.ast.stmt.ReturnStmt
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.requireFile
-import com.itsaky.androidide.actions.requirePath
-import com.itsaky.androidide.lsp.java.JavaCompilerProvider
-import com.itsaky.androidide.lsp.java.actions.FieldBasedAction
-import com.itsaky.androidide.lsp.java.compiler.CompileTask
-import com.itsaky.androidide.lsp.java.utils.EditHelper
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.preferences.utils.indentationString
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.resources.R.string
-import com.itsaky.androidide.utils.flashError
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.requireFile
+import com.willow.androidide.ultra.actions.requirePath
+import com.willow.androidide.ultra.lsp.java.JavaCompilerProvider
+import com.willow.androidide.ultra.lsp.java.actions.FieldBasedAction
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
+import com.willow.androidide.ultra.lsp.java.utils.EditHelper
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.preferences.utils.indentationString
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
+import com.willow.androidide.ultra.utils.flashError
 import io.github.rosemoe.sora.widget.CodeEditor
 import jdkx.lang.model.element.VariableElement
 import openjdk.source.tree.ClassTree
@@ -87,7 +87,7 @@ class GenerateToStringMethodAction : FieldBasedAction() {
         IProjectManager.getInstance().getWorkspace()?.findModuleForFile(data.requireFile(), false)
           ?: return
       )
-    val range = data[com.itsaky.androidide.models.Range::class.java]!!
+    val range = data[com.willow.androidide.ultra.models.Range::class.java]!!
     val file = data.requirePath()
 
     compiler.compile(file).run { task ->

@@ -1,4 +1,4 @@
-package com.itsaky.androidide.fuzzysearch.algorithms;
+package com.willow.androidide.ultra.fuzzysearch.algorithms;
 
 import java.util.HashSet;
 import java.util.Set;

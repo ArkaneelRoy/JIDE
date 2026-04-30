@@ -1,23 +1,23 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.logsender.utils;
+package com.willow.androidide.ultra.logsender.utils;
 
-import static com.itsaky.androidide.logsender.LogSender.PACKAGE_ANDROIDIDE;
+import static com.willow.androidide.ultra.logsender.LogSender.PACKAGE_ANDROIDIDE;
 
 import android.app.Application;
 import android.app.BackgroundServiceStartNotAllowedException;
@@ -29,8 +29,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import com.itsaky.androidide.logsender.LogSender;
-import com.itsaky.androidide.logsender.LogSenderService;
+import com.willow.androidide.ultra.logsender.LogSender;
+import com.willow.androidide.ultra.logsender.LogSenderService;
 
 /**
  * Content providers are loaded before the application class is created. {@link LogSenderInstaller}

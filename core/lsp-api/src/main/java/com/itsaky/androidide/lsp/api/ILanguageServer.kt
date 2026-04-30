@@ -1,52 +1,52 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.api
+package com.willow.androidide.ultra.lsp.api
 
-import com.itsaky.androidide.lsp.models.CodeFormatResult
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.DefinitionParams
-import com.itsaky.androidide.lsp.models.DefinitionResult
-import com.itsaky.androidide.lsp.models.DiagnosticResult
-import com.itsaky.androidide.lsp.models.ExpandSelectionParams
-import com.itsaky.androidide.lsp.models.FormatCodeParams
-import com.itsaky.androidide.lsp.models.LSPFailure
-import com.itsaky.androidide.lsp.models.ReferenceParams
-import com.itsaky.androidide.lsp.models.ReferenceResult
-import com.itsaky.androidide.lsp.models.SignatureHelp
-import com.itsaky.androidide.lsp.models.SignatureHelpParams
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.projects.IWorkspace
+import com.willow.androidide.ultra.lsp.models.CodeFormatResult
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.DefinitionParams
+import com.willow.androidide.ultra.lsp.models.DefinitionResult
+import com.willow.androidide.ultra.lsp.models.DiagnosticResult
+import com.willow.androidide.ultra.lsp.models.ExpandSelectionParams
+import com.willow.androidide.ultra.lsp.models.FormatCodeParams
+import com.willow.androidide.ultra.lsp.models.LSPFailure
+import com.willow.androidide.ultra.lsp.models.ReferenceParams
+import com.willow.androidide.ultra.lsp.models.ReferenceResult
+import com.willow.androidide.ultra.lsp.models.SignatureHelp
+import com.willow.androidide.ultra.lsp.models.SignatureHelpParams
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.projects.IWorkspace
 import java.nio.file.Path
 
 /**
@@ -92,7 +92,7 @@ interface ILanguageServer {
   /**
    * Setup this language server with the given workspace. Servers are not expected to keep a reference
    * to the provided workspace. Instead, use
-   * [getRootWorkspace()][com.itsaky.androidide.projects.IProjectManager.workspace] to
+   * [getRootWorkspace()][com.willow.androidide.ultra.projects.IProjectManager.workspace] to
    * obtain the workspace instance.
    *
    * @param workspace The initialized workspace.

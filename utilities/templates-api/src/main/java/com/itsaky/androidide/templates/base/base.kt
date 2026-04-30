@@ -1,56 +1,56 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates.base
+package com.willow.androidide.ultra.templates.base
 
-import com.itsaky.androidide.templates.BooleanParameter
-import com.itsaky.androidide.templates.CheckBoxWidget
-import com.itsaky.androidide.templates.EnumParameter
-import com.itsaky.androidide.templates.FileTemplate
-import com.itsaky.androidide.templates.FileTemplateRecipeResult
-import com.itsaky.androidide.templates.Language
-import com.itsaky.androidide.templates.ModuleTemplate
-import com.itsaky.androidide.templates.ModuleTemplateData
-import com.itsaky.androidide.templates.ModuleType
-import com.itsaky.androidide.templates.ModuleType.AndroidApp
-import com.itsaky.androidide.templates.ModuleType.AndroidLibrary
-import com.itsaky.androidide.templates.ParameterConstraint.DIRECTORY
-import com.itsaky.androidide.templates.ParameterConstraint.EXISTS
-import com.itsaky.androidide.templates.ParameterConstraint.MODULE_NAME
-import com.itsaky.androidide.templates.ParameterConstraint.NONEMPTY
-import com.itsaky.androidide.templates.ProjectTemplate
-import com.itsaky.androidide.templates.ProjectTemplateData
-import com.itsaky.androidide.templates.ProjectVersionData
-import com.itsaky.androidide.templates.R
-import com.itsaky.androidide.templates.Sdk
-import com.itsaky.androidide.templates.SpinnerWidget
-import com.itsaky.androidide.templates.StringParameter
-import com.itsaky.androidide.templates.TextFieldWidget
-import com.itsaky.androidide.templates.base.util.getNewProjectName
-import com.itsaky.androidide.templates.base.util.moduleNameToDir
-import com.itsaky.androidide.templates.enumParameter
-import com.itsaky.androidide.templates.minSdkParameter
-import com.itsaky.androidide.templates.packageNameParameter
-import com.itsaky.androidide.templates.projectLanguageParameter
-import com.itsaky.androidide.templates.projectNameParameter
-import com.itsaky.androidide.templates.stringParameter
-import com.itsaky.androidide.templates.useKtsParameter
-import com.itsaky.androidide.utils.AndroidUtils
-import com.itsaky.androidide.utils.Environment
+import com.willow.androidide.ultra.templates.BooleanParameter
+import com.willow.androidide.ultra.templates.CheckBoxWidget
+import com.willow.androidide.ultra.templates.EnumParameter
+import com.willow.androidide.ultra.templates.FileTemplate
+import com.willow.androidide.ultra.templates.FileTemplateRecipeResult
+import com.willow.androidide.ultra.templates.Language
+import com.willow.androidide.ultra.templates.ModuleTemplate
+import com.willow.androidide.ultra.templates.ModuleTemplateData
+import com.willow.androidide.ultra.templates.ModuleType
+import com.willow.androidide.ultra.templates.ModuleType.AndroidApp
+import com.willow.androidide.ultra.templates.ModuleType.AndroidLibrary
+import com.willow.androidide.ultra.templates.ParameterConstraint.DIRECTORY
+import com.willow.androidide.ultra.templates.ParameterConstraint.EXISTS
+import com.willow.androidide.ultra.templates.ParameterConstraint.MODULE_NAME
+import com.willow.androidide.ultra.templates.ParameterConstraint.NONEMPTY
+import com.willow.androidide.ultra.templates.ProjectTemplate
+import com.willow.androidide.ultra.templates.ProjectTemplateData
+import com.willow.androidide.ultra.templates.ProjectVersionData
+import com.willow.androidide.ultra.templates.R
+import com.willow.androidide.ultra.templates.Sdk
+import com.willow.androidide.ultra.templates.SpinnerWidget
+import com.willow.androidide.ultra.templates.StringParameter
+import com.willow.androidide.ultra.templates.TextFieldWidget
+import com.willow.androidide.ultra.templates.base.util.getNewProjectName
+import com.willow.androidide.ultra.templates.base.util.moduleNameToDir
+import com.willow.androidide.ultra.templates.enumParameter
+import com.willow.androidide.ultra.templates.minSdkParameter
+import com.willow.androidide.ultra.templates.packageNameParameter
+import com.willow.androidide.ultra.templates.projectLanguageParameter
+import com.willow.androidide.ultra.templates.projectNameParameter
+import com.willow.androidide.ultra.templates.stringParameter
+import com.willow.androidide.ultra.templates.useKtsParameter
+import com.willow.androidide.ultra.utils.AndroidUtils
+import com.willow.androidide.ultra.utils.Environment
 import java.io.File
 
 typealias AndroidModuleTemplateConfigurator = AndroidModuleTemplateBuilder.() -> Unit

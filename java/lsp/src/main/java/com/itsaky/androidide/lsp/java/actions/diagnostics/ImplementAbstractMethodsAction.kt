@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.java.actions.diagnostics
+package com.willow.androidide.ultra.lsp.java.actions.diagnostics
 
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.hasRequiredData
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.javac.services.util.JavaDiagnosticUtils
-import com.itsaky.androidide.lsp.java.actions.BaseJavaCodeAction
-import com.itsaky.androidide.lsp.java.models.DiagnosticCode
-import com.itsaky.androidide.lsp.java.rewrite.ImplementAbstractMethods
-import com.itsaky.androidide.resources.R
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.hasRequiredData
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.javac.services.util.JavaDiagnosticUtils
+import com.willow.androidide.ultra.lsp.java.actions.BaseJavaCodeAction
+import com.willow.androidide.ultra.lsp.java.models.DiagnosticCode
+import com.willow.androidide.ultra.lsp.java.rewrite.ImplementAbstractMethods
+import com.willow.androidide.ultra.resources.R
 import jdkx.tools.Diagnostic
 import jdkx.tools.JavaFileObject
 import org.slf4j.LoggerFactory
@@ -50,12 +50,12 @@ class ImplementAbstractMethodsAction : BaseJavaCodeAction() {
       return
     }
 
-    if (!data.hasRequiredData(com.itsaky.androidide.lsp.models.DiagnosticItem::class.java)) {
+    if (!data.hasRequiredData(com.willow.androidide.ultra.lsp.models.DiagnosticItem::class.java)) {
       markInvisible()
       return
     }
 
-    val diagnostic = data.get(com.itsaky.androidide.lsp.models.DiagnosticItem::class.java)!!
+    val diagnostic = data.get(com.willow.androidide.ultra.lsp.models.DiagnosticItem::class.java)!!
     if (diagnosticCode != diagnostic.code || diagnostic.extra !is Diagnostic<*>) {
       markInvisible()
       return
@@ -76,7 +76,7 @@ class ImplementAbstractMethodsAction : BaseJavaCodeAction() {
     val diagnostic =
       JavaDiagnosticUtils.asJCDiagnostic(
         data.get(
-          com.itsaky.androidide.lsp.models.DiagnosticItem::class.java)!!.extra as Diagnostic<out JavaFileObject>
+          com.willow.androidide.ultra.lsp.models.DiagnosticItem::class.java)!!.extra as Diagnostic<out JavaFileObject>
       )
     return ImplementAbstractMethods(diagnostic!!)
   }

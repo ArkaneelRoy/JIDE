@@ -1,47 +1,47 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.compiler;
+package com.willow.androidide.ultra.lsp.java.compiler;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.Pair;
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent;
-import com.itsaky.androidide.javac.services.compiler.ReusableCompiler;
-import com.itsaky.androidide.javac.services.partial.CompilationInfo;
-import com.itsaky.androidide.javac.services.partial.PartialReparser;
-import com.itsaky.androidide.javac.services.partial.PartialReparserImpl;
-import com.itsaky.androidide.lsp.java.models.CompilationRequest;
-import com.itsaky.androidide.lsp.java.models.PartialReparseRequest;
-import com.itsaky.androidide.lsp.java.parser.ParseTask;
-import com.itsaky.androidide.lsp.java.parser.Parser;
-import com.itsaky.androidide.lsp.java.utils.Extractors;
-import com.itsaky.androidide.lsp.java.visitors.FindTypeDeclarations;
-import com.itsaky.androidide.models.Position;
-import com.itsaky.androidide.models.Range;
-import com.itsaky.androidide.projects.FileManager;
-import com.itsaky.androidide.projects.android.AndroidModule;
-import com.itsaky.androidide.projects.ModuleProject;
-import com.itsaky.androidide.projects.util.BootClasspathProvider;
-import com.itsaky.androidide.projects.util.StringSearch;
-import com.itsaky.androidide.utils.Cache;
-import com.itsaky.androidide.utils.Environment;
-import com.itsaky.androidide.utils.SourceClassTrie;
-import com.itsaky.androidide.utils.StopWatch;
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent;
+import com.willow.androidide.ultra.javac.services.compiler.ReusableCompiler;
+import com.willow.androidide.ultra.javac.services.partial.CompilationInfo;
+import com.willow.androidide.ultra.javac.services.partial.PartialReparser;
+import com.willow.androidide.ultra.javac.services.partial.PartialReparserImpl;
+import com.willow.androidide.ultra.lsp.java.models.CompilationRequest;
+import com.willow.androidide.ultra.lsp.java.models.PartialReparseRequest;
+import com.willow.androidide.ultra.lsp.java.parser.ParseTask;
+import com.willow.androidide.ultra.lsp.java.parser.Parser;
+import com.willow.androidide.ultra.lsp.java.utils.Extractors;
+import com.willow.androidide.ultra.lsp.java.visitors.FindTypeDeclarations;
+import com.willow.androidide.ultra.models.Position;
+import com.willow.androidide.ultra.models.Range;
+import com.willow.androidide.ultra.projects.FileManager;
+import com.willow.androidide.ultra.projects.android.AndroidModule;
+import com.willow.androidide.ultra.projects.ModuleProject;
+import com.willow.androidide.ultra.projects.util.BootClasspathProvider;
+import com.willow.androidide.ultra.projects.util.StringSearch;
+import com.willow.androidide.ultra.utils.Cache;
+import com.willow.androidide.ultra.utils.Environment;
+import com.willow.androidide.ultra.utils.SourceClassTrie;
+import com.willow.androidide.ultra.utils.StopWatch;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

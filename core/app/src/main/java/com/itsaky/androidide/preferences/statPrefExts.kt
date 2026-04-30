@@ -1,28 +1,28 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *  
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *  
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *  
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.preferences
+package com.willow.androidide.ultra.preferences
 
 import android.content.Context
 import androidx.preference.Preference
-import com.itsaky.androidide.preferences.internal.StatPreferences
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.stats.AndroidIDEStats
-import com.itsaky.androidide.stats.StatUploadWorker
+import com.willow.androidide.ultra.preferences.internal.StatPreferences
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.stats.AndroidIDE UltraStats
+import com.willow.androidide.ultra.stats.StatUploadWorker
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -83,34 +83,34 @@ private abstract class StatDataPreference(
 private class UniqueID(
   override val key: String = StatUploadWorker.KEY_DEVICE_ID,
   override val title: Int = R.string.title_unique_id,
-) : StatDataPreference({ AndroidIDEStats.uniqueDeviceId })
+) : StatDataPreference({ AndroidIDE UltraStats.uniqueDeviceId })
 
 @Parcelize
 private class DeviceName(
   override val key: String = StatUploadWorker.KEY_DEVICE_NAME,
   override val title: Int = R.string.title_device
-) : StatDataPreference({ AndroidIDEStats.deviceModel })
+) : StatDataPreference({ AndroidIDE UltraStats.deviceModel })
 
 @Parcelize
 private class AndroidVersion(
   override val key: String = StatUploadWorker.KEY_ANDROID_VERSION,
   override val title: Int = R.string.title_android_version
-) : StatDataPreference({ AndroidIDEStats.androidVersion.toString() })
+) : StatDataPreference({ AndroidIDE UltraStats.androidVersion.toString() })
 
 @Parcelize
 private class AppVersion(
   override val key: String = StatUploadWorker.KEY_APP_VERSION,
   override val title: Int = R.string.title_app_version
-) : StatDataPreference({ AndroidIDEStats.appVersion })
+) : StatDataPreference({ AndroidIDE UltraStats.appVersion })
 
 @Parcelize
 private class Country(
   override val key: String = StatUploadWorker.KEY_DEVICE_COUNTRY,
   override val title: Int = R.string.title_country
-) : StatDataPreference({ AndroidIDEStats.country })
+) : StatDataPreference({ AndroidIDE UltraStats.country })
 
 @Parcelize
 private class CpuArch(
   override val key: String = StatUploadWorker.KEY_APP_CPU_ARCH,
   override val title: Int = R.string.title_cpu_arch
-) : StatDataPreference({ AndroidIDEStats.cpuArch })
+) : StatDataPreference({ AndroidIDE UltraStats.cpuArch })

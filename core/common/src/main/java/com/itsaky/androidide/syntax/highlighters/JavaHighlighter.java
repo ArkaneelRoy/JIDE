@@ -1,26 +1,26 @@
 /*
- * This file is part of AndroidIDE.
+ * This file is part of AndroidIDE Ultra.
  *
- * AndroidIDE is free software: you can redistribute it and/or modify
+ * AndroidIDE Ultra is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * AndroidIDE is distributed in the hope that it will be useful,
+ * AndroidIDE Ultra is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ * along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.syntax.highlighters;
+package com.willow.androidide.ultra.syntax.highlighters;
 
 import android.text.SpannableStringBuilder;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
-import com.itsaky.androidide.lexers.java.JavaLexer;
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE;
+import com.willow.androidide.ultra.lexers.java.JavaLexer;
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra;
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 import java.io.StringReader;
 import java.util.regex.Matcher;
@@ -31,7 +31,7 @@ import org.antlr.v4.runtime.Token;
 public class JavaHighlighter implements Highlighter {
 
   @Override
-  public SpannableStringBuilder highlight(SchemeAndroidIDE scheme, String code, String match) throws Exception {
+  public SpannableStringBuilder highlight(SchemeAndroidIDE Ultra scheme, String code, String match) throws Exception {
     final JavaLexer lexer = new JavaLexer(CharStreams.fromReader(new StringReader(code)));
     final SpannableStringBuilder sb = new SpannableStringBuilder();
     Token token;
@@ -165,7 +165,7 @@ public class JavaHighlighter implements Highlighter {
         case JavaLexer.SHORT:
           sb.append(
               token.getText(),
-              new ForegroundColorSpan(scheme.getColor(SchemeAndroidIDE.TYPE_NAME)),
+              new ForegroundColorSpan(scheme.getColor(SchemeAndroidIDE Ultra.TYPE_NAME)),
               SpannableStringBuilder.SPAN_EXCLUSIVE_EXCLUSIVE);
           break;
         case JavaLexer.BLOCK_COMMENT:

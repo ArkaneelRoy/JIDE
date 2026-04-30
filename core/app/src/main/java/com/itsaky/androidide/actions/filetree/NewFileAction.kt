@@ -1,40 +1,40 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.actions.filetree
+package com.willow.androidide.ultra.actions.filetree
 
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.core.view.isVisible
 import com.blankj.utilcode.util.FileIOUtils
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.requireFile
-import com.itsaky.androidide.adapters.viewholders.FileTreeViewHolder
-import com.itsaky.androidide.databinding.LayoutCreateFileJavaBinding
-import com.itsaky.androidide.eventbus.events.file.FileCreationEvent
-import com.itsaky.androidide.preferences.databinding.LayoutDialogTextInputBinding
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.resources.R
-import com.itsaky.androidide.utils.DialogUtils
-import com.itsaky.androidide.utils.Environment
-import com.itsaky.androidide.utils.ProjectWriter
-import com.itsaky.androidide.utils.SingleTextWatcher
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.flashSuccess
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.requireFile
+import com.willow.androidide.ultra.adapters.viewholders.FileTreeViewHolder
+import com.willow.androidide.ultra.databinding.LayoutCreateFileJavaBinding
+import com.willow.androidide.ultra.eventbus.events.file.FileCreationEvent
+import com.willow.androidide.ultra.preferences.databinding.LayoutDialogTextInputBinding
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.utils.DialogUtils
+import com.willow.androidide.ultra.utils.Environment
+import com.willow.androidide.ultra.utils.ProjectWriter
+import com.willow.androidide.ultra.utils.SingleTextWatcher
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.flashSuccess
 import com.unnamed.b.atv.model.TreeNode
 import jdkx.lang.model.SourceVersion
 import org.greenrobot.eventbus.EventBus

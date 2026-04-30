@@ -1,4 +1,4 @@
-package com.itsaky.androidide.lsp.java.utils;
+package com.willow.androidide.ultra.lsp.java.utils;
 
 import java.util.stream.Collectors;
 import jdkx.lang.model.type.ArrayType;

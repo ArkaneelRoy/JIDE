@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.viewmodel
+package com.willow.androidide.ultra.viewmodel
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.itsaky.androidide.contributors.Contributor
-import com.itsaky.androidide.contributors.CrowdinTranslator
-import com.itsaky.androidide.contributors.CrowdinTranslators
-import com.itsaky.androidide.contributors.GitHubContributor
-import com.itsaky.androidide.contributors.GitHubContributors
+import com.willow.androidide.ultra.contributors.Contributor
+import com.willow.androidide.ultra.contributors.CrowdinTranslator
+import com.willow.androidide.ultra.contributors.CrowdinTranslators
+import com.willow.androidide.ultra.contributors.GitHubContributor
+import com.willow.androidide.ultra.contributors.GitHubContributors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

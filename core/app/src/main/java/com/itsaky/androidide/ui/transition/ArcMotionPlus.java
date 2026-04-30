@@ -15,7 +15,7 @@
  *
  */
 
-package com.itsaky.androidide.ui.transition;
+package com.willow.androidide.ultra.ui.transition;
 
 /**
  * A PathMotion that generates a curved path along an arc on an imaginary circle containing the two

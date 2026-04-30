@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.activities.editor
+package com.willow.androidide.ultra.activities.editor
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -30,34 +30,34 @@ import androidx.collection.MutableIntObjectMap
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
 import com.blankj.utilcode.util.ImageUtils
-import com.itsaky.androidide.R.string
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.ActionItem.Location.EDITOR_TOOLBAR
-import com.itsaky.androidide.actions.ActionsRegistry.Companion.getInstance
-import com.itsaky.androidide.actions.FillMenuParams
-import com.itsaky.androidide.editor.language.treesitter.JavaLanguage
-import com.itsaky.androidide.editor.language.treesitter.JsonLanguage
-import com.itsaky.androidide.editor.language.treesitter.KotlinLanguage
-import com.itsaky.androidide.editor.language.treesitter.LogLanguage
-import com.itsaky.androidide.editor.language.treesitter.TSLanguageRegistry
-import com.itsaky.androidide.editor.language.treesitter.XMLLanguage
-import com.itsaky.androidide.editor.schemes.IDEColorSchemeProvider
-import com.itsaky.androidide.editor.ui.IDEEditor
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.eventbus.events.file.FileRenameEvent
-import com.itsaky.androidide.interfaces.IEditorHandler
-import com.itsaky.androidide.models.FileExtension
-import com.itsaky.androidide.models.OpenedFile
-import com.itsaky.androidide.models.OpenedFilesCache
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.models.SaveResult
-import com.itsaky.androidide.projects.internal.ProjectManagerImpl
-import com.itsaky.androidide.tasks.executeAsync
-import com.itsaky.androidide.ui.CodeEditorView
-import com.itsaky.androidide.utils.DialogUtils.newYesNoDialog
-import com.itsaky.androidide.utils.IntentUtils.openImage
-import com.itsaky.androidide.utils.UniqueNameBuilder
-import com.itsaky.androidide.utils.flashSuccess
+import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_TOOLBAR
+import com.willow.androidide.ultra.actions.ActionsRegistry.Companion.getInstance
+import com.willow.androidide.ultra.actions.FillMenuParams
+import com.willow.androidide.ultra.editor.language.treesitter.JavaLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.JsonLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.KotlinLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.LogLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.TSLanguageRegistry
+import com.willow.androidide.ultra.editor.language.treesitter.XMLLanguage
+import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider
+import com.willow.androidide.ultra.editor.ui.IDEEditor
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.eventbus.events.file.FileRenameEvent
+import com.willow.androidide.ultra.interfaces.IEditorHandler
+import com.willow.androidide.ultra.models.FileExtension
+import com.willow.androidide.ultra.models.OpenedFile
+import com.willow.androidide.ultra.models.OpenedFilesCache
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.models.SaveResult
+import com.willow.androidide.ultra.projects.internal.ProjectManagerImpl
+import com.willow.androidide.ultra.tasks.executeAsync
+import com.willow.androidide.ultra.ui.CodeEditorView
+import com.willow.androidide.ultra.utils.DialogUtils.newYesNoDialog
+import com.willow.androidide.ultra.utils.IntentUtils.openImage
+import com.willow.androidide.ultra.utils.UniqueNameBuilder
+import com.willow.androidide.ultra.utils.flashSuccess
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

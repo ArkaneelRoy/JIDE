@@ -1,24 +1,24 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.activities.editor
+package com.willow.androidide.ultra.activities.editor
 
 import android.os.Process
-import com.itsaky.androidide.utils.Environment
-import com.itsaky.androidide.utils.transferToStream
+import com.willow.androidide.ultra.utils.Environment
+import com.willow.androidide.ultra.utils.transferToStream
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -31,7 +31,7 @@ import java.util.Date
 import java.util.Locale
 
 /**
- * Reads the logs from AndroidIDE and saves it to a file in the projects directory.
+ * Reads the logs from AndroidIDE Ultra and saves it to a file in the projects directory.
  *
  * @author Akash Yadav
  */
@@ -73,7 +73,7 @@ class IDELogcatReader {
     val date = Date()
     val dateFormat = SimpleDateFormat("yyyy-MM-dd_HH:mm:ss.SSS", Locale.US)
     val outputFile = File(Environment.ANDROIDIDE_HOME,
-      "logs/AndroidIDE-LOG-${dateFormat.format(date)}.txt")
+      "logs/AndroidIDE Ultra-LOG-${dateFormat.format(date)}.txt")
 
     log.debug("Creating output file: {}", outputFile)
 

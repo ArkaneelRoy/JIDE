@@ -7,11 +7,11 @@
   <permission
     android:description="@string/permdesc_bind_logger_service"
     android:label="@string/permlab_bind_logger_service"
-    android:name="com.itsaky.androidide.permission.BIND_LOG_SERVICE"
+    android:name="com.willow.androidide.ultra.permission.BIND_LOG_SERVICE"
     android:protectionLevel="normal"
     tools:ignore="ManifestOrder" />
 
-  <uses-permission android:name="com.itsaky.androidide.permission.BIND_LOG_SERVICE" />
+  <uses-permission android:name="com.willow.androidide.ultra.permission.BIND_LOG_SERVICE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -39,14 +39,14 @@
     android:requestLegacyExternalStorage="true"
     android:resizeableActivity="false"
     android:supportsRtl="true"
-    android:theme="@style/Theme.AndroidIDE"
+    android:theme="@style/Theme.AndroidIDE Ultra"
     tools:ignore="DiscouragedApi,MediaCapabilities,UnusedAttribute">
     <activity
       android:exported="true"
       android:name=".activities.CrashHandlerActivity"
       android:windowSoftInputMode="stateAlwaysHidden">
       <intent-filter>
-        <action android:name="com.itsaky.androidide.REPORT_CRASH" />
+        <action android:name="com.willow.androidide.ultra.REPORT_CRASH" />
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
@@ -66,7 +66,7 @@
     <activity
       android:exported="false"
       android:name=".activities.MainActivity"
-      android:theme="@style/Theme.AndroidIDE" />
+      android:theme="@style/Theme.AndroidIDE Ultra" />
     <activity
       android:configChanges="orientation|screenSize"
       android:launchMode="singleTop"
@@ -79,7 +79,7 @@
       android:windowSoftInputMode="adjustResize" />
 
     <provider
-      android:authorities="com.itsaky.androidide.documents"
+      android:authorities="com.willow.androidide.ultra.documents"
       android:exported="true"
       android:grantUriPermissions="true"
       android:name=".provider.IDEDocumentsProvider"
@@ -105,7 +105,7 @@
       android:name=".services.InstallationResultReceiver"
       tools:ignore="ExportedReceiver">
       <intent-filter>
-        <action android:name="com.itsaky.androidide.installer.INSTALL_PACKAGE" />
+        <action android:name="com.willow.androidide.ultra.installer.INSTALL_PACKAGE" />
       </intent-filter>
     </receiver>
 
@@ -116,9 +116,9 @@
     <service
       android:exported="true"
       android:name=".services.log.LogReceiverService"
-      android:permission="com.itsaky.androidide.permission.BIND_LOG_SERVICE">
+      android:permission="com.willow.androidide.ultra.permission.BIND_LOG_SERVICE">
       <intent-filter>
-        <action android:name="com.itsaky.androidide.LOG_SERVICE_ACTION" />
+        <action android:name="com.willow.androidide.ultra.LOG_SERVICE_ACTION" />
       </intent-filter>
     </service>
     <service

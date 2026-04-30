@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.compiler
+package com.willow.androidide.ultra.lsp.java.compiler
 
-import com.itsaky.androidide.javac.services.compiler.ReusableContext
-import com.itsaky.androidide.javac.services.compiler.ReusableJavaCompiler
-import com.itsaky.androidide.lsp.java.parser.ts.TSJavaParser
-import com.itsaky.androidide.lsp.java.parser.ts.TSMethodPruner.prune
-import com.itsaky.androidide.projects.FileManager
-import com.itsaky.androidide.utils.VMUtils
-import com.itsaky.androidide.utils.withStopWatch
+import com.willow.androidide.ultra.javac.services.compiler.ReusableContext
+import com.willow.androidide.ultra.javac.services.compiler.ReusableJavaCompiler
+import com.willow.androidide.ultra.lsp.java.parser.ts.TSJavaParser
+import com.willow.androidide.ultra.lsp.java.parser.ts.TSMethodPruner.prune
+import com.willow.androidide.ultra.projects.FileManager
+import com.willow.androidide.ultra.utils.VMUtils
+import com.willow.androidide.ultra.utils.withStopWatch
 import jdkx.tools.JavaFileObject
 import jdkx.tools.JavaFileObject.Kind.SOURCE
 import openjdk.tools.javac.api.ClientCodeWrapper

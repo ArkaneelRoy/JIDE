@@ -1,16 +1,16 @@
-package com.itsaky.androidide.lsp.java.actions.common
+package com.willow.androidide.ultra.lsp.java.actions.common
 
 import com.google.googlejavaformat.java.FormatterException
 import com.google.googlejavaformat.java.ImportOrderer
-import com.itsaky.androidide.actions.ActionData
-import com.itsaky.androidide.actions.hasRequiredData
-import com.itsaky.androidide.actions.markInvisible
-import com.itsaky.androidide.actions.requireEditor
-import com.itsaky.androidide.editor.api.IEditor
-import com.itsaky.androidide.lsp.java.JavaLanguageServer
-import com.itsaky.androidide.lsp.java.actions.BaseJavaCodeAction
-import com.itsaky.androidide.lsp.java.models.JavaServerSettings
-import com.itsaky.androidide.resources.R.string
+import com.willow.androidide.ultra.actions.ActionData
+import com.willow.androidide.ultra.actions.hasRequiredData
+import com.willow.androidide.ultra.actions.markInvisible
+import com.willow.androidide.ultra.actions.requireEditor
+import com.willow.androidide.ultra.editor.api.IEditor
+import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
+import com.willow.androidide.ultra.lsp.java.actions.BaseJavaCodeAction
+import com.willow.androidide.ultra.lsp.java.models.JavaServerSettings
+import com.willow.androidide.ultra.resources.R.string
 import io.github.rosemoe.sora.widget.CodeEditor
 import org.slf4j.LoggerFactory
 
@@ -41,7 +41,7 @@ class OrganizeImportsAction : BaseJavaCodeAction() {
   }
 
   override suspend fun execAction(data: ActionData): Any {
-    val watch = com.itsaky.androidide.utils.StopWatch("Organize imports")
+    val watch = com.willow.androidide.ultra.utils.StopWatch("Organize imports")
     return try {
       val editor = data.requireEditor()
       val content = editor.text

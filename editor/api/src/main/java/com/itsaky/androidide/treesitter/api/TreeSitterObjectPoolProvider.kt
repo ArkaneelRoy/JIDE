@@ -1,27 +1,27 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.treesitter.api
+package com.willow.androidide.ultra.treesitter.api
 
-import com.itsaky.androidide.utils.RecyclableObjectPool
-import com.itsaky.androidide.utils.RecyclableObjectPool.Companion.CAPACITY_DEFAULT
-import com.itsaky.androidide.utils.RecyclableObjectPool.Companion.CAPACITY_MINI
-import com.itsaky.androidide.utils.newRecyclableObjectPool
-import com.itsaky.androidide.utils.uncheckedCast
+import com.willow.androidide.ultra.utils.RecyclableObjectPool
+import com.willow.androidide.ultra.utils.RecyclableObjectPool.Companion.CAPACITY_DEFAULT
+import com.willow.androidide.ultra.utils.RecyclableObjectPool.Companion.CAPACITY_MINI
+import com.willow.androidide.ultra.utils.newRecyclableObjectPool
+import com.willow.androidide.ultra.utils.uncheckedCast
 import java.util.concurrent.ConcurrentHashMap
 
 /**

@@ -1,9 +1,9 @@
-package com.itsaky.androidide.lsp.xml.providers;
+package com.willow.androidide.ultra.lsp.xml.providers;
 
-import com.itsaky.androidide.lsp.models.CodeFormatResult;
-import com.itsaky.androidide.lsp.models.FormatCodeParams;
-import com.itsaky.androidide.lsp.xml.providers.format.XMLFormatter;
-import com.itsaky.androidide.utils.StopWatch;
+import com.willow.androidide.ultra.lsp.models.CodeFormatResult;
+import com.willow.androidide.ultra.lsp.models.FormatCodeParams;
+import com.willow.androidide.ultra.lsp.xml.providers.format.XMLFormatter;
+import com.willow.androidide.ultra.utils.StopWatch;
 
 import org.eclipse.lemminx.dom.DOMParser;
 import org.eclipse.lemminx.uriresolver.URIResolverExtensionManager;

@@ -1,30 +1,30 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.schemes
+package com.willow.androidide.ultra.editor.schemes
 
 import android.content.Context
-import com.itsaky.androidide.editor.language.treesitter.TreeSitterLanguageSpec
-import com.itsaky.androidide.editor.language.treesitter.predicates.AnyOfPredicate
-import com.itsaky.androidide.editor.language.treesitter.predicates.EqualPredicate
-import com.itsaky.androidide.editor.language.treesitter.predicates.MatchPredicate
-import com.itsaky.androidide.editor.language.treesitter.predicates.NotEqualPredicate
-import com.itsaky.androidide.editor.language.treesitter.predicates.NotMatchPredicate
-import com.itsaky.androidide.treesitter.TSLanguage
+import com.willow.androidide.ultra.editor.language.treesitter.TreeSitterLanguageSpec
+import com.willow.androidide.ultra.editor.language.treesitter.predicates.AnyOfPredicate
+import com.willow.androidide.ultra.editor.language.treesitter.predicates.EqualPredicate
+import com.willow.androidide.ultra.editor.language.treesitter.predicates.MatchPredicate
+import com.willow.androidide.ultra.editor.language.treesitter.predicates.NotEqualPredicate
+import com.willow.androidide.ultra.editor.language.treesitter.predicates.NotMatchPredicate
+import com.willow.androidide.ultra.treesitter.TSLanguage
 import io.github.rosemoe.sora.editor.ts.LocalsCaptureSpec
 import io.github.rosemoe.sora.editor.ts.TsLanguageSpec
 import org.slf4j.LoggerFactory

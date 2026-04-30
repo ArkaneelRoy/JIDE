@@ -1,40 +1,40 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.templates
+package com.willow.androidide.ultra.templates
 
 import com.google.common.truth.Truth.assertThat
-import com.itsaky.androidide.templates.Language.Java
-import com.itsaky.androidide.templates.Language.Kotlin
-import com.itsaky.androidide.templates.base.baseProject
-import com.itsaky.androidide.templates.base.modules.android.ManifestActivity
-import com.itsaky.androidide.templates.base.modules.android.defaultAppModule
-import com.itsaky.androidide.templates.base.modules.createConstructor
-import com.itsaky.androidide.templates.base.modules.createMethod
-import com.itsaky.androidide.templates.impl.base.createRecipe
-import com.itsaky.androidide.templates.impl.basicActivity.basicActivityProject
-import com.itsaky.androidide.templates.impl.bottomNavActivity.bottomNavActivityProject
-import com.itsaky.androidide.templates.impl.composeActivity.composeActivityProject
-import com.itsaky.androidide.templates.impl.emptyActivity.emptyActivityProject
-import com.itsaky.androidide.templates.impl.navDrawerActivity.navDrawerActivityProject
-import com.itsaky.androidide.templates.impl.noActivity.noActivityProjectTemplate
-import com.itsaky.androidide.templates.impl.noAndroidXActivity.noAndroidXActivityProject
-import com.itsaky.androidide.templates.impl.tabbedActivity.tabbedActivityProject
-import com.itsaky.androidide.xml.permissions.Permission.INTERNET
+import com.willow.androidide.ultra.templates.Language.Java
+import com.willow.androidide.ultra.templates.Language.Kotlin
+import com.willow.androidide.ultra.templates.base.baseProject
+import com.willow.androidide.ultra.templates.base.modules.android.ManifestActivity
+import com.willow.androidide.ultra.templates.base.modules.android.defaultAppModule
+import com.willow.androidide.ultra.templates.base.modules.createConstructor
+import com.willow.androidide.ultra.templates.base.modules.createMethod
+import com.willow.androidide.ultra.templates.impl.base.createRecipe
+import com.willow.androidide.ultra.templates.impl.basicActivity.basicActivityProject
+import com.willow.androidide.ultra.templates.impl.bottomNavActivity.bottomNavActivityProject
+import com.willow.androidide.ultra.templates.impl.composeActivity.composeActivityProject
+import com.willow.androidide.ultra.templates.impl.emptyActivity.emptyActivityProject
+import com.willow.androidide.ultra.templates.impl.navDrawerActivity.navDrawerActivityProject
+import com.willow.androidide.ultra.templates.impl.noActivity.noActivityProjectTemplate
+import com.willow.androidide.ultra.templates.impl.noAndroidXActivity.noAndroidXActivityProject
+import com.willow.androidide.ultra.templates.impl.tabbedActivity.tabbedActivityProject
+import com.willow.androidide.ultra.xml.permissions.Permission.INTERNET
 import com.squareup.javapoet.ArrayTypeName
 import com.squareup.javapoet.ParameterSpec
 import com.squareup.javapoet.TypeName

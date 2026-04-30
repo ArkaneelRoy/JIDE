@@ -1,36 +1,36 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers;
+package com.willow.androidide.ultra.lsp.java.providers;
 
 import androidx.annotation.NonNull;
-import com.itsaky.androidide.lsp.java.compiler.CompileTask;
-import com.itsaky.androidide.lsp.java.compiler.CompilerProvider;
-import com.itsaky.androidide.lsp.java.compiler.SynchronizedTask;
-import com.itsaky.androidide.lsp.java.utils.FindHelper;
-import com.itsaky.androidide.lsp.java.utils.MarkdownHelper;
-import com.itsaky.androidide.lsp.java.utils.ScopeHelper;
-import com.itsaky.androidide.lsp.java.utils.ShortTypePrinter;
-import com.itsaky.androidide.lsp.java.visitors.FindInvocationAt;
-import com.itsaky.androidide.lsp.models.ParameterInformation;
-import com.itsaky.androidide.lsp.models.SignatureHelp;
-import com.itsaky.androidide.lsp.models.SignatureHelpParams;
-import com.itsaky.androidide.lsp.models.SignatureInformation;
-import com.itsaky.androidide.progress.ICancelChecker;
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask;
+import com.willow.androidide.ultra.lsp.java.compiler.CompilerProvider;
+import com.willow.androidide.ultra.lsp.java.compiler.SynchronizedTask;
+import com.willow.androidide.ultra.lsp.java.utils.FindHelper;
+import com.willow.androidide.ultra.lsp.java.utils.MarkdownHelper;
+import com.willow.androidide.ultra.lsp.java.utils.ScopeHelper;
+import com.willow.androidide.ultra.lsp.java.utils.ShortTypePrinter;
+import com.willow.androidide.ultra.lsp.java.visitors.FindInvocationAt;
+import com.willow.androidide.ultra.lsp.models.ParameterInformation;
+import com.willow.androidide.ultra.lsp.models.SignatureHelp;
+import com.willow.androidide.ultra.lsp.models.SignatureHelpParams;
+import com.willow.androidide.ultra.lsp.models.SignatureInformation;
+import com.willow.androidide.ultra.progress.ICancelChecker;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;

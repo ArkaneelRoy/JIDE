@@ -1,32 +1,32 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.tooling.impl.internal
+package com.willow.androidide.ultra.tooling.impl.internal
 
-import com.itsaky.androidide.builder.model.IJavaCompilerSettings
-import com.itsaky.androidide.tooling.api.IJavaProject
-import com.itsaky.androidide.tooling.api.models.GradleArtifact
-import com.itsaky.androidide.tooling.api.models.JavaContentRoot
-import com.itsaky.androidide.tooling.api.models.JavaModuleDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleExternalDependency
-import com.itsaky.androidide.tooling.api.models.JavaModuleProjectDependency
-import com.itsaky.androidide.tooling.api.models.JavaProjectMetadata
-import com.itsaky.androidide.tooling.api.models.JavaSourceDirectory
-import com.itsaky.androidide.tooling.api.models.ProjectMetadata
+import com.willow.androidide.ultra.builder.model.IJavaCompilerSettings
+import com.willow.androidide.ultra.tooling.api.IJavaProject
+import com.willow.androidide.ultra.tooling.api.models.GradleArtifact
+import com.willow.androidide.ultra.tooling.api.models.JavaContentRoot
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleExternalDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaModuleProjectDependency
+import com.willow.androidide.ultra.tooling.api.models.JavaProjectMetadata
+import com.willow.androidide.ultra.tooling.api.models.JavaSourceDirectory
+import com.willow.androidide.ultra.tooling.api.models.ProjectMetadata
 import org.gradle.tooling.model.idea.IdeaModule
 import org.gradle.tooling.model.idea.IdeaModuleDependency
 import org.gradle.tooling.model.idea.IdeaSingleEntryLibraryDependency

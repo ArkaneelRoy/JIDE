@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.inflater.internal
+package com.willow.androidide.ultra.inflater.internal
 
 import android.view.View
 import android.view.ViewGroup
@@ -27,33 +27,33 @@ import com.android.aapt.Resources.XmlNode.NodeCase.ELEMENT
 import com.android.aaptcompiler.AaptResourceType.ID
 import com.android.aaptcompiler.AaptResourceType.LAYOUT
 import com.android.aaptcompiler.XmlProcessor
-import com.itsaky.androidide.inflater.DefaultComponentFactory
-import com.itsaky.androidide.inflater.IAttribute
-import com.itsaky.androidide.inflater.IComponentFactory
-import com.itsaky.androidide.inflater.IComponentFactory.Companion.LAYOUT_INFLATER_COMPONENT_FACTORY_KEY
-import com.itsaky.androidide.inflater.ILayoutInflater
-import com.itsaky.androidide.inflater.INamespace
-import com.itsaky.androidide.inflater.IView
-import com.itsaky.androidide.inflater.IViewGroup
-import com.itsaky.androidide.inflater.InflateException
-import com.itsaky.androidide.inflater.events.IInflateEventsListener
-import com.itsaky.androidide.inflater.events.InflationFinishEvent
-import com.itsaky.androidide.inflater.events.InflationStartEvent
-import com.itsaky.androidide.inflater.events.OnApplyAttributeEvent
-import com.itsaky.androidide.inflater.events.OnInflateViewEvent
-import com.itsaky.androidide.inflater.internal.utils.IDTable
-import com.itsaky.androidide.inflater.internal.utils.ViewFactory.createViewInstance
-import com.itsaky.androidide.inflater.internal.utils.ViewFactory.generateLayoutParams
-import com.itsaky.androidide.inflater.internal.utils.parseLayoutReference
-import com.itsaky.androidide.inflater.utils.endParse
-import com.itsaky.androidide.inflater.utils.isParsing
-import com.itsaky.androidide.inflater.utils.startParse
-import com.itsaky.androidide.inflater.viewAdapter
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.projects.android.AndroidModule
-import com.itsaky.androidide.xml.widgets.Widget
-import com.itsaky.androidide.xml.widgets.WidgetTable
-import com.itsaky.androidide.xml.widgets.WidgetType
+import com.willow.androidide.ultra.inflater.DefaultComponentFactory
+import com.willow.androidide.ultra.inflater.IAttribute
+import com.willow.androidide.ultra.inflater.IComponentFactory
+import com.willow.androidide.ultra.inflater.IComponentFactory.Companion.LAYOUT_INFLATER_COMPONENT_FACTORY_KEY
+import com.willow.androidide.ultra.inflater.ILayoutInflater
+import com.willow.androidide.ultra.inflater.INamespace
+import com.willow.androidide.ultra.inflater.IView
+import com.willow.androidide.ultra.inflater.IViewGroup
+import com.willow.androidide.ultra.inflater.InflateException
+import com.willow.androidide.ultra.inflater.events.IInflateEventsListener
+import com.willow.androidide.ultra.inflater.events.InflationFinishEvent
+import com.willow.androidide.ultra.inflater.events.InflationStartEvent
+import com.willow.androidide.ultra.inflater.events.OnApplyAttributeEvent
+import com.willow.androidide.ultra.inflater.events.OnInflateViewEvent
+import com.willow.androidide.ultra.inflater.internal.utils.IDTable
+import com.willow.androidide.ultra.inflater.internal.utils.ViewFactory.createViewInstance
+import com.willow.androidide.ultra.inflater.internal.utils.ViewFactory.generateLayoutParams
+import com.willow.androidide.ultra.inflater.internal.utils.parseLayoutReference
+import com.willow.androidide.ultra.inflater.utils.endParse
+import com.willow.androidide.ultra.inflater.utils.isParsing
+import com.willow.androidide.ultra.inflater.utils.startParse
+import com.willow.androidide.ultra.inflater.viewAdapter
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.projects.android.AndroidModule
+import com.willow.androidide.ultra.xml.widgets.Widget
+import com.willow.androidide.ultra.xml.widgets.WidgetTable
+import com.willow.androidide.ultra.xml.widgets.WidgetType
 import java.io.File
 
 /**
@@ -348,7 +348,7 @@ open class LayoutInflaterImpl : ILayoutInflater {
   }
 
   protected open fun processXmlFile(file: File): Pair<XmlProcessor, AndroidModule> {
-    return com.itsaky.androidide.inflater.utils.processXmlFile(file, LAYOUT)
+    return com.willow.androidide.ultra.inflater.utils.processXmlFile(file, LAYOUT)
   }
 
   private fun onCreateUnsupportedView(
@@ -375,7 +375,7 @@ open class LayoutInflaterImpl : ILayoutInflater {
     if (!isParsing) {
       if (this.module == null) {
         startParse(file)
-        this.module = com.itsaky.androidide.inflater.utils.module
+        this.module = com.willow.androidide.ultra.inflater.utils.module
       } else {
         startParse(this.module!!)
       }

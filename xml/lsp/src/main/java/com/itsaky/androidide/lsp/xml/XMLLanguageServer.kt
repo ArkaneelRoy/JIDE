@@ -1,48 +1,48 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.lsp.xml
+package com.willow.androidide.ultra.lsp.xml
 
 import androidx.annotation.RestrictTo
-import com.itsaky.androidide.eventbus.events.editor.DocumentChangeEvent
-import com.itsaky.androidide.lsp.api.ICompletionProvider
-import com.itsaky.androidide.lsp.api.ILanguageClient
-import com.itsaky.androidide.lsp.api.ILanguageServer
-import com.itsaky.androidide.lsp.api.IServerSettings
-import com.itsaky.androidide.lsp.models.CodeFormatResult
-import com.itsaky.androidide.lsp.models.CompletionParams
-import com.itsaky.androidide.lsp.models.CompletionResult
-import com.itsaky.androidide.lsp.models.DefinitionParams
-import com.itsaky.androidide.lsp.models.DefinitionResult
-import com.itsaky.androidide.lsp.models.DiagnosticResult
-import com.itsaky.androidide.lsp.models.ExpandSelectionParams
-import com.itsaky.androidide.lsp.models.FormatCodeParams
-import com.itsaky.androidide.lsp.models.LSPFailure
-import com.itsaky.androidide.lsp.models.ReferenceParams
-import com.itsaky.androidide.lsp.models.ReferenceResult
-import com.itsaky.androidide.lsp.models.SignatureHelp
-import com.itsaky.androidide.lsp.models.SignatureHelpParams
-import com.itsaky.androidide.lsp.util.NoCompletionsProvider
-import com.itsaky.androidide.lsp.xml.models.XMLServerSettings
-import com.itsaky.androidide.lsp.xml.providers.AdvancedEditProvider.onContentChange
-import com.itsaky.androidide.lsp.xml.providers.CodeFormatProvider
-import com.itsaky.androidide.lsp.xml.providers.XmlCompletionProvider
-import com.itsaky.androidide.models.Range
-import com.itsaky.androidide.projects.IWorkspace
-import com.itsaky.androidide.utils.DocumentUtils
+import com.willow.androidide.ultra.eventbus.events.editor.DocumentChangeEvent
+import com.willow.androidide.ultra.lsp.api.ICompletionProvider
+import com.willow.androidide.ultra.lsp.api.ILanguageClient
+import com.willow.androidide.ultra.lsp.api.ILanguageServer
+import com.willow.androidide.ultra.lsp.api.IServerSettings
+import com.willow.androidide.ultra.lsp.models.CodeFormatResult
+import com.willow.androidide.ultra.lsp.models.CompletionParams
+import com.willow.androidide.ultra.lsp.models.CompletionResult
+import com.willow.androidide.ultra.lsp.models.DefinitionParams
+import com.willow.androidide.ultra.lsp.models.DefinitionResult
+import com.willow.androidide.ultra.lsp.models.DiagnosticResult
+import com.willow.androidide.ultra.lsp.models.ExpandSelectionParams
+import com.willow.androidide.ultra.lsp.models.FormatCodeParams
+import com.willow.androidide.ultra.lsp.models.LSPFailure
+import com.willow.androidide.ultra.lsp.models.ReferenceParams
+import com.willow.androidide.ultra.lsp.models.ReferenceResult
+import com.willow.androidide.ultra.lsp.models.SignatureHelp
+import com.willow.androidide.ultra.lsp.models.SignatureHelpParams
+import com.willow.androidide.ultra.lsp.util.NoCompletionsProvider
+import com.willow.androidide.ultra.lsp.xml.models.XMLServerSettings
+import com.willow.androidide.ultra.lsp.xml.providers.AdvancedEditProvider.onContentChange
+import com.willow.androidide.ultra.lsp.xml.providers.CodeFormatProvider
+import com.willow.androidide.ultra.lsp.xml.providers.XmlCompletionProvider
+import com.willow.androidide.ultra.models.Range
+import com.willow.androidide.ultra.projects.IWorkspace
+import com.willow.androidide.ultra.utils.DocumentUtils
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

@@ -30,7 +30,7 @@ import java.util.*;
 import jdkx.lang.model.SourceVersion;
 import static jdkx.lang.model.SourceVersion.*;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 import openjdk.tools.javac.jvm.Target;
 import openjdk.tools.javac.resources.CompilerProperties.Errors;
 import openjdk.tools.javac.resources.CompilerProperties.Fragments;
@@ -285,7 +285,7 @@ public enum Source {
         }
 
         public boolean allowedInSource(Source source) {
-            // AndroidIDE changed: Modules are allowed only when enabled.
+            // AndroidIDE Ultra changed: Modules are allowed only when enabled.
             if (!JavacConfigProvider.isModulesEnabled() && optFragment == Fragments.FeatureModules) {
                 return false;
             }

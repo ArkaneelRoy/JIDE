@@ -25,7 +25,7 @@
 
 package jdkx.lang.model;
 
-import com.itsaky.androidide.javac.config.JavacConfigProvider;
+import com.willow.androidide.ultra.javac.config.JavacConfigProvider;
 
 /**
  * Source versions of the Java programming language.
@@ -244,7 +244,7 @@ public enum SourceVersion {
      * {@return the latest source version that can be modeled}
      */
     public static SourceVersion latest() {
-        // AndroidIDE changed: Allow overriding latest source version.
+        // AndroidIDE Ultra changed: Allow overriding latest source version.
         return JavacConfigProvider.getLatestSourceVersion();
     }
 
@@ -258,7 +258,7 @@ public enum SourceVersion {
      * need to be updated accordingly.
      */
     private static SourceVersion getLatestSupported() {
-        // AndroidIDE changed: Allow overriding latest supported source version.
+        // AndroidIDE Ultra changed: Allow overriding latest supported source version.
         return JavacConfigProvider.getLatestSupportedSourceVersion();
     }
 
@@ -286,7 +286,7 @@ public enum SourceVersion {
      * which may be earlier than the {@code latest} release.
      */
     public static SourceVersion latestSupported() {
-        // AndroidIDE changed: Allow overriding latest supported source version.
+        // AndroidIDE Ultra changed: Allow overriding latest supported source version.
         return JavacConfigProvider.getLatestSupportedSourceVersion();
     }
 

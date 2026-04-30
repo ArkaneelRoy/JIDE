@@ -1,50 +1,50 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.preferences
+package com.willow.androidide.ultra.preferences
 
 import android.content.Context
 import androidx.preference.Preference
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
-import com.itsaky.androidide.R
-import com.itsaky.androidide.app.configuration.IJdkDistributionProvider
-import com.itsaky.androidide.models.JdkDistribution
-import com.itsaky.androidide.preferences.internal.BuildPreferences.CUSTOM_GRADLE_INSTALLATION
-import com.itsaky.androidide.preferences.internal.BuildPreferences.GRADLE_CLEAR_CACHE
-import com.itsaky.androidide.preferences.internal.BuildPreferences.GRADLE_COMMANDS
-import com.itsaky.androidide.preferences.internal.BuildPreferences.LAUNCH_APP_AFTER_INSTALL
-import com.itsaky.androidide.preferences.internal.BuildPreferences.PREF_JAVA_HOME
-import com.itsaky.androidide.preferences.internal.BuildPreferences.gradleInstallationDir
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isBuildCacheEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isDebugEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isInfoEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isOfflineEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isScanEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isStacktraceEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.isWarningModeAllEnabled
-import com.itsaky.androidide.preferences.internal.BuildPreferences.javaHome
-import com.itsaky.androidide.preferences.internal.BuildPreferences.launchAppAfterInstall
-import com.itsaky.androidide.resources.R.drawable
-import com.itsaky.androidide.resources.R.string
-import com.itsaky.androidide.tasks.executeAsync
-import com.itsaky.androidide.utils.Environment.GRADLE_USER_HOME
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.flashSuccess
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.app.configuration.IJdkDistributionProvider
+import com.willow.androidide.ultra.models.JdkDistribution
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.CUSTOM_GRADLE_INSTALLATION
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.GRADLE_CLEAR_CACHE
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.GRADLE_COMMANDS
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.LAUNCH_APP_AFTER_INSTALL
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.PREF_JAVA_HOME
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.gradleInstallationDir
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isBuildCacheEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isDebugEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isInfoEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isOfflineEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isScanEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isStacktraceEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.isWarningModeAllEnabled
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.javaHome
+import com.willow.androidide.ultra.preferences.internal.BuildPreferences.launchAppAfterInstall
+import com.willow.androidide.ultra.resources.R.drawable
+import com.willow.androidide.ultra.resources.R.string
+import com.willow.androidide.ultra.tasks.executeAsync
+import com.willow.androidide.ultra.utils.Environment.GRADLE_USER_HOME
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.flashSuccess
 import kotlinx.parcelize.Parcelize
 import java.io.File
 import kotlin.reflect.KMutableProperty0

@@ -1,43 +1,43 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.compiler;
+package com.willow.androidide.ultra.lsp.java.compiler;
 
-import static com.itsaky.androidide.javac.config.JavacConfigProvider.PROP_ANDROIDIDE_JAVA_HOME;
-import static com.itsaky.androidide.javac.config.JavacConfigProvider.disableModules;
-import static com.itsaky.androidide.javac.config.JavacConfigProvider.enableModules;
-import static com.itsaky.androidide.javac.config.JavacConfigProvider.setLatestSourceVersion;
-import static com.itsaky.androidide.javac.config.JavacConfigProvider.setLatestSupportedSourceVersion;
-import static com.itsaky.androidide.utils.Environment.JAVA_HOME;
+import static com.willow.androidide.ultra.javac.config.JavacConfigProvider.PROP_ANDROIDIDE_JAVA_HOME;
+import static com.willow.androidide.ultra.javac.config.JavacConfigProvider.disableModules;
+import static com.willow.androidide.ultra.javac.config.JavacConfigProvider.enableModules;
+import static com.willow.androidide.ultra.javac.config.JavacConfigProvider.setLatestSourceVersion;
+import static com.willow.androidide.ultra.javac.config.JavacConfigProvider.setLatestSupportedSourceVersion;
+import static com.willow.androidide.ultra.utils.Environment.JAVA_HOME;
 
 import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
-import com.itsaky.androidide.builder.model.IJavaCompilerSettings;
-import com.itsaky.androidide.javac.services.compiler.ReusableBorrow;
-import com.itsaky.androidide.javac.services.partial.DiagnosticListenerImpl;
-import com.itsaky.androidide.lsp.java.models.CompilationRequest;
-import com.itsaky.androidide.lsp.java.visitors.MethodRangeScanner;
-import com.itsaky.androidide.models.Range;
-import com.itsaky.androidide.projects.ModuleProject;
-import com.itsaky.androidide.projects.util.StringSearch;
-import com.itsaky.androidide.tooling.api.ProjectType;
-import com.itsaky.androidide.utils.ClassTrie;
-import com.itsaky.androidide.utils.SourceClassTrie;
-import com.itsaky.androidide.utils.StopWatch;
+import com.willow.androidide.ultra.builder.model.IJavaCompilerSettings;
+import com.willow.androidide.ultra.javac.services.compiler.ReusableBorrow;
+import com.willow.androidide.ultra.javac.services.partial.DiagnosticListenerImpl;
+import com.willow.androidide.ultra.lsp.java.models.CompilationRequest;
+import com.willow.androidide.ultra.lsp.java.visitors.MethodRangeScanner;
+import com.willow.androidide.ultra.models.Range;
+import com.willow.androidide.ultra.projects.ModuleProject;
+import com.willow.androidide.ultra.projects.util.StringSearch;
+import com.willow.androidide.ultra.tooling.api.ProjectType;
+import com.willow.androidide.ultra.utils.ClassTrie;
+import com.willow.androidide.ultra.utils.SourceClassTrie;
+import com.willow.androidide.ultra.utils.StopWatch;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;

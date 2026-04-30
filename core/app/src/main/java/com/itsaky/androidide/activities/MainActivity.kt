@@ -1,21 +1,21 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.activities
+package com.willow.androidide.ultra.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -28,19 +28,19 @@ import androidx.core.view.isVisible
 import androidx.transition.TransitionManager
 import androidx.transition.doOnEnd
 import com.google.android.material.transition.MaterialSharedAxis
-import com.itsaky.androidide.activities.editor.EditorActivityKt
-import com.itsaky.androidide.app.EdgeToEdgeIDEActivity
-import com.itsaky.androidide.databinding.ActivityMainBinding
-import com.itsaky.androidide.preferences.internal.GeneralPreferences
-import com.itsaky.androidide.projects.IProjectManager
-import com.itsaky.androidide.resources.R.string
-import com.itsaky.androidide.templates.ITemplateProvider
-import com.itsaky.androidide.utils.DialogUtils
-import com.itsaky.androidide.utils.flashInfo
-import com.itsaky.androidide.viewmodel.MainViewModel
-import com.itsaky.androidide.viewmodel.MainViewModel.Companion.SCREEN_MAIN
-import com.itsaky.androidide.viewmodel.MainViewModel.Companion.SCREEN_TEMPLATE_DETAILS
-import com.itsaky.androidide.viewmodel.MainViewModel.Companion.SCREEN_TEMPLATE_LIST
+import com.willow.androidide.ultra.activities.editor.EditorActivityKt
+import com.willow.androidide.ultra.app.EdgeToEdgeIDEActivity
+import com.willow.androidide.ultra.databinding.ActivityMainBinding
+import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
+import com.willow.androidide.ultra.projects.IProjectManager
+import com.willow.androidide.ultra.resources.R.string
+import com.willow.androidide.ultra.templates.ITemplateProvider
+import com.willow.androidide.ultra.utils.DialogUtils
+import com.willow.androidide.ultra.utils.flashInfo
+import com.willow.androidide.ultra.viewmodel.MainViewModel
+import com.willow.androidide.ultra.viewmodel.MainViewModel.Companion.SCREEN_MAIN
+import com.willow.androidide.ultra.viewmodel.MainViewModel.Companion.SCREEN_TEMPLATE_DETAILS
+import com.willow.androidide.ultra.viewmodel.MainViewModel.Companion.SCREEN_TEMPLATE_LIST
 import java.io.File
 
 class MainActivity : EdgeToEdgeIDEActivity() {

@@ -1,29 +1,29 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.editor.schemes
+package com.willow.androidide.ultra.editor.schemes
 
 import android.content.Context
 import androidx.annotation.WorkerThread
-import com.itsaky.androidide.eventbus.events.editor.ColorSchemeInvalidatedEvent
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE
-import com.itsaky.androidide.utils.Environment
-import com.itsaky.androidide.utils.isSystemInDarkMode
+import com.willow.androidide.ultra.eventbus.events.editor.ColorSchemeInvalidatedEvent
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.utils.Environment
+import com.willow.androidide.ultra.utils.isSystemInDarkMode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -180,7 +180,7 @@ object IDEColorSchemeProvider {
    *
    * @param context Context used to determine whether the system is in dark mode.
    * @param coroutineScope The scope used to read the scheme asynchronously.
-   * @param callback The callback to receive the [SchemeAndroidIDE] instance.
+   * @param callback The callback to receive the [SchemeAndroidIDE Ultra] instance.
    * @see readScheme
    */
   @JvmOverloads
@@ -189,7 +189,7 @@ object IDEColorSchemeProvider {
     coroutineScope: CoroutineScope,
     type: String? = null,
     callbackContext: CoroutineContext = Dispatchers.Main.immediate,
-    callback: (SchemeAndroidIDE?) -> Unit
+    callback: (SchemeAndroidIDE Ultra?) -> Unit
   ) {
 
     // If the scheme has already been loaded, do not bother to dispatch an IO coroutine
@@ -231,7 +231,7 @@ object IDEColorSchemeProvider {
   fun readScheme(
     context: Context,
     type: String? = null
-  ): SchemeAndroidIDE? {
+  ): SchemeAndroidIDE Ultra? {
     val scheme = getColorSchemeForType(type)
     if (scheme == null) {
       log.error("Failed to read color scheme")

@@ -326,7 +326,7 @@ public final class TermuxConstants {
      */
 
     /** Termux GitHub organization name */
-    public static final String TERMUX_GITHUB_ORGANIZATION_NAME = "AndroidIDEOfficial"; // Default: "termux"
+    public static final String TERMUX_GITHUB_ORGANIZATION_NAME = "AndroidIDE UltraOfficial"; // Default: "termux"
     /** Termux GitHub organization url */
     public static final String TERMUX_GITHUB_ORGANIZATION_URL = "https://github.com" + "/" + TERMUX_GITHUB_ORGANIZATION_NAME; // Default: "https://github.com/termux"
 
@@ -339,21 +339,21 @@ public final class TermuxConstants {
      */
 
     /** Termux app name */
-    public static final String TERMUX_APP_NAME = "AndroidIDE"; // Default: "Termux"
+    public static final String TERMUX_APP_NAME = "AndroidIDE Ultra"; // Default: "Termux"
     /** Termux package name */
-    public static final String TERMUX_PACKAGE_NAME = "com.itsaky.androidide"; // Default: "com.termux"
+    public static final String TERMUX_PACKAGE_NAME = "com.willow.androidide.ultra"; // Default: "com.termux"
     /** Termux GitHub repo name */
-    public static final String TERMUX_GITHUB_REPO_NAME = "AndroidIDE"; // Default: "termux-app"
+    public static final String TERMUX_GITHUB_REPO_NAME = "AndroidIDE Ultra"; // Default: "termux-app"
     /** Termux GitHub repo url */
     public static final String TERMUX_GITHUB_REPO_URL = TERMUX_GITHUB_ORGANIZATION_URL + "/" + TERMUX_GITHUB_REPO_NAME; // Default: "https://github.com/termux/termux-app"
     /** Termux GitHub issues repo url */
     public static final String TERMUX_GITHUB_ISSUES_REPO_URL = TERMUX_GITHUB_REPO_URL + "/issues"; // Default: "https://github.com/termux/termux-app/issues"
 
 
-    /** AndroidIDE APK release */
-    public static final String APK_RELEASE_ANDROIDIDE = "AndroidIDE"; // Default: "AndroidIDE"
+    /** AndroidIDE Ultra APK release */
+    public static final String APK_RELEASE_ANDROIDIDE = "AndroidIDE Ultra"; // Default: "AndroidIDE Ultra"
 
-    /** AndroidIDE APK release signing certificate SHA-256 digest */
+    /** AndroidIDE Ultra APK release signing certificate SHA-256 digest */
     public static final String APK_RELEASE_ANDROIDIDE_SIGNING_CERTIFICATE_SHA256_DIGEST = "2DF2CBC1468CCB89DAD1733DC8E027BFF35EEEFA58C9EF35A5518A5D57912007"; // Default: "2DF2CBC1468CCB89DAD1733DC8E027BFF35EEEFA58C9EF35A5518A5D57912007"
 
     /** F-Droid APK release */

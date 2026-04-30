@@ -1,4 +1,4 @@
-package com.itsaky.androidide.diffutils.structs;
+package com.willow.androidide.ultra.diffutils.structs;
 
 public final class EditOp {
 

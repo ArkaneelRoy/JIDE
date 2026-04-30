@@ -1,33 +1,33 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.handlers
+package com.willow.androidide.ultra.handlers
 
-import com.itsaky.androidide.R
-import com.itsaky.androidide.activities.editor.EditorHandlerActivity
-import com.itsaky.androidide.preferences.internal.GeneralPreferences
-import com.itsaky.androidide.resources.R.string
-import com.itsaky.androidide.services.builder.GradleBuildService
-import com.itsaky.androidide.tooling.api.messages.result.BuildInfo
-import com.itsaky.androidide.tooling.events.ProgressEvent
-import com.itsaky.androidide.tooling.events.configuration.ProjectConfigurationStartEvent
-import com.itsaky.androidide.tooling.events.task.TaskStartEvent
-import com.itsaky.androidide.utils.flashError
-import com.itsaky.androidide.utils.flashSuccess
+import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.activities.editor.EditorHandlerActivity
+import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
+import com.willow.androidide.ultra.resources.R.string
+import com.willow.androidide.ultra.services.builder.GradleBuildService
+import com.willow.androidide.ultra.tooling.api.messages.result.BuildInfo
+import com.willow.androidide.ultra.tooling.events.ProgressEvent
+import com.willow.androidide.ultra.tooling.events.configuration.ProjectConfigurationStartEvent
+import com.willow.androidide.ultra.tooling.events.task.TaskStartEvent
+import com.willow.androidide.ultra.utils.flashError
+import com.willow.androidide.ultra.utils.flashSuccess
 import org.slf4j.LoggerFactory
 import java.lang.ref.WeakReference
 

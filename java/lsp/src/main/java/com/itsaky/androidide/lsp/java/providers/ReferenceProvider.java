@@ -1,34 +1,34 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.itsaky.androidide.lsp.java.providers;
+package com.willow.androidide.ultra.lsp.java.providers;
 
 import androidx.annotation.NonNull;
-import com.itsaky.androidide.lsp.java.compiler.CompileTask;
-import com.itsaky.androidide.lsp.java.compiler.CompilerProvider;
-import com.itsaky.androidide.lsp.java.compiler.SynchronizedTask;
-import com.itsaky.androidide.lsp.java.utils.CancelChecker;
-import com.itsaky.androidide.lsp.java.utils.FindHelper;
-import com.itsaky.androidide.lsp.java.utils.NavigationHelper;
-import com.itsaky.androidide.lsp.java.visitors.FindReferences;
-import com.itsaky.androidide.lsp.models.ReferenceParams;
-import com.itsaky.androidide.lsp.models.ReferenceResult;
-import com.itsaky.androidide.models.Location;
-import com.itsaky.androidide.progress.ICancelChecker;
+import com.willow.androidide.ultra.lsp.java.compiler.CompileTask;
+import com.willow.androidide.ultra.lsp.java.compiler.CompilerProvider;
+import com.willow.androidide.ultra.lsp.java.compiler.SynchronizedTask;
+import com.willow.androidide.ultra.lsp.java.utils.CancelChecker;
+import com.willow.androidide.ultra.lsp.java.utils.FindHelper;
+import com.willow.androidide.ultra.lsp.java.utils.NavigationHelper;
+import com.willow.androidide.ultra.lsp.java.visitors.FindReferences;
+import com.willow.androidide.ultra.lsp.models.ReferenceParams;
+import com.willow.androidide.ultra.lsp.models.ReferenceResult;
+import com.willow.androidide.ultra.models.Location;
+import com.willow.androidide.ultra.progress.ICancelChecker;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;

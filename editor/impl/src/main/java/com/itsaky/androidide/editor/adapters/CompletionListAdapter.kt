@@ -1,20 +1,20 @@
 /*
- *  This file is part of AndroidIDE.
+ *  This file is part of AndroidIDE Ultra.
  *
- *  AndroidIDE is free software: you can redistribute it and/or modify
+ *  AndroidIDE Ultra is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidIDE is distributed in the hope that it will be useful,
+ *  AndroidIDE Ultra is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.itsaky.androidide.editor.adapters
+package com.willow.androidide.ultra.editor.adapters
 
 import android.content.res.Resources
 import android.graphics.Typeface
@@ -24,34 +24,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.itsaky.androidide.editor.R
-import com.itsaky.androidide.editor.databinding.LayoutCompletionItemBinding
-import com.itsaky.androidide.lookup.Lookup
-import com.itsaky.androidide.lsp.java.utils.JavaType
-import com.itsaky.androidide.lsp.models.ClassCompletionData
-import com.itsaky.androidide.lsp.models.CompletionItemKind.CLASS
-import com.itsaky.androidide.lsp.models.CompletionItemKind.CONSTRUCTOR
-import com.itsaky.androidide.lsp.models.CompletionItemKind.ENUM
-import com.itsaky.androidide.lsp.models.CompletionItemKind.FIELD
-import com.itsaky.androidide.lsp.models.CompletionItemKind.INTERFACE
-import com.itsaky.androidide.lsp.models.CompletionItemKind.METHOD
-import com.itsaky.androidide.lsp.models.MemberCompletionData
-import com.itsaky.androidide.lsp.models.MethodCompletionData
-import com.itsaky.androidide.preferences.internal.EditorPreferences
-import com.itsaky.androidide.resources.R.string.msg_api_info_deprecated
-import com.itsaky.androidide.resources.R.string.msg_api_info_removed
-import com.itsaky.androidide.resources.R.string.msg_api_info_since
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_API
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_DETAIL
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_LABEL
-import com.itsaky.androidide.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_TYPE
-import com.itsaky.androidide.tasks.executeAsync
-import com.itsaky.androidide.utils.customOrJBMono
-import com.itsaky.androidide.xml.versions.ApiVersions
+import com.willow.androidide.ultra.editor.R
+import com.willow.androidide.ultra.editor.databinding.LayoutCompletionItemBinding
+import com.willow.androidide.ultra.lookup.Lookup
+import com.willow.androidide.ultra.lsp.java.utils.JavaType
+import com.willow.androidide.ultra.lsp.models.ClassCompletionData
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.CLASS
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.CONSTRUCTOR
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.ENUM
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.FIELD
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.INTERFACE
+import com.willow.androidide.ultra.lsp.models.CompletionItemKind.METHOD
+import com.willow.androidide.ultra.lsp.models.MemberCompletionData
+import com.willow.androidide.ultra.lsp.models.MethodCompletionData
+import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.resources.R.string.msg_api_info_deprecated
+import com.willow.androidide.ultra.resources.R.string.msg_api_info_removed
+import com.willow.androidide.ultra.resources.R.string.msg_api_info_since
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_API
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_DETAIL
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_LABEL
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_TYPE
+import com.willow.androidide.ultra.tasks.executeAsync
+import com.willow.androidide.ultra.utils.customOrJBMono
+import com.willow.androidide.ultra.xml.versions.ApiVersions
 import io.github.rosemoe.sora.widget.component.EditorCompletionAdapter
 import org.eclipse.jdt.core.Signature
-import com.itsaky.androidide.lsp.models.CompletionItem as LspCompletionItem
+import com.willow.androidide.ultra.lsp.models.CompletionItem as LspCompletionItem
 
 class CompletionListAdapter : EditorCompletionAdapter() {
 
@@ -126,7 +126,7 @@ class CompletionListAdapter : EditorCompletionAdapter() {
 
   private fun setItemBackground(binding: LayoutCompletionItemBinding, isCurrent: Boolean) {
     val color =
-      if (isCurrent) getThemeColor(SchemeAndroidIDE.COMPLETION_WND_BG_CURRENT_ITEM)
+      if (isCurrent) getThemeColor(SchemeAndroidIDE Ultra.COMPLETION_WND_BG_CURRENT_ITEM)
       else 0
 
     val cornerRadius = binding.root.context.resources
