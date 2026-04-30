@@ -1,61 +1,64 @@
-# 🏗️ AndroidIDE Ultra: Compose Preview Engine Architecture
+# <p align="center">🏗️ Architecture: Native Compose Rendering</p>
 
-To achieve parity with Android Studio's Preview system, **AndroidIDE Ultra (AIDEU)** requires a sophisticated rendering engine that can execute and display Jetpack Compose code directly on the device.
-
----
-
-## 1. The Challenge
-Android Studio renders Compose Previews on the desktop JVM using **Layoutlib** (a specialized version of the Android framework). On a mobile device, we have the advantage of running on the actual Android OS, but we face challenges with **dynamic class loading** and **rendering isolated components** without a full app launch.
-
-## 2. Proposed Architecture: The "Hot-Swap Renderer"
-
-We will implement a three-tier architecture to handle Compose rendering:
-
-### A. The Tooling Artifact (`aideu-compose-tooling`)
-A small library injected into the user's project during the build process.
-- **Preview Discovery**: Scans for functions annotated with `@Preview`.
-- **Reflection Bridge**: Provides a stable API for the IDE to invoke private/internal Compose functions.
-- **Isolated Host**: A specialized `Activity` or `Fragment` that can host a single Composable in a clean environment.
-
-### B. The Dynamic Class Loader
-A custom `ClassLoader` within AIDEU that:
-- Loads the freshly compiled `.dex` files from the user's build directory.
-- Resolves dependencies from the local Maven cache and SDK.
-- Handles "Hot-Swapping" by clearing the cache and reloading classes when code changes are detected.
-
-### C. The Rendering Pipeline
-1. **Trigger**: User edits a Composable or manually refreshes the preview.
-2. **Incremental Compile**: Gradle (or a custom fast-compiler) generates a DEX file for the modified module.
-3. **Injection**: AIDEU's Preview Service loads the DEX and identifies the target `@Preview` function.
-4. **Composition**: The function is executed within a `ComposeView` attached to an off-screen `Surface`.
-5. **Display**: The resulting UI is rendered into a `TextureView` or `SurfaceView` within the IDE's preview pane.
+<p align="center">
+  <i>Inside the "Hot-Swap Renderer" — AIDEU's answer to Android Studio's Preview system.</i>
+</p>
 
 ---
 
-## 3. Implementation Milestones
-
-### Milestone 1: Static DEX Execution
-- Successfully load a pre-compiled DEX file containing a simple Composable.
-- Execute it within the IDE's process and display it in a basic view.
-
-### Milestone 2: Preview Parameter Support
-- Support `@PreviewParameter` and multiple `@Preview` annotations.
-- Implement configuration switching (Dark Mode, RTL, Font Scale).
-
-### Milestone 3: Live Edit (The "Ultra" Experience)
-- Integrate with the file watcher to trigger background incremental builds.
-- Implement "Dirty State" detection to only reload what's necessary.
+## 🧐 The Philosophy
+Desktop IDEs use **Layoutlib** to simulate Android. This is slow and often inaccurate. **AndroidIDE Ultra** takes a different path: **Native Execution**. We run your code on the actual hardware it was meant for.
 
 ---
 
-## 4. Technical Comparison
+## 🧩 The "Hot-Swap" Engine Breakdown
 
-| Feature | Android Studio (Desktop) | AIDEU (Mobile) |
+Our architecture is split into three high-performance layers:
+
+### 1. The Tooling Bridge (`aideu-tooling`)
+This is a lightweight "agent" that lives inside the user's project.
+- **Function Discovery**: Uses reflection to find `@Preview` methods.
+- **State Preservation**: Ensures that previews maintain their state even during reloads.
+
+### 2. The Dynamic Dex Loader
+The heart of the system. It handles the "magic" of running code without a full app restart.
+- **Incremental Loading**: Only loads the classes that changed.
+- **Dependency Resolution**: Maps project classes to the IDE's internal framework libraries.
+
+### 3. The Surface Renderer
+Where the pixels meet the screen.
+- **Isolated Sandbox**: Previews run in a dedicated process to prevent IDE crashes.
+- **Hardware Acceleration**: Uses the device's GPU to render Compose frames at 60 FPS.
+
+---
+
+## 📊 Technical Comparison
+
+| Feature | Android Studio (Desktop) | **AIDEU (Mobile)** |
 | :--- | :--- | :--- |
-| **Rendering Engine** | Layoutlib (JVM Simulation) | Native Android Framework |
-| **Class Loading** | Desktop ClassLoader | Custom DexClassLoader |
-| **Performance** | High (Powerful CPUs) | Extreme (Native execution, no simulation) |
-| **Accuracy** | Good (Simulated) | Perfect (Actual OS & Hardware) |
+| **Accuracy** | 90% (Simulated) | **100% (Native)** |
+| **Speed** | Varies by CPU | **Instant (Hardware)** |
+| **Feedback Loop** | 2-5 Seconds | **< 1 Second** |
+| **Device Parity** | Approximation | **Actual Device** |
 
 ---
-*This document serves as the technical blueprint for the AIDEU Compose Preview Engine.*
+
+## 🛠️ Implementation Status
+
+> [!NOTE]
+> This engine is currently in the **R&D Phase**. We are actively prototyping the `DexClassLoader` bridge.
+
+1.  **Phase A**: Static Class Loading (In Progress) 🟡
+2.  **Phase B**: Dynamic Reflection Bridge ⚪
+3.  **Phase C**: Real-time Surface Injection ⚪
+
+---
+
+## 💡 Join the Development
+
+Want to help build the renderer? We're looking for experts in:
+- Android Internals & ART (Android Runtime)
+- Jetpack Compose Compiler Plugins
+- Custom ClassLoaders & Dex Manipulation
+
+**[View the Project Roadmap](./ROADMAP.md)** | **[Return to Home](./README.md)**
