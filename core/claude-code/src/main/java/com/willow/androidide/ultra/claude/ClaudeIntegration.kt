@@ -51,4 +51,32 @@ class ClaudeIntegration(private val project: IProject, private val service: Clau
         
         service.askClaude(prompt, callback)
     }
+
+    /**
+     * Explains the provided code in simple terms.
+     */
+    fun explainCode(code: String, callback: ClaudeService.ClaudeCallback) {
+        val prompt = """
+            Explain the following code in simple terms, highlighting its purpose and key logic:
+            
+            Code:
+            $code
+        """.trimIndent()
+        
+        service.askClaude(prompt, callback)
+    }
+
+    /**
+     * Generates unit tests for the provided code.
+     */
+    fun generateTests(code: String, callback: ClaudeService.ClaudeCallback) {
+        val prompt = """
+            Generate comprehensive unit tests for the following code using JUnit and Mockito where appropriate:
+            
+            Code:
+            $code
+        """.trimIndent()
+        
+        service.askClaude(prompt, callback)
+    }
 }

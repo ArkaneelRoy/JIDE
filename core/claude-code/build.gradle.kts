@@ -35,4 +35,8 @@ dependencies {
     // For API calls
     implementation(libs.google.gson)
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    // Testing
+    testImplementation(libs.tests.junit)
+    testImplementation(libs.tests.mockito.kotlin)
 }
