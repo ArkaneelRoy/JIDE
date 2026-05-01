@@ -116,7 +116,7 @@ if (FDroidConfig.hasRead && FDroidConfig.isFDroidBuild) {
   }
 }
 
-rootProject.name = "AndroidIDE Ultra"
+rootProject.name = "AndroidIDE-Ultra"
 
 // keep this sorted alphabetically
 include(
