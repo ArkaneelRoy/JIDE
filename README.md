@@ -48,6 +48,7 @@ Why choose Ultra? We aren't just maintaining; we are **innovating**.
 We have big plans. From **Jetpack Compose Previews** that run natively to **Claude Code** integration for autonomous programming.
 
 👉 **[Explore the Full Roadmap 1.0](./ROADMAP.md)**
+👉 **[View Recent Contributions](./CONTRIBUTIONS.md)**
 
 ---
 
