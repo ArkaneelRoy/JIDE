@@ -125,6 +125,7 @@ include(
   ":annotation:processors-ksp",
   ":core:actions",
   ":core:app",
+  ":core:claude-code",
   ":core:common",
   ":core:indexing-api",
   ":core:indexing-core",
