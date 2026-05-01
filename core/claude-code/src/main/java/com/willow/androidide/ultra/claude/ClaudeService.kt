@@ -42,8 +42,8 @@ class ClaudeService(private val apiKey: String) {
      */
     fun askClaude(prompt: String, callback: ClaudeCallback) {
         val json = mapOf(
-            "model" to "claude-3-5-sonnet-20240620",
-            "max_tokens" to 1024,
+            "model" to "claude-4.6-sonnet",
+            "max_tokens" to 4096,
             "messages" to listOf(
                 mapOf("role" to "user", "content" to prompt)
             )

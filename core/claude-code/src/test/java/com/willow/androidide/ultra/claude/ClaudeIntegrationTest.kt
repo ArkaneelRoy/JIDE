@@ -65,4 +65,22 @@ class ClaudeIntegrationTest {
         
         verify(mockService).askClaude(any(), eq(mockCallback))
     }
+
+    @Test
+    fun testReviewCode() {
+        val code = "fun leaky() { val list = mutableListOf<Int>(); while(true) list.add(1) }"
+        
+        integration.reviewCode(code, mockCallback)
+        
+        verify(mockService).askClaude(any(), eq(mockCallback))
+    }
+
+    @Test
+    fun testGenerateDocumentation() {
+        val code = "fun process(data: String): Int = data.length"
+        
+        integration.generateDocumentation(code, mockCallback)
+        
+        verify(mockService).askClaude(any(), eq(mockCallback))
+    }
 }

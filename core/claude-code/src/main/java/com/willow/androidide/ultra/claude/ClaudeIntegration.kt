@@ -79,4 +79,33 @@ class ClaudeIntegration(private val project: IProject, private val service: Clau
         
         service.askClaude(prompt, callback)
     }
+
+    /**
+     * Performs a code review, identifying potential bugs, performance issues, and style violations.
+     */
+    fun reviewCode(code: String, callback: ClaudeService.ClaudeCallback) {
+        val prompt = """
+            Perform a thorough code review of the following snippet. 
+            Identify potential bugs, performance bottlenecks, security vulnerabilities, and adherence to Kotlin/Android best practices.
+            
+            Code:
+            $code
+        """.trimIndent()
+        
+        service.askClaude(prompt, callback)
+    }
+
+    /**
+     * Generates KDoc/Javadoc documentation for the provided code.
+     */
+    fun generateDocumentation(code: String, callback: ClaudeService.ClaudeCallback) {
+        val prompt = """
+            Generate professional KDoc/Javadoc documentation for the following code, including descriptions for parameters, return values, and exceptions.
+            
+            Code:
+            $code
+        """.trimIndent()
+        
+        service.askClaude(prompt, callback)
+    }
 }
