@@ -23,7 +23,7 @@ import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateBuilder
 import com.willow.androidide.ultra.templates.base.ModuleTemplateBuilder
 import com.willow.androidide.ultra.templates.base.modules.dependencies
 
-private const val compose_kotlinCompilerExtensionVersion = "1.3.2"
+private const val compose_kotlinCompilerExtensionVersion = "1.5.14"
 
 private val AndroidModuleTemplateBuilder.androidPlugin: String
   get() {
