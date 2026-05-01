@@ -5,13 +5,11 @@ agree to abide the terms specified in the [CODE OF CONDUCT](./CODE_OF_CONDUCT.md
 
 ## Requirements
 
-- Android Studio.
-- JDK 17 (prefer the one bundled with Android Studio).
+- **Android Studio Jellyfish** or newer.
+- **JDK 17** or **JDK 21** (JDK 17 is recommended for stability).
 
-> NOTE:
->
-> At the time of this writing, the stable version of Android Studio (Electric Eel) is bundled with
-> JDK 11. Only Android Studio Flamingo and newer are bundled with JDK 17.
+> [!NOTE]
+> AndroidIDE Ultra is compatible with modern Android Gradle Plugin (AGP) 8.5+. Ensure your environment is up to date to avoid build synchronization issues.
 
 ## Build the project
 
@@ -20,8 +18,7 @@ Open the project in Android Studio. No extra steps are needed for this.
 It is possible to build AndroidIDE Ultra in AndroidIDE Ultra itself. But, as it might be a too heavy task for an
 Android device to be able to build the project, Android Studio is always recommended.
 
-You can refer the [AndroidIDE Ultra Developer Guide](https://docs.androidide.com/developer/index.html) to
-get started with the development or to learn more about the various components in the IDE. 
+You can refer to the [AndroidIDE Ultra Documentation](https://github.com/Willow7737/AndroidIDE-Ultra) for getting started with development. 
 
 ## Source code format
 

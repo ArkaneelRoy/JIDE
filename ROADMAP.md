@@ -37,7 +37,7 @@ Native Android is just the beginning.
 
 | Milestone | Focus | Status |
 | :--- | :--- | :--- |
-| **Alpha (Current)** | Branding, Legal, Build Optimization | ✅ Done |
+| **Alpha (Current)** | Branding, Legal, Build & Script Optimization | ✅ Done |
 | **Beta 1.0** | Claude Code CLI Integration & KLS Stability | 📅 Q2 2026 |
 | **Beta 2.0** | Native Compose Preview Engine (MVP) | 📅 Q3 2026 |
 | **Ultra 1.0** | Flutter Support & Production-Ready Profilers | 📅 Q4 2026 |

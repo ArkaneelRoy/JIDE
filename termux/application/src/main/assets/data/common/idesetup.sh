@@ -16,7 +16,7 @@ install_dir=$HOME
 sdkver_org=34.0.4
 with_cmdline=true
 assume_yes=false
-manifest="https://raw.githubusercontent.com/AndroidIDE UltraOfficial/androidide-tools/main/manifest.json"
+manifest="https://raw.githubusercontent.com/Willow7737/androidide-tools/main/manifest.json"
 pkgm="pkg"
 pkg_curl="libcurl"
 pkgs="jq tar"
@@ -90,7 +90,7 @@ install_packages() {
 }
 
 print_help() {
-  echo "AndroidIDE Ultra build tools installer"
+  echo "🚀 AndroidIDE Ultra Build Tools Installer"
   echo "This script helps you easily install build tools in AndroidIDE Ultra."
   echo ""
   echo "Usage:"
