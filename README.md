@@ -72,8 +72,3 @@ Curious about how we're making Compose Previews work natively on Android? We've 
 
 AndroidIDE Ultra is licensed under the **GNU General Public License v3.0**. 
 This project is a derivative work of the original [AndroidIDE](https://github.com/AndroidIDEOfficial/AndroidIDE). We honor and respect the work of the original contributors who made this journey possible.
-
----
-<p align="center">
-  Built with ❤️ for the Android Community.
-</p>
