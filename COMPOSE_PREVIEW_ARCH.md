@@ -48,8 +48,8 @@ Where the pixels meet the screen.
 > [!NOTE]
 > This engine is currently in the **R&D Phase**. We are actively prototyping the `DexClassLoader` bridge.
 
-1.  **Phase A**: Static Class Loading (In Progress) 🟡
-2.  **Phase B**: Dynamic Reflection Bridge ⚪
+1.  **Phase A**: Static Class Loading (Done) ✅
+2.  **Phase B**: Dynamic Reflection Bridge (In Progress) 🟡
 3.  **Phase C**: Real-time Surface Injection ⚪
 
 ---
