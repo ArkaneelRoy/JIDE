@@ -20,7 +20,7 @@
 import com.willow.androidide.ultra.build.config.BuildConfig
 import com.willow.androidide.ultra.build.config.FDroidConfig
 import com.willow.androidide.ultra.build.config.publishingVersion
-import com.willow.androidide.ultra.plugins.AndroidIDE UltraPlugin
+import com.willow.androidide.ultra.plugins.AndroidIDEPlugin
 import com.willow.androidide.ultra.plugins.conf.configureAndroidModule
 import com.willow.androidide.ultra.plugins.conf.configureJavaModule
 import com.willow.androidide.ultra.plugins.conf.configureMavenPublish
@@ -61,7 +61,7 @@ subprojects {
   FDroidConfig.load(project)
 
   afterEvaluate {
-    apply { plugin(AndroidIDE UltraPlugin::class.java) }
+    apply { plugin(AndroidIDEPlugin::class.java) }
   }
 
   project.version = rootProject.version

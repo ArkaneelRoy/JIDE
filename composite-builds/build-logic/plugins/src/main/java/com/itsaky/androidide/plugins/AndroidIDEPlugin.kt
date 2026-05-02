@@ -29,11 +29,11 @@ import org.gradle.api.Project
  *
  * @author Akash Yadav
  */
-class AndroidIDE UltraPlugin : Plugin<Project> {
+class AndroidIDEPlugin : Plugin<Project> {
 
   override fun apply(target: Project) = target.run {
     if (project.path == rootProject.path) {
-      throw GradleException("Cannot apply ${AndroidIDE UltraPlugin::class.simpleName} to root project")
+      throw GradleException("Cannot apply ${AndroidIDEPlugin::class.simpleName} to root project")
     }
 
     if (!project.buildFile.exists() || !project.buildFile.isFile) {

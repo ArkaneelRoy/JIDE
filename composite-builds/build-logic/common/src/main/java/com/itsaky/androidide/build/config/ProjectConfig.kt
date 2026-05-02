@@ -23,8 +23,8 @@ import org.gradle.api.Project
 object ProjectConfig {
 
   const val REPO_HOST = "github.com"
-  const val REPO_OWNER = "AndroidIDE UltraOfficial"
-  const val REPO_NAME = "AndroidIDE Ultra"
+  const val REPO_OWNER = "Willow7737"
+  const val REPO_NAME = "AndroidIDE-Ultra"
   const val REPO_URL = "https://$REPO_HOST/$REPO_OWNER/$REPO_NAME"
   const val SCM_GIT =
     "scm:git:git://$REPO_HOST/$REPO_OWNER/$REPO_NAME.git"
