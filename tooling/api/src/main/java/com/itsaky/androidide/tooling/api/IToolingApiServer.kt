@@ -35,6 +35,9 @@ import java.util.concurrent.CompletableFuture
 @JsonSegment("server")
 interface IToolingApiServer {
 
+  @JsonRequest
+  fun findAndInvokePreviewMethods(dexPath: String, optimizedDirectory: String, className: String): CompletableFuture<List<String>>
+
   /**
    * Returns the metadata about the tooling server.
    */

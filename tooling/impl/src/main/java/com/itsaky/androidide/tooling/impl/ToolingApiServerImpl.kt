@@ -44,6 +44,7 @@ import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResu
 import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult.Failure.UNSUPPORTED_CONFIGURATION
 import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult.Failure.UNSUPPORTED_GRADLE_VERSION
 import com.willow.androidide.ultra.tooling.api.models.ToolingServerMetadata
+import com.willow.androidide.ultra.tooling.impl.internal.DexClassLoaderBridge
 import com.willow.androidide.ultra.tooling.impl.internal.ProjectImpl
 import com.willow.androidide.ultra.tooling.impl.sync.ModelBuilderException
 import com.willow.androidide.ultra.tooling.impl.sync.RootModelBuilder
@@ -72,6 +73,24 @@ import kotlin.concurrent.withLock
  * @author Akash Yadav
  */
 internal class ToolingApiServerImpl(private val project: ProjectImpl) :
+  IToolingApiServer {
+
+  // Placeholder for DexClassLoaderBridge instance
+  private var dexClassLoaderBridge: DexClassLoaderBridge? = null
+
+  override fun findAndInvokePreviewMethods(dexPath: String, optimizedDirectory: String, className: String): CompletableFuture<List<String>> {
+    return CompletableFuture.supplyAsync {
+      try {
+        dexClassLoaderBridge = DexClassLoaderBridge(dexPath, optimizedDirectory)
+        val loadedClass = dexClassLoaderBridge!!.loadClass(className)
+        val previewMethods = dexClassLoaderBridge!!.findPreviewMethods(loadedClass)
+        previewMethods.map { it.name }
+      } catch (e: Exception) {
+        log.error("Error finding and invoking preview methods", e)
+        emptyList()
+      }
+    }
+  }
   IToolingApiServer {
 
   private var client: IToolingApiClient? = null
