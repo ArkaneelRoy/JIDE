@@ -15,6 +15,7 @@ This document tracks the improvements and fixes made to the AndroidIDE Ultra rep
 - **Gradle Configuration**: Updated `settings.gradle.kts` to include the new `core/claude-code` module and added it as a dependency in `core/app/build.gradle.kts`.
 - **Created `scripts/optimize_resources.sh`**: Developed a new utility script to help optimize Android resources by checking for unused resources, optimizing PNGs, and identifying large assets.
 - **Created `scripts/analyze_dependencies.sh`**: Developed a new utility script to help developers analyze project dependencies for specific modules and check for available updates.
+- **Created `scripts/run_code_quality_checks.sh`**: Developed a comprehensive script to automate code quality checks, including Android Lint, unit tests, documentation status, and resource optimization. This script ensures code consistency and early detection of issues.
 ### 💡 AI Integration (Claude Code)
 - **Claude Model Update**: Upgraded the Claude API model in `ClaudeService.kt` to `claude-4.6-sonnet` and increased `max_tokens` to 4096, enhancing AI capabilities and response length.
 - **New Module `core/claude-code`**: Created a new Gradle module to house Claude AI integration logic.
