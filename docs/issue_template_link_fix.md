@@ -24,3 +24,22 @@ to:
 `https://github.com/Willow7737/AndroidIDE-Ultra/blob/dev/CODE_OF_CONDUCT.md`
 
 This ensures that all references within the issue templates correctly point to the Code of Conduct in the `Willow7737/AndroidIDE-Ultra` repository.
+
+## Additional Branding and Automation Fixes
+
+Beyond the issue templates, a broader sweep was conducted to ensure branding consistency and fix automation workflows:
+
+### 1. Nyx Configuration (`.nyx.yml`)
+- Updated issue substitution links to point to the correct repository.
+- Renamed release assets to use lowercase `androidide-ultra` for consistency.
+- Corrected the `ReleaseAndroidIDE` environment variable name to match the CI workflow.
+- Updated `REPOSITORY_OWNER` and `REPOSITORY_NAME` to `Willow7737` and `AndroidIDE-Ultra`.
+
+### 2. Changelog Template (`.nyx/CHANGELOG.tpl`)
+- Updated all hardcoded repository links to reference `Willow7737/AndroidIDE-Ultra`.
+
+### 3. Crowdin Contributors Workflow (`.github/workflows/crowdin_contributors.yml`)
+- Updated the repository check to `Willow7737/AndroidIDE-Ultra` to ensure the workflow runs on the correct fork.
+
+### 4. Global Markdown Link Cleanup
+- Performed a global search and replace across all Markdown files to fix malformed links pointing to the old repository structure. This affected numerous changelog files, ensuring that historical references now point to the correct fork.

@@ -11,7 +11,7 @@ changelog:
     Added: "^feat$"
     Fixed: "^fix$"
   substitutions:
-    "(?m)#([0-9]+)(?s)": "[#%s](https://github.com/AndroidIDE UltraOfficial/AndroidIDE Ultra/issues/%s)"
+    "(?m)#([0-9]+)(?s)": "[#%s](https://github.com/Willow7737/AndroidIDE-Ultra/issues/%s)"
 
 releaseAssets:
   apk_arm64:
@@ -30,17 +30,17 @@ releaseAssets:
     path: app-armeabi-v7a-release.apk
     type: application/octet-stream
   checksums_md5:
-    fileName: "AndroidIDE Ultra-{{version}}-md5-CHECKSUMS.txt"
+    fileName: "androidide-ultra-{{version}}-md5-CHECKSUMS.txt"
     description: "MD5 Checksums"
     path: build/CHECKSUMS-md5.txt
     type: text/plain
   checksums_sha256:
-    fileName: "AndroidIDE Ultra-{{version}}-sha256-CHECKSUMS.txt"
+    fileName: "androidide-ultra-{{version}}-sha256-CHECKSUMS.txt"
     description: "SHA-256 Checksums"
     path: build/CHECKSUMS-sha256.txt
     type: text/plain
   checksums_sha512:
-    fileName: "AndroidIDE Ultra-{{version}}-sha512-CHECKSUMS.txt"
+    fileName: "androidide-ultra-{{version}}-sha512-CHECKSUMS.txt"
     description: "SHA-512 Checksums"
     path: build/CHECKSUMS-sha512.txt
     type: text/plain
@@ -63,7 +63,7 @@ releaseTypes:
       matchWorkspaceStatus: "CLEAN"
       matchEnvironmentVariables:
         CI: "^true$"
-        ReleaseAndroidIDE Ultra: "^true$"
+        ReleaseAndroidIDE: "^true$"
     internal:
       description: "{{#fileContent}}build/CHANGELOG.md{{/fileContent}}"
       collapseVersions: true
@@ -89,8 +89,8 @@ services:
     github:
       type: GITHUB
       options:
-        REPOSITORY_OWNER: "AndroidIDE UltraOfficial"
-        REPOSITORY_NAME: "AndroidIDE Ultra"
+        REPOSITORY_OWNER: "Willow7737"
+        REPOSITORY_NAME: "AndroidIDE-Ultra"
         AUTHENTICATION_TOKEN: "{{#environmentVariable}}GH_TOKEN{{/environmentVariable}}"
 
 git:
