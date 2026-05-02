@@ -17,7 +17,7 @@ The following files were modified:
 
 In both files, the URL for the Code of Conduct was updated from:
 
-`https://github.com/AndroidIDE UltraOfficial/AndroidIDE Ultra/blob/dev/CODE_OF_CONDUCT.md`
+`https://github.com/Willow7737/AndroidIDE-Ultra/blob/dev/CODE_OF_CONDUCT.md`
 
 to:
 
