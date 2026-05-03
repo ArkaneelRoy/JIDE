@@ -38,9 +38,10 @@ Native Android is just the beginning.
 | Milestone | Focus | Status |
 | :--- | :--- | :--- |
 | **Alpha (Current)** | Branding, Legal, Build & Script Optimization | ✅ Done |
-| **Beta 1.0** | Claude Code CLI Integration & KLS Stability | 🟡 In Progress (CLI wrapper drafted) |
-| **Beta 2.0** | Native Compose Preview Engine (MVP) | 🟡 In Progress (DexClassLoader bridge prototyped) |
-| **Ultra 1.0** | Flutter Support & Production-Ready Profilers | 🟡 In Progress (Pub.dev browser started) |
+| **Beta 1.0** | Claude Code CLI Integration & KLS Stability | ✅ Done |
+| **Beta 2.0** | Native Compose Preview Engine (MVP) | ✅ Done |
+| **Ultra 1.0** | Flutter Support & Production-Ready Profilers | ✅ Done |
+| **Phase B Completion** | Dynamic Reflection Bridge (Overall) | ✅ Done |
 
 ---
 
