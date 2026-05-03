@@ -132,9 +132,10 @@ public class Main {
   public static Set<OperationType> progressUpdateTypes() {
     final Set<OperationType> types = new HashSet<>();
 
-    // AndroidIDE Ultra currently does not handle any other type of events
+    // Phase E: Added TEST operation type for continuous testing pipeline
     types.add(OperationType.TASK);
     types.add(OperationType.PROJECT_CONFIGURATION);
+    types.add(OperationType.TEST);
 
     return types;
   }

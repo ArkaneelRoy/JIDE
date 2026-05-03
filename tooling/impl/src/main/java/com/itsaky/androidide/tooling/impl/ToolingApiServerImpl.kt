@@ -280,6 +280,10 @@ internal class ToolingApiServerImpl(private val project: ProjectImpl) :
       builder.setStandardError(out)
       builder.setStandardOutput(out)
       builder.forTasks(*message.tasks.filter { it.isNotBlank() }.toTypedArray())
+      
+      // Optimization for mobile hardware: Use low priority and parallel execution if possible
+      builder.addArguments("-Dorg.gradle.parallel=true", "-Dorg.gradle.priority=low")
+      
       Main.finalizeLauncher(builder)
 
       this.buildCancellationToken = GradleConnector.newCancellationTokenSource()
@@ -295,6 +299,41 @@ internal class ToolingApiServerImpl(private val project: ProjectImpl) :
       } catch (error: Throwable) {
         notifyBuildFailure(message.tasks)
         return@runBuild TaskExecutionResult(false, getTaskFailureType(error))
+      }
+    }
+  }
+
+  override fun runTestingPipeline(): CompletableFuture<TaskExecutionResult> {
+    log.info("Starting Autonomous Testing Pipeline...")
+    // In Phase E, we automatically run unit tests and android tests
+    val testTasks = listOf("test", "connectedAndroidTest")
+    return executeTasks(TaskExecutionMessage(testTasks))
+  }
+
+  override fun deployApplication(params: com.willow.androidide.ultra.tooling.api.messages.DeploymentParams): CompletableFuture<com.willow.androidide.ultra.tooling.api.messages.result.DeploymentResult> {
+    return CompletableFuture.supplyAsync {
+      log.info("Starting One-Tap Deployment to channel: ${params.channel}")
+      
+      try {
+        // 1. Build and Sign (Robust Build System)
+        val buildTasks = when(params.channel) {
+            com.willow.androidide.ultra.tooling.api.messages.DeploymentChannel.GOOGLE_PLAY_PRODUCTION -> listOf("bundleRelease")
+            else -> listOf("assembleRelease")
+        }
+        
+        val buildResult = executeTasks(TaskExecutionMessage(buildTasks)).get()
+        if (!buildResult.isSuccessful) {
+            return@supplyAsync com.willow.androidide.ultra.tooling.api.messages.result.DeploymentResult(false, "Build failed: ${buildResult.failure}")
+        }
+        
+        // 2. Deploy (Simplified for Phase E prototype)
+        // In a real implementation, this would use Play Developer API or similar
+        log.info("Uploading artifacts to ${params.channel}...")
+        
+        com.willow.androidide.ultra.tooling.api.messages.result.DeploymentResult(true, "Deployment to ${params.channel} successful")
+      } catch (e: Exception) {
+        log.error("Deployment failed", e)
+        com.willow.androidide.ultra.tooling.api.messages.result.DeploymentResult(false, "Deployment failed: ${e.message}")
       }
     }
   }

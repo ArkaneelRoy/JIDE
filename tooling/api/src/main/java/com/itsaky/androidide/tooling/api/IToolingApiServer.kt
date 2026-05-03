@@ -61,6 +61,19 @@ interface IToolingApiServer {
   fun executeTasks(message: TaskExecutionMessage): CompletableFuture<TaskExecutionResult>
 
   /**
+   * Run the continuous testing pipeline.
+   * Automatically runs generated tests and provides immediate feedback.
+   */
+  @JsonRequest
+  fun runTestingPipeline(): CompletableFuture<TaskExecutionResult>
+
+  /**
+   * Deploy the application to the specified channel.
+   */
+  @JsonRequest
+  fun deployApplication(params: com.willow.androidide.ultra.tooling.api.messages.DeploymentParams): CompletableFuture<com.willow.androidide.ultra.tooling.api.messages.result.DeploymentResult>
+
+  /**
    * Cancel the current build.
    *
    * @return A [CompletableFuture] which completes when the current build cancellation process
