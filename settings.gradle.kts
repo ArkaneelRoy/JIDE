@@ -85,18 +85,26 @@ buildscript {
 }
 
 val isGitRepo by lazy {
-  cmdOutput("git", "rev-parse", "--is-inside-work-tree").trim() == "true"
+  try {
+    cmdOutput("git", "rev-parse", "--is-inside-work-tree").trim() == "true"
+  } catch (e: Exception) {
+    false
+  }
 }
 
 private fun cmdOutput(vararg args: String): String {
-  return ProcessBuilder(*args)
-    .directory(File("."))
-    .redirectErrorStream(true)
-    .start()
-    .inputStream
-    .bufferedReader()
-    .readText()
-    .trim()
+  return try {
+    ProcessBuilder(*args)
+      .directory(File("."))
+      .redirectErrorStream(true)
+      .start()
+      .inputStream
+      .bufferedReader()
+      .readText()
+      .trim()
+  } catch (e: Exception) {
+    ""
+  }
 }
 
 FDroidConfig.load(rootDir)
