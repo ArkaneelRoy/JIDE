@@ -28,7 +28,7 @@ object BuildConfig {
   const val packageName = "com.willow.androidide.ultra"
 
   /** The compile SDK version. */
-  const val compileSdk = 34
+  const val compileSdk = 33
 
   /** The minimum SDK version. */
   const val minSdk = 26
