@@ -35,7 +35,7 @@ import org.gradle.configurationcache.extensions.capitalized
  *
  * @author Akash Yadav
  */
-class AndroidIDE UltraAssetsPlugin : Plugin<Project> {
+class AndroidIDEUltraAssetsPlugin : Plugin<Project> {
 
   override fun apply(target: Project) {
     target.run {

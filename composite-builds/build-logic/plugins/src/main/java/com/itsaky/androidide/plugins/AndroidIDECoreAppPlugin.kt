@@ -25,6 +25,6 @@ import org.gradle.api.Project
  *
  * @author Akash Yadav
  */
-class AndroidIDE UltraCoreAppPlugin : Plugin<Project> {
+class AndroidIDEUltraCoreAppPlugin : Plugin<Project> {
   override fun apply(target: Project) {}
 }
