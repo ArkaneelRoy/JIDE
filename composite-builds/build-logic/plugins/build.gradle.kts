@@ -49,11 +49,11 @@ gradlePlugin {
   plugins {
     create("com.willow.androidide.ultra.build") {
       id = "com.willow.androidide.ultra.build"
-      implementationClass = "com.willow.androidide.ultra.plugins.AndroidIDE UltraPlugin"
+      implementationClass = "com.willow.androidide.ultra.plugins.AndroidIDEPlugin"
     }
     create("com.willow.androidide.ultra.core-app") {
       id = "com.willow.androidide.ultra.core-app"
-      implementationClass = "com.willow.androidide.ultra.plugins.AndroidIDE UltraCoreAppPlugin"
+      implementationClass = "com.willow.androidide.ultra.plugins.AndroidIDEUltraCoreAppPlugin"
     }
     create("com.willow.androidide.ultra.build.propsparser") {
       id = "com.willow.androidide.ultra.build.propsparser"
