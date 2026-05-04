@@ -38,12 +38,12 @@ java {
 
 //noinspection UseTomlInstead GradleDynamicVersion
 dependencies {
-    compileOnly("org.codehaus.janino:janino:+")
-    compileOnly("org.codehaus.janino:commons-compiler:+")
-    compileOnly("org.fusesource.jansi:jansi:+")
-    compileOnly("jakarta.mail:jakarta.mail-api:+")
-    compileOnly("jakarta.servlet:jakarta.servlet-api:+")
+    compileOnly("org.codehaus.janino:janino:3.1.12")
+    compileOnly("org.codehaus.janino:commons-compiler:3.1.12")
+    compileOnly("org.fusesource.jansi:jansi:2.4.1")
+    compileOnly("jakarta.mail:jakarta.mail-api:2.1.3")
+    compileOnly("jakarta.servlet:jakarta.servlet-api:6.0.0")
 
-    testCompileOnly("org.eclipse.angus:angus-mail:+")
-    testCompileOnly("org.mockito:mockito-core:+")
+    testCompileOnly("org.eclipse.angus:angus-mail:2.0.3")
+    testCompileOnly("org.mockito:mockito-core:5.11.0")
 }
