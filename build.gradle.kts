@@ -57,6 +57,9 @@ subprojects {
       "org.bouncycastle:bcprov-jdk18on:1.77",
       "org.bouncycastle:bcutil-jdk18on:1.77",
       "org.bouncycastle:bcpkix-jdk18on:1.77",
+      "org.jetbrains.kotlin:kotlin-stdlib:1.9.24",
+      "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24",
+      "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24",
     )
   }
 
