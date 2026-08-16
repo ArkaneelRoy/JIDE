@@ -29,6 +29,7 @@ import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.ThreadUtils
 import com.google.android.material.R as MaterialR
 import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.databinding.LayoutSearchProjectBinding
 import com.willow.androidide.ultra.flashbar.Flashbar
 import com.willow.androidide.ultra.fragments.sheets.ProgressSheet

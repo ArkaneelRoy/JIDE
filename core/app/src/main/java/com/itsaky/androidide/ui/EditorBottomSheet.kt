@@ -45,7 +45,7 @@ import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.Tab
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.MaterialSharedAxis
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.adapters.DiagnosticsAdapter
 import com.willow.androidide.ultra.adapters.EditorBottomSheetTabAdapter
 import com.willow.androidide.ultra.adapters.SearchListAdapter

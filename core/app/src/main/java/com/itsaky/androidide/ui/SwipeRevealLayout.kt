@@ -28,6 +28,7 @@ import androidx.annotation.FloatRange
 import androidx.annotation.IdRes
 import androidx.customview.widget.ViewDragHelper
 import com.google.android.material.shape.MaterialShapeDrawable
+import com.willow.androidide.ultra.R
 import kotlin.math.max
 import kotlin.math.min
 

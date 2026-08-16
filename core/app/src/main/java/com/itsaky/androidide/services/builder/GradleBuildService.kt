@@ -36,6 +36,7 @@ import com.willow.androidide.ultra.preferences.internal.DevOpsPreferences
 import com.willow.androidide.ultra.projects.internal.ProjectManagerImpl
 import com.willow.androidide.ultra.projects.builder.BuildService
 import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.services.ToolingServerNotStartedException
 import com.willow.androidide.ultra.services.builder.ToolingServerRunner.OnServerStartListener
 import com.willow.androidide.ultra.tasks.ifCancelledOrInterrupted
