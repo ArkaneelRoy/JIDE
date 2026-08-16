@@ -28,14 +28,14 @@ import com.willow.androidide.ultra.lsp.models.TextEdit
 import com.willow.androidide.ultra.lsp.xml.XMLLanguageServer
 import com.willow.androidide.ultra.models.Range
 import com.willow.androidide.ultra.projects.FileManager
-import com.willow.androidide.ultra.treesitter.TSParser
-import com.willow.androidide.ultra.treesitter.TSQuery
-import com.willow.androidide.ultra.treesitter.TSQueryCapture
-import com.willow.androidide.ultra.treesitter.TSQueryCursor
-import com.willow.androidide.ultra.treesitter.TSQueryError
-import com.willow.androidide.ultra.treesitter.TSQueryMatch
-import com.willow.androidide.ultra.treesitter.TSTree
-import com.willow.androidide.ultra.treesitter.xml.TSLanguageXml
+import com.itsaky.androidide.treesitter.TSParser
+import com.itsaky.androidide.treesitter.TSQuery
+import com.itsaky.androidide.treesitter.TSQueryCapture
+import com.itsaky.androidide.treesitter.TSQueryCursor
+import com.itsaky.androidide.treesitter.TSQueryError
+import com.itsaky.androidide.treesitter.TSQueryMatch
+import com.itsaky.androidide.treesitter.TSTree
+import com.itsaky.androidide.treesitter.xml.TSLanguageXml
 
 /** @author Akash Yadav */
 object AdvancedEditProvider {
