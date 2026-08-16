@@ -68,6 +68,14 @@ Curious about how we're making Compose Previews work natively on Android? We've 
 
 ---
 
+## 🚀 Build and Release
+
+AndroidIDE Ultra is built with the Gradle wrapper and requires **JDK 17** plus an Android SDK. Run `scripts/setup_dev_env.sh` to check the local environment, then use `./gradlew :core:app:assembleDebug` for a development APK or `./gradlew :core:app:assembleRelease` for release APKs. Release builds are split into the supported `arm64-v8a`, `armeabi-v7a`, and `x86_64` ABIs.
+
+The repository has two release paths. The existing `Build and test` workflow validates changes and retains its Nyx-based main-branch publication flow. The dedicated `Release AndroidIDE Ultra` workflow is the deterministic path for publishing a GitHub release: push a `v`-prefixed semantic-version tag such as `v2.7.1`, or manually dispatch the workflow with an existing tag. It builds and verifies all three ABI APKs, generates MD5, SHA-256, and SHA-512 checksums, and uploads the assets to the matching GitHub release. If signing secrets are configured, the release uses the project signing key; otherwise the build system’s documented fallback behavior applies.
+
+For local release-asset preparation after a successful Gradle build, run `RELEASE_VERSION=v2.7.1 scripts/prepare_release_assets.sh dist`. The script fails if an ABI APK is missing or ambiguous and verifies the published checksum set before the workflow creates a release.
+
 ## ⚖️ License & Attribution
 
 AndroidIDE Ultra is licensed under the **GNU General Public License v3.0**. 

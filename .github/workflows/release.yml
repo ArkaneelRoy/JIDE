@@ -1,0 +1,163 @@
+name: Release AndroidIDE Ultra
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing v-prefixed semantic-version tag to build and publish'
+        required: true
+        type: string
+      prerelease:
+        description: 'Mark the GitHub release as a pre-release'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  JAVA_VERSION: '17'
+  JAVA_DISTRIBUTION: 'temurin'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build release APKs
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.release_meta.outputs.tag }}
+      version: ${{ steps.release_meta.outputs.version }}
+      prerelease: ${{ steps.release_meta.outputs.prerelease }}
+    steps:
+      - name: Resolve release metadata
+        id: release_meta
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_PRERELEASE: ${{ inputs.prerelease }}
+        run: |
+          set -Eeuo pipefail
+          tag="${INPUT_TAG:-${REF_NAME}}"
+          [[ "${tag}" == v* ]] || { echo "Release tags must start with v: ${tag}" >&2; exit 1; }
+          version="${tag#v}"
+          [[ "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]] || {
+            echo "Invalid semantic-version tag: ${tag}" >&2
+            exit 1
+          }
+          prerelease="false"
+          if [[ "${EVENT_NAME}" == "workflow_dispatch" ]]; then
+            prerelease="${INPUT_PRERELEASE:-false}"
+          elif [[ "${version}" == *-* ]]; then
+            prerelease="true"
+          fi
+          {
+            echo "tag=${tag}"
+            echo "version=${version}"
+            echo "prerelease=${prerelease}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout tagged source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.release_meta.outputs.tag }}
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          cache: gradle
+
+      - name: Prepare Gradle
+        run: chmod +x ./gradlew scripts/prepare_release_assets.sh
+
+      - name: Assemble release APKs
+        env:
+          CI: 'true'
+          ReleaseAndroidIDE: 'true'
+          IDE_SIGNING_ALIAS: ${{ secrets.IDE_SIGNING_ALIAS }}
+          IDE_SIGNING_AUTH_PASS: ${{ secrets.IDE_SIGNING_AUTH_PASS }}
+          IDE_SIGNING_AUTH_USER: ${{ secrets.IDE_SIGNING_AUTH_USER }}
+          IDE_SIGNING_KEY_PASS: ${{ secrets.IDE_SIGNING_KEY_PASS }}
+          IDE_SIGNING_STORE_PASS: ${{ secrets.IDE_SIGNING_STORE_PASS }}
+          IDE_SIGNING_URL: ${{ secrets.IDE_SIGNING_URL }}
+          IDE_SIGNING_KEY_BIN: ${{ secrets.IDE_SIGNING_KEY_BIN }}
+          RELEASE_VERSION: ${{ steps.release_meta.outputs.tag }}
+        run: ./gradlew :core:app:assembleRelease --stacktrace
+
+      - name: Prepare and verify release assets
+        env:
+          RELEASE_VERSION: ${{ steps.release_meta.outputs.tag }}
+        run: scripts/prepare_release_assets.sh dist
+
+      - name: Upload release assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: androidide-ultra-${{ steps.release_meta.outputs.version }}
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    name: Publish GitHub release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tagged source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.build.outputs.tag }}
+          fetch-depth: 0
+
+      - name: Download release assets
+        uses: actions/download-artifact@v4
+        with:
+          name: androidide-ultra-${{ needs.build.outputs.version }}
+          path: dist
+
+      - name: Verify release assets and checksums
+        working-directory: dist
+        run: |
+          set -Eeuo pipefail
+          test "$(find . -maxdepth 1 -type f -name '*.apk' | wc -l)" -eq 3
+          sha256sum --check "androidide-ultra-${{ needs.build.outputs.version }}-sha256-CHECKSUMS.txt"
+
+      - name: Create or update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.build.outputs.tag }}
+          VERSION: ${{ needs.build.outputs.version }}
+          PRERELEASE: ${{ needs.build.outputs.prerelease }}
+        run: |
+          set -Eeuo pipefail
+          title="AndroidIDE Ultra ${VERSION}"
+          notes_file="dist/RELEASE_NOTES.md"
+          {
+            echo "## AndroidIDE Ultra ${VERSION}"
+            echo
+            echo "This release contains ABI-specific APKs for arm64-v8a, armeabi-v7a, and x86_64."
+            echo
+            echo "Verify downloads with the published SHA-256 checksum file before installation."
+          } > "${notes_file}"
+
+          release_args=(--title "${title}" --notes-file "${notes_file}")
+          if [[ "${PRERELEASE}" == "true" ]]; then
+            release_args+=(--prerelease)
+          fi
+
+          if gh release view "${TAG}" >/dev/null 2>&1; then
+            gh release edit "${TAG}" "${release_args[@]}"
+          else
+            gh release create "${TAG}" "${release_args[@]}"
+          fi
+          gh release upload "${TAG}" dist/*.apk dist/*CHECKSUMS.txt --clobber
