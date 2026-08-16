@@ -108,10 +108,19 @@ abstract class TreeSitterLanguage(
   override fun getIndentAdvance(
     content: ContentReference,
     line: Int,
-    column: Int,
-    spaceCountOnLine: Int,
-    tabCountOnLine: Int
+    column: Int
   ): Int {
+    val currentLine = content.getLine(line).substring(0, column)
+    var spaceCountOnLine = 0
+    var tabCountOnLine = 0
+    for (character in currentLine) {
+      when (character) {
+        ' ' -> spaceCountOnLine++
+        '\t' -> tabCountOnLine++
+        else -> break
+      }
+    }
+
     return try {
       if (line == content.reference.lineCount - 1) {
         // line + 1 does not exist
