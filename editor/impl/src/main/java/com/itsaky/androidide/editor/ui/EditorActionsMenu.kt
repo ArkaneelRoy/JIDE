@@ -36,6 +36,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import com.blankj.utilcode.util.SizeUtils
+import com.google.android.material.R as MaterialR
 import com.google.android.material.button.MaterialButton
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.ActionItem
@@ -198,8 +199,8 @@ open class EditorActionsMenu(val editor: IDEEditor) :
     val drawable = GradientDrawable()
     drawable.shape = GradientDrawable.RECTANGLE
     drawable.cornerRadius = SizeUtils.dp2px(28f).toFloat() // Recommeneded size is 28dp
-    drawable.color = ColorStateList.valueOf(editor.context.resolveAttr(R.attr.colorSurface))
-    drawable.setStroke(SizeUtils.dp2px(1f), editor.context.resolveAttr(R.attr.colorOutline))
+    drawable.color = ColorStateList.valueOf(editor.context.resolveAttr(MaterialR.attr.colorSurface))
+    drawable.setStroke(SizeUtils.dp2px(1f), editor.context.resolveAttr(MaterialR.attr.colorOutline))
     list.background = drawable
   }
 

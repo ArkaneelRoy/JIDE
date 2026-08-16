@@ -27,7 +27,7 @@ import android.view.inputmethod.EditorInfo
 import androidx.annotation.StringRes
 import com.blankj.utilcode.util.FileUtils
 import com.blankj.utilcode.util.SizeUtils
-import com.willow.androidide.ultra.editor.R.string
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.editor.adapters.CompletionListAdapter
 import com.willow.androidide.ultra.editor.api.IEditor
 import com.willow.androidide.ultra.editor.api.ILspEditor

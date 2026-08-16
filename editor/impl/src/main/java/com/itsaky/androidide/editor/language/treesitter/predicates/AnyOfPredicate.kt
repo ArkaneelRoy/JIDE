@@ -17,9 +17,9 @@
 
 package com.willow.androidide.ultra.editor.language.treesitter.predicates
 
-import com.willow.androidide.ultra.treesitter.TSQuery
-import com.willow.androidide.ultra.treesitter.TSQueryMatch
-import com.willow.androidide.ultra.treesitter.TSQueryPredicateStep
+import com.itsaky.androidide.treesitter.TSQuery
+import com.itsaky.androidide.treesitter.TSQueryMatch
+import com.itsaky.androidide.treesitter.TSQueryPredicateStep
 import io.github.rosemoe.sora.editor.ts.predicate.PredicateResult
 import io.github.rosemoe.sora.editor.ts.predicate.TsClientPredicateStep
 import io.github.rosemoe.sora.editor.ts.predicate.TsPredicate

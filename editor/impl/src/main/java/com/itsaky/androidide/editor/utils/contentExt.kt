@@ -18,9 +18,9 @@
 package com.willow.androidide.ultra.editor.utils
 
 import androidx.core.text.trimmedLength
-import com.willow.androidide.ultra.treesitter.TSNode
-import com.willow.androidide.ultra.treesitter.TSTree
-import com.willow.androidide.ultra.treesitter.getNodeAt
+import com.itsaky.androidide.treesitter.TSNode
+import com.itsaky.androidide.treesitter.TSTree
+import com.itsaky.androidide.treesitter.getNodeAt
 import io.github.rosemoe.sora.text.Content
 import io.github.rosemoe.sora.text.TextUtils
 import io.github.rosemoe.sora.util.IntPair

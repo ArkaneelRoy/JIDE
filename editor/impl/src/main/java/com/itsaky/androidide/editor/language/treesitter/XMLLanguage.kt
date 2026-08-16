@@ -22,7 +22,7 @@ import com.willow.androidide.ultra.editor.language.treesitter.TreeSitterLanguage
 import com.willow.androidide.ultra.lsp.api.ILanguageServer
 import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
 import com.willow.androidide.ultra.lsp.xml.XMLLanguageServer
-import com.willow.androidide.ultra.treesitter.xml.TSLanguageXml
+import com.itsaky.androidide.treesitter.xml.TSLanguageXml
 import io.github.rosemoe.sora.lang.Language.INTERRUPTION_LEVEL_STRONG
 import io.github.rosemoe.sora.util.MyCharacter
 

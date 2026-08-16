@@ -19,7 +19,7 @@ package com.willow.androidide.ultra.editor.language.treesitter
 
 import android.content.Context
 import com.willow.androidide.ultra.editor.language.treesitter.TreeSitterLanguage.Factory
-import com.willow.androidide.ultra.treesitter.log.TSLanguageLog
+import com.itsaky.androidide.treesitter.log.TSLanguageLog
 
 /**
  * Tree Sitter language implementation for logs.

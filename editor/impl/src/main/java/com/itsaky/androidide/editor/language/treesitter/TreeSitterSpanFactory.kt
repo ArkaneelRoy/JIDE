@@ -20,8 +20,8 @@ package com.willow.androidide.ultra.editor.language.treesitter
 import android.graphics.Color
 import androidx.core.graphics.ColorUtils
 import com.willow.androidide.ultra.editor.schemes.LanguageScheme
-import com.willow.androidide.ultra.treesitter.TSQuery
-import com.willow.androidide.ultra.treesitter.TSQueryCapture
+import com.itsaky.androidide.treesitter.TSQuery
+import com.itsaky.androidide.treesitter.TSQueryCapture
 import com.willow.androidide.ultra.utils.parseHexColor
 import io.github.rosemoe.sora.editor.ts.spans.DefaultSpanFactory
 import io.github.rosemoe.sora.editor.ts.spans.TsSpanFactory

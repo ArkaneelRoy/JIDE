@@ -17,9 +17,9 @@
 
 package com.willow.androidide.ultra.editor.language.treesitter
 
-import com.willow.androidide.ultra.treesitter.TSLanguage
-import com.willow.androidide.ultra.treesitter.TSQuery
-import com.willow.androidide.ultra.treesitter.TSQueryError
+import com.itsaky.androidide.treesitter.TSLanguage
+import com.itsaky.androidide.treesitter.TSQuery
+import com.itsaky.androidide.treesitter.TSQueryError
 import io.github.rosemoe.sora.editor.ts.TsLanguageSpec
 import java.io.Closeable
 

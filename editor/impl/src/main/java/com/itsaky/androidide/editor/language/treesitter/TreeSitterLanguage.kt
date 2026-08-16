@@ -26,7 +26,7 @@ import com.willow.androidide.ultra.editor.schemes.LanguageScheme
 import com.willow.androidide.ultra.editor.schemes.LanguageSpecProvider.getLanguageSpec
 import com.willow.androidide.ultra.editor.schemes.LocalCaptureSpecProvider.newLocalCaptureSpec
 import com.willow.androidide.ultra.editor.utils.isNonBlankLine
-import com.willow.androidide.ultra.treesitter.TSLanguage
+import com.itsaky.androidide.treesitter.TSLanguage
 import com.willow.androidide.ultra.utils.IntPair
 import io.github.rosemoe.sora.editor.ts.TsTheme
 import io.github.rosemoe.sora.lang.Language.INTERRUPTION_LEVEL_STRONG

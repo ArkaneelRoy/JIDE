@@ -24,7 +24,7 @@ import com.willow.androidide.ultra.editor.language.treesitter.predicates.EqualPr
 import com.willow.androidide.ultra.editor.language.treesitter.predicates.MatchPredicate
 import com.willow.androidide.ultra.editor.language.treesitter.predicates.NotEqualPredicate
 import com.willow.androidide.ultra.editor.language.treesitter.predicates.NotMatchPredicate
-import com.willow.androidide.ultra.treesitter.TSLanguage
+import com.itsaky.androidide.treesitter.TSLanguage
 import io.github.rosemoe.sora.editor.ts.LocalsCaptureSpec
 import io.github.rosemoe.sora.editor.ts.TsLanguageSpec
 import org.slf4j.LoggerFactory

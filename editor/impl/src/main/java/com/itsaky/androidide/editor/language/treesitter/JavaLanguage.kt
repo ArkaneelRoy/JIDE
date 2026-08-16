@@ -25,7 +25,7 @@ import com.willow.androidide.ultra.editor.language.utils.CommonSymbolPairs
 import com.willow.androidide.ultra.lsp.api.ILanguageServer
 import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
 import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
-import com.willow.androidide.ultra.treesitter.java.TSLanguageJava
+import com.itsaky.androidide.treesitter.java.TSLanguageJava
 import io.github.rosemoe.sora.lang.Language.INTERRUPTION_LEVEL_SLIGHT
 import io.github.rosemoe.sora.util.MyCharacter
 import io.github.rosemoe.sora.widget.SymbolPairMatch
