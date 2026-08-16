@@ -17,13 +17,13 @@
 
 package io.github.rosemoe.sora.editor.ts
 
-import com.willow.androidide.ultra.treesitter.TSInputEdit
-import com.willow.androidide.ultra.treesitter.TSQueryCursor
-import com.willow.androidide.ultra.treesitter.TSTree
-import com.willow.androidide.ultra.treesitter.api.TreeSitterInputEdit
-import com.willow.androidide.ultra.treesitter.api.TreeSitterQueryCapture
-import com.willow.androidide.ultra.treesitter.api.safeExecQueryCursor
-import com.willow.androidide.ultra.treesitter.string.UTF16String
+import com.itsaky.androidide.treesitter.TSInputEdit
+import com.itsaky.androidide.treesitter.TSQueryCursor
+import com.itsaky.androidide.treesitter.TSTree
+import com.itsaky.androidide.treesitter.api.TreeSitterInputEdit
+import com.itsaky.androidide.treesitter.api.TreeSitterQueryCapture
+import com.itsaky.androidide.treesitter.api.safeExecQueryCursor
+import com.itsaky.androidide.treesitter.string.UTF16String
 import io.github.rosemoe.sora.data.ObjectAllocator
 import io.github.rosemoe.sora.editor.ts.spans.TsSpanFactory
 import io.github.rosemoe.sora.lang.analysis.StyleReceiver

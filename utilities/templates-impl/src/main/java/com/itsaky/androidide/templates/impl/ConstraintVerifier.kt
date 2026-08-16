@@ -88,13 +88,13 @@ object ConstraintVerifier {
     }
 
     return BaseApplication.getBaseInstance()
-      .getString(R.string.msg_package_is_not_valid)
+      .getString(string.msg_package_is_not_valid)
   }
 
   private fun validateLayoutName(input: String): String? {
     if (input.isBlank()) {
       return BaseApplication.getBaseInstance()
-        .getString(R.string.msg_value_empty)
+        .getString(string.msg_value_empty)
     }
 
     // Allow only lowecase letters with digits and underscores

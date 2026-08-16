@@ -15,7 +15,7 @@
  *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.willow.androidide.ultra.treesitter
+package com.itsaky.androidide.treesitter
 
 /**
  * The 0-based start line number.
