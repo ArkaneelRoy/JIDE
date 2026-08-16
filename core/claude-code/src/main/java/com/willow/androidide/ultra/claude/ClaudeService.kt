@@ -21,6 +21,7 @@ import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
+import java.util.concurrent.CompletableFuture
 
 /**
  * Service for interacting with Claude API.
@@ -35,6 +36,20 @@ class ClaudeService(private val apiKey: String) {
     interface ClaudeCallback {
         fun onSuccess(response: String)
         fun onError(error: Throwable)
+    }
+
+    /**
+     * Synchronously sends a prompt to Claude.
+     *
+     * This adapter is intended for callers that already execute off the main thread.
+     */
+    fun query(prompt: String): String {
+        val result = CompletableFuture<String>()
+        askClaude(prompt, object : ClaudeCallback {
+            override fun onSuccess(response: String) = result.complete(response)
+            override fun onError(error: Throwable) = result.completeExceptionally(error)
+        })
+        return result.get()
     }
 
     /**

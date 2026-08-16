@@ -37,6 +37,7 @@ dependencies {
 
   implementation(projects.core.common)
   implementation(projects.core.projects)
+  implementation(projects.core.resources)
   implementation(projects.utilities.preferences)
   implementation(projects.utilities.shared)
 

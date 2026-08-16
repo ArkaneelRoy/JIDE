@@ -16,12 +16,10 @@
  */
 package com.willow.androidide.ultra.claude
 
-import com.willow.androidide.ultra.projects.IProject
-
 /**
  * High-level integration for Claude features in the IDE.
  */
-class ClaudeIntegration(private val project: IProject, private val service: ClaudeService) {
+class ClaudeIntegration(private val service: ClaudeService) {
 
     /**
      * Suggests a fix for a specific error in a file.

@@ -59,14 +59,14 @@ class ClaudeSyncBridge(private val claudeService: ClaudeService) {
 
     private fun encryptData(data: ByteArray): ByteArray {
         // In production, use a proper key management system
-        val key = SecretKeySpec("AIDEU-SECURE-KEY".toByteArray().padEnd(16), "AES")
+        val key = SecretKeySpec("AIDEU-SECURE-KEY".toByteArray().copyOf(16), "AES")
         val cipher = Cipher.getInstance("AES")
         cipher.init(Cipher.ENCRYPT_MODE, key)
         return cipher.doFinal(data)
     }
 
     private fun decryptData(data: ByteArray): ByteArray {
-        val key = SecretKeySpec("AIDEU-SECURE-KEY".toByteArray().padEnd(16), "AES")
+        val key = SecretKeySpec("AIDEU-SECURE-KEY".toByteArray().copyOf(16), "AES")
         val cipher = Cipher.getInstance("AES")
         cipher.init(Cipher.DECRYPT_MODE, key)
         return cipher.doFinal(data)

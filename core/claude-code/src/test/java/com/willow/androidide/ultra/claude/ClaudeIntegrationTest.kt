@@ -1,6 +1,5 @@
 package com.willow.androidide.ultra.claude
 
-import com.willow.androidide.ultra.projects.IProject
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
@@ -10,9 +9,6 @@ import org.mockito.kotlin.eq
 import org.mockito.kotlin.verify
 
 class ClaudeIntegrationTest {
-
-    @Mock
-    lateinit var mockProject: IProject
 
     @Mock
     lateinit var mockService: ClaudeService
@@ -25,7 +21,7 @@ class ClaudeIntegrationTest {
     @Before
     fun setup() {
         MockitoAnnotations.openMocks(this)
-        integration = ClaudeIntegration(mockProject, mockService)
+        integration = ClaudeIntegration(mockService)
     }
 
     @Test

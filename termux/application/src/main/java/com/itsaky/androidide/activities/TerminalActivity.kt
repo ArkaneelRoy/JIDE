@@ -29,7 +29,7 @@ import com.willow.androidide.ultra.terminal.IdeTerminalSessionClient
 import com.willow.androidide.ultra.terminal.IdesetupSession
 import com.willow.androidide.ultra.utils.Environment
 import com.willow.androidide.ultra.utils.flashError
-import com.willow.androidide.ultra.resources.R
+import com.termux.R
 import com.termux.app.TermuxActivity
 import com.termux.app.terminal.TermuxTerminalSessionActivityClient
 import com.termux.shared.termux.shell.command.runner.terminal.TermuxSession
@@ -93,7 +93,7 @@ class TerminalActivity : TermuxActivity() {
     if (canAddNewSessions) {
       super.onCreateNewSession(isFailsafe, sessionName, workingDirectory)
     } else {
-      flashError(R.string.msg_terminal_new_sessions_disabled)
+      flashError(com.willow.androidide.ultra.resources.R.string.msg_terminal_new_sessions_disabled)
     }
   }
 
@@ -125,7 +125,7 @@ class TerminalActivity : TermuxActivity() {
   private fun addIdesetupSession(args: Array<String>) {
     val script = IdesetupSession.createScript(this) ?: run {
       log.error("Failed to add idesetup session. Cannot create script.")
-      flashError(R.string.msg_cannot_create_terminal_session)
+      flashError(com.willow.androidide.ultra.resources.R.string.msg_cannot_create_terminal_session)
       return
     }
 
@@ -141,7 +141,7 @@ class TerminalActivity : TermuxActivity() {
     ), script)
 
     session ?: run {
-      flashError(R.string.msg_cannot_create_terminal_session)
+      flashError(com.willow.androidide.ultra.resources.R.string.msg_cannot_create_terminal_session)
       return
     }
 

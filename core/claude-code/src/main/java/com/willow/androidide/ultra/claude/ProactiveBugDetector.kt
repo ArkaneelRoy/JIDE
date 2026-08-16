@@ -21,7 +21,7 @@ class ProactiveBugDetector(private val claudeService: ClaudeService) {
         val suggestedFix: String?
     )
 
-    enum Severity { INFO, WARNING, ERROR, CRITICAL }
+    enum class Severity { INFO, WARNING, ERROR, CRITICAL }
 
     /**
      * Starts the background analysis service.

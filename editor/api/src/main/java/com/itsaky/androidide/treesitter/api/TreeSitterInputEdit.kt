@@ -15,10 +15,10 @@
  *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.willow.androidide.ultra.treesitter.api
+package com.itsaky.androidide.treesitter.api
 
-import com.willow.androidide.ultra.treesitter.TSInputEdit
-import com.willow.androidide.ultra.treesitter.TSPoint
+import com.itsaky.androidide.treesitter.TSInputEdit
+import com.itsaky.androidide.treesitter.TSPoint
 import com.willow.androidide.ultra.utils.DefaultRecyclable
 import com.willow.androidide.ultra.utils.RecyclableObjectPool
 

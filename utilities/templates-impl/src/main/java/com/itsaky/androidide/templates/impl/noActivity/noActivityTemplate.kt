@@ -18,7 +18,7 @@
 package com.willow.androidide.ultra.templates.impl.noActivity
 
 import com.willow.androidide.ultra.templates.base.modules.android.defaultAppModule
-import com.willow.androidide.ultra.templates.impl.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.templates.impl.base.createRecipe
 import com.willow.androidide.ultra.templates.impl.base.emptyThemesAndColors
 import com.willow.androidide.ultra.templates.impl.baseProjectImpl

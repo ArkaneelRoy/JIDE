@@ -15,9 +15,9 @@
  *   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.willow.androidide.ultra.treesitter.api
+package com.itsaky.androidide.treesitter.api
 
-import com.willow.androidide.ultra.treesitter.TSLanguage
+import com.itsaky.androidide.treesitter.TSLanguage
 import com.willow.androidide.ultra.utils.DefaultRecyclable
 import com.willow.androidide.ultra.utils.RecyclableObjectPool
 

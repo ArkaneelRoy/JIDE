@@ -29,7 +29,7 @@ import com.willow.androidide.ultra.templates.ParameterConstraint.MODULE_NAME
 import com.willow.androidide.ultra.templates.ParameterConstraint.NONEMPTY
 import com.willow.androidide.ultra.templates.ParameterConstraint.PACKAGE
 import com.willow.androidide.ultra.templates.base.util.isValidModuleName
-import com.willow.androidide.ultra.templates.impl.R.string
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.utils.AndroidUtils
 import jdkx.lang.model.SourceVersion
 import java.io.File

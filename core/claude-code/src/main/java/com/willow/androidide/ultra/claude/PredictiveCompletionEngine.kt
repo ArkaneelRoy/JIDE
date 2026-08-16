@@ -19,7 +19,7 @@ class PredictiveCompletionEngine(private val claudeService: ClaudeService) {
         val type: SuggestionType
     )
 
-    enum SuggestionType {
+    enum class SuggestionType {
         METHOD, VARIABLE, CLASS, KEYWORD, SNIPPET
     }
 

@@ -22,7 +22,7 @@ import com.willow.androidide.ultra.templates.base.AndroidModuleTemplateBuilder
 import com.willow.androidide.ultra.templates.base.modules.android.defaultAppModule
 import com.willow.androidide.ultra.templates.base.util.AndroidModuleResManager.ResourceType.LAYOUT
 import com.willow.androidide.ultra.templates.base.util.SourceWriter
-import com.willow.androidide.ultra.templates.impl.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.templates.impl.base.createRecipe
 import com.willow.androidide.ultra.templates.impl.base.emptyThemesAndColors
 import com.willow.androidide.ultra.templates.impl.base.writeMainActivity
