@@ -23,7 +23,8 @@ import com.willow.androidide.ultra.templates.Language.Java
 import com.willow.androidide.ultra.templates.Language.Kotlin
 import com.willow.androidide.ultra.templates.ParameterConstraint.NONEMPTY
 import com.willow.androidide.ultra.templates.ParameterConstraint.PACKAGE
-import com.willow.androidide.ultra.templates.R.string
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
 

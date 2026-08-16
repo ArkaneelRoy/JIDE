@@ -35,7 +35,7 @@ import com.willow.androidide.ultra.templates.ParameterConstraint.NONEMPTY
 import com.willow.androidide.ultra.templates.ProjectTemplate
 import com.willow.androidide.ultra.templates.ProjectTemplateData
 import com.willow.androidide.ultra.templates.ProjectVersionData
-import com.willow.androidide.ultra.templates.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.templates.Sdk
 import com.willow.androidide.ultra.templates.SpinnerWidget
 import com.willow.androidide.ultra.templates.StringParameter
