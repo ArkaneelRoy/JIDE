@@ -74,6 +74,7 @@ fun Project.configureAndroidModule(
           arrayOf(
             "META-INF/CHANGES",
             "META-INF/README.md",
+            "META-INF/LICENSE-notice.md",
           )
         )
         pickFirsts.addAll(
