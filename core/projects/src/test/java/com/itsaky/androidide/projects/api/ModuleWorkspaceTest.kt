@@ -169,7 +169,10 @@ class ModuleWorkspaceTest {
 
       app.indexSourcesAndClasspaths()
 
-      val classes = app.compileJavaSourceClasses.findInPackage("com.itsaky")
+      // Dependency sources in this fixture intentionally use the fork namespace while the app
+      // source uses the original test namespace. Search the complete source index so both are
+      // validated without assuming a shared package prefix.
+      val classes = app.compileJavaSourceClasses.allSources()
       assertThat(classes).isNotNull()
       assertThat(classes).isNotEmpty()
 

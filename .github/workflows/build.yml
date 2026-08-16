@@ -200,6 +200,7 @@ jobs:
   run_connected_checks:
     name: Run connected checks
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     strategy:
       matrix:
         api-level: [ 26, 32 ]
@@ -244,7 +245,10 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
-          script: ./gradlew connectedCheck --info --stacktrace
+          force-avd-creation: false
+          disable-animations: true
+          emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect
+          script: ./gradlew connectedCheck --stacktrace --console=plain --no-daemon
       - name: Upload test reports
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
@@ -322,6 +326,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ build_apk ]
     if: ${{ always() && github.ref != 'refs/heads/main' && github.event_name != 'pull_request' && needs.build_apk.result == 'success' }}
+    env:
+      MAVEN_USERNAME: ${{ secrets.MVN_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.MVN_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -347,4 +354,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Publish snapshots
+        if: ${{ env.MAVEN_USERNAME != '' && env.MAVEN_PASSWORD != '' }}
         run: ./gradlew publishAllPublicationsToMavenCentralRepository --stacktrace
+      - name: Skip snapshots without Maven Central credentials
+        if: ${{ env.MAVEN_USERNAME == '' || env.MAVEN_PASSWORD == '' }}
+        run: echo 'Maven Central credentials are not configured; snapshot publication is skipped.'
