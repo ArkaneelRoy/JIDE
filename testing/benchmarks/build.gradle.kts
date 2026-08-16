@@ -68,7 +68,6 @@ dependencies {
   androidTestImplementation(libs.androidx.benchmark.junit4)
 
   androidTestImplementation(projects.core.common)
-  androidTestImplementation(projects.core.indexingApi)
   androidTestImplementation(projects.java.lsp)
   androidTestImplementation(projects.utilities.shared)
 }
