@@ -24,7 +24,7 @@ import org.junit.jupiter.api.Test
 /**
  * @author Akash Yadav
  */
-class AndroidIDE UltraPluginTest {
+class AndroidIDEPluginTest {
 
   @Test
   fun `test logsender must be enabled by default`() {

@@ -55,7 +55,7 @@
 
   <color name="_sunny_glow_light_colorOutline">#ff7a7572</color>
 
-  <style name="Theme.AndroidIDE Ultra.SunnyGlow" parent="Theme.AndroidIDE Ultra">
+  <style name="Theme.AndroidIDEUltra.SunnyGlow" parent="Theme.AndroidIDEUltra">
     <item name="colorPrimary">@color/_sunny_glow_light_colorPrimary</item>
     <item name="colorPrimaryContainer">@color/_sunny_glow_light_colorPrimaryContainer</item>
     <item name="colorPrimaryDark">@color/_sunny_glow_light_colorPrimaryDark</item>
@@ -130,7 +130,7 @@
 
   <color name="_sunny_glow_dark_colorOutline">#ff95908d</color>
 
-  <style name="Theme.AndroidIDE Ultra.SunnyGlow.Dark" parent="Theme.AndroidIDE Ultra.SunnyGlow">
+  <style name="Theme.AndroidIDEUltra.SunnyGlow.Dark" parent="Theme.AndroidIDEUltra.SunnyGlow">
     <item name="colorPrimary">@color/_sunny_glow_dark_colorPrimary</item>
     <item name="colorPrimaryDark">@color/_sunny_glow_dark_colorPrimaryDark</item>
     <item name="colorOnPrimary">@color/_sunny_glow_dark_colorOnPrimary</item>

@@ -25,7 +25,7 @@ import com.willow.androidide.ultra.R;
 import com.willow.androidide.ultra.databinding.FragmentNonEditableEditorBinding;
 import com.willow.androidide.ultra.editor.ui.IDEEditor;
 import com.willow.androidide.ultra.fragments.EmptyStateFragment;
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra;
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE;
 import com.willow.androidide.ultra.utils.TypefaceUtilsKt;
 import io.github.rosemoe.sora.lang.EmptyLanguage;
 
@@ -50,7 +50,7 @@ public abstract class NonEditableEditorFragment extends
     editor.setTypefaceLineNumber(TypefaceUtilsKt.jetbrainsMono());
     editor.setTypefaceText(TypefaceUtilsKt.jetbrainsMono());
     editor.setTextSize(12);
-    editor.setColorScheme(SchemeAndroidIDE Ultra.newInstance(requireContext()));
+    editor.setColorScheme(SchemeAndroidIDE.newInstance(requireContext()));
   }
 
   private CharSequence createEmptyStateMessage() {

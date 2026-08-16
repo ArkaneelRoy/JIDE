@@ -23,11 +23,11 @@ import com.willow.androidide.ultra.utils.isSystemInDarkMode
 import com.willow.androidide.ultra.utils.resolveAttr
 
 /**
- * [SchemeAndroidIDE Ultra] implementation that uses dynamic colors.
+ * [SchemeAndroidIDE] implementation that uses dynamic colors.
  *
  * @author Akash Yadav
  */
-open class DynamicColorScheme : SchemeAndroidIDE Ultra() {
+open class DynamicColorScheme : SchemeAndroidIDE() {
 
   private var isInDarkMode: Boolean = true
 

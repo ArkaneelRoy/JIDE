@@ -70,7 +70,7 @@ gradlePlugin {
   plugins {
     create("initScriptPlugin") {
       id = "${BuildConfig.packageName}.init"
-      implementationClass = "${BuildConfig.packageName}.gradle.AndroidIDE UltraInitScriptPlugin"
+      implementationClass = "${BuildConfig.packageName}.gradle.AndroidIDEInitScriptPlugin"
       displayName = "AndroidIDE Ultra Init Script Gradle Plugin"
       description = "Init script Gradle plugin for projects that are built with AndroidIDE Ultra"
       tags.set(setOf("androidide", "init"))
@@ -78,7 +78,7 @@ gradlePlugin {
 
     create("gradlePlugin") {
       id = BuildConfig.packageName
-      implementationClass = "${BuildConfig.packageName}.gradle.AndroidIDE UltraGradlePlugin"
+      implementationClass = "${BuildConfig.packageName}.gradle.AndroidIDEGradlePlugin"
       displayName = "AndroidIDE Ultra Gradle Plugin"
       description = "Gradle plugin for projects that are built with AndroidIDE Ultra"
       tags.set(setOf("androidide", "gradle"))

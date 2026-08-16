@@ -20,7 +20,7 @@
 package com.willow.androidide.ultra.syntax.highlighters;
 
 import android.text.SpannableStringBuilder;
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra;
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE;
 
 /**
  * A highlighter is used to highlight a small piece of code
@@ -29,5 +29,5 @@ import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra;
  * an EditorLanguage instead
  */
 public interface Highlighter {
-  SpannableStringBuilder highlight(SchemeAndroidIDE Ultra scheme, String code, String match) throws Exception;
+  SpannableStringBuilder highlight(SchemeAndroidIDE scheme, String code, String match) throws Exception;
 }

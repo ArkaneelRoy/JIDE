@@ -21,7 +21,7 @@ import android.content.Context
 import androidx.preference.Preference
 import com.willow.androidide.ultra.preferences.internal.StatPreferences
 import com.willow.androidide.ultra.resources.R
-import com.willow.androidide.ultra.stats.AndroidIDE UltraStats
+import com.willow.androidide.ultra.stats.AndroidIDEStats
 import com.willow.androidide.ultra.stats.StatUploadWorker
 import kotlinx.parcelize.Parcelize
 
@@ -83,34 +83,34 @@ private abstract class StatDataPreference(
 private class UniqueID(
   override val key: String = StatUploadWorker.KEY_DEVICE_ID,
   override val title: Int = R.string.title_unique_id,
-) : StatDataPreference({ AndroidIDE UltraStats.uniqueDeviceId })
+) : StatDataPreference({ AndroidIDEStats.uniqueDeviceId })
 
 @Parcelize
 private class DeviceName(
   override val key: String = StatUploadWorker.KEY_DEVICE_NAME,
   override val title: Int = R.string.title_device
-) : StatDataPreference({ AndroidIDE UltraStats.deviceModel })
+) : StatDataPreference({ AndroidIDEStats.deviceModel })
 
 @Parcelize
 private class AndroidVersion(
   override val key: String = StatUploadWorker.KEY_ANDROID_VERSION,
   override val title: Int = R.string.title_android_version
-) : StatDataPreference({ AndroidIDE UltraStats.androidVersion.toString() })
+) : StatDataPreference({ AndroidIDEStats.androidVersion.toString() })
 
 @Parcelize
 private class AppVersion(
   override val key: String = StatUploadWorker.KEY_APP_VERSION,
   override val title: Int = R.string.title_app_version
-) : StatDataPreference({ AndroidIDE UltraStats.appVersion })
+) : StatDataPreference({ AndroidIDEStats.appVersion })
 
 @Parcelize
 private class Country(
   override val key: String = StatUploadWorker.KEY_DEVICE_COUNTRY,
   override val title: Int = R.string.title_country
-) : StatDataPreference({ AndroidIDE UltraStats.country })
+) : StatDataPreference({ AndroidIDEStats.country })
 
 @Parcelize
 private class CpuArch(
   override val key: String = StatUploadWorker.KEY_APP_CPU_ARCH,
   override val title: Int = R.string.title_cpu_arch
-) : StatDataPreference({ AndroidIDE UltraStats.cpuArch })
+) : StatDataPreference({ AndroidIDEStats.cpuArch })

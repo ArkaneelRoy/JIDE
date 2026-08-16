@@ -49,7 +49,7 @@
   <color name="_blue_wave_light_colorOnSurfaceVariant">#ff44464f</color>
   <color name="_blue_wave_light_colorOutline">#ff74767f</color>
 
-  <style name="Theme.AndroidIDE Ultra.BlueWave" parent="Theme.AndroidIDE Ultra">
+  <style name="Theme.AndroidIDEUltra.BlueWave" parent="Theme.AndroidIDEUltra">
     <item name="colorPrimary">@color/_blue_wave_light_colorPrimary</item>
     <item name="colorPrimaryContainer">@color/_blue_wave_light_colorPrimaryContainer</item>
     <item name="colorPrimaryDark">@color/_blue_wave_light_colorPrimaryDark</item>
@@ -118,7 +118,7 @@
   <color name="_blue_wave_dark_colorOnSurfaceVariant">#ffc5c6d0</color>
   <color name="_blue_wave_dark_colorOutline">#ff8f9099</color>
 
-  <style name="Theme.AndroidIDE Ultra.BlueWave.Dark" parent="Theme.AndroidIDE Ultra.BlueWave">
+  <style name="Theme.AndroidIDEUltra.BlueWave.Dark" parent="Theme.AndroidIDEUltra.BlueWave">
     <item name="colorPrimary">@color/_blue_wave_dark_colorPrimary</item>
     <item name="colorPrimaryContainer">@color/_blue_wave_dark_colorPrimaryContainer</item>
     <item name="colorPrimaryDark">@color/_blue_wave_dark_colorPrimaryDark</item>

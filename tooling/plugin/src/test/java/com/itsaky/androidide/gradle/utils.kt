@@ -98,7 +98,7 @@ internal fun writeInitScript(file: File, deps: List<File>) {
         }
       }
       
-      apply plugin: com.willow.androidide.ultra.gradle.AndroidIDE UltraInitScriptPlugin
+      apply plugin: com.willow.androidide.ultra.gradle.AndroidIDEInitScriptPlugin
     """.trimIndent()
     )
   }

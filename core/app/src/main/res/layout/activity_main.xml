@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:title="@string/app_name"
-        app:titleTextAppearance="@style/TextAppearance.AndroidIDE Ultra.TitleLarge.Bold"
+        app:titleTextAppearance="@style/TextAppearance.AndroidIDEUltra.TitleLarge.Bold"
         app:titleCentered="true" />
 
   </com.google.android.material.appbar.AppBarLayout>

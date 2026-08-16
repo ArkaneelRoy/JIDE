@@ -46,9 +46,9 @@ import com.willow.androidide.ultra.preferences.internal.DevOpsPreferences
 import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
 import com.willow.androidide.ultra.preferences.internal.StatPreferences
 import com.willow.androidide.ultra.resources.localization.LocaleProvider
-import com.willow.androidide.ultra.stats.AndroidIDE UltraStats
+import com.willow.androidide.ultra.stats.AndroidIDEStats
 import com.willow.androidide.ultra.stats.StatUploadWorker
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.treesitter.TreeSitter
 import com.willow.androidide.ultra.ui.themes.IDETheme
 import com.willow.androidide.ultra.ui.themes.IThemeManager
@@ -115,7 +115,7 @@ class IDEApplication : TermuxApplication() {
       DynamicColors.applyToActivitiesIfAvailable(this)
     }
 
-    EditorColorScheme.setDefault(SchemeAndroidIDE Ultra.newInstance(null))
+    EditorColorScheme.setDefault(SchemeAndroidIDE.newInstance(null))
 
     ReflectionUtils.bypassHiddenAPIReflectionRestrictions()
     GlobalScope.launch {
@@ -148,7 +148,7 @@ class IDEApplication : TermuxApplication() {
 
     val constraints = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
     val request = PeriodicWorkRequestBuilder<StatUploadWorker>(Duration.ofHours(24)).setInputData(
-      AndroidIDE UltraStats.statData.toInputData()
+      AndroidIDEStats.statData.toInputData()
     ).setConstraints(constraints)
       .addTag(StatUploadWorker.WORKER_WORK_NAME).build()
 

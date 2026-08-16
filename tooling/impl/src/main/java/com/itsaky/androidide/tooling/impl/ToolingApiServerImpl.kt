@@ -91,7 +91,6 @@ internal class ToolingApiServerImpl(private val project: ProjectImpl) :
       }
     }
   }
-  IToolingApiServer {
 
   private var client: IToolingApiClient? = null
   private var connector: GradleConnector? = null

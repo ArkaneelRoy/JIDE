@@ -27,7 +27,7 @@ import com.willow.androidide.ultra.databinding.LayoutSearchResultGroupBinding
 import com.willow.androidide.ultra.databinding.LayoutSearchResultItemBinding
 import com.willow.androidide.ultra.models.FileExtension
 import com.willow.androidide.ultra.models.SearchResult
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.syntax.highlighters.JavaHighlighter
 import com.willow.androidide.ultra.utils.resolveAttr
 import java.io.File
@@ -78,7 +78,7 @@ class SearchListAdapter(
       val binding = p1.binding
       CompletableFuture.runAsync {
         try {
-          val scheme = SchemeAndroidIDE Ultra.newInstance(binding.text.context)
+          val scheme = SchemeAndroidIDE.newInstance(binding.text.context)
           val sb = JavaHighlighter().highlight(scheme, match.line, match.match)
           ThreadUtils.runOnUiThread { binding.text.text = sb }
         } catch (e: Exception) {

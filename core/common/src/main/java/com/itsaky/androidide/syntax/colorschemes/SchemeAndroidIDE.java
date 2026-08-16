@@ -28,9 +28,9 @@ import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
  *
  * @author Akash Yadav
  */
-public class SchemeAndroidIDE Ultra extends EditorColorScheme {
+public class SchemeAndroidIDE extends EditorColorScheme {
 
-  protected SchemeAndroidIDE Ultra() {}
+  protected SchemeAndroidIDE() {}
 
   protected static int endColorId = EditorColorScheme.END_COLOR_ID;
   
@@ -110,9 +110,9 @@ public class SchemeAndroidIDE Ultra extends EditorColorScheme {
     return TextStyle.makeStyle(id, true);
   }
 
-  public static SchemeAndroidIDE Ultra newInstance(Context context) {
+  public static SchemeAndroidIDE newInstance(Context context) {
     if (context == null) {
-      return new SchemeAndroidIDE Ultra();
+      return new SchemeAndroidIDE();
     }
     final var scheme = new DynamicColorScheme();
     scheme.apply(context);

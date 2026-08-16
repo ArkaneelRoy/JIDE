@@ -26,7 +26,7 @@ import com.willow.androidide.ultra.editor.language.treesitter.XMLLanguage
 import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider
 import com.willow.androidide.ultra.editor.ui.IDEEditor
 import com.willow.androidide.ultra.preferences.internal.EditorPreferences
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.uidesigner.databinding.ActivityShowXmlBinding
 import com.willow.androidide.ultra.utils.flashInfo
 import com.willow.androidide.ultra.utils.jetbrainsMono
@@ -62,7 +62,7 @@ class ShowXmlActivity : BaseIDEActivity() {
     this.binding!!.toolbar.setNavigationOnClickListener { finish() }
 
     this.editor?.let { editor ->
-      editor.colorScheme = SchemeAndroidIDE Ultra.newInstance(this@ShowXmlActivity)
+      editor.colorScheme = SchemeAndroidIDE.newInstance(this@ShowXmlActivity)
       editor.editable = false
       editor.typefaceText = jetbrainsMono()
       editor.typefaceLineNumber = jetbrainsMono()

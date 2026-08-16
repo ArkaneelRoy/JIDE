@@ -42,7 +42,7 @@ import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
 import com.willow.androidide.ultra.lsp.xml.XMLLanguageServer
 import com.willow.androidide.ultra.models.Range
 import com.willow.androidide.ultra.preferences.internal.EditorPreferences
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.tasks.cancelIfActive
 import com.willow.androidide.ultra.tasks.runOnUiThread
 import com.willow.androidide.ultra.utils.customOrJBMono
@@ -130,7 +130,7 @@ class CodeEditorView(
       isHighlightCurrentBlock = true
       props.autoCompletionOnComposing = true
       dividerWidth = SizeUtils.dp2px(2f).toFloat()
-      colorScheme = SchemeAndroidIDE Ultra.newInstance(context)
+      colorScheme = SchemeAndroidIDE.newInstance(context)
       lineSeparator = LineSeparator.LF
     }
 

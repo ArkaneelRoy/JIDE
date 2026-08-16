@@ -36,11 +36,11 @@ import java.net.URI
  *
  * @author Akash Yadav
  */
-class AndroidIDE UltraInitScriptPlugin : Plugin<Gradle> {
+class AndroidIDEInitScriptPlugin : Plugin<Gradle> {
 
   companion object {
 
-    private val logger = Logging.getLogger(AndroidIDE UltraInitScriptPlugin::class.java)
+    private val logger = Logging.getLogger(AndroidIDEInitScriptPlugin::class.java)
   }
 
   override fun apply(target: Gradle) {

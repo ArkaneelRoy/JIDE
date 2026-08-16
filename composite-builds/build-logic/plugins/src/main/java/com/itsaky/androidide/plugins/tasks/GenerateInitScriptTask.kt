@@ -76,7 +76,7 @@ abstract class GenerateInitScriptTask : DefaultTask() {
           }
       }
       
-      apply plugin: com.willow.androidide.ultra.gradle.AndroidIDE UltraInitScriptPlugin
+      apply plugin: com.willow.androidide.ultra.gradle.AndroidIDEInitScriptPlugin
     """
           .trimIndent()
       )

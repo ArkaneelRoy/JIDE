@@ -26,11 +26,11 @@ import org.gradle.api.logging.Logging
  *
  * @author Akash Yadav
  */
-class AndroidIDE UltraGradlePlugin : Plugin<Project> {
+class AndroidIDEGradlePlugin : Plugin<Project> {
 
   companion object {
 
-    private val logger = Logging.getLogger(AndroidIDE UltraGradlePlugin::class.java)
+    private val logger = Logging.getLogger(AndroidIDEGradlePlugin::class.java)
   }
 
   override fun apply(target: Project) {

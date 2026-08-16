@@ -34,7 +34,7 @@ import java.util.Locale
  *
  * @author Akash Yadav
  */
-object AndroidIDE UltraStats {
+object AndroidIDEStats {
 
   val uniqueDeviceId by lazy {
     digest(DeviceUtils.getUniqueDeviceId(BaseApplication.getBaseInstance().packageName))

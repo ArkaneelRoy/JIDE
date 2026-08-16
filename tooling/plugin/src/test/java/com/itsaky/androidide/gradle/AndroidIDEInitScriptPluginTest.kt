@@ -25,7 +25,7 @@ import org.junit.jupiter.api.Test
 /**
  * @author Akash Yadav
  */
-class AndroidIDE UltraInitScriptPluginTest {
+class AndroidIDEInitScriptPluginTest {
 
   @Test
   fun `test plugins are applied and log sender dependency is added properly`() {
@@ -52,7 +52,7 @@ class AndroidIDE UltraInitScriptPluginTest {
   private fun assertBasics(result: BuildResult) {
     // These plugins must be applied to the
     for ((project, plugins) in mapOf(
-      ":app" to arrayOf(AndroidIDE UltraGradlePlugin::class, LogSenderPlugin::class))) {
+      ":app" to arrayOf(AndroidIDEGradlePlugin::class, LogSenderPlugin::class))) {
       for (plugin in plugins) {
         assertThat(result.output).contains(
           "Applying ${plugin.simpleName} to project '${project}'"

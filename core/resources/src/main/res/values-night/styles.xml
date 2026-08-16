@@ -17,9 +17,9 @@
   ~   along with AndroidIDE Ultra.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-  <style name="Theme.AndroidIDE Ultra.Material3" parent="Theme.Material3.Dark.NoActionBar"/>
+  <style name="Theme.AndroidIDEUltra.Material3" parent="Theme.Material3.Dark.NoActionBar"/>
 
-  <style name="Theme.AndroidIDE Ultra" parent="Theme.AndroidIDE Ultra.Styled">
+  <style name="Theme.AndroidIDEUltra" parent="Theme.AndroidIDEUltra.Styled">
     <!-- Left drawer. -->
     <item name="buttonBarButtonStyle">@style/TermuxActivity.Drawer.ButtonBarStyle.Dark</item>
     <item name="termuxActivityDrawerBackground">@color/black</item>
