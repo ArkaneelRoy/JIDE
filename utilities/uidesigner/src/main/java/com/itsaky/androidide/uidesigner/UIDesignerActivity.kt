@@ -34,6 +34,7 @@ import com.willow.androidide.ultra.actions.ActionItem.Location.UI_DESIGNER_TOOLB
 import com.willow.androidide.ultra.actions.ActionsRegistry
 import com.willow.androidide.ultra.actions.FillMenuParams
 import com.willow.androidide.ultra.app.BaseIDEActivity
+import com.willow.androidide.ultra.resources.R as SharedR
 import com.willow.androidide.ultra.uidesigner.actions.clearUiDesignerActions
 import com.willow.androidide.ultra.uidesigner.actions.registerUiDesignerActions
 import com.willow.androidide.ultra.uidesigner.databinding.ActivityUiDesignerBinding
@@ -88,7 +89,7 @@ class UIDesignerActivity : BaseIDEActivity() {
 
           // XML generation failed, notify user and exit activity
           runOnUiThread {
-            flashError(R.string.msg_generate_xml_failed)
+            flashError(SharedR.string.msg_generate_xml_failed)
             onFailedToReturnXml(error?.cause?.message ?: error?.message ?: "Unknown error")
           }
         }
@@ -138,8 +139,8 @@ class UIDesignerActivity : BaseIDEActivity() {
       this,
       binding!!.root,
       binding!!.toolbar,
-      R.string.app_name,
-      R.string.app_name
+      SharedR.string.app_name,
+      SharedR.string.app_name
     )
       .apply {
         binding!!.root.addDrawerListener(this)

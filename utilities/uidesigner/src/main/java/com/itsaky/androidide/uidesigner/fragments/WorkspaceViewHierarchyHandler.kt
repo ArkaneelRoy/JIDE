@@ -21,7 +21,7 @@ import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import com.willow.androidide.ultra.inflater.IViewGroup
 import com.willow.androidide.ultra.inflater.viewGroup
-import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.uidesigner.models.PlaceholderView
 import com.willow.androidide.ultra.uidesigner.undo.ViewAddedAction
 import com.willow.androidide.ultra.uidesigner.undo.ViewMovedAction

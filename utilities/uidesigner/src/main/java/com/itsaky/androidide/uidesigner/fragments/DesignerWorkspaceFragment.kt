@@ -30,7 +30,7 @@ import com.willow.androidide.ultra.inflater.IView
 import com.willow.androidide.ultra.inflater.internal.LayoutFile
 import com.willow.androidide.ultra.inflater.utils.endParse
 import com.willow.androidide.ultra.inflater.utils.startParse
-import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.uidesigner.UIDesignerActivity
 import com.willow.androidide.ultra.uidesigner.databinding.FragmentDesignerWorkspaceBinding
 import com.willow.androidide.ultra.uidesigner.drag.WidgetDragListener

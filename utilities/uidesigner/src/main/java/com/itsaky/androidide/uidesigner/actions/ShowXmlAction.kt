@@ -24,7 +24,7 @@ import androidx.fragment.app.Fragment
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.hasRequiredData
 import com.willow.androidide.ultra.actions.markInvisible
-import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.uidesigner.ShowXmlActivity
 import com.willow.androidide.ultra.uidesigner.utils.ViewToXml
 import com.willow.androidide.ultra.utils.flashError

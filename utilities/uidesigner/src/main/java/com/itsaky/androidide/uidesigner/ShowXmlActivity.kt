@@ -26,6 +26,7 @@ import com.willow.androidide.ultra.editor.language.treesitter.XMLLanguage
 import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider
 import com.willow.androidide.ultra.editor.ui.IDEEditor
 import com.willow.androidide.ultra.preferences.internal.EditorPreferences
+import com.willow.androidide.ultra.resources.R as SharedR
 import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.uidesigner.databinding.ActivityShowXmlBinding
 import com.willow.androidide.ultra.utils.flashInfo
@@ -91,7 +92,7 @@ class ShowXmlActivity : BaseIDEActivity() {
 
     this.binding?.copy?.setOnClickListener {
       this.editor?.copyText(false)
-      flashInfo(R.string.copied)
+      flashInfo(SharedR.string.copied)
     }
 
     return this.binding!!.root

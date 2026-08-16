@@ -32,7 +32,8 @@ import androidx.core.view.updatePaddingRelative
 import com.blankj.utilcode.util.SizeUtils
 import com.google.android.material.textview.MaterialTextView
 import com.willow.androidide.ultra.inflater.IView
-import com.willow.androidide.ultra.uidesigner.R
+import com.google.android.material.R as MaterialR
+import com.willow.androidide.ultra.resources.R as SharedR
 import com.willow.androidide.ultra.utils.resolveAttr
 
 /**
@@ -64,7 +65,7 @@ constructor(
   init {
     orientation = VERTICAL
 
-    paint.color = context.resolveAttr(R.attr.colorOutline)
+    paint.color = context.resolveAttr(MaterialR.attr.colorOutline)
     paint.strokeWidth = SizeUtils.dp2px(1f).toFloat()
     paint.isAntiAlias = true
   }
@@ -162,8 +163,8 @@ constructor(
         MarginLayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px(48f)).apply {
           updateMarginsRelative(start = depth * offset)
         }
-      setBackgroundResource(R.drawable.bg_ripple)
-      setTextAppearance(R.style.TextAppearance_Material3_BodyMedium)
+      setBackgroundResource(SharedR.drawable.bg_ripple)
+      setTextAppearance(MaterialR.style.TextAppearance_Material3_BodyMedium)
       setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
       updatePaddingRelative(start = offset, end = offset)
     }

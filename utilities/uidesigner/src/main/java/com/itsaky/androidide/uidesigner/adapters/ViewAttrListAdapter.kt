@@ -24,7 +24,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.willow.androidide.ultra.inflater.IView.SingleAttributeChangeListener
-import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.uidesigner.adapters.ViewAttrListAdapter.VH
 import com.willow.androidide.ultra.uidesigner.databinding.LayoutViewattrItemBinding
 import com.willow.androidide.ultra.uidesigner.models.UiAttribute

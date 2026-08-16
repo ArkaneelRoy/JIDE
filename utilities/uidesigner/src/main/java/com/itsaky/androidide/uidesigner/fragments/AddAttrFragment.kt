@@ -26,8 +26,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.willow.androidide.ultra.inflater.utils.newAttribute
 import com.willow.androidide.ultra.inflater.viewAdapter
+import com.willow.androidide.ultra.resources.R as SharedR
 import com.willow.androidide.ultra.uidesigner.R
-import com.willow.androidide.ultra.uidesigner.R.string
 import com.willow.androidide.ultra.uidesigner.adapters.AddAttrListAdapter
 import com.willow.androidide.ultra.uidesigner.databinding.LayoutAddAttrBinding
 import com.willow.androidide.ultra.uidesigner.databinding.LayoutViewInfoHeaderBinding
@@ -68,8 +68,8 @@ class AddAttrFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
 
     header?.apply {
-      name.setText(string.msg_viewaction_add_attr)
-      desc.setText(string.msg_select_attr)
+      name.setText(SharedR.string.msg_viewaction_add_attr)
+      desc.setText(SharedR.string.msg_select_attr)
     }
 
     showAttrs()

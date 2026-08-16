@@ -25,7 +25,7 @@ import com.willow.androidide.ultra.inflater.internal.ViewGroupImpl
 import com.willow.androidide.ultra.inflater.internal.ViewImpl
 import com.willow.androidide.ultra.lsp.xml.utils.XMLBuilder
 import com.willow.androidide.ultra.tasks.executeAsyncProvideError
-import com.willow.androidide.ultra.uidesigner.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.utils.DialogUtils
 import org.slf4j.LoggerFactory
 import java.util.concurrent.CompletableFuture

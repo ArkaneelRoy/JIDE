@@ -21,7 +21,7 @@ import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner.Grou
 import com.willow.androidide.ultra.annotations.uidesigner.IncludeInDesigner.Group.WIDGETS
 import com.willow.androidide.ultra.inflater.IViewAdapterIndex
 import com.willow.androidide.ultra.inflater.internal.utils.simpleName
-import com.willow.androidide.ultra.uidesigner.R.string
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.uidesigner.models.UiWidgetCategory
 
 internal object Widgets {
