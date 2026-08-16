@@ -59,6 +59,8 @@ android {
 }
 
 dependencies {
+  implementation(libs.tooling.slf4j)
+
   androidTestImplementation(libs.tests.androidx.test.runner)
   androidTestImplementation(libs.tests.androidx.junit)
   androidTestImplementation(libs.tests.junit)

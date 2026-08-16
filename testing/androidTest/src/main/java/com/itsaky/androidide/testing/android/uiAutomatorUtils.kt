@@ -41,7 +41,7 @@ const val LAUNCH_TIMEOUT = 5000L
  * @param fromLauncher Whether the application must be launched from the Android launcher.
  * @param clearTasks Whether the application's previous tasks must be cleared.
  */
-fun launchAndroidIDE Ultra(
+fun launchAndroidIDEUltra(
   fromLauncher: Boolean = true,
   clearTasks: Boolean = true,
 ): UiDevice {

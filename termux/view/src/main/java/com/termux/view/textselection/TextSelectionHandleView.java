@@ -13,7 +13,6 @@ import android.view.ViewParent;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 
-import com.termux.view.R;
 import com.termux.view.TerminalView;
 import com.termux.view.support.PopupWindowCompatGingerbread;
 
@@ -59,8 +58,8 @@ public class TextSelectionHandleView extends View {
         mCursorController = cursorController;
         mInitialOrientation = initialOrientation;
 
-        mHandleLeftDrawable = getContext().getDrawable(R.drawable.text_select_handle_left_material);
-        mHandleRightDrawable = getContext().getDrawable(R.drawable.text_select_handle_right_material);
+        mHandleLeftDrawable = getContext().getDrawable(android.R.drawable.text_select_handle_left);
+        mHandleRightDrawable = getContext().getDrawable(android.R.drawable.text_select_handle_right);
 
         setOrientation(mInitialOrientation);
     }

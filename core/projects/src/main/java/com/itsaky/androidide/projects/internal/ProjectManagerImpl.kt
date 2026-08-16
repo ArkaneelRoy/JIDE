@@ -33,7 +33,7 @@ import com.willow.androidide.ultra.projects.CachingProject
 import com.willow.androidide.ultra.projects.IProjectManager
 import com.willow.androidide.ultra.projects.IWorkspace
 import com.willow.androidide.ultra.projects.ModuleProject
-import com.willow.androidide.ultra.projects.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.projects.android.AndroidModule
 import com.willow.androidide.ultra.projects.builder.BuildService
 import com.willow.androidide.ultra.tasks.executeAsync

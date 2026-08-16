@@ -17,10 +17,10 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
   <!-- Base application theme. -->
-  <style name="Base.Theme.AndroidIDE Ultra" parent="Theme.Material3.DayNight">
+  <style name="Base.Theme.AndroidIDEUltra" parent="Theme.Material3.DayNight">
     <!-- Customize your light theme here. -->
     <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
   </style>
 
-  <style name="Theme.AndroidIDE Ultra" parent="Base.Theme.AndroidIDE Ultra" />
+  <style name="Theme.AndroidIDEUltra" parent="Base.Theme.AndroidIDEUltra" />
 </resources>

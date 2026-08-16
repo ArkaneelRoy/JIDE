@@ -22,6 +22,7 @@ import android.graphics.PorterDuff.Mode.SRC_ATOP
 import android.graphics.PorterDuffColorFilter
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
+import com.google.android.material.R.attr
 import com.willow.androidide.ultra.utils.resolveAttr
 
 /**
@@ -44,7 +45,7 @@ abstract class BasePreference : IPreference() {
       pref.icon =
         ContextCompat.getDrawable(context, it)?.apply {
           colorFilter =
-            PorterDuffColorFilter(context.resolveAttr(R.attr.colorOnPrimaryContainer), SRC_ATOP)
+            PorterDuffColorFilter(context.resolveAttr(attr.colorOnPrimaryContainer), SRC_ATOP)
         }
     }
 

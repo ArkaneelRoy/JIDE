@@ -24,6 +24,7 @@ import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.View
 import androidx.annotation.CallSuper
+import com.google.android.material.R.attr
 import com.willow.androidide.ultra.utils.resolveAttr
 
 /**
@@ -137,7 +138,7 @@ interface ActionItem {
    */
   fun createColorFilter(data: ActionData): ColorFilter? {
     return data.getContext()?.let {
-      PorterDuffColorFilter(it.resolveAttr(R.attr.colorOnSurface), PorterDuff.Mode.SRC_ATOP)
+      PorterDuffColorFilter(it.resolveAttr(attr.colorOnSurface), PorterDuff.Mode.SRC_ATOP)
     }
   }
 
