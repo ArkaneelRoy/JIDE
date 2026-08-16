@@ -20,7 +20,7 @@ package com.willow.androidide.ultra.lsp.java.actions.diagnostics
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.requireContext
 import com.willow.androidide.ultra.actions.requirePath
-import com.willow.androidide.ultra.lsp.java.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.lsp.java.actions.BaseJavaCodeAction
 import com.willow.androidide.ultra.lsp.java.compiler.CompileTask
 import com.willow.androidide.ultra.lsp.java.models.DiagnosticCode

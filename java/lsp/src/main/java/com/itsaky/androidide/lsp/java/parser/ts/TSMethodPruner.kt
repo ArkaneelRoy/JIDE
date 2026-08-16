@@ -17,11 +17,11 @@
 
 package com.willow.androidide.ultra.lsp.java.parser.ts
 
-import com.willow.androidide.ultra.treesitter.TSQuery
-import com.willow.androidide.ultra.treesitter.TSQueryCursor
-import com.willow.androidide.ultra.treesitter.TSQueryMatch
-import com.willow.androidide.ultra.treesitter.TSTree
-import com.willow.androidide.ultra.treesitter.java.TSLanguageJava
+import com.itsaky.androidide.treesitter.TSQuery
+import com.itsaky.androidide.treesitter.TSQueryCursor
+import com.itsaky.androidide.treesitter.TSQueryMatch
+import com.itsaky.androidide.treesitter.TSTree
+import com.itsaky.androidide.treesitter.java.TSLanguageJava
 
 /**
  * Helper class to prune method bodies in Java source code using.

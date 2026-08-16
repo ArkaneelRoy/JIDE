@@ -17,7 +17,7 @@
 
 package com.willow.androidide.ultra.lsp.java.parser.ts
 
-import com.willow.androidide.ultra.treesitter.TSTree
+import com.itsaky.androidide.treesitter.TSTree
 import jdkx.tools.JavaFileObject
 import java.net.URI
 

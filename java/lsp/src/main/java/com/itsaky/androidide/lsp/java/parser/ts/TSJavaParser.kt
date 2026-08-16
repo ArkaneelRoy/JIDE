@@ -20,8 +20,8 @@ package com.willow.androidide.ultra.lsp.java.parser.ts
 import com.willow.androidide.ultra.eventbus.events.file.FileDeletionEvent
 import com.willow.androidide.ultra.eventbus.events.file.FileRenameEvent
 import com.willow.androidide.ultra.lsp.java.parser.IJavaParser
-import com.willow.androidide.ultra.treesitter.TSParser
-import com.willow.androidide.ultra.treesitter.java.TSLanguageJava
+import com.itsaky.androidide.treesitter.TSParser
+import com.itsaky.androidide.treesitter.java.TSLanguageJava
 import com.willow.androidide.ultra.utils.StopWatch
 import jdkx.tools.JavaFileObject
 import org.greenrobot.eventbus.EventBus

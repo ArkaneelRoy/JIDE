@@ -29,7 +29,7 @@ import com.willow.androidide.ultra.lsp.api.ILanguageClient
 import com.willow.androidide.ultra.lsp.api.ILanguageServerRegistry
 import com.willow.androidide.ultra.lsp.java.JavaCompilerProvider
 import com.willow.androidide.ultra.lsp.java.JavaLanguageServer
-import com.willow.androidide.ultra.lsp.java.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.lsp.java.compiler.JavaCompilerService
 import com.willow.androidide.ultra.lsp.java.rewrite.Rewrite
 import com.willow.androidide.ultra.projects.IProjectManager
