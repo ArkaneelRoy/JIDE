@@ -46,8 +46,12 @@ class ClaudeService(private val apiKey: String) {
     fun query(prompt: String): String {
         val result = CompletableFuture<String>()
         askClaude(prompt, object : ClaudeCallback {
-            override fun onSuccess(response: String) = result.complete(response)
-            override fun onError(error: Throwable) = result.completeExceptionally(error)
+            override fun onSuccess(response: String) {
+                result.complete(response)
+            }
+            override fun onError(error: Throwable) {
+                result.completeExceptionally(error)
+            }
         })
         return result.get()
     }
