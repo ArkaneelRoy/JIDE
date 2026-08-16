@@ -29,6 +29,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.FloatRange
 import androidx.annotation.StringRes
 import com.blankj.utilcode.util.ThreadUtils
+import com.google.android.material.R.attr
 import com.willow.androidide.ultra.flashbar.Flashbar
 import com.willow.androidide.ultra.flashbar.Flashbar.Gravity.TOP
 import com.willow.androidide.ultra.resources.R
@@ -48,8 +49,8 @@ const val COLOR_INFO = Color.DKGRAY
 fun Activity.flashbarBuilder(
   gravity: Flashbar.Gravity = TOP,
   duration: Long = DURATION_SHORT,
-  backgroundColor: Int = resolveAttr(R.attr.colorPrimaryContainer),
-  messageColor: Int = resolveAttr(R.attr.colorOnPrimaryContainer)
+  backgroundColor: Int = resolveAttr(attr.colorPrimaryContainer),
+  messageColor: Int = resolveAttr(attr.colorOnPrimaryContainer)
 ): Flashbar.Builder {
   return Flashbar.Builder(this)
     .gravity(gravity)

@@ -20,7 +20,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.willow.androidide.ultra.common.R
+import com.google.android.material.R.attr
+
 import com.willow.androidide.ultra.tasks.cancelIfActive
 import com.willow.androidide.ultra.ui.themes.IThemeManager
 import com.willow.androidide.ultra.utils.resolveAttr
@@ -35,10 +36,10 @@ abstract class BaseIDEActivity : AppCompatActivity() {
   open var enableSystemBarTheming: Boolean = true
 
   open val navigationBarColor: Int
-    get() = resolveAttr(R.attr.colorSurface)
+    get() = resolveAttr(attr.colorSurface)
 
   open val statusBarColor: Int
-    get() = resolveAttr(R.attr.colorSurface)
+    get() = resolveAttr(attr.colorSurface)
 
   /**
    * [CoroutineScope] for executing tasks with the [Default][Dispatchers.Default] dispatcher.

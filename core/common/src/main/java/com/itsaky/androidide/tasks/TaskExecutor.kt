@@ -19,7 +19,7 @@ package com.willow.androidide.ultra.tasks
 import android.app.ProgressDialog
 import android.content.Context
 import com.blankj.utilcode.util.ThreadUtils
-import com.willow.androidide.ultra.common.R
+import com.willow.androidide.ultra.resources.R.string
 import org.slf4j.LoggerFactory
 import java.util.concurrent.Callable
 import java.util.concurrent.CompletableFuture
@@ -85,7 +85,7 @@ inline fun <T> Context.executeWithProgress(
   block: (ProgressDialog) -> T
 ): T {
   val dialog = ProgressDialog(this)
-  dialog.setMessage(getString(R.string.please_wait))
+  dialog.setMessage(getString(string.please_wait))
   dialog.setCancelable(cancellable)
   dialog.show()
   return block(dialog)

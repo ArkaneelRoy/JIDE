@@ -25,7 +25,7 @@ import androidx.core.provider.DocumentsContractCompat.buildDocumentUriUsingTree
 import androidx.core.provider.DocumentsContractCompat.getTreeDocumentId
 import androidx.documentfile.provider.DocumentFile
 import androidx.fragment.app.Fragment
-import com.willow.androidide.ultra.common.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.utils.flashError
 import kotlinx.coroutines.CoroutineName
@@ -106,7 +106,7 @@ open class BaseFragment @JvmOverloads constructor(contentLayoutId: Int = 0) :
     try {
       this.startForResult.launch(Intent(Intent.ACTION_OPEN_DOCUMENT_TREE))
     } catch (e: Exception) {
-      requireActivity().flashError(getString(R.string.msg_dir_picker_failed, e.message))
+      requireActivity().flashError(getString(string.msg_dir_picker_failed, e.message))
     }
   }
 

@@ -1,92 +1,91 @@
-package com.itsaky.androidide.tooling.impl.internal
+package com.willow.androidide.ultra.tooling.impl.internal
 
-import dalvik.system.DexClassLoader
 import java.io.File
 import java.lang.reflect.Method
+import java.net.URLClassLoader
 import java.util.concurrent.ConcurrentHashMap
 
 /**
- * DexClassLoaderBridge handles the dynamic loading of DEX files for the Native Compose Renderer.
- * It enables Phase B (Dynamic Reflection Bridge) by allowing hot-swapping of UI components
- * without requiring a full application restart.
+ * Loads preview classes dynamically for the native/compose renderer bridge.
+ *
+ * On Android the bridge uses dalvik.system.DexClassLoader through reflection so
+ * this JVM tooling module does not require the Android SDK on its compile classpath.
+ * On the JVM it falls back to URLClassLoader for JAR/ZIP inputs, which keeps the
+ * tooling API server testable without pretending that a JVM can load DEX files.
  */
 class DexClassLoaderBridge(
-    private var dexPath: String,
-    private val optimizedDirectory: String,
-    private val parentClassLoader: ClassLoader = DexClassLoaderBridge::class.java.classLoader
+  private var dexPath: String,
+  private val optimizedDirectory: String,
+  private val parentClassLoader: ClassLoader = DexClassLoaderBridge::class.java.classLoader,
 ) {
 
-    private var classLoader: DexClassLoader = createClassLoader()
-    private val classCache = ConcurrentHashMap<String, Class<*>>()
+  private var classLoader: ClassLoader = createClassLoader()
+  private val classCache = ConcurrentHashMap<String, Class<*>>()
 
-    /**
-     * Creates a new DexClassLoader instance for the current dexPath.
-     */
-    private fun createClassLoader(): DexClassLoader {
-        return DexClassLoader(dexPath, optimizedDirectory, null, parentClassLoader)
+  private fun createClassLoader(): ClassLoader {
+    val dexClassLoader = runCatching {
+      Class.forName("dalvik.system.DexClassLoader")
+    }.getOrNull()
+
+    if (dexClassLoader != null) {
+      val constructor = dexClassLoader.getConstructor(
+        String::class.java,
+        String::class.java,
+        String::class.java,
+        ClassLoader::class.java,
+      )
+      return constructor.newInstance(
+        dexPath,
+        optimizedDirectory,
+        null,
+        parentClassLoader,
+      ) as ClassLoader
     }
 
-    /**
-     * Hot-swaps the current DEX file with a new one.
-     * This clears the class cache and re-initializes the ClassLoader.
-     * 
-     * @param newDexPath The path to the new DEX file.
-     */
-    @Synchronized
-    fun hotSwap(newDexPath: String) {
-        if (this.dexPath == newDexPath && File(newDexPath).lastModified() <= File(dexPath).lastModified()) {
-            return // No changes detected
-        }
-        
-        this.dexPath = newDexPath
-        this.classCache.clear()
-        this.classLoader = createClassLoader()
+    val file = File(dexPath)
+    require(file.isFile) { "Dynamic class archive does not exist: $dexPath" }
+    require(!file.extension.equals("dex", ignoreCase = true)) {
+      "DEX preview loading requires an Android runtime: $dexPath"
+    }
+    return URLClassLoader(arrayOf(file.toURI().toURL()), parentClassLoader)
+  }
+
+  /** Replaces the current archive when a newer file is supplied. */
+  @Synchronized
+  fun hotSwap(newDexPath: String) {
+    val currentFile = File(dexPath)
+    val newFile = File(newDexPath)
+    if (dexPath == newDexPath && newFile.lastModified() <= currentFile.lastModified()) {
+      return
     }
 
-    /**
-     * Loads a class by name, using a cache for performance.
-     */
-    fun loadClass(className: String): Class<*> {
-        return classCache.getOrPut(className) {
-            classLoader.loadClass(className)
-        }
-    }
+    dexPath = newDexPath
+    classCache.clear()
+    classLoader = createClassLoader()
+  }
 
-    /**
-     * Finds all methods annotated with @Preview in the given class.
-     * Uses reflection to check annotation names to avoid direct dependency on Compose libraries.
-     */
-    fun findPreviewMethods(clazz: Class<*>): List<Method> {
-        return clazz.declaredMethods.filter { method ->
-            method.annotations.any { annotation ->
-                val name = annotation.annotationClass.qualifiedName ?: annotation.annotationClass.simpleName
-                name?.contains("Preview") == true
-            }
-        }
-    }
+  /** Loads and caches a class by its fully qualified name. */
+  fun loadClass(className: String): Class<*> = classCache.getOrPut(className) {
+    classLoader.loadClass(className)
+  }
 
-    /**
-     * Invokes a preview method dynamically.
-     * 
-     * @param method The method to invoke.
-     * @param instance The instance to invoke on (null for static methods/Composables).
-     * @param args Arguments for the method.
-     * @return The result of the invocation.
-     */
-    fun invokePreviewMethod(method: Method, instance: Any? = null, vararg args: Any?): Any? {
-        method.isAccessible = true
-        return method.invoke(instance, *args)
+  /** Finds methods whose annotation type name contains `Preview`. */
+  fun findPreviewMethods(clazz: Class<*>): List<Method> = clazz.declaredMethods.filter { method ->
+    method.annotations.any { annotation ->
+      val name = annotation.annotationClass.qualifiedName ?: annotation.annotationClass.simpleName
+      name?.contains("Preview") == true
     }
+  }
 
-    /**
-     * Checks if the current DEX file exists and is readable.
-     */
-    fun isValid(): Boolean {
-        val file = File(dexPath)
-        return file.exists() && file.canRead()
-    }
+  /** Invokes a preview method, supporting both static and instance methods. */
+  fun invokePreviewMethod(method: Method, instance: Any? = null, vararg args: Any?): Any? {
+    method.isAccessible = true
+    return method.invoke(instance, *args)
+  }
 
-    companion object {
-        private const val TAG = "DexClassLoaderBridge"
-    }
+  /** Returns whether the current archive exists and is readable. */
+  fun isValid(): Boolean {
+    val file = File(dexPath)
+    return file.exists() && file.canRead()
+  }
 }

@@ -18,7 +18,8 @@
 package com.willow.androidide.ultra.syntax.colorschemes
 
 import android.content.Context
-import com.willow.androidide.ultra.common.R.attr
+import com.google.android.material.R.attr
+
 import com.willow.androidide.ultra.utils.isSystemInDarkMode
 import com.willow.androidide.ultra.utils.resolveAttr
 

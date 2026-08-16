@@ -35,7 +35,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.slider.Slider;
-import com.willow.androidide.ultra.common.R;
+import com.willow.androidide.ultra.resources.R;
 import com.willow.androidide.ultra.common.databinding.LayoutColorPickerBinding;
 
 /**

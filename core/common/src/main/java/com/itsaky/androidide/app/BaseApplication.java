@@ -22,7 +22,7 @@ import android.content.Intent;
 import android.net.Uri;
 import com.blankj.utilcode.util.ThrowableUtils;
 import com.willow.androidide.ultra.buildinfo.BuildInfo;
-import com.willow.androidide.ultra.common.R;
+import com.willow.androidide.ultra.resources.R;
 import com.willow.androidide.ultra.managers.PreferenceManager;
 import com.willow.androidide.ultra.managers.ToolsManager;
 import com.willow.androidide.ultra.utils.Environment;
