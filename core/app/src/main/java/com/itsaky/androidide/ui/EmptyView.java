@@ -29,7 +29,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import com.willow.androidide.ultra.R;
+import com.google.android.material.R;
 import com.willow.androidide.ultra.utils.ResourceUtilsKt;
 
 public class EmptyView extends RelativeLayout {
@@ -84,6 +84,6 @@ public class EmptyView extends RelativeLayout {
 
   @NonNull
   public CharSequence getMessage() {
-    return TextUtils.isEmpty(message) ? getContext().getString(R.string.msg_empty_view) : message;
+    return TextUtils.isEmpty(message) ? getContext().getString(com.willow.androidide.ultra.resources.R.string.msg_empty_view) : message;
   }
 }

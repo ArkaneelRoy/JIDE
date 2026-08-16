@@ -27,8 +27,8 @@ import androidx.annotation.GravityInt
 import androidx.appcompat.app.AlertDialog
 import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.ThreadUtils
-import com.willow.androidide.ultra.R
-import com.willow.androidide.ultra.R.string
+import com.google.android.material.R as MaterialR
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.databinding.LayoutSearchProjectBinding
 import com.willow.androidide.ultra.flashbar.Flashbar
 import com.willow.androidide.ultra.fragments.sheets.ProgressSheet
@@ -241,10 +241,10 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
 
     this.syncNotificationFlashbar = flashbarBuilder(
       duration = DURATION_INDEFINITE,
-      backgroundColor = resolveAttr(R.attr.colorSecondaryContainer),
-      messageColor = resolveAttr(R.attr.colorOnSecondaryContainer)
+      backgroundColor = resolveAttr(MaterialR.attr.colorSecondaryContainer),
+      messageColor = resolveAttr(MaterialR.attr.colorOnSecondaryContainer)
     )
-      .withIcon(R.drawable.ic_sync, colorFilter = resolveAttr(R.attr.colorOnSecondaryContainer))
+      .withIcon(R.drawable.ic_sync, colorFilter = resolveAttr(MaterialR.attr.colorOnSecondaryContainer))
       .message(string.msg_sync_needed)
       .positiveActionText(string.btn_sync)
       .positiveActionTapListener {

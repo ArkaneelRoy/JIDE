@@ -19,7 +19,7 @@ package com.willow.androidide.ultra.fragments.output
 import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.ThreadUtils
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 
 class BuildOutputFragment : NonEditableEditorFragment() {
   private val unsavedLines: MutableList<String?> = ArrayList()

@@ -24,7 +24,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionManager
 import com.willow.androidide.ultra.R
-import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.activities.MainActivity
 import com.willow.androidide.ultra.adapters.TemplateWidgetsListAdapter
 import com.willow.androidide.ultra.databinding.FragmentTemplateDetailsBinding

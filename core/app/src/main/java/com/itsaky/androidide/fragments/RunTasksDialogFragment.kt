@@ -37,7 +37,6 @@ import com.blankj.utilcode.util.ThreadUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.transition.MaterialSharedAxis
-import com.willow.androidide.ultra.R.string
 import com.willow.androidide.ultra.adapters.RunTasksListAdapter
 import com.willow.androidide.ultra.databinding.LayoutRunTaskBinding
 import com.willow.androidide.ultra.databinding.LayoutRunTaskDialogBinding

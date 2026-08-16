@@ -21,7 +21,7 @@ import android.content.Context
 import androidx.preference.Preference
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.app.configuration.IJdkDistributionProvider
 import com.willow.androidide.ultra.models.JdkDistribution
 import com.willow.androidide.ultra.preferences.internal.BuildPreferences.CUSTOM_GRADLE_INSTALLATION

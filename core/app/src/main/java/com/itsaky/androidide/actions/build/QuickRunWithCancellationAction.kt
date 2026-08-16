@@ -22,7 +22,6 @@ import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import androidx.core.content.ContextCompat
-import com.willow.androidide.ultra.R.string
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.BaseBuildAction
 import com.willow.androidide.ultra.actions.getContext
@@ -32,6 +31,7 @@ import com.willow.androidide.ultra.lookup.Lookup
 import com.willow.androidide.ultra.models.ApkMetadata
 import com.willow.androidide.ultra.projects.android.AndroidModule
 import com.willow.androidide.ultra.projects.builder.BuildService
+import com.google.android.material.R as MaterialR
 import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult
 import com.willow.androidide.ultra.tooling.api.models.BasicAndroidVariantMetadata
@@ -95,7 +95,7 @@ class QuickRunWithCancellationAction(context: Context, override val order: Int) 
     return data.getContext()?.let {
       PorterDuffColorFilter(it.resolveAttr(
         if (data.isBuildInProgress())
-          R.attr.colorError
+          MaterialR.attr.colorError
         else R.attr.colorSuccess
       ), PorterDuff.Mode.SRC_ATOP)
     }

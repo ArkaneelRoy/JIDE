@@ -38,7 +38,7 @@ import android.widget.ArrayAdapter
 import androidx.core.content.getSystemService
 import androidx.core.view.isVisible
 import com.github.appintro.SlidePolicy
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.databinding.LayoutOnboardngSetupConfigBinding
 import com.willow.androidide.ultra.models.IdeSetupArgument
 import com.willow.androidide.ultra.resources.R.string

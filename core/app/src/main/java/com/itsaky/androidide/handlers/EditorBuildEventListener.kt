@@ -17,7 +17,7 @@
 
 package com.willow.androidide.ultra.handlers
 
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.activities.editor.EditorHandlerActivity
 import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
 import com.willow.androidide.ultra.resources.R.string

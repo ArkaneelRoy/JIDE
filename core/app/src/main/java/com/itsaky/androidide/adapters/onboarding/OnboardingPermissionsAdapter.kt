@@ -24,7 +24,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.SizeUtils
 import com.google.android.material.button.MaterialButton
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.databinding.LayoutOnboardingPermissionItemBinding
 import com.willow.androidide.ultra.models.OnboardingPermissionItem
 

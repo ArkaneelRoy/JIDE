@@ -17,7 +17,7 @@
 
 package com.willow.androidide.ultra.utils
 
-import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.activities.editor.BaseEditorActivity
 import com.willow.androidide.ultra.ui.EditorBottomSheet
 import org.slf4j.LoggerFactory

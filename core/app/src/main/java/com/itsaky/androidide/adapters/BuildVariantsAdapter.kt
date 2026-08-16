@@ -22,7 +22,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
-import com.willow.androidide.ultra.R
+import androidx.appcompat.R as AppCompatR
 import com.willow.androidide.ultra.databinding.LayoutBuildVariantItemBinding
 import com.willow.androidide.ultra.tooling.api.IAndroidProject
 import com.willow.androidide.ultra.tooling.api.models.BuildVariantInfo
@@ -65,7 +65,7 @@ class BuildVariantsAdapter(
       val viewModel = viewModel
 
       setAdapter(
-        ArrayAdapter(binding.root.context, R.layout.support_simple_spinner_dropdown_item,
+        ArrayAdapter(binding.root.context, AppCompatR.layout.support_simple_spinner_dropdown_item,
           variantInfo.buildVariants
         )
       )

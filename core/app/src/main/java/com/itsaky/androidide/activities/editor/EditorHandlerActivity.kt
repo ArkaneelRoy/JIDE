@@ -27,10 +27,10 @@ import android.view.ViewGroup.LayoutParams
 import androidx.annotation.DrawableRes
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.collection.MutableIntObjectMap
+import com.willow.androidide.ultra.resources.R
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
 import com.blankj.utilcode.util.ImageUtils
-import com.willow.androidide.ultra.R.string
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_TOOLBAR
 import com.willow.androidide.ultra.actions.ActionsRegistry.Companion.getInstance

@@ -20,7 +20,7 @@ package com.willow.androidide.ultra.preferences
 import android.view.LayoutInflater
 import androidx.preference.Preference
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.databinding.LayoutTextSizeSliderBinding
 import com.willow.androidide.ultra.editor.schemes.IDEColorScheme
 import com.willow.androidide.ultra.editor.schemes.IDEColorSchemeProvider

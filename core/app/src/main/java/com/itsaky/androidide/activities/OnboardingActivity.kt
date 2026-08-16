@@ -25,8 +25,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.github.appintro.AppIntro2
 import com.github.appintro.AppIntroPageTransformerType
-import com.willow.androidide.ultra.R
-import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.app.configuration.IDEBuildConfigProvider
 import com.willow.androidide.ultra.app.configuration.IJdkDistributionProvider
 import com.willow.androidide.ultra.fragments.onboarding.GreetingFragment

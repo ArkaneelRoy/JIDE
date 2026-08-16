@@ -3,7 +3,7 @@ package com.willow.androidide.ultra.fragments.onboarding
 import android.content.Context
 import android.os.Bundle
 import android.view.ViewGroup
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.app.IDEApplication
 import com.willow.androidide.ultra.databinding.LayoutOnboardingStatisticsBinding
 

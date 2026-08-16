@@ -60,8 +60,9 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCa
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.Tab
+import com.google.android.material.R as MaterialR
 import com.willow.androidide.ultra.R
-import com.willow.androidide.ultra.R.string
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.actions.ActionItem.Location.EDITOR_FILE_TABS
 import com.willow.androidide.ultra.adapters.DiagnosticsAdapter
 import com.willow.androidide.ultra.adapters.SearchListAdapter
@@ -188,7 +189,7 @@ abstract class BaseEditorActivity : EdgeToEdgeIDEActivity(), TabLayout.OnTabSele
   private var isImeVisible = false
   private var contentCardRealHeight: Int? = null
   private val editorSurfaceContainerBackground by lazy {
-    resolveAttr(R.attr.colorSurfaceDim)
+    resolveAttr(MaterialR.attr.colorSurfaceDim)
   }
   private val editorLayoutCorners by lazy {
     resources.getDimensionPixelSize(R.dimen.editor_container_corners).toFloat()
@@ -365,7 +366,7 @@ abstract class BaseEditorActivity : EdgeToEdgeIDEActivity(), TabLayout.OnTabSele
 
   private fun setupMemUsageChart() {
     binding.memUsageView.chart.apply {
-      val colorAccent = resolveAttr(R.attr.colorAccent)
+      val colorAccent = resolveAttr(MaterialR.attr.colorAccent)
 
       isDragEnabled = false
       description.isEnabled = false
@@ -403,7 +404,7 @@ abstract class BaseEditorActivity : EdgeToEdgeIDEActivity(), TabLayout.OnTabSele
     }
 
     val bgColor = editorSurfaceContainerBackground
-    val textColor = resolveAttr(R.attr.colorOnSurface)
+    val textColor = resolveAttr(MaterialR.attr.colorOnSurface)
 
     for ((index, proc) in processes.withIndex()) {
       val dataset = datasets[index]

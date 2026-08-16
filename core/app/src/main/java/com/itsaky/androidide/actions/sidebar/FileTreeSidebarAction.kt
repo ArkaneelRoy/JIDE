@@ -20,7 +20,7 @@ package com.willow.androidide.ultra.actions.sidebar
 import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.fragments.sidebar.FileTreeFragment
 import kotlin.reflect.KClass
 

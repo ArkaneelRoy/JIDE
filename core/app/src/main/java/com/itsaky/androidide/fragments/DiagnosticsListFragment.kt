@@ -19,7 +19,7 @@ package com.willow.androidide.ultra.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.adapters.DiagnosticsAdapter
 
 class DiagnosticsListFragment : RecyclerViewFragment<DiagnosticsAdapter>() {

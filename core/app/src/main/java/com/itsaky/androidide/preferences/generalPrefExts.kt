@@ -21,7 +21,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.preferences.internal.GeneralPreferences
 import com.willow.androidide.ultra.resources.R.drawable
 import com.willow.androidide.ultra.resources.R.string

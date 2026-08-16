@@ -24,7 +24,7 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.view.View
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.preferences.internal.DevOpsPreferences
 import com.willow.androidide.ultra.services.log.ConnectionObserverParams
 import com.willow.androidide.ultra.services.log.LogReceiverImpl

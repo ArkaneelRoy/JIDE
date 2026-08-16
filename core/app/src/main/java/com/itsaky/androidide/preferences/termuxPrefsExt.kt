@@ -21,7 +21,7 @@ import android.content.Context
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.app.IDEApplication
 import com.termux.shared.logger.Logger
 import com.termux.shared.termux.settings.preferences.TermuxAppSharedPreferences

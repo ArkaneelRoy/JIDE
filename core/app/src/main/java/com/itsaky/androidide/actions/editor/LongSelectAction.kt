@@ -19,7 +19,7 @@ package com.willow.androidide.ultra.actions.editor
 
 import android.content.Context
 import androidx.core.content.ContextCompat
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.ActionItem
 import com.willow.androidide.ultra.actions.EditorRelatedAction

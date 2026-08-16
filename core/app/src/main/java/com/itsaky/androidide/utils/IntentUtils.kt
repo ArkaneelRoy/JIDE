@@ -25,7 +25,7 @@ import androidx.core.app.ShareCompat
 import androidx.core.content.FileProvider
 import com.blankj.utilcode.util.ImageUtils
 import com.blankj.utilcode.util.ImageUtils.ImageType.TYPE_UNKNOWN
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import java.io.File
 
 /**

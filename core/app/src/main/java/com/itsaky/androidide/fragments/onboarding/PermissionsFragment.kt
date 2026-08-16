@@ -29,7 +29,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.github.appintro.SlidePolicy
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.adapters.onboarding.OnboardingPermissionsAdapter
 import com.willow.androidide.ultra.buildinfo.BuildInfo
 import com.willow.androidide.ultra.models.OnboardingPermissionItem

@@ -20,7 +20,7 @@ package com.willow.androidide.ultra.actions.filetree
 import android.content.Context
 import android.view.LayoutInflater
 import com.blankj.utilcode.util.FileUtils
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.requireFile
 import com.willow.androidide.ultra.adapters.viewholders.FileTreeViewHolder

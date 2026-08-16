@@ -31,7 +31,8 @@ import androidx.core.view.updatePaddingRelative
 import com.blankj.utilcode.util.ClipboardUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.willow.androidide.ultra.BuildConfig
-import com.willow.androidide.ultra.R
+import com.google.android.material.R as MaterialR
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.adapters.SimpleIconTitleDescriptionAdapter
 import com.willow.androidide.ultra.app.BaseApplication
 import com.willow.androidide.ultra.app.EdgeToEdgeIDEActivity
@@ -289,11 +290,11 @@ class AboutActivity : EdgeToEdgeIDEActivity() {
       val item = getItem(position) as SimpleIconTitleDescriptionItem
       val dp8 = SizeUtils.dp2px(8f)
       binding.icon.updatePaddingRelative(dp8, dp8, dp8, dp8)
-      binding.title.setTextAppearance(R.style.TextAppearance_Material3_TitleSmall)
+      binding.title.setTextAppearance(MaterialR.style.TextAppearance_Material3_TitleSmall)
 
       binding.description.maxLines = 3
-      binding.description.setTextAppearance(R.style.TextAppearance_Material3_BodySmall)
-      binding.description.setTextColor(binding.description.context.resolveAttr(R.attr.colorPrimary))
+      binding.description.setTextAppearance(MaterialR.style.TextAppearance_Material3_BodySmall)
+      binding.description.setTextColor(binding.description.context.resolveAttr(MaterialR.attr.colorPrimary))
 
       binding.root.isClickable = true
       binding.root.isFocusable = true

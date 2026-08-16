@@ -22,7 +22,7 @@ import android.view.View
 import androidx.lifecycle.Lifecycle
 import ch.qos.logback.classic.Logger
 import ch.qos.logback.classic.LoggerContext
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.logging.LifecycleAwareAppender
 import org.slf4j.LoggerFactory
 

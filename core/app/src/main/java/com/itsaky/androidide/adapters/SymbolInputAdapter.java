@@ -24,7 +24,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.willow.androidide.ultra.R;
+import com.google.android.material.R;
 import com.willow.androidide.ultra.databinding.LayoutSymbolItemBinding;
 import com.willow.androidide.ultra.editor.ui.IDEEditor;
 import com.willow.androidide.ultra.models.Symbol;

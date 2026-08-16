@@ -49,7 +49,7 @@ import com.willow.androidide.ultra.resources.localization.LocaleProvider
 import com.willow.androidide.ultra.stats.AndroidIDEStats
 import com.willow.androidide.ultra.stats.StatUploadWorker
 import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
-import com.willow.androidide.ultra.treesitter.TreeSitter
+import com.itsaky.androidide.treesitter.TreeSitter
 import com.willow.androidide.ultra.ui.themes.IDETheme
 import com.willow.androidide.ultra.ui.themes.IThemeManager
 import com.willow.androidide.ultra.utils.RecyclableObjectPool

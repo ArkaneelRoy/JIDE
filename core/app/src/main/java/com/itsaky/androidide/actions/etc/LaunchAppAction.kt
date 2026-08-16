@@ -20,7 +20,7 @@ package com.willow.androidide.ultra.actions.etc
 import android.content.Context
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.EditorActivityAction
 import com.willow.androidide.ultra.actions.markInvisible

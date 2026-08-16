@@ -18,7 +18,7 @@
 package com.willow.androidide.ultra.actions
 
 import android.content.Context
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.projects.IProjectManager
 import com.willow.androidide.ultra.projects.android.AndroidModule
 import com.willow.androidide.ultra.utils.DialogUtils

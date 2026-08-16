@@ -17,7 +17,7 @@
 
 package com.willow.androidide.ultra.preferences
 
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.preferences.internal.DevOpsPreferences
 import kotlinx.parcelize.Parcelize
 

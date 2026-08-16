@@ -28,7 +28,6 @@ import androidx.core.app.NotificationManagerCompat
 import com.blankj.utilcode.util.ResourceUtils
 import com.blankj.utilcode.util.ZipUtils
 import com.willow.androidide.ultra.BuildConfig
-import com.willow.androidide.ultra.R.*
 import com.willow.androidide.ultra.app.BaseApplication
 import com.willow.androidide.ultra.lookup.Lookup
 import com.willow.androidide.ultra.managers.ToolsManager

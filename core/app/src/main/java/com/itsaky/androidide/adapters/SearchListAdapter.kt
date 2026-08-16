@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.blankj.utilcode.util.ThreadUtils
-import com.willow.androidide.ultra.R
+import com.google.android.material.R as MaterialR
 import com.willow.androidide.ultra.adapters.SearchListAdapter.VH
 import com.willow.androidide.ultra.databinding.LayoutSearchResultGroupBinding
 import com.willow.androidide.ultra.databinding.LayoutSearchResultItemBinding
@@ -54,7 +54,7 @@ class SearchListAdapter(
     val binding = p1.binding
     val file = keys[p2]
     val matches = results[file] ?: listOf()
-    val color = binding.icon.context.resolveAttr(R.attr.colorPrimary)
+    val color = binding.icon.context.resolveAttr(MaterialR.attr.colorPrimary)
     binding.title.text = file.name
     binding.icon.setImageResource(FileExtension.Factory.forFile(file).icon)
     binding.icon.setColorFilter(color, SRC_ATOP)

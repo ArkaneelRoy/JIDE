@@ -21,7 +21,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.actions.ActionData
 import com.willow.androidide.ultra.actions.requireContext
 import com.willow.androidide.ultra.activities.TerminalActivity

@@ -22,7 +22,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.core.graphics.Insets
 import androidx.core.view.isVisible
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.adapters.ContributorsGridAdapter
 import com.willow.androidide.ultra.app.EdgeToEdgeIDEActivity
 import com.willow.androidide.ultra.databinding.ActivityContributorsBinding

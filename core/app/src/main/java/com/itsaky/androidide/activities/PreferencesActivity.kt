@@ -20,7 +20,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.graphics.Insets
 import androidx.fragment.app.Fragment
-import com.willow.androidide.ultra.R
+import com.willow.androidide.ultra.resources.R
 import com.willow.androidide.ultra.app.EdgeToEdgeIDEActivity
 import com.willow.androidide.ultra.databinding.ActivityPreferencesBinding
 import com.willow.androidide.ultra.fragments.IDEPreferencesFragment
