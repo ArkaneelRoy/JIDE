@@ -47,7 +47,7 @@ class TerminalBootstrapPackagesPlugin : Plugin<Project> {
     private const val BOOTSTRAP_PACKAGES_VERSION = "16.12.2023"
 
     private const val PACKAGES_DOWNLOAD_URL =
-      "https://github.com/Willow7737/terminal-packages/releases/download/bootstrap-%1\$s/bootstrap-%2\$s.zip"
+      "https://github.com/AndroidIDEOfficial/terminal-packages/releases/download/bootstrap-%1\$s/bootstrap-%2\$s.zip"
   }
 
   override fun apply(target: Project) {
