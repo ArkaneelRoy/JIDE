@@ -54,15 +54,15 @@ public class MessageDialogUtils {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.Theme_AppCompat_Light_Dialog);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-        View view = inflater.inflate(R.layout.dialog_show_message, null);
+        View view = inflater.inflate(com.termux.shared.R.layout.dialog_show_message, null);
         if (view != null) {
             builder.setView(view);
 
-            TextView titleView = view.findViewById(R.id.dialog_title);
+            TextView titleView = view.findViewById(com.termux.shared.R.id.dialog_title);
             if (titleView != null)
                 titleView.setText(titleText);
 
-            TextView messageView = view.findViewById(R.id.dialog_message);
+            TextView messageView = view.findViewById(com.termux.shared.R.id.dialog_message);
             if (messageView != null)
                 messageView.setText(messageText);
         }

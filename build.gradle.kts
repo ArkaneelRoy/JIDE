@@ -49,6 +49,14 @@ buildscript {
 project.group = BuildConfig.packageName
 
 subprojects {
+  configurations.configureEach {
+    resolutionStrategy.force(
+      "org.bouncycastle:bcprov-jdk18on:1.77",
+      "org.bouncycastle:bcutil-jdk18on:1.77",
+      "org.bouncycastle:bcpkix-jdk18on:1.77",
+    )
+  }
+
   if (project != rootProject) {
     var group = project.parent!!.group
     if (project.parent != rootProject) {

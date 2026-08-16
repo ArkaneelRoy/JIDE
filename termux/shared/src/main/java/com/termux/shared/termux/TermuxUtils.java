@@ -8,7 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import com.termux.shared.R;
+import com.willow.androidide.ultra.resources.R;
 import com.termux.shared.android.AndroidUtils;
 import com.termux.shared.android.PackageUtils;
 import com.termux.shared.errors.Error;

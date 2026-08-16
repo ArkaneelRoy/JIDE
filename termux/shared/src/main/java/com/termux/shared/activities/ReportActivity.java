@@ -84,7 +84,7 @@ public class ReportActivity extends BaseIDEActivity {
     Logger.logVerbose(LOG_TAG, "onCreate");
     super.onCreate(savedInstanceState);
 
-    Toolbar toolbar = findViewById(R.id.toolbar);
+    Toolbar toolbar = findViewById(com.termux.shared.R.id.toolbar);
     if (toolbar != null) {
       setSupportActionBar(toolbar);
     }
@@ -169,14 +169,14 @@ public class ReportActivity extends BaseIDEActivity {
         }
     }
 
-    RecyclerView recyclerView = findViewById(R.id.recycler_view);
+    RecyclerView recyclerView = findViewById(com.termux.shared.R.id.recycler_view);
 
     final Markwon markwon = MarkdownUtils.getRecyclerMarkwonBuilder(this);
 
     final MarkwonAdapter adapter = MarkwonAdapter.builderTextViewIsRoot(
-            R.layout.markdown_adapter_node_default)
+            com.termux.shared.R.layout.markdown_adapter_node_default)
         .include(FencedCodeBlock.class,
-            SimpleEntry.create(R.layout.markdown_adapter_node_code_block, R.id.code_text_view))
+            SimpleEntry.create(com.termux.shared.R.layout.markdown_adapter_node_code_block, com.termux.shared.R.id.code_text_view))
         .build();
 
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -209,10 +209,10 @@ public class ReportActivity extends BaseIDEActivity {
   @Override
   public boolean onCreateOptionsMenu(final Menu menu) {
     final MenuInflater inflater = getMenuInflater();
-    inflater.inflate(R.menu.menu_report, menu);
+    inflater.inflate(com.termux.shared.R.menu.menu_report, menu);
 
     if (mReportInfo.reportSaveFilePath == null) {
-      MenuItem item = menu.findItem(R.id.menu_item_save_report_to_file);
+      MenuItem item = menu.findItem(com.termux.shared.R.id.menu_item_save_report_to_file);
         if (item != null) {
             item.setEnabled(false);
         }
@@ -230,13 +230,13 @@ public class ReportActivity extends BaseIDEActivity {
   @Override
   public boolean onOptionsItemSelected(final MenuItem item) {
     int id = item.getItemId();
-    if (id == R.id.menu_item_share_report) {
-      ShareUtils.shareText(this, getString(R.string.title_report_text),
+    if (id == com.termux.shared.R.id.menu_item_share_report) {
+      ShareUtils.shareText(this, getString(com.willow.androidide.ultra.resources.R.string.title_report_text),
           ReportInfo.getReportInfoMarkdownString(mReportInfo));
-    } else if (id == R.id.menu_item_copy_report) {
+    } else if (id == com.termux.shared.R.id.menu_item_copy_report) {
       ShareUtils.copyTextToClipboard(this, ReportInfo.getReportInfoMarkdownString(mReportInfo),
           null);
-    } else if (id == R.id.menu_item_save_report_to_file) {
+    } else if (id == com.termux.shared.R.id.menu_item_save_report_to_file) {
       ShareUtils.saveTextToFile(this, mReportInfo.reportSaveFileLabel,
           mReportInfo.reportSaveFilePath, ReportInfo.getReportInfoMarkdownString(mReportInfo),
           true, REQUEST_GRANT_STORAGE_PERMISSION_FOR_SAVE_FILE);
@@ -300,12 +300,12 @@ public class ReportActivity extends BaseIDEActivity {
       Logger.logVerbose(LOG_TAG,
           mReportInfo.reportTitle + " report string total size " + reportStringSize
               + " is greater than " + ACTIVITY_TEXT_SIZE_LIMIT_IN_BYTES + " and will be truncated");
-      mReportActivityMarkdownString = this.getString(R.string.msg_report_truncated) +
+      mReportActivityMarkdownString = this.getString(com.willow.androidide.ultra.resources.R.string.msg_report_truncated) +
           DataUtils.getTruncatedCommandOutput(reportString.toString(),
               ACTIVITY_TEXT_SIZE_LIMIT_IN_BYTES, true, false, false);
     } else if (truncated) {
       mReportActivityMarkdownString =
-          this.getString(R.string.msg_report_truncated) + reportString.toString();
+          this.getString(com.willow.androidide.ultra.resources.R.string.msg_report_truncated) + reportString.toString();
     } else {
       mReportActivityMarkdownString = reportString.toString();
     }

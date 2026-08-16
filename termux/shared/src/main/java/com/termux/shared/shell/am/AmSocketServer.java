@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.termux.am.Am;
-import com.termux.shared.R;
+import com.willow.androidide.ultra.resources.R;
 import com.termux.shared.android.PackageUtils;
 import com.termux.shared.android.PermissionUtils;
 import com.termux.shared.errors.Error;
