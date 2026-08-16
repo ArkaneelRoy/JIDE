@@ -42,6 +42,9 @@ buildscript {
   dependencies {
     classpath(libs.kotlin.gradle.plugin)
     classpath(libs.nav.safe.args.gradle.plugin)
+    classpath("org.bouncycastle:bcprov-jdk18on:1.77")
+    classpath("org.bouncycastle:bcutil-jdk18on:1.77")
+    classpath("org.bouncycastle:bcpkix-jdk18on:1.77")
   }
 }
 

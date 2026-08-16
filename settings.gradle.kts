@@ -81,6 +81,9 @@ buildscript {
   }
   dependencies {
     classpath("com.mooltiverse.oss.nyx:gradle:2.5.2")
+    classpath("org.bouncycastle:bcprov-jdk18on:1.77")
+    classpath("org.bouncycastle:bcutil-jdk18on:1.77")
+    classpath("org.bouncycastle:bcpkix-jdk18on:1.77")
   }
 }
 
