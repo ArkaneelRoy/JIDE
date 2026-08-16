@@ -103,7 +103,14 @@ fun Project.configureMavenPublish() {
 
     coordinates(project.group.toString(), project.name, project.publishingVersion)
     publishToMavenCentral(host = S01)
-    signAllPublications()
+
+    // Test and artifact-build jobs do not have release signing credentials. The
+    // Vanniktech signing tasks must not be created in that case, otherwise their
+    // lazy onlyIf predicate fails while Gradle evaluates unrelated test tasks.
+    val signingKey = providers.gradleProperty("signingInMemoryKey").orNull.orEmpty()
+    if (signingKey.isNotBlank()) {
+      signAllPublications()
+    }
 
     if (plugins.hasPlugin("com.android.library")) {
       configure(AndroidMultiVariantLibrary())
