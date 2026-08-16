@@ -67,6 +67,8 @@ jobs:
         with:
           java-version: ${{ env.BUILD_JAVA_VERSION }}
           distribution: ${{ env.BUILD_JAVA_DIST }}
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -132,6 +134,8 @@ jobs:
         with:
           java-version: ${{ env.BUILD_JAVA_VERSION }}
           distribution: ${{ env.BUILD_JAVA_DIST }}
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -168,6 +172,8 @@ jobs:
         with:
           java-version: ${{ env.BUILD_JAVA_VERSION }}
           distribution: ${{ env.BUILD_JAVA_DIST }}
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -218,6 +224,8 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -278,6 +286,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: apk-armeabi-v7a-release
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -323,6 +333,8 @@ jobs:
         with:
           java-version: ${{ env.BUILD_JAVA_VERSION }}
           distribution: ${{ env.BUILD_JAVA_DIST }}
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache

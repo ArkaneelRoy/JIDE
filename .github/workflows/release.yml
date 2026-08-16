@@ -79,6 +79,9 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           cache: gradle
 
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
+
       - name: Prepare Gradle
         run: chmod +x ./gradlew scripts/prepare_release_assets.sh
 
