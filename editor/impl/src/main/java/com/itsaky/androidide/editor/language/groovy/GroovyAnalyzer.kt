@@ -21,7 +21,7 @@ import com.willow.androidide.ultra.editor.language.incremental.BaseIncrementalAn
 import com.willow.androidide.ultra.editor.language.incremental.IncrementalToken
 import com.willow.androidide.ultra.editor.language.incremental.LineState
 import com.willow.androidide.ultra.lexers.groovy.GroovyLexer
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import io.github.rosemoe.sora.lang.analysis.IncrementalAnalyzeManager.LineTokenizeResult
 import io.github.rosemoe.sora.lang.styling.Span
 import io.github.rosemoe.sora.lang.styling.SpanFactory
@@ -44,7 +44,7 @@ class GroovyAnalyzer : BaseIncrementalAnalyzeManager(GroovyLexer::class.java) {
       when (type) {
         GroovyLexer.WS -> {
           if (first) {
-            spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE Ultra.TEXT_NORMAL)))
+            spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE.TEXT_NORMAL)))
             first = false
           }
         }
@@ -89,7 +89,7 @@ class GroovyAnalyzer : BaseIncrementalAnalyzeManager(GroovyLexer::class.java) {
         GroovyLexer.TRY,
         GroovyLexer.VOID,
         GroovyLexer.VOLATILE,
-        GroovyLexer.WHILE -> spans.add(SpanFactory.obtain(offset, SchemeAndroidIDE Ultra.forKeyword()))
+        GroovyLexer.WHILE -> spans.add(SpanFactory.obtain(offset, SchemeAndroidIDE.forKeyword()))
 
         GroovyLexer.DECIMAL_LITERAL,
         GroovyLexer.HEX_LITERAL,
@@ -101,11 +101,11 @@ class GroovyAnalyzer : BaseIncrementalAnalyzeManager(GroovyLexer::class.java) {
         GroovyLexer.CHAR_LITERAL,
         GroovyLexer.NULL_LITERAL,
         ->
-          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE Ultra.LITERAL)))
+          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE.LITERAL)))
 
         GroovyLexer.SINGLE_QUOTE_STRING,
         GroovyLexer.STRING_LITERAL -> spans.add(
-          SpanFactory.obtain(offset, SchemeAndroidIDE Ultra.forString()))
+          SpanFactory.obtain(offset, SchemeAndroidIDE.forString()))
 
         GroovyLexer.LPAREN,
         GroovyLexer.RPAREN,
@@ -154,7 +154,7 @@ class GroovyAnalyzer : BaseIncrementalAnalyzeManager(GroovyLexer::class.java) {
         GroovyLexer.RBRACE,
         GroovyLexer.DOT,
         ->
-          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE Ultra.OPERATOR)))
+          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE.OPERATOR)))
 
         GroovyLexer.BOOLEAN,
         GroovyLexer.BYTE,
@@ -166,23 +166,23 @@ class GroovyAnalyzer : BaseIncrementalAnalyzeManager(GroovyLexer::class.java) {
         GroovyLexer.LONG,
         GroovyLexer.SHORT,
         ->
-          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE Ultra.TYPE_NAME)))
+          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE.TYPE_NAME)))
 
-        GroovyLexer.COMMENT -> spans.add(SpanFactory.obtain(offset, SchemeAndroidIDE Ultra.forComment()))
+        GroovyLexer.COMMENT -> spans.add(SpanFactory.obtain(offset, SchemeAndroidIDE.forComment()))
         GroovyLexer.LINE_COMMENT -> handleLineCommentSpan(token, spans, offset)
         GroovyLexer.AT ->
-          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE Ultra.ANNOTATION)))
+          spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE.ANNOTATION)))
 
         GroovyLexer.IDENTIFIER -> {
-          var colorId = SchemeAndroidIDE Ultra.TEXT_NORMAL
+          var colorId = SchemeAndroidIDE.TEXT_NORMAL
           if (previous == GroovyLexer.AT) {
-            colorId = SchemeAndroidIDE Ultra.ANNOTATION
+            colorId = SchemeAndroidIDE.ANNOTATION
           }
           spans.add(SpanFactory.obtain(offset, TextStyle.makeStyle(colorId)))
         }
 
         else -> spans.add(
-          SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE Ultra.TEXT_NORMAL)))
+          SpanFactory.obtain(offset, TextStyle.makeStyle(SchemeAndroidIDE.TEXT_NORMAL)))
       }
       previous = type
     }

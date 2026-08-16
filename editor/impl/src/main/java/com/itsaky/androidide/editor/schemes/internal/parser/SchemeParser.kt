@@ -19,7 +19,7 @@ package com.willow.androidide.ultra.editor.schemes.internal.parser
 
 import com.google.gson.stream.JsonReader
 import com.willow.androidide.ultra.editor.schemes.IDEColorScheme
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme
 import java.io.File
 
@@ -61,20 +61,20 @@ class SchemeParser(private val resolveFileRef: (String) -> File) {
     COMPLETION_WINDOW_OUTLINE("completion.window.outline", EditorColorScheme.COMPLETION_WND_CORNER),
     COMPLETION_WND_TEXT_LABEL(
       "completion.window.text.label",
-      SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_LABEL
+      SchemeAndroidIDE.COMPLETION_WND_TEXT_LABEL
     ),
     COMPLETION_WND_TEXT_DETAIL(
       "completion.window.text.detail",
-      SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_DETAIL
+      SchemeAndroidIDE.COMPLETION_WND_TEXT_DETAIL
     ),
-    COMPLETION_WND_TEXT_API("completion.window.text.api", SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_API),
+    COMPLETION_WND_TEXT_API("completion.window.text.api", SchemeAndroidIDE.COMPLETION_WND_TEXT_API),
     COMPLETION_WND_TEXT_TYPE(
       "completion.window.text.type",
-      SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_TYPE
+      SchemeAndroidIDE.COMPLETION_WND_TEXT_TYPE
     ),
     COMPLETION_WND_BG_CURRENT_ITEM(
       "completion.window.item.current",
-      SchemeAndroidIDE Ultra.COMPLETION_WND_BG_CURRENT_ITEM
+      SchemeAndroidIDE.COMPLETION_WND_BG_CURRENT_ITEM
     ),
     NON_PRINTABLE_CHAR("non_printable_char", EditorColorScheme.NON_PRINTABLE_CHAR),
     HIGHLIGHTED_DELIMITERS_UNDERLINE(

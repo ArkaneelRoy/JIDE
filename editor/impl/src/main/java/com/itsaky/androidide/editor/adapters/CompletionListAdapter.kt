@@ -41,11 +41,11 @@ import com.willow.androidide.ultra.preferences.internal.EditorPreferences
 import com.willow.androidide.ultra.resources.R.string.msg_api_info_deprecated
 import com.willow.androidide.ultra.resources.R.string.msg_api_info_removed
 import com.willow.androidide.ultra.resources.R.string.msg_api_info_since
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_API
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_DETAIL
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_LABEL
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.COMPLETION_WND_TEXT_TYPE
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_API
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_DETAIL
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_LABEL
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.COMPLETION_WND_TEXT_TYPE
 import com.willow.androidide.ultra.tasks.executeAsync
 import com.willow.androidide.ultra.utils.customOrJBMono
 import com.willow.androidide.ultra.xml.versions.ApiVersions
@@ -126,7 +126,7 @@ class CompletionListAdapter : EditorCompletionAdapter() {
 
   private fun setItemBackground(binding: LayoutCompletionItemBinding, isCurrent: Boolean) {
     val color =
-      if (isCurrent) getThemeColor(SchemeAndroidIDE Ultra.COMPLETION_WND_BG_CURRENT_ITEM)
+      if (isCurrent) getThemeColor(SchemeAndroidIDE.COMPLETION_WND_BG_CURRENT_ITEM)
       else 0
 
     val cornerRadius = binding.root.context.resources

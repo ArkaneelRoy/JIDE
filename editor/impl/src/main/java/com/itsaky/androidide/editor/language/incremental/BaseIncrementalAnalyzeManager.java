@@ -17,15 +17,15 @@
 
 package com.willow.androidide.ultra.editor.language.incremental;
 
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.FIXME_COMMENT;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.TODO_COMMENT;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.withoutCompletion;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.FIXME_COMMENT;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.TODO_COMMENT;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.withoutCompletion;
 
 import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.ArrayUtils;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.EvictingQueue;
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra;
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE;
 import com.willow.androidide.ultra.utils.CharSequenceReader;
 import io.github.rosemoe.sora.lang.analysis.AsyncIncrementalAnalyzeManager;
 import io.github.rosemoe.sora.lang.styling.CodeBlock;
@@ -170,7 +170,7 @@ public abstract class BaseIncrementalAnalyzeManager extends
     Objects.requireNonNull(result);
 
     if (result.isEmpty()) {
-      result.add(Span.obtain(0, TextStyle.makeStyle(SchemeAndroidIDE Ultra.TEXT_NORMAL)));
+      result.add(Span.obtain(0, TextStyle.makeStyle(SchemeAndroidIDE.TEXT_NORMAL)));
     }
 
     return result;
@@ -292,7 +292,7 @@ public abstract class BaseIncrementalAnalyzeManager extends
   protected void handleLineCommentSpan(@NonNull IncrementalToken token, @NonNull List<Span> spans,
                                        int offset
   ) {
-    var commentType = SchemeAndroidIDE Ultra.COMMENT;
+    var commentType = SchemeAndroidIDE.COMMENT;
 
     // highlight special line comments
     var commentText = token.getText();

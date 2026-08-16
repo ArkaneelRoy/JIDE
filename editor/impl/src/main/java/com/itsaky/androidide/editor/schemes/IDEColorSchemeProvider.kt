@@ -21,7 +21,7 @@ import android.content.Context
 import androidx.annotation.WorkerThread
 import com.willow.androidide.ultra.eventbus.events.editor.ColorSchemeInvalidatedEvent
 import com.willow.androidide.ultra.preferences.internal.EditorPreferences
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.utils.Environment
 import com.willow.androidide.ultra.utils.isSystemInDarkMode
 import kotlinx.coroutines.CoroutineScope
@@ -180,7 +180,7 @@ object IDEColorSchemeProvider {
    *
    * @param context Context used to determine whether the system is in dark mode.
    * @param coroutineScope The scope used to read the scheme asynchronously.
-   * @param callback The callback to receive the [SchemeAndroidIDE Ultra] instance.
+   * @param callback The callback to receive the [SchemeAndroidIDE] instance.
    * @see readScheme
    */
   @JvmOverloads
@@ -189,7 +189,7 @@ object IDEColorSchemeProvider {
     coroutineScope: CoroutineScope,
     type: String? = null,
     callbackContext: CoroutineContext = Dispatchers.Main.immediate,
-    callback: (SchemeAndroidIDE Ultra?) -> Unit
+    callback: (SchemeAndroidIDE?) -> Unit
   ) {
 
     // If the scheme has already been loaded, do not bother to dispatch an IO coroutine
@@ -231,7 +231,7 @@ object IDEColorSchemeProvider {
   fun readScheme(
     context: Context,
     type: String? = null
-  ): SchemeAndroidIDE Ultra? {
+  ): SchemeAndroidIDE? {
     val scheme = getColorSchemeForType(type)
     if (scheme == null) {
       log.error("Failed to read color scheme")

@@ -66,7 +66,7 @@ import com.willow.androidide.ultra.models.Range
 import com.willow.androidide.ultra.preferences.internal.EditorPreferences
 import com.willow.androidide.ultra.progress.ICancelChecker
 import com.willow.androidide.ultra.syntax.colorschemes.DynamicColorScheme
-import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra
+import com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE
 import com.willow.androidide.ultra.tasks.JobCancelChecker
 import com.willow.androidide.ultra.tasks.cancelIfActive
 import com.willow.androidide.ultra.tasks.launchAsyncWithProgress
@@ -577,12 +577,12 @@ open class IDEEditor @JvmOverloads constructor(
    * Applies the given [TreeSitterLanguage] and the [color scheme][scheme] for the given [file type][type].
    */
   open fun applyTreeSitterLang(language: TreeSitterLanguage, type: String,
-    scheme: SchemeAndroidIDE Ultra?) {
+    scheme: SchemeAndroidIDE?) {
     applyTreeSitterLangInternal(language, type, scheme)
   }
 
   private fun applyTreeSitterLangInternal(language: TreeSitterLanguage, type: String,
-    scheme: SchemeAndroidIDE Ultra?) {
+    scheme: SchemeAndroidIDE?) {
     if (isReleased) {
       return
     }
@@ -590,7 +590,7 @@ open class IDEEditor @JvmOverloads constructor(
       scheme
     } else {
       log.error("Failed to read current color scheme")
-      SchemeAndroidIDE Ultra.newInstance(context)
+      SchemeAndroidIDE.newInstance(context)
     }
 
     if (finalScheme is IDEColorScheme) {
@@ -599,7 +599,7 @@ open class IDEEditor @JvmOverloads constructor(
 
       if (finalScheme.getLanguageScheme(type) == null) {
         log.warn("Color scheme does not support file type '{}'", type)
-        finalScheme = SchemeAndroidIDE Ultra.newInstance(context)
+        finalScheme = SchemeAndroidIDE.newInstance(context)
       }
     }
 
@@ -663,7 +663,7 @@ open class IDEEditor @JvmOverloads constructor(
     markUnmodified()
 
     searcher = IDEEditorSearcher(this)
-    colorScheme = SchemeAndroidIDE Ultra.newInstance(context)
+    colorScheme = SchemeAndroidIDE.newInstance(context)
     inputType = createInputTypeFlags()
 
     val window = EditorCompletionWindow(this)

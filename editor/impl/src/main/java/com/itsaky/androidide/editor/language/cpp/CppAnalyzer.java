@@ -17,13 +17,13 @@
 
 package com.willow.androidide.ultra.editor.language.cpp;
 
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.LITERAL;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.OPERATOR;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.TEXT_NORMAL;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.TYPE_NAME;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.forComment;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.forKeyword;
-import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE Ultra.forString;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.LITERAL;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.OPERATOR;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.TEXT_NORMAL;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.TYPE_NAME;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.forComment;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.forKeyword;
+import static com.willow.androidide.ultra.syntax.colorschemes.SchemeAndroidIDE.forString;
 import static io.github.rosemoe.sora.lang.styling.TextStyle.makeStyle;
 
 import com.willow.androidide.ultra.editor.language.incremental.BaseIncrementalAnalyzeManager;
