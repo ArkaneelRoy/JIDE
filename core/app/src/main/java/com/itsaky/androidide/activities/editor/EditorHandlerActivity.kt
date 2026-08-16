@@ -28,6 +28,7 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.collection.MutableIntObjectMap
 import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
 import com.blankj.utilcode.util.ImageUtils

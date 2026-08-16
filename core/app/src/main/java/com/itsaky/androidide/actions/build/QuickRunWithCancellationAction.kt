@@ -33,6 +33,7 @@ import com.willow.androidide.ultra.projects.android.AndroidModule
 import com.willow.androidide.ultra.projects.builder.BuildService
 import com.google.android.material.R as MaterialR
 import com.willow.androidide.ultra.resources.R
+import com.willow.androidide.ultra.resources.R.string
 import com.willow.androidide.ultra.tooling.api.messages.result.TaskExecutionResult
 import com.willow.androidide.ultra.tooling.api.models.BasicAndroidVariantMetadata
 import com.willow.androidide.ultra.utils.ApkInstaller
@@ -179,7 +180,7 @@ class QuickRunWithCancellationAction(context: Context, override val order: Int) 
     log.info("Sending build cancellation request...")
     val builder = Lookup.getDefault().lookup(BuildService.KEY_BUILD_SERVICE)
     if (builder?.isToolingServerStarted() != true) {
-      flashError(com.willow.androidide.ultra.projects.R.string.msg_tooling_server_unavailable)
+      flashError(R.string.msg_tooling_server_unavailable)
       return false
     }
 
