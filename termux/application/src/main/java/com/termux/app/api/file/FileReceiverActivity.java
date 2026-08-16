@@ -155,8 +155,8 @@ public class FileReceiverActivity extends AppCompatActivity {
     }
 
     void promptNameAndSave(final InputStream in, final String attachmentFileName) {
-        TextInputDialogUtils.textInput(this, R.string.title_file_received, attachmentFileName,
-            R.string.action_file_received_edit, text -> {
+        TextInputDialogUtils.textInput(this, com.willow.androidide.ultra.resources.R.string.title_file_received, attachmentFileName,
+            com.willow.androidide.ultra.resources.R.string.action_file_received_edit, text -> {
                 File outFile = saveStreamWithName(in, text);
                 if (outFile == null) return;
 
@@ -179,7 +179,7 @@ public class FileReceiverActivity extends AppCompatActivity {
                 startService(executeIntent);
                 finish();
             },
-            R.string.action_file_received_open_directory, text -> {
+            com.willow.androidide.ultra.resources.R.string.action_file_received_open_directory, text -> {
                 if (saveStreamWithName(in, text) == null) return;
 
                 Intent executeIntent = new Intent(TERMUX_SERVICE.ACTION_SERVICE_EXECUTE);

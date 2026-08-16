@@ -258,7 +258,7 @@ public class TermuxActivity extends BaseIDEActivity implements ServiceConnection
             Logger.logStackTraceWithMessage(LOG_TAG,"TermuxActivity failed to start TermuxService", e);
             Logger.showToast(this,
                 getString(e.getMessage() != null && e.getMessage().contains("app is in background") ?
-                    R.string.error_termux_service_start_failed_bg : R.string.error_termux_service_start_failed_general),
+                    com.willow.androidide.ultra.resources.R.string.error_termux_service_start_failed_bg : com.willow.androidide.ultra.resources.R.string.error_termux_service_start_failed_general),
                 true);
             mIsInvalidState = true;
             return;
@@ -595,7 +595,7 @@ public class TermuxActivity extends BaseIDEActivity implements ServiceConnection
         if (terminalToolbarViewPager == null) return;
 
         final boolean showNow = mPreferences.toogleShowTerminalToolbar();
-        Logger.showToast(this, (showNow ? getString(R.string.msg_enabling_terminal_toolbar) : getString(R.string.msg_disabling_terminal_toolbar)), true);
+        Logger.showToast(this, (showNow ? getString(com.willow.androidide.ultra.resources.R.string.msg_enabling_terminal_toolbar) : getString(com.willow.androidide.ultra.resources.R.string.msg_disabling_terminal_toolbar)), true);
         terminalToolbarViewPager.setVisibility(showNow ? View.VISIBLE : View.GONE);
         if (showNow && isTerminalToolbarTextInputViewSelected()) {
             // Focus the text input view if just revealed.
@@ -617,9 +617,9 @@ public class TermuxActivity extends BaseIDEActivity implements ServiceConnection
         View newSessionButton = findViewById(R.id.new_session_button);
         newSessionButton.setOnClickListener(v -> onCreateNewSession(false, null, null));
         newSessionButton.setOnLongClickListener(v -> {
-            TextInputDialogUtils.textInput(TermuxActivity.this, R.string.title_create_named_session, null,
-                R.string.action_create_named_session_confirm, text -> onCreateNewSession(false, text, null),
-                R.string.action_new_session_failsafe, text -> onCreateNewSession(true, text, null),
+            TextInputDialogUtils.textInput(TermuxActivity.this, com.willow.androidide.ultra.resources.R.string.title_create_named_session, null,
+                com.willow.androidide.ultra.resources.R.string.action_create_named_session_confirm, text -> onCreateNewSession(false, text, null),
+                com.willow.androidide.ultra.resources.R.string.action_new_session_failsafe, text -> onCreateNewSession(true, text, null),
                 -1, null, null);
             return true;
         });
@@ -686,17 +686,17 @@ public class TermuxActivity extends BaseIDEActivity implements ServiceConnection
             }
         }
 
-        menu.add(Menu.NONE, CONTEXT_MENU_SELECT_URL_ID, Menu.NONE, R.string.action_select_url);
-        menu.add(Menu.NONE, CONTEXT_MENU_SHARE_TRANSCRIPT_ID, Menu.NONE, R.string.action_share_transcript);
+        menu.add(Menu.NONE, CONTEXT_MENU_SELECT_URL_ID, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_select_url);
+        menu.add(Menu.NONE, CONTEXT_MENU_SHARE_TRANSCRIPT_ID, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_share_transcript);
         if (!DataUtils.isNullOrEmpty(mTerminalView.getStoredSelectedText()))
-            menu.add(Menu.NONE, CONTEXT_MENU_SHARE_SELECTED_TEXT, Menu.NONE, R.string.action_share_selected_text);
+            menu.add(Menu.NONE, CONTEXT_MENU_SHARE_SELECTED_TEXT, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_share_selected_text);
         if (addAutoFillMenu)
-            menu.add(Menu.NONE, CONTEXT_MENU_AUTOFILL_ID, Menu.NONE, R.string.action_autofill_password);
-        menu.add(Menu.NONE, CONTEXT_MENU_RESET_TERMINAL_ID, Menu.NONE, R.string.action_reset_terminal);
-        menu.add(Menu.NONE, CONTEXT_MENU_KILL_PROCESS_ID, Menu.NONE, getResources().getString(R.string.action_kill_process, getCurrentSession().getPid())).setEnabled(currentSession.isRunning());
-        menu.add(Menu.NONE, CONTEXT_MENU_TOGGLE_KEEP_SCREEN_ON, Menu.NONE, R.string.action_toggle_keep_screen_on).setCheckable(true).setChecked(mPreferences.shouldKeepScreenOn());
-        menu.add(Menu.NONE, CONTEXT_MENU_HELP_ID, Menu.NONE, R.string.action_open_help);
-        menu.add(Menu.NONE, CONTEXT_MENU_REPORT_ID, Menu.NONE, R.string.action_report_issue);
+            menu.add(Menu.NONE, CONTEXT_MENU_AUTOFILL_ID, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_autofill_password);
+        menu.add(Menu.NONE, CONTEXT_MENU_RESET_TERMINAL_ID, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_reset_terminal);
+        menu.add(Menu.NONE, CONTEXT_MENU_KILL_PROCESS_ID, Menu.NONE, getResources().getString(com.willow.androidide.ultra.resources.R.string.action_kill_process, getCurrentSession().getPid())).setEnabled(currentSession.isRunning());
+        menu.add(Menu.NONE, CONTEXT_MENU_TOGGLE_KEEP_SCREEN_ON, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_toggle_keep_screen_on).setCheckable(true).setChecked(mPreferences.shouldKeepScreenOn());
+        menu.add(Menu.NONE, CONTEXT_MENU_HELP_ID, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_open_help);
+        menu.add(Menu.NONE, CONTEXT_MENU_REPORT_ID, Menu.NONE, com.willow.androidide.ultra.resources.R.string.action_report_issue);
     }
 
     /** Hook system menu to show context menu instead. */
@@ -755,7 +755,7 @@ public class TermuxActivity extends BaseIDEActivity implements ServiceConnection
 
         final AlertDialog.Builder b = new AlertDialog.Builder(this);
         b.setIcon(android.R.drawable.ic_dialog_alert);
-        b.setMessage(R.string.title_confirm_kill_process);
+        b.setMessage(com.willow.androidide.ultra.resources.R.string.title_confirm_kill_process);
         b.setPositiveButton(android.R.string.yes, (dialog, id) -> {
             dialog.dismiss();
             session.finishIfRunning();
@@ -767,7 +767,7 @@ public class TermuxActivity extends BaseIDEActivity implements ServiceConnection
     private void onResetTerminalSession(TerminalSession session) {
         if (session != null) {
             session.reset();
-            showToast(getResources().getString(R.string.msg_terminal_reset), true);
+            showToast(getResources().getString(com.willow.androidide.ultra.resources.R.string.msg_terminal_reset), true);
 
             if (mTermuxTerminalSessionActivityClient != null)
                 mTermuxTerminalSessionActivityClient.onResetTerminalSession();

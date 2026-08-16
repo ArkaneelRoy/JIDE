@@ -72,13 +72,13 @@ public final class TermuxInstaller {
         // Termux can only be run as the primary user (device owner) since only that
         // account has the expected file system paths. Verify that:
         if (!PackageUtils.isCurrentUserThePrimaryUser(activity)) {
-            bootstrapErrorMessage = activity.getString(R.string.bootstrap_error_not_primary_user_message,
+            bootstrapErrorMessage = activity.getString(com.willow.androidide.ultra.resources.R.string.bootstrap_error_not_primary_user_message,
                 MarkdownUtils.getMarkdownCodeForString(TERMUX_PREFIX_DIR_PATH, false));
             Logger.logError(LOG_TAG, "isFilesDirectoryAccessible: " + isFilesDirectoryAccessible);
             Logger.logError(LOG_TAG, bootstrapErrorMessage);
             sendBootstrapCrashReportNotification(activity, bootstrapErrorMessage);
             MessageDialogUtils.exitAppWithErrorMessage(activity,
-                activity.getString(R.string.bootstrap_error_title),
+                activity.getString(com.willow.androidide.ultra.resources.R.string.bootstrap_error_title),
                 bootstrapErrorMessage);
             return;
         }
@@ -88,14 +88,14 @@ public final class TermuxInstaller {
             //noinspection SdCardPath
             if (PackageUtils.isAppInstalledOnExternalStorage(activity) &&
                 !TermuxConstants.TERMUX_FILES_DIR_PATH.equals(activity.getFilesDir().getAbsolutePath().replaceAll("^/data/user/0/", "/data/data/"))) {
-                bootstrapErrorMessage += "\n\n" + activity.getString(R.string.bootstrap_error_installed_on_portable_sd,
+                bootstrapErrorMessage += "\n\n" + activity.getString(com.willow.androidide.ultra.resources.R.string.bootstrap_error_installed_on_portable_sd,
                     MarkdownUtils.getMarkdownCodeForString(TERMUX_PREFIX_DIR_PATH, false));
             }
 
             Logger.logError(LOG_TAG, bootstrapErrorMessage);
             sendBootstrapCrashReportNotification(activity, bootstrapErrorMessage);
             MessageDialogUtils.showMessage(activity,
-                activity.getString(R.string.bootstrap_error_title),
+                activity.getString(com.willow.androidide.ultra.resources.R.string.bootstrap_error_title),
                 bootstrapErrorMessage, null);
             return;
         }
@@ -111,7 +111,7 @@ public final class TermuxInstaller {
             Logger.logInfo(LOG_TAG, "The termux prefix directory \"" + TERMUX_PREFIX_DIR_PATH + "\" does not exist but another file exists at its destination.");
         }
 
-        final ProgressDialog progress = ProgressDialog.show(activity, null, activity.getString(R.string.bootstrap_installer_body), true, false);
+        final ProgressDialog progress = ProgressDialog.show(activity, null, activity.getString(com.willow.androidide.ultra.resources.R.string.bootstrap_installer_body), true, false);
         new Thread() {
             @Override
             public void run() {
@@ -244,12 +244,12 @@ public final class TermuxInstaller {
 
         activity.runOnUiThread(() -> {
             try {
-                new AlertDialog.Builder(activity).setTitle(R.string.bootstrap_error_title).setMessage(R.string.bootstrap_error_body)
-                    .setNegativeButton(R.string.bootstrap_error_abort, (dialog, which) -> {
+                new AlertDialog.Builder(activity).setTitle(com.willow.androidide.ultra.resources.R.string.bootstrap_error_title).setMessage(com.willow.androidide.ultra.resources.R.string.bootstrap_error_body)
+                    .setNegativeButton(com.willow.androidide.ultra.resources.R.string.bootstrap_error_abort, (dialog, which) -> {
                         dialog.dismiss();
                         activity.finish();
                     })
-                    .setPositiveButton(R.string.bootstrap_error_try_again, (dialog, which) -> {
+                    .setPositiveButton(com.willow.androidide.ultra.resources.R.string.bootstrap_error_try_again, (dialog, which) -> {
                         dialog.dismiss();
                         FileUtils.deleteFile("termux prefix directory", TERMUX_PREFIX_DIR_PATH, true);
                         TermuxInstaller.setupBootstrapIfNeeded(activity, whenDone);

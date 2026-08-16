@@ -673,15 +673,15 @@ public class TermuxTerminalViewClient extends TermuxTerminalViewClientBase {
 
         // See https://github.com/termux/termux-app/issues/1166.
         transcriptText = DataUtils.getTruncatedCommandOutput(transcriptText, DataUtils.TRANSACTION_SIZE_LIMIT_IN_BYTES, false, true, false).trim();
-        ShareUtils.shareText(mActivity, mActivity.getString(R.string.title_share_transcript),
-            transcriptText, mActivity.getString(R.string.title_share_transcript_with));
+        ShareUtils.shareText(mActivity, mActivity.getString(com.willow.androidide.ultra.resources.R.string.title_share_transcript),
+            transcriptText, mActivity.getString(com.willow.androidide.ultra.resources.R.string.title_share_transcript_with));
     }
 
     public void shareSelectedText() {
         String selectedText = mActivity.getTerminalView().getStoredSelectedText();
         if (DataUtils.isNullOrEmpty(selectedText)) return;
-        ShareUtils.shareText(mActivity, mActivity.getString(R.string.title_share_selected_text),
-            selectedText, mActivity.getString(R.string.title_share_selected_text_with));
+        ShareUtils.shareText(mActivity, mActivity.getString(com.willow.androidide.ultra.resources.R.string.title_share_selected_text),
+            selectedText, mActivity.getString(com.willow.androidide.ultra.resources.R.string.title_share_selected_text_with));
     }
 
     public void showUrlSelection() {
@@ -692,7 +692,7 @@ public class TermuxTerminalViewClient extends TermuxTerminalViewClientBase {
 
         LinkedHashSet<CharSequence> urlSet = TermuxUrlUtils.extractUrls(text);
         if (urlSet.isEmpty()) {
-            new AlertDialog.Builder(mActivity).setMessage(R.string.title_select_url_none_found).show();
+            new AlertDialog.Builder(mActivity).setMessage(com.willow.androidide.ultra.resources.R.string.title_select_url_none_found).show();
             return;
         }
 
@@ -702,8 +702,8 @@ public class TermuxTerminalViewClient extends TermuxTerminalViewClientBase {
         // Click to copy url to clipboard:
         final AlertDialog dialog = new AlertDialog.Builder(mActivity).setItems(urls, (di, which) -> {
             String url = (String) urls[which];
-            ShareUtils.copyTextToClipboard(mActivity, url, mActivity.getString(R.string.msg_select_url_copied_to_clipboard));
-        }).setTitle(R.string.title_select_url_dialog).create();
+            ShareUtils.copyTextToClipboard(mActivity, url, mActivity.getString(com.willow.androidide.ultra.resources.R.string.msg_select_url_copied_to_clipboard));
+        }).setTitle(com.willow.androidide.ultra.resources.R.string.title_select_url_dialog).create();
 
         // Long press to open URL:
         dialog.setOnShowListener(di -> {
@@ -727,14 +727,14 @@ public class TermuxTerminalViewClient extends TermuxTerminalViewClientBase {
         if (transcriptText == null) return;
 
         MessageDialogUtils.showMessage(mActivity, TermuxConstants.TERMUX_APP_NAME + " Report Issue",
-            mActivity.getString(R.string.msg_add_termux_debug_info),
-            mActivity.getString(R.string.action_yes), (dialog, which) -> reportIssueFromTranscript(transcriptText, true),
-            mActivity.getString(R.string.action_no), (dialog, which) -> reportIssueFromTranscript(transcriptText, false),
+            mActivity.getString(com.willow.androidide.ultra.resources.R.string.msg_add_termux_debug_info),
+            mActivity.getString(com.willow.androidide.ultra.resources.R.string.action_yes), (dialog, which) -> reportIssueFromTranscript(transcriptText, true),
+            mActivity.getString(com.willow.androidide.ultra.resources.R.string.action_no), (dialog, which) -> reportIssueFromTranscript(transcriptText, false),
             null);
     }
 
     private void reportIssueFromTranscript(String transcriptText, boolean addTermuxDebugInfo) {
-        Logger.showToast(mActivity, mActivity.getString(R.string.msg_generating_report), true);
+        Logger.showToast(mActivity, mActivity.getString(com.willow.androidide.ultra.resources.R.string.msg_generating_report), true);
 
         new Thread() {
             @Override
