@@ -35,7 +35,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.slider.Slider;
-import com.willow.androidide.ultra.resources.R;
+import com.willow.androidide.ultra.common.R;
 import com.willow.androidide.ultra.common.databinding.LayoutColorPickerBinding;
 
 /**
@@ -88,7 +88,7 @@ public class ColorPickerView extends LinearLayout {
   public ColorPickerView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
 
-    this.DEFAULT_COLOR = ContextCompat.getColor(context, R.color.color_picker_default_color);
+    this.DEFAULT_COLOR = ContextCompat.getColor(context, com.willow.androidide.ultra.resources.R.color.color_picker_default_color);
 
     this.binding = LayoutColorPickerBinding.inflate(LayoutInflater.from(context));
 
