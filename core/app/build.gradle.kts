@@ -19,7 +19,7 @@
 
 import com.willow.androidide.ultra.build.config.BuildConfig
 import com.willow.androidide.ultra.desugaring.utils.JavaIOReplacements.applyJavaIOReplacements
-import com.willow.androidide.ultra.plugins.AndroidIDE UltraAssetsPlugin
+import com.willow.androidide.ultra.plugins.AndroidIDEUltraAssetsPlugin
 
 plugins {
   id("com.willow.androidide.ultra.core-app")
@@ -32,7 +32,7 @@ plugins {
 }
 
 apply {
-  plugin(AndroidIDE UltraAssetsPlugin::class.java)
+  plugin(AndroidIDEUltraAssetsPlugin::class.java)
 }
 
 buildscript {
