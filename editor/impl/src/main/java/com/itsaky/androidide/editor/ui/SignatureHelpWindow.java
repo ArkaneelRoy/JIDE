@@ -17,7 +17,7 @@
 
 package com.willow.androidide.ultra.editor.ui;
 
-import static com.willow.androidide.ultra.editor.R.attr;
+import static com.google.android.material.R.attr;
 
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
