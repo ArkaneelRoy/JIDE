@@ -62,10 +62,9 @@ captures/
 .idea/deploymentTargetSelector.xml
 .idea/studiobot.xml
 
-# Keystore files
-# Uncomment the following lines if you do not want to check your keystore files in.
-#*.jks
-#*.keystore
+# Keystore files must never be committed; CI obtains release signing material from secrets.
+*.jks
+*.keystore
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
