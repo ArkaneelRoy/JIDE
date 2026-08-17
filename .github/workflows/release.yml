@@ -104,6 +104,16 @@ jobs:
           RELEASE_VERSION: ${{ steps.release_meta.outputs.tag }}
         run: scripts/prepare_release_assets.sh dist
 
+      - name: Verify release APK signatures
+        run: |
+          set -Eeuo pipefail
+          sdk_root="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
+          apksigner="${sdk_root}/build-tools/34.0.0/apksigner"
+          [[ -x "${apksigner}" ]] || { echo "Unable to locate apksigner at ${apksigner}" >&2; exit 1; }
+          for apk in dist/*.apk; do
+            "${apksigner}" verify --verbose "${apk}"
+          done
+
       - name: Upload release assets
         uses: actions/upload-artifact@v4
         with:
