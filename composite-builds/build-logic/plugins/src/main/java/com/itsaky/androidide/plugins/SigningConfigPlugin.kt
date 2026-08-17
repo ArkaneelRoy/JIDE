@@ -43,11 +43,20 @@ class SigningConfigPlugin : Plugin<Project> {
         return
       }
 
+      fun useDebugSigningForRelease() {
+        if (plugins.hasPlugin("com.android.application")) {
+          extensions.getByType(BaseExtension::class.java).apply {
+            buildTypes.getByName("release").signingConfig = signingConfigs.getByName("debug")
+          }
+          logger.warn("External signing key unavailable; release APK will use the debug keystore.")
+        }
+      }
+
       downloadSigningKey()
 
       val signingKey = signingKey.get().asFile
       if (!signingKey.exists()) {
-        logger.warn("Signing key not found. Debug signing will be used.")
+        useDebugSigningForRelease()
         return
       }
 
@@ -73,6 +82,7 @@ class SigningConfigPlugin : Plugin<Project> {
           logger.warn(
             "Signing info not configured. keystoreFile=$signingKey[exists=${signingKey.exists()}]"
           )
+          useDebugSigningForRelease()
           null
         }
       }
