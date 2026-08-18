@@ -302,6 +302,48 @@ if [ ! -f "$install_dir" ]; then
   mkdir -p "$install_dir"
 fi
 
+# Older AndroidIDE builds shipped Termux scripts with absolute paths for the
+# original package name. Repair the package-manager scripts in place before
+# invoking pkg, since the SDK setup session can outlive the app bootstrap step.
+repair_legacy_termux_prefix() {
+  local prefix="${PREFIX:-}"
+  if [ -z "$prefix" ] || [ ! -d "$prefix" ]; then
+    print_err "Termux PREFIX is unavailable; cannot repair package-manager paths."
+    exit 1
+  fi
+
+  local app_data="${prefix%/files/usr}"
+  local script
+  for script in "$prefix/bin/pkg" "$prefix/bin/termux-setup-package-manager"; do
+    if [ -f "$script" ]; then
+      sed -i \
+        -e "s|/data/data/com.itsaky.androidide|$app_data|g" \
+        -e "s|/data/user/0/com.itsaky.androidide|$app_data|g" \
+        -e "s|/data/data/com.termux|$app_data|g" \
+        -e "s|/data/user/0/com.termux|$app_data|g" \
+        "$script"
+    fi
+  done
+
+  # apt may retain the old compiled default for its configuration-parts
+  # directory. APT_CONFIG overrides that default for this setup process.
+  local apt_config="$prefix/etc/apt/apt.conf"
+  mkdir -p "$(dirname "$apt_config")"
+  cat > "$apt_config" <<EOF
+Dir::Etc::sourcelist "$prefix/etc/apt/sources.list";
+Dir::Etc::sourceparts "$prefix/etc/apt/sources.list.d";
+Dir::Etc::main "$apt_config";
+Dir::Etc::parts "$prefix/etc/apt/apt.conf.d";
+Dir::State "$prefix/var/lib/apt";
+Dir::Cache "$prefix/var/cache/apt";
+Dir::Etc::trusted "$prefix/etc/apt/trusted.gpg";
+Dir::Etc::trustedparts "$prefix/etc/apt/trusted.gpg.d";
+EOF
+  export APT_CONFIG="$apt_config"
+}
+
+repair_legacy_termux_prefix
+
 if [ ! command -v "$pkgm" ] &>/dev/null; then
   print_err "'$pkgm' command not found. Try installing 'termux-tools' and 'apt'."
   exit 1
