@@ -28,9 +28,11 @@ import com.termux.shared.termux.file.TermuxFileUtils;
 import com.termux.shared.termux.shell.command.environment.TermuxShellEnvironment;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -164,7 +166,7 @@ public final class TermuxInstaller {
                                     String[] parts = line.split("←");
                                     if (parts.length != 2)
                                         throw new RuntimeException("Malformed symlink line: " + line);
-                                    String oldPath = parts[0];
+                                    String oldPath = rewriteLegacyPrefix(parts[0]);
                                     String newPath = TERMUX_STAGING_PREFIX_DIR_PATH + "/" + parts[1];
                                     symlinks.add(Pair.create(oldPath, newPath));
 
@@ -186,11 +188,18 @@ public final class TermuxInstaller {
                                 }
 
                                 if (!isDirectory) {
+                                    ByteArrayOutputStream entryBytes = new ByteArrayOutputStream();
+                                    int readBytes;
+                                    while ((readBytes = zipInput.read(buffer)) != -1)
+                                        entryBytes.write(buffer, 0, readBytes);
+                                    byte[] rawContents = entryBytes.toByteArray();
+                                    byte[] contents = zipEntryName.startsWith("bin/")
+                                        ? rewriteLegacyPrefix(rawContents)
+                                        : rawContents;
                                     try (FileOutputStream outStream = new FileOutputStream(targetFile)) {
-                                        int readBytes;
-                                        while ((readBytes = zipInput.read(buffer)) != -1)
-                                            outStream.write(buffer, 0, readBytes);
+                                        outStream.write(contents);
                                     }
+
                                     if (zipEntryName.startsWith("bin/") || zipEntryName.startsWith("libexec") ||
                                         zipEntryName.startsWith("lib/apt/apt-helper") || zipEntryName.startsWith("lib/apt/methods")) {
                                         //noinspection OctalInteger
@@ -370,6 +379,35 @@ public final class TermuxInstaller {
 
     private static Error ensureDirectoryExists(File directory) {
         return FileUtils.createDirectoryFile(directory.getAbsolutePath());
+    }
+
+    /**
+     * Bootstrap archives may have been built for an older AndroidIDE/Termux package name.
+     * Rewrite those absolute prefix references to the current app's prefix while preserving
+     * binary ELF entries byte-for-byte.
+     */
+    private static String rewriteLegacyPrefix(String value) {
+        String rewritten = value;
+        String[] legacyPrefixes = {
+            "/data/data/com.itsaky.androidide/files/usr",
+            "/data/user/0/com.itsaky.androidide/files/usr",
+            "/data/data/com.termux/files/usr",
+            "/data/user/0/com.termux/files/usr"
+        };
+        for (String legacyPrefix : legacyPrefixes) {
+            rewritten = rewritten.replace(legacyPrefix, TERMUX_PREFIX_DIR_PATH);
+        }
+        return rewritten;
+    }
+
+    private static byte[] rewriteLegacyPrefix(byte[] contents) {
+        if (contents.length >= 4 && contents[0] == 0x7f && contents[1] == 'E' &&
+            contents[2] == 'L' && contents[3] == 'F') {
+            return contents;
+        }
+        String text = new String(contents, StandardCharsets.ISO_8859_1);
+        String rewritten = rewriteLegacyPrefix(text);
+        return rewritten.equals(text) ? contents : rewritten.getBytes(StandardCharsets.ISO_8859_1);
     }
 
     public static byte[] loadZipBytes() {
