@@ -328,19 +328,48 @@ repair_legacy_termux_prefix() {
   # apt may retain the old compiled default for its configuration-parts
   # directory. APT_CONFIG overrides that default for this setup process.
   local apt_config="$prefix/etc/apt/apt.conf"
-  mkdir -p "$(dirname "$apt_config")"
+  local apt_etc="$prefix/etc/apt"
+  local apt_cache="$prefix/var/cache/apt"
+  local apt_state="$prefix/var/lib/apt"
+  mkdir -p \
+    "$apt_etc/apt.conf.d" \
+    "$apt_etc/preferences.d" \
+    "$apt_etc/sources.list.d" \
+    "$apt_etc/trusted.gpg.d" \
+    "$apt_cache/archives/partial" \
+    "$apt_state/lists/partial" \
+    "$(dirname "$apt_config")"
   cat > "$apt_config" <<EOF
-Dir::Etc::sourcelist "$prefix/etc/apt/sources.list";
-Dir::Etc::sourceparts "$prefix/etc/apt/sources.list.d";
+Dir::Etc::sourcelist "$apt_etc/sources.list";
+Dir::Etc::sourceparts "$apt_etc/sources.list.d";
 Dir::Etc::main "$apt_config";
-Dir::Etc::parts "$prefix/etc/apt/apt.conf.d";
-Dir::State "$prefix/var/lib/apt";
-Dir::Cache "$prefix/var/cache/apt";
-Dir::Etc::trusted "$prefix/etc/apt/trusted.gpg";
-Dir::Etc::trustedparts "$prefix/etc/apt/trusted.gpg.d";
+Dir::Etc::parts "$apt_etc/apt.conf.d";
+Dir::Etc::preferences "$apt_etc/preferences";
+Dir::Etc::preferencesparts "$apt_etc/preferences.d";
+Dir::State "$apt_state";
+Dir::State::lists "$apt_state/lists";
+Dir::Cache "$apt_cache";
+Dir::Cache::archives "$apt_cache/archives";
+Dir::Etc::trusted "$apt_etc/trusted.gpg";
+Dir::Etc::trustedparts "$apt_etc/trusted.gpg.d";
 Dir::Bin::methods "$prefix/lib/apt/methods";
 EOF
   export APT_CONFIG="$apt_config"
+
+  # Prefer the bootstrap CA bundle. If an older bootstrap omitted it, allow
+  # only the initial repository refresh to bootstrap ca-certificates; apt still
+  # verifies downloaded package signatures before installation.
+  local cert_file="$prefix/etc/tls/cert.pem"
+  if [ -s "$cert_file" ]; then
+    export SSL_CERT_FILE="$cert_file"
+    export CURL_CA_BUNDLE="$cert_file"
+    printf 'Acquire::https::CaInfo "%s";\n' "$cert_file" >> "$apt_config"
+  else
+    print_warn "No Termux CA bundle found; using temporary TLS verification fallback for bootstrap."
+    printf '%s\n' \
+      'Acquire::https::Verify-Peer "false";' \
+      'Acquire::https::Verify-Host "false";' >> "$apt_config"
+  fi
 }
 
 repair_legacy_termux_prefix
