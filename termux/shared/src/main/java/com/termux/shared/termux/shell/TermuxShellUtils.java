@@ -18,6 +18,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +34,10 @@ public class TermuxShellUtils {
             Logger.logWarn(LOG_TAG, "Termux prefix is missing libandroid-support.so");
             return false;
         }
+        if (!failsafe && fileContainsLegacyPrefix(new File(Environment.BIN_DIR, "pkg"))) {
+            Logger.logWarn(LOG_TAG, "Termux prefix contains a legacy package path; re-bootstrap required");
+            return false;
+        }
         for (String shellBinary : UnixShellEnvironment.LOGIN_SHELL_BINARIES) {
             File shellFile = new File(Environment.BIN_DIR, shellBinary);
             if (shellFile.canExecute()) {
@@ -41,6 +46,19 @@ public class TermuxShellUtils {
         }
 
         return false;
+    }
+
+    private static boolean fileContainsLegacyPrefix(File file) {
+        if (!file.isFile()) return true;
+        try (FileInputStream input = new FileInputStream(file)) {
+            byte[] buffer = new byte[8192];
+            int count = input.read(buffer);
+            if (count <= 0) return true;
+            String contents = new String(buffer, 0, count, StandardCharsets.ISO_8859_1);
+            return contents.contains("com.itsaky.androidide") || contents.contains("com.termux");
+        } catch (IOException e) {
+            return true;
+        }
     }
 
     /**
