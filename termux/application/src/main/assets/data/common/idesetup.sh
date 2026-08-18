@@ -338,6 +338,7 @@ Dir::State "$prefix/var/lib/apt";
 Dir::Cache "$prefix/var/cache/apt";
 Dir::Etc::trusted "$prefix/etc/apt/trusted.gpg";
 Dir::Etc::trustedparts "$prefix/etc/apt/trusted.gpg.d";
+Dir::Bin::methods "$prefix/lib/apt/methods";
 EOF
   export APT_CONFIG="$apt_config"
 }
