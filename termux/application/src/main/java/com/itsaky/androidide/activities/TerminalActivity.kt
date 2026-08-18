@@ -31,6 +31,7 @@ import com.willow.androidide.ultra.utils.Environment
 import com.willow.androidide.ultra.utils.flashError
 import com.termux.R
 import com.termux.app.TermuxActivity
+import com.termux.app.TermuxInstaller
 import com.termux.app.terminal.TermuxTerminalSessionActivityClient
 import com.termux.shared.termux.shell.command.runner.terminal.TermuxSession
 import org.slf4j.LoggerFactory
@@ -108,7 +109,11 @@ class TerminalActivity : TermuxActivity() {
       val runIdesetup = intent.getBooleanExtra(EXTRA_ONBOARDING_RUN_IDESETUP, false)
       val runIdesetupArgs = intent.getStringArrayExtra(EXTRA_ONBOARDING_RUN_IDESETUP_ARGS)
       if (runIdesetup && !runIdesetupArgs.isNullOrEmpty()) {
-        addIdesetupSession(runIdesetupArgs)
+        // SDK setup invokes pkg immediately. Validate or rebuild the Termux prefix first,
+        // including prefixes left behind by older AndroidIDE package names.
+        TermuxInstaller.setupBootstrapIfNeeded(this) {
+          addIdesetupSession(runIdesetupArgs)
+        }
         return
       }
     }
