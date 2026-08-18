@@ -27,6 +27,12 @@ public class TermuxShellUtils {
     private static final String LOG_TAG = "TermuxShellUtils";
 
     public static boolean shellExists(boolean failsafe) {
+        // The bundled upstream Termux binaries depend on this library. If it is absent,
+        // consider the prefix incomplete so TermuxInstaller can re-bootstrap it.
+        if (!failsafe && !new File(Environment.LIB_DIR, "libandroid-support.so").isFile()) {
+            Logger.logWarn(LOG_TAG, "Termux prefix is missing libandroid-support.so");
+            return false;
+        }
         for (String shellBinary : UnixShellEnvironment.LOGIN_SHELL_BINARIES) {
             File shellFile = new File(Environment.BIN_DIR, shellBinary);
             if (shellFile.canExecute()) {

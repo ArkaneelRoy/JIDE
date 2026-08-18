@@ -80,7 +80,10 @@ public class TermuxShellEnvironment extends AndroidShellEnvironment {
         if (!isFailSafe) {
             environment.put(ENV_TMPDIR, TermuxConstants.TERMUX_TMP_PREFIX_DIR_PATH);
             environment.put(ENV_PATH, TermuxConstants.TERMUX_BIN_PREFIX_DIR_PATH + String.format(":%s/cmdline-tools/latest/bin", ANDROID_HOME.getAbsolutePath()));
-            environment.remove(ENV_LD_LIBRARY_PATH);
+            // Bootstrap binaries are built for the upstream Termux package and cannot rely on
+            // their original absolute RUNPATH after this fork relocates the prefix. Explicitly
+            // expose the fork's prefix libraries to the Android dynamic linker.
+            environment.put(ENV_LD_LIBRARY_PATH, TermuxConstants.TERMUX_PREFIX_DIR_PATH + "/lib");
         }
 
         return environment;
