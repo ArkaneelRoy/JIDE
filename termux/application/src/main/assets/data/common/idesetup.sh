@@ -314,7 +314,7 @@ repair_legacy_termux_prefix() {
 
   local app_data="${prefix%/files/usr}"
   local script
-  for script in "$prefix/bin/pkg" "$prefix/bin/termux-setup-package-manager"; do
+  for script in "$prefix/bin/pkg" "$prefix/bin/termux-setup-package-manager" "$prefix/bin/apt-key"; do
     if [ -f "$script" ]; then
       sed -i \
         -e "s|/data/data/com.itsaky.androidide|$app_data|g" \
@@ -353,6 +353,7 @@ Dir::Cache::archives "$apt_cache/archives";
 Dir::Etc::trusted "$apt_etc/trusted.gpg";
 Dir::Etc::trustedparts "$apt_etc/trusted.gpg.d";
 Dir::Bin::methods "$prefix/lib/apt/methods";
+Dir::Bin::apt-key "$prefix/bin/apt-key";
 EOF
   export APT_CONFIG="$apt_config"
 
