@@ -84,6 +84,9 @@ public class TermuxShellEnvironment extends AndroidShellEnvironment {
             // their original absolute RUNPATH after this fork relocates the prefix. Explicitly
             // expose the fork's prefix libraries to the Android dynamic linker.
             environment.put(ENV_LD_LIBRARY_PATH, TermuxConstants.TERMUX_PREFIX_DIR_PATH + "/lib");
+            // Force apt/pkg to use the relocated configuration generated at
+            // application startup, rather than the old compiled com.itsaky path.
+            environment.put("APT_CONFIG", TermuxConstants.TERMUX_ETC_PREFIX_DIR_PATH + "/apt/apt.conf");
         }
 
         return environment;

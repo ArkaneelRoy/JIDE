@@ -11,6 +11,7 @@ import com.termux.shared.termux.settings.properties.TermuxAppSharedProperties;
 import com.termux.shared.termux.shell.TermuxShellManager;
 import com.termux.shared.termux.shell.am.TermuxAmSocketServer;
 import com.termux.shared.termux.shell.command.environment.TermuxShellEnvironment;
+import com.termux.app.TermuxInstaller;
 import com.termux.shared.termux.theme.TermuxThemeUtils;
 
 public class TermuxApplication extends BaseApplication {
@@ -59,6 +60,9 @@ public class TermuxApplication extends BaseApplication {
         TermuxShellEnvironment.init(this);
 
         if (isTermuxFilesDirectoryAccessible) {
+            // Repair package-manager scripts/configuration before any fresh
+            // interactive terminal session can invoke pkg or apt.
+            TermuxInstaller.repairLegacyTermuxRuntime(this);
             TermuxShellEnvironment.writeEnvironmentToFile(this);
         }
     }

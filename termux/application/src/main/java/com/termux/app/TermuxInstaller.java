@@ -31,6 +31,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -375,6 +377,90 @@ public final class TermuxInstaller {
                 }
             }
         }.start();
+    }
+
+    /**
+     * Repair package-manager files left by bootstraps built for the old
+     * AndroidIDE package name. This is deliberately limited to text scripts
+     * and configuration files; ELF binaries are never rewritten.
+     */
+    public static void repairLegacyTermuxRuntime(Context context) {
+        File prefix = TERMUX_PREFIX_DIR;
+        if (!prefix.isDirectory()) return;
+
+        try {
+            File aptEtc = new File(prefix, "etc/apt");
+            File aptConfParts = new File(aptEtc, "apt.conf.d");
+            File aptSourcesParts = new File(aptEtc, "sources.list.d");
+            File aptPreferencesParts = new File(aptEtc, "preferences.d");
+            File aptTrustedParts = new File(aptEtc, "trusted.gpg.d");
+            File aptCache = new File(prefix, "var/cache/apt/archives/partial");
+            File aptLists = new File(prefix, "var/lib/apt/lists/partial");
+            aptConfParts.mkdirs();
+            aptSourcesParts.mkdirs();
+            aptPreferencesParts.mkdirs();
+            aptTrustedParts.mkdirs();
+            aptCache.mkdirs();
+            aptLists.mkdirs();
+
+            File[] scripts = {
+                new File(prefix, "bin/pkg"),
+                new File(prefix, "bin/termux-setup-package-manager"),
+                new File(prefix, "bin/apt-key")
+            };
+            for (File script : scripts) rewriteLegacyTextFile(script);
+
+            String aptConfig = "Dir::Etc::sourcelist \\\"" + new File(aptEtc, "sources.list") + "\\\";\\n"
+                + "Dir::Etc::sourceparts \\\"" + aptSourcesParts + "\\\";\\n"
+                + "Dir::Etc::main \\\"" + new File(aptEtc, "apt.conf") + "\\\";\\n"
+                + "Dir::Etc::parts \\\"" + aptConfParts + "\\\";\\n"
+                + "Dir::Etc::preferences \\\"" + new File(aptEtc, "preferences") + "\\\";\\n"
+                + "Dir::Etc::preferencesparts \\\"" + aptPreferencesParts + "\\\";\\n"
+                + "Dir::State \\\"" + new File(prefix, "var/lib/apt") + "\\\";\\n"
+                + "Dir::State::lists \\\"" + new File(prefix, "var/lib/apt/lists") + "\\\";\\n"
+                + "Dir::Cache \\\"" + new File(prefix, "var/cache/apt") + "\\\";\\n"
+                + "Dir::Cache::archives \\\"" + new File(prefix, "var/cache/apt/archives") + "\\\";\\n"
+                + "Dir::Etc::trusted \\\"" + new File(aptEtc, "trusted.gpg") + "\\\";\\n"
+                + "Dir::Etc::trustedparts \\\"" + aptTrustedParts + "\\\";\\n"
+                + "Dir::Bin::methods \\\"" + new File(prefix, "lib/apt/methods") + "\\\";\\n";
+            writeTextFile(new File(aptEtc, "apt.conf"), aptConfig);
+            String abi = android.os.Build.SUPPORTED_ABIS.length == 0 ? "aarch64" : android.os.Build.SUPPORTED_ABIS[0];
+            if ("arm64-v8a".equals(abi)) abi = "aarch64";
+            else if ("armeabi-v7a".equals(abi)) abi = "arm";
+            writeTextFile(new File(aptEtc, "sources.list"),
+                "deb [arch=" + abi + "] https://willow7737.github.io/AndroidIDE-Ultra/apt/termux-main stable main\\n");
+
+            File key = new File(aptTrustedParts, "androidide-ultra-apt-key.asc");
+            try (InputStream input = context.getAssets().open("data/common/androidide-ultra-apt-key.asc");
+                 FileOutputStream output = new FileOutputStream(key)) {
+                byte[] buffer = new byte[4096];
+                int count;
+                while ((count = input.read(buffer)) != -1) output.write(buffer, 0, count);
+            }
+        } catch (Exception e) {
+            Logger.logErrorExtended(LOG_TAG, "Failed to repair Termux package-manager runtime: " + e);
+        }
+    }
+
+    private static void rewriteLegacyTextFile(File file) throws IOException {
+        if (!file.isFile()) return;
+        try (java.io.FileInputStream input = new java.io.FileInputStream(file);
+             ByteArrayOutputStream output = new ByteArrayOutputStream()) {
+            byte[] buffer = new byte[4096];
+            int count;
+            while ((count = input.read(buffer)) != -1) output.write(buffer, 0, count);
+            byte[] original = output.toByteArray();
+            byte[] rewritten = rewriteLegacyPrefix(original);
+            if (rewritten != original) {
+                try (FileOutputStream out = new FileOutputStream(file)) { out.write(rewritten); }
+            }
+        }
+    }
+
+    private static void writeTextFile(File file, String text) throws IOException {
+        try (FileOutputStream output = new FileOutputStream(file)) {
+            output.write(text.getBytes(StandardCharsets.UTF_8));
+        }
     }
 
     private static Error ensureDirectoryExists(File directory) {

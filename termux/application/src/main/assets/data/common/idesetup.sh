@@ -19,6 +19,7 @@ assume_yes=false
 manifest="https://raw.githubusercontent.com/Willow7737/androidide-tools/main/manifest.json"
 apt_repo="https://willow7737.github.io/AndroidIDE-Ultra/apt/termux-main"
 apt_repo_key_fingerprint="4AFAA013BB9AD712FE1ECE32E13BDBFD66DF4448"
+apt_repo_key_sha256="36fad2e3d76928fb0408ed2c6abeb8d3344c4163b851eb440f4f031fb27da591"
 pkgm="pkg"
 pkg_curl="libcurl"
 pkgs="jq tar"
@@ -373,30 +374,31 @@ XLuXMAD+P/GWZqu4FewWLuzfOvTjzBa2xHxV1SNp+wY=
 =ihxd
 -----END PGP PUBLIC KEY BLOCK-----
 APT_REPOSITORY_PUBLIC_KEY
-  "$prefix/bin/apt-key" --keyring "$apt_etc/trusted.gpg" add "$key_file" >/dev/null
-  if ! "$prefix/bin/apt-key" --keyring "$apt_etc/trusted.gpg" finger | grep -q "$apt_repo_key_fingerprint"; then
-    print_err "AndroidIDE Ultra APT signing key fingerprint mismatch. Aborting."
+  local key_sha256
+  key_sha256=$(sha256sum "$key_file" | awk '{print $1}')
+  if [ "$key_sha256" != "$apt_repo_key_sha256" ]; then
+    print_err "AndroidIDE Ultra APT signing key hash mismatch. Aborting."
     exit 1
   fi
-  # Prefer the bootstrap CA bundle. If an older bootstrap omitted it, allow
-  # only the initial repository refresh to bootstrap ca-certificates; apt still
-  # verifies downloaded package signatures before installation.
+  # APT reads ASCII-armored keys from trusted.gpg.d directly. Do not invoke
+  # apt-key here: older AndroidIDE bootstraps do not include the gnupg command,
+  # and apt-key is deprecated. The pinned key hash preserves key authenticity;
+  # APT still verifies every Release/InRelease signature cryptographically.
+  # Require the bootstrap CA bundle. Never disable TLS verification for a
+  # package repository, even during first-run bootstrap.
   local cert_file="$prefix/etc/tls/cert.pem"
-  if [ -s "$cert_file" ]; then
-    export SSL_CERT_FILE="$cert_file"
-    export CURL_CA_BUNDLE="$cert_file"
-    printf 'Acquire::https::CaInfo "%s";\n' "$cert_file" >> "$apt_config"
-  else
-    print_warn "No Termux CA bundle found; using temporary TLS verification fallback for bootstrap."
-    printf '%s\n' \
-      'Acquire::https::Verify-Peer "false";' \
-      'Acquire::https::Verify-Host "false";' >> "$apt_config"
+  if [ ! -s "$cert_file" ]; then
+    print_err "Termux CA bundle is missing at $cert_file; refusing insecure repository access."
+    exit 1
   fi
+  export SSL_CERT_FILE="$cert_file"
+  export CURL_CA_BUNDLE="$cert_file"
+  printf 'Acquire::https::CaInfo "%s";\n' "$cert_file" >> "$apt_config"
 }
 
 repair_legacy_termux_prefix
 
-if [ ! command -v "$pkgm" ] &>/dev/null; then
+if ! command -v "$pkgm" &>/dev/null; then
   print_err "'$pkgm' command not found. Try installing 'termux-tools' and 'apt'."
   exit 1
 fi
