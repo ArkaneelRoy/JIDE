@@ -17,6 +17,8 @@ sdkver_org=34.0.4
 with_cmdline=true
 assume_yes=false
 manifest="https://raw.githubusercontent.com/Willow7737/androidide-tools/main/manifest.json"
+apt_repo="https://willow7737.github.io/AndroidIDE-Ultra/apt/termux-main"
+apt_repo_key_fingerprint="56558A715C0BA000ABD28F09DEB02F9230788C5E"
 pkgm="pkg"
 pkg_curl="libcurl"
 pkgs="jq tar"
@@ -356,7 +358,26 @@ Dir::Bin::methods "$prefix/lib/apt/methods";
 Dir::Bin::apt-key "$prefix/bin/apt-key";
 EOF
   export APT_CONFIG="$apt_config"
+  # Use the AndroidIDE Ultra repository and its pinned replacement signing key.
+  printf 'deb [arch=%s] %s stable main\n' "$arch" "$apt_repo" > "$apt_etc/sources.list"
+  local key_file="$apt_etc/trusted.gpg.d/androidide-ultra-apt-key.asc"
+  cat > "$key_file" <<'APT_REPOSITORY_PUBLIC_KEY'
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 
+mDMEaogT7xYJKwYBBAHaRw8BAQdAotVsCOWLw/BLBAiP3to2h3+n+AtM/res1stb
+Jo9AGyC0PkFuZHJvaWJREUgVWx0cmEgQVBUIFJlcG9zaXRvcnkgPGFwdEBhbmRy
+b2lkaWRlLXVsdHJhLmludmFsaWQ+iJkEExYKAEEWIQRWVYpxXAugAKvSjwnesC+S
+MHiMXgUCaogT7wIbAwUJA8JnAAULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAK
+CRDesC+SMHiMXt2XAQCW0YGKSoXf2FfUiZ4WHclq04ziOy+BtPScrUkIGh65UAD/
+XLuXMAD+P/GWZqu4FewWLuzfOvTjzBa2xHxV1SNp+wY=
+=ihxd
+-----END PGP PUBLIC KEY BLOCK-----
+APT_REPOSITORY_PUBLIC_KEY
+  "$prefix/bin/apt-key" --keyring "$apt_etc/trusted.gpg" add "$key_file" >/dev/null
+  if ! "$prefix/bin/apt-key" --keyring "$apt_etc/trusted.gpg" finger | grep -q "$apt_repo_key_fingerprint"; then
+    print_err "AndroidIDE Ultra APT signing key fingerprint mismatch. Aborting."
+    exit 1
+  fi
   # Prefer the bootstrap CA bundle. If an older bootstrap omitted it, allow
   # only the initial repository refresh to bootstrap ca-certificates; apt still
   # verifies downloaded package signatures before installation.

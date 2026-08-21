@@ -1,0 +1,92 @@
+name: Publish AndroidIDE Ultra APT repository
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 1 * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install repository tooling
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends dpkg-dev gnupg
+
+      - name: Build package mirror
+        run: python3 scripts/publish-apt-mirror.py --output site
+
+      - name: Import repository signing key
+        env:
+          APT_REPO_SIGNING_KEY: ${{ secrets.APT_REPO_SIGNING_KEY }}
+        run: |
+          test -n "$APT_REPO_SIGNING_KEY"
+          mkdir -m 700 "$RUNNER_TEMP/apt-gnupg"
+          export GNUPGHOME="$RUNNER_TEMP/apt-gnupg"
+          printf '%s\n' "$APT_REPO_SIGNING_KEY" | gpg --batch --import
+          fingerprint=$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1=="fpr" {print $10; exit}')
+          test "$fingerprint" = "56558A715C0BA000ABD28F09DEB02F9230788C5E"
+          echo "APT_REPO_SIGNING_FINGERPRINT=$fingerprint" >> "$GITHUB_ENV"
+
+      - name: Generate and sign repository metadata
+        run: |
+          export GNUPGHOME="$RUNNER_TEMP/apt-gnupg"
+          cd site/apt/termux-main/dists/stable
+          {
+            printf '%s\n' \
+              'Origin: AndroidIDE Ultra' \
+              'Label: AndroidIDE Ultra' \
+              'Suite: stable' \
+              'Codename: termux' \
+              'Architectures: aarch64 arm x86_64 all' \
+              'Components: main'
+            apt-ftparchive release .
+          } > Release
+          gpg --batch --yes --armor --detach-sign --local-user "$APT_REPO_SIGNING_FINGERPRINT" --output Release.gpg Release
+          gpg --batch --yes --clearsign --local-user "$APT_REPO_SIGNING_FINGERPRINT" --output InRelease Release
+          gpg --batch --verify InRelease
+          gpgv --keyring <(gpg --batch --export "$APT_REPO_SIGNING_FINGERPRINT") InRelease
+
+      - name: Export public key and repository documentation
+        run: |
+          export GNUPGHOME="$RUNNER_TEMP/apt-gnupg"
+          gpg --batch --armor --export "$APT_REPO_SIGNING_FINGERPRINT" > site/androidide-ultra-apt-key.asc
+          cat > site/index.html <<'EOF'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>AndroidIDE Ultra APT repository</title>
+          <h1>AndroidIDE Ultra APT repository</h1>
+          <p>This repository contains the signed Termux packages required by AndroidIDE Ultra.</p>
+          <p>Repository: <code>/apt/termux-main</code></p>
+          <p>Signing key: <a href="androidide-ultra-apt-key.asc">androidide-ultra-apt-key.asc</a></p>
+          EOF
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
