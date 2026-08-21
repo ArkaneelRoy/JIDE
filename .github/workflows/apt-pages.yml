@@ -36,7 +36,7 @@ jobs:
           export GNUPGHOME="$RUNNER_TEMP/apt-gnupg"
           printf '%s\n' "$APT_REPO_SIGNING_KEY" | gpg --batch --import
           fingerprint=$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1=="fpr" {print $10; exit}')
-          test "$fingerprint" = "56558A715C0BA000ABD28F09DEB02F9230788C5E"
+          test "$fingerprint" = "4AFAA013BB9AD712FE1ECE32E13BDBFD66DF4448"
           echo "APT_REPO_SIGNING_FINGERPRINT=$fingerprint" >> "$GITHUB_ENV"
 
       - name: Generate and sign repository metadata
