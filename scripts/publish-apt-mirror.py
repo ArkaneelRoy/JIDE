@@ -132,7 +132,7 @@ def main():
         for name in sorted(required):
             if name in BOOTSTRAP_PROVIDED:
                 continue
-            data = entries[name]
+            data = dict(entries[name])
             filename = data.get("Filename")
             sha256 = data.get("SHA256")
             if not filename or not sha256:
@@ -144,6 +144,7 @@ def main():
                 actual = hashlib.sha256(destination.read_bytes()).hexdigest()
                 if actual != sha256:
                     raise SystemExit(f"{arch}: SHA-256 mismatch for {name}: {actual} != {sha256}")
+                data["Filename"] = f"dists/stable/main/binary-{arch}/{destination.name}"
             selected.append(data)
         packages = []
         for data in selected:
