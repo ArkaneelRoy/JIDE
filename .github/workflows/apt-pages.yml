@@ -56,7 +56,8 @@ jobs:
           gpg --batch --yes --armor --detach-sign --local-user "$APT_REPO_SIGNING_FINGERPRINT" --output Release.gpg Release
           gpg --batch --yes --clearsign --local-user "$APT_REPO_SIGNING_FINGERPRINT" --output InRelease Release
           gpg --batch --verify InRelease
-          gpgv --keyring <(gpg --batch --export "$APT_REPO_SIGNING_FINGERPRINT") InRelease
+          gpg --batch --export "$APT_REPO_SIGNING_FINGERPRINT" > "$RUNNER_TEMP/apt-repository-keyring.gpg"
+          gpgv --keyring "$RUNNER_TEMP/apt-repository-keyring.gpg" InRelease
 
       - name: Export public key and repository documentation
         run: |
