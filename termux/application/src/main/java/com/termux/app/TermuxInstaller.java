@@ -396,6 +396,7 @@ public final class TermuxInstaller {
             File aptTrustedParts = new File(aptEtc, "trusted.gpg.d");
             File aptCache = new File(prefix, "var/cache/apt/archives/partial");
             File aptLists = new File(prefix, "var/lib/apt/lists/partial");
+            File dpkgState = new File(prefix, "var/lib/dpkg");
             File aptLog = new File(prefix, "var/log/apt");
             aptConfParts.mkdirs();
             aptSourcesParts.mkdirs();
@@ -403,6 +404,7 @@ public final class TermuxInstaller {
             aptTrustedParts.mkdirs();
             aptCache.mkdirs();
             aptLists.mkdirs();
+            dpkgState.mkdirs();
             aptLog.mkdirs();
 
             File[] scripts = {
@@ -420,12 +422,14 @@ public final class TermuxInstaller {
                 + "Dir::Etc::preferencesparts \\\"" + aptPreferencesParts + "\\\";\\n"
                 + "Dir::State \\\"" + new File(prefix, "var/lib/apt") + "\\\";\\n"
                 + "Dir::State::lists \\\"" + new File(prefix, "var/lib/apt/lists") + "\\\";\\n"
+                + "Dir::State::status \\\"" + new File(dpkgState, "status") + "\\\";\\n"
                 + "Dir::Cache \\\"" + new File(prefix, "var/cache/apt") + "\\\";\\n"
                 + "Dir::Cache::archives \\\"" + new File(prefix, "var/cache/apt/archives") + "\\\";\\n"
                 + "Dir::Etc::trusted \\\"" + new File(aptEtc, "trusted.gpg") + "\\\";\\n"
                 + "Dir::Etc::trustedparts \\\"" + aptTrustedParts + "\\\";\\n"
                 + "Dir::Bin::methods \\\"" + new File(prefix, "lib/apt/methods") + "\\\";\\n"
                 + "Dir::Bin::dpkg \\\"" + new File(prefix, "bin/dpkg") + "\\\";\\n"
+                + "DPkg::Options { \"--admindir=" + dpkgState + "\"; };\\n"
                 + "Dir::Bin::apt-key \\\"" + new File(prefix, "bin/apt-key") + "\\\";\\n"
                 + "Dir::Log \\\"" + aptLog + "\\\";\\n"
                 + "Dir::Log::Terminal \\\"" + new File(aptLog, "term.log") + "\\\";\\n"

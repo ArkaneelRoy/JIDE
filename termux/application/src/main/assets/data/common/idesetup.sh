@@ -341,6 +341,7 @@ repair_legacy_termux_prefix() {
     "$apt_etc/trusted.gpg.d" \
     "$apt_cache/archives/partial" \
     "$apt_state/lists/partial" \
+    "$prefix/var/lib/dpkg" \
     "$prefix/var/log/apt" \
     "$(dirname "$apt_config")"
   cat > "$apt_config" <<EOF
@@ -352,12 +353,14 @@ Dir::Etc::preferences "$apt_etc/preferences";
 Dir::Etc::preferencesparts "$apt_etc/preferences.d";
 Dir::State "$apt_state";
 Dir::State::lists "$apt_state/lists";
+Dir::State::status "$prefix/var/lib/dpkg/status";
 Dir::Cache "$apt_cache";
 Dir::Cache::archives "$apt_cache/archives";
 Dir::Etc::trusted "$apt_etc/trusted.gpg";
 Dir::Etc::trustedparts "$apt_etc/trusted.gpg.d";
 Dir::Bin::methods "$prefix/lib/apt/methods";
 Dir::Bin::dpkg "$prefix/bin/dpkg";
+DPkg::Options { "--admindir=$prefix/var/lib/dpkg"; };
 Dir::Bin::apt-key "$prefix/bin/apt-key";
 Dir::Log "$prefix/var/log/apt";
 Dir::Log::Terminal "$prefix/var/log/apt/term.log";
