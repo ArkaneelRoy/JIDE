@@ -77,6 +77,16 @@ def relocate_deb_prefix(deb: Path):
             if old_base.exists() and not any(old_base.iterdir()): old_base.rmdir()
         for path in extracted.rglob("*"):
             rewrite_payload_file(path)
+        conffiles = extracted / "DEBIAN/conffiles"
+        if conffiles.exists():
+            kept = []
+            for line in conffiles.read_bytes().splitlines(keepends=True):
+                ending = b"\\n" if line.endswith(b"\\n") else b""
+                value = line[:-1] if ending else line
+                target = extracted / value.lstrip(b"/").decode("utf-8", errors="strict")
+                if target.exists() or target.is_symlink():
+                    kept.append(line)
+            conffiles.write_bytes(b"".join(kept))
         subprocess.run(["dpkg-deb", "--build", "--root-owner-group", str(extracted), str(rebuilt)], check=True, stdout=subprocess.DEVNULL)
         shutil.copy2(rebuilt, deb)
 
