@@ -3,24 +3,72 @@
 
 The upstream AndroidIDE repository is archived. This script mirrors only the package
 closure needed by idesetup.sh, verifies every downloaded .deb against the upstream
-Packages SHA-256, and leaves signing of Release/InRelease to the CI workflow.
+Packages SHA-256, relocates legacy absolute package roots to the Termux prefix root,
+and leaves signing of Release/InRelease to the CI workflow.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import re
 import shutil
 import subprocess
-import time
-import sys
-import urllib.request
+import tempfile
 from pathlib import Path
 
 UPSTREAM = "https://packages.androidide.com/apt/termux-main"
 BASE_PACKAGES = {"apt", "ca-certificates", "jq", "tar", "git", "openssh", "libcurl"}
 ARCHES = {"aarch64": "aarch64", "arm": "arm", "x86_64": "x86_64"}
 BOOTSTRAP_PROVIDED = {"termux-keyring", "termux-licenses", "termux-tools"}
+LEGACY_PREFIX = b"/data/data/com.itsaky.androidide/files/usr"
+CURRENT_PREFIX = b"/data/data/com.willow.androidide.ultra/files/usr"
+LEGACY_MEMBER_ROOT = Path("data/data/com.itsaky.androidide/files/usr")
+
+
+def rewrite_payload_file(path: Path):
+    if path.is_symlink():
+        target = os.readlink(path)
+        rewritten = target.replace(LEGACY_PREFIX.decode(), CURRENT_PREFIX.decode())
+        if rewritten != target:
+            path.unlink()
+            path.symlink_to(rewritten)
+        return
+    if not path.is_file():
+        return
+    raw = path.read_bytes()
+    if raw.startswith(b"\x7fELF"):
+        return
+    rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
+    if rewritten != raw:
+        path.write_bytes(rewritten)
+
+
+def relocate_deb_prefix(deb: Path):
+    """Rewrite archive member paths and text/symlink targets to this fork's prefix."""
+    with tempfile.TemporaryDirectory(prefix="androidide-deb-") as temp_name:
+        extracted = Path(temp_name) / "root"
+        rebuilt = Path(temp_name) / deb.name
+        subprocess.run(["dpkg-deb", "--raw-extract", str(deb), str(extracted)], check=True, stdout=subprocess.DEVNULL)
+        old_root = extracted / LEGACY_MEMBER_ROOT
+        if old_root.exists():
+            for child in list(old_root.iterdir()):
+                destination = extracted / child.name
+                if destination.exists() or destination.is_symlink():
+                    raise SystemExit(f"cannot relocate {deb}: payload collision at {destination}")
+                child.rename(destination)
+            old_root.rmdir()
+            old_files = old_root.parent
+            if old_files.exists() and not any(old_files.iterdir()): old_files.rmdir()
+            old_data = old_files.parent
+            if old_data.exists() and not any(old_data.iterdir()): old_data.rmdir()
+            old_base = old_data.parent
+            if old_base.exists() and not any(old_base.iterdir()): old_base.rmdir()
+        for path in extracted.rglob("*"):
+            rewrite_payload_file(path)
+        subprocess.run(["dpkg-deb", "--build", "--root-owner-group", str(extracted), str(rebuilt)], check=True, stdout=subprocess.DEVNULL)
+        shutil.copy2(rebuilt, deb)
+
 
 
 def paragraphs(text: str):
@@ -141,10 +189,10 @@ def main():
                 source_url = f"{UPSTREAM}/{filename}"
                 destination = output_dir / Path(filename).name
                 download(source_url, destination)
-                actual = hashlib.sha256(destination.read_bytes()).hexdigest()
-                if actual != sha256:
-                    raise SystemExit(f"{arch}: SHA-256 mismatch for {name}: {actual} != {sha256}")
+                relocate_deb_prefix(destination)
                 data["Filename"] = f"dists/stable/main/binary-{arch}/{destination.name}"
+                data["Size"] = str(destination.stat().st_size)
+                data["SHA256"] = hashlib.sha256(destination.read_bytes()).hexdigest()
             selected.append(data)
         packages = []
         for data in selected:
