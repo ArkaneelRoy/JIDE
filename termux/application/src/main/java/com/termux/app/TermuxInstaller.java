@@ -125,14 +125,14 @@ public final class TermuxInstaller {
                     Error error;
 
                     // Delete prefix staging directory or any file at its destination
-                    error = FileUtils.deleteFile("termux prefix staging directory", TERMUX_STAGING_PREFIX_DIR_PATH, true);
+                    error = deleteWithRetries("termux prefix staging directory", TERMUX_STAGING_PREFIX_DIR_PATH);
                     if (error != null) {
                         showBootstrapErrorDialog(activity, whenDone, Error.getErrorMarkdownString(error));
                         return;
                     }
 
                     // Delete prefix directory or any file at its destination
-                    error = FileUtils.deleteFile("termux prefix directory", TERMUX_PREFIX_DIR_PATH, true);
+                    error = deleteWithRetries("termux prefix directory", TERMUX_PREFIX_DIR_PATH);
                     if (error != null) {
                         showBootstrapErrorDialog(activity, whenDone, Error.getErrorMarkdownString(error));
                         return;
@@ -262,7 +262,6 @@ public final class TermuxInstaller {
                     })
                     .setPositiveButton(com.willow.androidide.ultra.resources.R.string.bootstrap_error_try_again, (dialog, which) -> {
                         dialog.dismiss();
-                        FileUtils.deleteFile("termux prefix directory", TERMUX_PREFIX_DIR_PATH, true);
                         TermuxInstaller.setupBootstrapIfNeeded(activity, whenDone);
                     }).show();
             } catch (WindowManager.BadTokenException e1) {
@@ -472,6 +471,21 @@ public final class TermuxInstaller {
         try (FileOutputStream output = new FileOutputStream(file)) {
             output.write(text.getBytes(StandardCharsets.UTF_8));
         }
+    }
+
+    private static Error deleteWithRetries(String description, String path) {
+        Error lastError = null;
+        for (int attempt = 0; attempt < 8; attempt++) {
+            lastError = FileUtils.deleteFile(description, path, true);
+            if (lastError == null) return null;
+            try {
+                Thread.sleep(Math.min(1500L, 100L << attempt));
+            } catch (InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+        return lastError;
     }
 
     private static Error ensureDirectoryExists(File directory) {
