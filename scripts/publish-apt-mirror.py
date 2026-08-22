@@ -39,7 +39,10 @@ def rewrite_payload_file(path: Path):
     raw = path.read_bytes()
     if raw.startswith(b"\x7fELF"):
         return
-    rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
+    if path.parent.name == "DEBIAN" and path.name == "conffiles":
+        rewritten = raw.replace(LEGACY_PREFIX, b"").replace(CURRENT_PREFIX, b"")
+    else:
+        rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
     if rewritten != raw:
         path.write_bytes(rewritten)
 
