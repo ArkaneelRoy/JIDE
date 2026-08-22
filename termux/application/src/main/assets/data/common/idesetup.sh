@@ -359,7 +359,7 @@ Dir::Cache::archives "$apt_cache/archives";
 Dir::Etc::trusted "$apt_etc/trusted.gpg";
 Dir::Etc::trustedparts "$apt_etc/trusted.gpg.d";
 Dir::Bin::methods "$prefix/lib/apt/methods";
-Dir::Bin::dpkg "$prefix/bin/dpkg";
+Dir::Bin::dpkg "$prefix/bin/androidide-dpkg-launcher";
 DPkg::Options { "--admindir=$prefix/var/lib/dpkg"; };
 Dir::Bin::apt-key "$prefix/bin/apt-key";
 Dir::Log "$prefix/var/log/apt";
@@ -370,6 +370,16 @@ EOF
   # dpkg resolves helper programs through PATH. Do not inherit a stale
   # com.itsaky.androidide PATH from the legacy bootstrap.
   export PATH="$prefix/bin:$prefix/bin/applets:/system/bin:/system/xbin:${PATH:-}"
+  # Some legacy APT builds sanitize PATH before starting dpkg. Use an
+  # Android-shell launcher so dpkg and every helper it checks receive the
+  # relocated Termux PATH explicitly.
+  local dpkg_launcher="$prefix/bin/androidide-dpkg-launcher"
+  cat > "$dpkg_launcher" <<EOF
+#!/system/bin/sh
+export PATH="$prefix/bin:$prefix/bin/applets:/system/bin:/system/xbin"
+exec "$prefix/bin/dpkg" "\$@"
+EOF
+  chmod 700 "$dpkg_launcher"
   # Use the AndroidIDE Ultra repository and its pinned replacement signing key.
   printf 'deb [arch=%s] %s stable main\n' "$arch" "$apt_repo" > "$apt_etc/sources.list"
   local key_file="$apt_etc/trusted.gpg.d/androidide-ultra-apt-key.asc"

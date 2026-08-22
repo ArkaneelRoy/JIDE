@@ -397,6 +397,7 @@ public final class TermuxInstaller {
             File aptLists = new File(prefix, "var/lib/apt/lists/partial");
             File dpkgState = new File(prefix, "var/lib/dpkg");
             File aptLog = new File(prefix, "var/log/apt");
+            File dpkgLauncher = new File(prefix, "bin/androidide-dpkg-launcher");
             aptConfParts.mkdirs();
             aptSourcesParts.mkdirs();
             aptPreferencesParts.mkdirs();
@@ -405,6 +406,11 @@ public final class TermuxInstaller {
             aptLists.mkdirs();
             dpkgState.mkdirs();
             aptLog.mkdirs();
+            writeTextFile(dpkgLauncher,
+                "#!/system/bin/sh\\n"
+                    + "export PATH=\"" + new File(prefix, "bin") + ":" + new File(prefix, "bin/applets") + ":/system/bin:/system/xbin\"\\n"
+                    + "exec \"" + new File(prefix, "bin/dpkg") + "\" \"$@\"\\n");
+            Os.chmod(dpkgLauncher.getAbsolutePath(), 0700);
 
             File[] scripts = {
                 new File(prefix, "bin/pkg"),
@@ -427,7 +433,7 @@ public final class TermuxInstaller {
                 + "Dir::Etc::trusted \\\"" + new File(aptEtc, "trusted.gpg") + "\\\";\\n"
                 + "Dir::Etc::trustedparts \\\"" + aptTrustedParts + "\\\";\\n"
                 + "Dir::Bin::methods \\\"" + new File(prefix, "lib/apt/methods") + "\\\";\\n"
-                + "Dir::Bin::dpkg \\\"" + new File(prefix, "bin/dpkg") + "\\\";\\n"
+                + "Dir::Bin::dpkg \\\"" + dpkgLauncher + "\\\";\\n"
                 + "DPkg::Options { \"--admindir=" + dpkgState + "\"; };\\n"
                 + "Dir::Bin::apt-key \\\"" + new File(prefix, "bin/apt-key") + "\\\";\\n"
                 + "Dir::Log \\\"" + aptLog + "\\\";\\n"
