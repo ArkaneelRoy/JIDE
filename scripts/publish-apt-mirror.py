@@ -40,7 +40,13 @@ def rewrite_payload_file(path: Path):
     if raw.startswith(b"\x7fELF"):
         return
     if path.parent.name == "DEBIAN" and path.name == "conffiles":
-        rewritten = raw.replace(LEGACY_PREFIX, b"").replace(CURRENT_PREFIX, b"")
+        normalized = []
+        for line in raw.splitlines(keepends=True):
+            ending = b"\\n" if line.endswith(b"\\n") else b""
+            value = line[:-1] if ending else line
+            value = value.replace(LEGACY_PREFIX, b"").replace(CURRENT_PREFIX, b"")
+            normalized.append(value.lstrip(b"/") + ending)
+        rewritten = b"".join(normalized)
     else:
         rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
     if rewritten != raw:
