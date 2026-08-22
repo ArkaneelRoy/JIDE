@@ -367,6 +367,9 @@ Dir::Log::Terminal "$prefix/var/log/apt/term.log";
 Dir::Log::Planner "$prefix/var/log/apt/eipp.log.xz";
 EOF
   export APT_CONFIG="$apt_config"
+  # dpkg resolves helper programs through PATH. Do not inherit a stale
+  # com.itsaky.androidide PATH from the legacy bootstrap.
+  export PATH="$prefix/bin:$prefix/bin/applets:/system/bin:/system/xbin:${PATH:-}"
   # Use the AndroidIDE Ultra repository and its pinned replacement signing key.
   printf 'deb [arch=%s] %s stable main\n' "$arch" "$apt_repo" > "$apt_etc/sources.list"
   local key_file="$apt_etc/trusted.gpg.d/androidide-ultra-apt-key.asc"

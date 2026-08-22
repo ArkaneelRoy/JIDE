@@ -79,7 +79,10 @@ public class TermuxShellEnvironment extends AndroidShellEnvironment {
         // If failsafe is not enabled, then we keep default PATH and TMPDIR so that system binaries can be used
         if (!isFailSafe) {
             environment.put(ENV_TMPDIR, TermuxConstants.TERMUX_TMP_PREFIX_DIR_PATH);
-            environment.put(ENV_PATH, TermuxConstants.TERMUX_BIN_PREFIX_DIR_PATH + String.format(":%s/cmdline-tools/latest/bin", ANDROID_HOME.getAbsolutePath()));
+            environment.put(ENV_PATH, TermuxConstants.TERMUX_BIN_PREFIX_DIR_PATH
+                + ":" + TermuxConstants.TERMUX_BIN_PREFIX_DIR_PATH + "/applets"
+                + ":/system/bin:/system/xbin"
+                + String.format(":%s/cmdline-tools/latest/bin", ANDROID_HOME.getAbsolutePath()));
             // Bootstrap binaries are built for the upstream Termux package and cannot rely on
             // their original absolute RUNPATH after this fork relocates the prefix. Explicitly
             // expose the fork's prefix libraries to the Android dynamic linker.
