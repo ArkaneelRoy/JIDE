@@ -45,7 +45,9 @@ def rewrite_payload_file(path: Path):
             ending = b"\\n" if line.endswith(b"\\n") else b""
             value = line[:-1] if ending else line
             value = value.replace(LEGACY_PREFIX, b"").replace(CURRENT_PREFIX, b"")
-            normalized.append(value.lstrip(b"/") + ending)
+            if not value.startswith(b"/"):
+                value = b"/" + value
+            normalized.append(value + ending)
         rewritten = b"".join(normalized)
     else:
         rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
