@@ -341,6 +341,7 @@ repair_legacy_termux_prefix() {
     "$apt_etc/trusted.gpg.d" \
     "$apt_cache/archives/partial" \
     "$apt_state/lists/partial" \
+    "$prefix/var/log/apt" \
     "$(dirname "$apt_config")"
   cat > "$apt_config" <<EOF
 Dir::Etc::sourcelist "$apt_etc/sources.list";
@@ -356,7 +357,11 @@ Dir::Cache::archives "$apt_cache/archives";
 Dir::Etc::trusted "$apt_etc/trusted.gpg";
 Dir::Etc::trustedparts "$apt_etc/trusted.gpg.d";
 Dir::Bin::methods "$prefix/lib/apt/methods";
+Dir::Bin::dpkg "$prefix/bin/dpkg";
 Dir::Bin::apt-key "$prefix/bin/apt-key";
+Dir::Log "$prefix/var/log/apt";
+Dir::Log::Terminal "$prefix/var/log/apt/term.log";
+Dir::Log::Planner "$prefix/var/log/apt/eipp.log.xz";
 EOF
   export APT_CONFIG="$apt_config"
   # Use the AndroidIDE Ultra repository and its pinned replacement signing key.

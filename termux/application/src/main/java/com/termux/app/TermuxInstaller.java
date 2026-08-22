@@ -396,12 +396,14 @@ public final class TermuxInstaller {
             File aptTrustedParts = new File(aptEtc, "trusted.gpg.d");
             File aptCache = new File(prefix, "var/cache/apt/archives/partial");
             File aptLists = new File(prefix, "var/lib/apt/lists/partial");
+            File aptLog = new File(prefix, "var/log/apt");
             aptConfParts.mkdirs();
             aptSourcesParts.mkdirs();
             aptPreferencesParts.mkdirs();
             aptTrustedParts.mkdirs();
             aptCache.mkdirs();
             aptLists.mkdirs();
+            aptLog.mkdirs();
 
             File[] scripts = {
                 new File(prefix, "bin/pkg"),
@@ -422,7 +424,12 @@ public final class TermuxInstaller {
                 + "Dir::Cache::archives \\\"" + new File(prefix, "var/cache/apt/archives") + "\\\";\\n"
                 + "Dir::Etc::trusted \\\"" + new File(aptEtc, "trusted.gpg") + "\\\";\\n"
                 + "Dir::Etc::trustedparts \\\"" + aptTrustedParts + "\\\";\\n"
-                + "Dir::Bin::methods \\\"" + new File(prefix, "lib/apt/methods") + "\\\";\\n";
+                + "Dir::Bin::methods \\\"" + new File(prefix, "lib/apt/methods") + "\\\";\\n"
+                + "Dir::Bin::dpkg \\\"" + new File(prefix, "bin/dpkg") + "\\\";\\n"
+                + "Dir::Bin::apt-key \\\"" + new File(prefix, "bin/apt-key") + "\\\";\\n"
+                + "Dir::Log \\\"" + aptLog + "\\\";\\n"
+                + "Dir::Log::Terminal \\\"" + new File(aptLog, "term.log") + "\\\";\\n"
+                + "Dir::Log::Planner \\\"" + new File(aptLog, "eipp.log.xz") + "\\\";\\n";
             writeTextFile(new File(aptEtc, "apt.conf"), aptConfig);
             String abi = android.os.Build.SUPPORTED_ABIS.length == 0 ? "aarch64" : android.os.Build.SUPPORTED_ABIS[0];
             if ("arm64-v8a".equals(abi)) abi = "aarch64";
