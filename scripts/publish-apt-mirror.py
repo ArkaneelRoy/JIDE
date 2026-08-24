@@ -42,7 +42,7 @@ def rewrite_payload_file(path: Path):
     if path.parent.name == "DEBIAN" and path.name == "conffiles":
         normalized = []
         for line in raw.splitlines(keepends=True):
-            ending = b"\\n" if line.endswith(b"\\n") else b""
+            ending = b"\n" if line.endswith(b"\n") else b""
             value = line[:-1] if ending else line
             value = value.replace(LEGACY_PREFIX, b"").replace(CURRENT_PREFIX, b"")
             if not value.startswith(b"/"):
@@ -81,7 +81,7 @@ def relocate_deb_prefix(deb: Path):
         if conffiles.exists():
             kept = []
             for line in conffiles.read_bytes().splitlines(keepends=True):
-                ending = b"\\n" if line.endswith(b"\\n") else b""
+                ending = b"\n" if line.endswith(b"\n") else b""
                 value = line[:-1] if ending else line
                 target = extracted / value.lstrip(b"/").decode("utf-8", errors="strict")
                 if target.exists() or target.is_symlink():
@@ -90,6 +90,46 @@ def relocate_deb_prefix(deb: Path):
         subprocess.run(["dpkg-deb", "--build", "--root-owner-group", str(extracted), str(rebuilt)], check=True, stdout=subprocess.DEVNULL)
         shutil.copy2(rebuilt, deb)
 
+
+
+HASH_FIELDS = {
+    "MD5Sum": "md5",
+    "SHA1": "sha1",
+    "SHA256": "sha256",
+    "SHA512": "sha512",
+}
+
+
+def file_hashes(path: Path):
+    """Return the APT digest fields for ``path``, computed from its current bytes."""
+    digests = {field: hashlib.new(algorithm) for field, algorithm in HASH_FIELDS.items()}
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            for digest in digests.values():
+                digest.update(chunk)
+    return {field: digest.hexdigest() for field, digest in digests.items()}
+
+
+def set_hash_fields(data: dict, path: Path):
+    """Replace every digest field in ``data`` with one computed from ``path``."""
+    for key in [k for k in data if k.lower() in {f.lower() for f in HASH_FIELDS}]:
+        del data[key]
+    data.update(file_hashes(path))
+
+
+def verify_index(index: Path, repository: Path):
+    """Fail the build if any published digest disagrees with the file it describes."""
+    for paragraph in paragraphs(index.read_text()):
+        data = fields(paragraph)
+        deb = repository / data["Filename"]
+        if not deb.is_file():
+            raise SystemExit(f"{index}: {data['Package']} references missing file {deb}")
+        if data["Size"] != str(deb.stat().st_size):
+            raise SystemExit(f"{index}: {data['Package']} has a stale Size field")
+        actual = file_hashes(deb)
+        for field, value in actual.items():
+            if data.get(field, value) != value:
+                raise SystemExit(f"{index}: {data['Package']} has a stale {field} field")
 
 
 def paragraphs(text: str):
@@ -148,8 +188,7 @@ def make_bootstrap_certificate_package(root: Path):
     )
     deb = package_dir / "ca-certificates_2026.1_all.deb"
     subprocess.run(["dpkg-deb", "--build", "--root-owner-group", str(build_dir), str(deb)], check=True, stdout=subprocess.DEVNULL)
-    digest = hashlib.sha256(deb.read_bytes()).hexdigest()
-    return {
+    entry = {
         "Package": "ca-certificates",
         "Architecture": "all",
         "Version": "2026.1",
@@ -159,8 +198,9 @@ def make_bootstrap_certificate_package(root: Path):
         "Description": "AndroidIDE Ultra bootstrap certificate compatibility package\n The Termux bootstrap already supplies the certificate bundle at /etc/tls/cert.pem.",
         "Filename": "dists/stable/main/binary-all/ca-certificates_2026.1_all.deb",
         "Size": str(deb.stat().st_size),
-        "SHA256": digest,
     }
+    set_hash_fields(entry, deb)
+    return entry
 
 
 def main():
@@ -210,15 +250,20 @@ def main():
                 source_url = f"{UPSTREAM}/{filename}"
                 destination = output_dir / Path(filename).name
                 download(source_url, destination)
+                downloaded = hashlib.sha256(destination.read_bytes()).hexdigest()
+                if downloaded != sha256:
+                    raise SystemExit(f"{arch}: {name} download digest {downloaded} does not match upstream {sha256}")
                 relocate_deb_prefix(destination)
                 data["Filename"] = f"dists/stable/main/binary-{arch}/{destination.name}"
                 data["Size"] = str(destination.stat().st_size)
-                data["SHA256"] = hashlib.sha256(destination.read_bytes()).hexdigest()
+                # Relocating rewrote the archive, so every upstream digest is now stale.
+                set_hash_fields(data, destination)
             selected.append(data)
         packages = []
         for data in selected:
             packages.append("\n".join(f"{k}: {v}" for k, v in data.items()))
         (output_dir / "Packages").write_text("\n\n".join(packages) + "\n")
+        verify_index(output_dir / "Packages", root / "apt" / "termux-main")
         subprocess.run(["gzip", "-9", "-c", str(output_dir / "Packages")], check=True, stdout=(output_dir / "Packages.gz").open("wb"))
         print(f"{arch}: mirrored {len(selected)} packages")
 
