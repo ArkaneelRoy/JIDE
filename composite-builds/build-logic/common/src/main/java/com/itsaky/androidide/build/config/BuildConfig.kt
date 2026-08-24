@@ -24,8 +24,22 @@ import org.gradle.api.JavaVersion
  */
 object BuildConfig {
 
-  /** AndroidIDE Ultra's package name. */
+  /** AndroidIDE Ultra's package name, used as the Java namespace and Maven group ID. */
   const val packageName = "com.willow.androidide.ultra"
+
+  /**
+   * The application ID the IDE installs under, which fixes the Termux prefix at
+   * "/data/data/$applicationId/files/usr".
+   *
+   * This is deliberately shorter than [packageName]. The prebuilt Termux packages have
+   * "/data/data/com.itsaky.androidide/files/usr" compiled into their binaries, and that
+   * path can only be rewritten in place if the replacement is no longer than the 42 bytes
+   * it occupies. That leaves a budget of 21 characters for the application ID, which
+   * "com.willow.androidide" matches exactly. Lengthening it past 21 characters breaks
+   * every prebuilt binary, so keep it in sync with CURRENT_PREFIX in
+   * scripts/publish-apt-mirror.py.
+   */
+  const val applicationId = "com.willow.androidide"
 
   /** The compile SDK version. */
   const val compileSdk = 34

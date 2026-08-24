@@ -32,6 +32,7 @@ import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
+import com.willow.androidide.ultra.buildinfo.BuildInfo
 import java.io.File
 
 open class BaseFragment @JvmOverloads constructor(contentLayoutId: Int = 0) :
@@ -45,7 +46,7 @@ open class BaseFragment @JvmOverloads constructor(contentLayoutId: Int = 0) :
 
   companion object {
     const val ANDROID_DOCS_AUTHORITY = "com.android.externalstorage.documents"
-    const val ANDROIDIDE_DOCS_AUTHORITY = "com.willow.androidide.ultra.documents"
+    val ANDROIDIDE_DOCS_AUTHORITY = "${BuildInfo.APPLICATION_ID}.documents"
   }
 
   override fun onDestroyView() {

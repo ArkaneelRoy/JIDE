@@ -61,7 +61,7 @@ fun launchAndroidIDEUltra(
 
   // Launch the app
   val context = ApplicationProvider.getApplicationContext<Context>()
-  val intent = context.packageManager.getLaunchIntentForPackage(BuildInfo.PACKAGE_NAME)
+  val intent = context.packageManager.getLaunchIntentForPackage(BuildInfo.APPLICATION_ID)
   assertThat(intent).isNotNull()
 
   if (clearTasks) {
@@ -72,7 +72,7 @@ fun launchAndroidIDEUltra(
 
   // Wait for the app to appear
   device.wait(
-    Until.hasObject(By.pkg(BuildInfo.PACKAGE_NAME).depth(0)),
+    Until.hasObject(By.pkg(BuildInfo.APPLICATION_ID).depth(0)),
     LAUNCH_TIMEOUT
   )
 

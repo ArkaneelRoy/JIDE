@@ -24,6 +24,7 @@ public class BuildInfo {
 
   // ---------- Basic info -----------------
   public static final String PACKAGE_NAME = "@@PACKAGE_NAME@@";
+  public static final String APPLICATION_ID = "@@APPLICATION_ID@@";
 
   // ---------- Tooling version info --------------
   public static final String AGP_VERSION_MININUM = "@@AGP_VERSION_MININUM@@";

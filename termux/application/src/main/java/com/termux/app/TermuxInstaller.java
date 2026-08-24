@@ -1,6 +1,7 @@
 package com.termux.app;
 
 import static com.termux.shared.termux.TermuxConstants.TERMUX_PREFIX_DIR;
+import static com.termux.shared.termux.TermuxConstants.TERMUX_PACKAGE_NAME;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_PREFIX_DIR_PATH;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR_PATH;
@@ -195,9 +196,7 @@ public final class TermuxInstaller {
                                     while ((readBytes = zipInput.read(buffer)) != -1)
                                         entryBytes.write(buffer, 0, readBytes);
                                     byte[] rawContents = entryBytes.toByteArray();
-                                    byte[] contents = zipEntryName.startsWith("bin/")
-                                        ? rewriteLegacyPrefix(rawContents)
-                                        : rawContents;
+                                    byte[] contents = rewriteLegacyPrefix(rawContents);
                                     try (FileOutputStream outStream = new FileOutputStream(targetFile)) {
                                         outStream.write(contents);
                                     }
@@ -498,32 +497,51 @@ public final class TermuxInstaller {
         return FileUtils.createDirectoryFile(directory.getAbsolutePath());
     }
 
+    private static final String[] LEGACY_PREFIXES = {
+        "/data/data/com.itsaky.androidide/files/usr",
+        "/data/user/0/com.itsaky.androidide/files/usr",
+        "/data/data/com.termux/files/usr",
+        "/data/user/0/com.termux/files/usr"
+    };
+
+    private static final String[] LEGACY_PACKAGES = {"com.itsaky.androidide", "com.termux"};
+
     /**
      * Bootstrap archives may have been built for an older AndroidIDE/Termux package name.
-     * Rewrite those absolute prefix references to the current app's prefix while preserving
-     * binary ELF entries byte-for-byte.
+     * Rewrite those absolute prefix references to the current app's prefix. Text entries can be
+     * rewritten freely; see {@link #rewriteSameLengthLegacyPackage(String)} for ELF images.
      */
     private static String rewriteLegacyPrefix(String value) {
         String rewritten = value;
-        String[] legacyPrefixes = {
-            "/data/data/com.itsaky.androidide/files/usr",
-            "/data/user/0/com.itsaky.androidide/files/usr",
-            "/data/data/com.termux/files/usr",
-            "/data/user/0/com.termux/files/usr"
-        };
-        for (String legacyPrefix : legacyPrefixes) {
+        for (String legacyPrefix : LEGACY_PREFIXES) {
             rewritten = rewritten.replace(legacyPrefix, TERMUX_PREFIX_DIR_PATH);
         }
         return rewritten;
     }
 
-    private static byte[] rewriteLegacyPrefix(byte[] contents) {
-        if (contents.length >= 4 && contents[0] == 0x7f && contents[1] == 'E' &&
-            contents[2] == 'L' && contents[3] == 'F') {
-            return contents;
+    /**
+     * Rewrite only those legacy package names that are exactly as long as the current one.
+     * Substituting a different length inside an ELF image would shift every byte after it and
+     * corrupt the file, so those references are left alone. Substituting the package name rather
+     * than a whole prefix also covers files/home and cache, not just files/usr.
+     */
+    private static String rewriteSameLengthLegacyPackage(String value) {
+        String rewritten = value;
+        for (String legacyPackage : LEGACY_PACKAGES) {
+            if (legacyPackage.length() == TERMUX_PACKAGE_NAME.length()) {
+                rewritten = rewritten.replace(legacyPackage, TERMUX_PACKAGE_NAME);
+            }
         }
+        return rewritten;
+    }
+
+    private static byte[] rewriteLegacyPrefix(byte[] contents) {
+        boolean isElf = contents.length >= 4 && contents[0] == 0x7f && contents[1] == 'E' &&
+            contents[2] == 'L' && contents[3] == 'F';
+        // ISO-8859-1 maps every byte to exactly one char and back, so this round-trip is
+        // byte-exact for binary content as well as text.
         String text = new String(contents, StandardCharsets.ISO_8859_1);
-        String rewritten = rewriteLegacyPrefix(text);
+        String rewritten = isElf ? rewriteSameLengthLegacyPackage(text) : rewriteLegacyPrefix(text);
         return rewritten.equals(text) ? contents : rewritten.getBytes(StandardCharsets.ISO_8859_1);
     }
 

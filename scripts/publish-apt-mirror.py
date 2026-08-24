@@ -21,8 +21,20 @@ UPSTREAM = "https://packages.androidide.com/apt/termux-main"
 BASE_PACKAGES = {"apt", "ca-certificates", "jq", "tar", "git", "openssh", "libcurl"}
 ARCHES = {"aarch64": "aarch64", "arm": "arm", "x86_64": "x86_64"}
 BOOTSTRAP_PROVIDED = {"termux-keyring", "termux-licenses", "termux-tools"}
-LEGACY_PREFIX = b"/data/data/com.itsaky.androidide/files/usr"
-CURRENT_PREFIX = b"/data/data/com.willow.androidide.ultra/files/usr"
+LEGACY_PACKAGE = b"com.itsaky.androidide"
+CURRENT_PACKAGE = b"com.willow.androidide"
+# The prebuilt binaries have the upstream paths compiled into them. Substituting inside an
+# ELF image only works while the replacement is exactly as long as what it replaces, which
+# is why the application ID is pinned to 21 characters. Keep this in sync with
+# BuildConfig.applicationId; lengthening it breaks every prebuilt binary.
+assert len(CURRENT_PACKAGE) == len(LEGACY_PACKAGE), (
+    f"package name length changed ({len(LEGACY_PACKAGE)} -> {len(CURRENT_PACKAGE)}): "
+    "prebuilt binaries can no longer be patched in place"
+)
+# Substituting the package name rather than a single prefix covers every path built from it
+# -- files/usr, files/home, cache -- under both the /data/data and /data/user/0 spellings.
+LEGACY_PREFIX = b"/data/data/" + LEGACY_PACKAGE + b"/files/usr"
+CURRENT_PREFIX = b"/data/data/" + CURRENT_PACKAGE + b"/files/usr"
 LEGACY_MEMBER_ROOT = Path(LEGACY_PREFIX.decode().lstrip("/"))
 CURRENT_MEMBER_ROOT = Path(CURRENT_PREFIX.decode().lstrip("/"))
 
@@ -30,7 +42,7 @@ CURRENT_MEMBER_ROOT = Path(CURRENT_PREFIX.decode().lstrip("/"))
 def rewrite_payload_file(path: Path):
     if path.is_symlink():
         target = os.readlink(path)
-        rewritten = target.replace(LEGACY_PREFIX.decode(), CURRENT_PREFIX.decode())
+        rewritten = target.replace(LEGACY_PACKAGE.decode(), CURRENT_PACKAGE.decode())
         if rewritten != target:
             path.unlink()
             path.symlink_to(rewritten)
@@ -38,9 +50,7 @@ def rewrite_payload_file(path: Path):
     if not path.is_file():
         return
     raw = path.read_bytes()
-    if raw.startswith(b"\x7fELF"):
-        return
-    rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
+    rewritten = raw.replace(LEGACY_PACKAGE, CURRENT_PACKAGE)
     if rewritten != raw:
         path.write_bytes(rewritten)
 
@@ -76,6 +86,12 @@ def relocate_deb_prefix(deb: Path):
                 if target.exists() or target.is_symlink():
                     kept.append(value + b"\n")
             conffiles.write_bytes(b"".join(kept))
+        for path in extracted.rglob("*"):
+            if path.is_symlink():
+                if LEGACY_PACKAGE.decode() in os.readlink(path):
+                    raise SystemExit(f"{deb}: legacy package name survives in symlink {path}")
+            elif path.is_file() and LEGACY_PACKAGE in path.read_bytes():
+                raise SystemExit(f"{deb}: legacy package name survives in {path}")
         subprocess.run(["dpkg-deb", "--build", "--root-owner-group", str(extracted), str(rebuilt)], check=True, stdout=subprocess.DEVNULL)
         shutil.copy2(rebuilt, deb)
 

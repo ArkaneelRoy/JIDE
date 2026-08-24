@@ -33,7 +33,7 @@ private val keyCharMap by lazy {
  * @see UiDevice.waitForWindowUpdate
  */
 fun UiDevice.waitForWindowUpdate(timeout: Long) =
-  waitForWindowUpdate(BuildInfo.PACKAGE_NAME, timeout)
+  waitForWindowUpdate(BuildInfo.APPLICATION_ID, timeout)
 
 /**
  * @see UiDevice.hasObject

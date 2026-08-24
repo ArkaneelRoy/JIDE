@@ -46,7 +46,7 @@ android {
   namespace = BuildConfig.packageName
 
   defaultConfig {
-    applicationId = BuildConfig.packageName
+    applicationId = BuildConfig.applicationId
     vectorDrawables.useSupportLibrary = true
   }
 
