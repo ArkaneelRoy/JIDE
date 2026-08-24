@@ -23,7 +23,8 @@ ARCHES = {"aarch64": "aarch64", "arm": "arm", "x86_64": "x86_64"}
 BOOTSTRAP_PROVIDED = {"termux-keyring", "termux-licenses", "termux-tools"}
 LEGACY_PREFIX = b"/data/data/com.itsaky.androidide/files/usr"
 CURRENT_PREFIX = b"/data/data/com.willow.androidide.ultra/files/usr"
-LEGACY_MEMBER_ROOT = Path("data/data/com.itsaky.androidide/files/usr")
+LEGACY_MEMBER_ROOT = Path(LEGACY_PREFIX.decode().lstrip("/"))
+CURRENT_MEMBER_ROOT = Path(CURRENT_PREFIX.decode().lstrip("/"))
 
 
 def rewrite_payload_file(path: Path):
@@ -39,18 +40,7 @@ def rewrite_payload_file(path: Path):
     raw = path.read_bytes()
     if raw.startswith(b"\x7fELF"):
         return
-    if path.parent.name == "DEBIAN" and path.name == "conffiles":
-        normalized = []
-        for line in raw.splitlines(keepends=True):
-            ending = b"\n" if line.endswith(b"\n") else b""
-            value = line[:-1] if ending else line
-            value = value.replace(LEGACY_PREFIX, b"").replace(CURRENT_PREFIX, b"")
-            if not value.startswith(b"/"):
-                value = b"/" + value
-            normalized.append(value + ending)
-        rewritten = b"".join(normalized)
-    else:
-        rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
+    rewritten = raw.replace(LEGACY_PREFIX, CURRENT_PREFIX)
     if rewritten != raw:
         path.write_bytes(rewritten)
 
@@ -62,30 +52,29 @@ def relocate_deb_prefix(deb: Path):
         rebuilt = Path(temp_name) / deb.name
         subprocess.run(["dpkg-deb", "--raw-extract", str(deb), str(extracted)], check=True, stdout=subprocess.DEVNULL)
         old_root = extracted / LEGACY_MEMBER_ROOT
+        new_root = extracted / CURRENT_MEMBER_ROOT
         if old_root.exists():
-            for child in list(old_root.iterdir()):
-                destination = extracted / child.name
-                if destination.exists() or destination.is_symlink():
-                    raise SystemExit(f"cannot relocate {deb}: payload collision at {destination}")
-                child.rename(destination)
-            old_root.rmdir()
-            old_files = old_root.parent
-            if old_files.exists() and not any(old_files.iterdir()): old_files.rmdir()
-            old_data = old_files.parent
-            if old_data.exists() and not any(old_data.iterdir()): old_data.rmdir()
-            old_base = old_data.parent
-            if old_base.exists() and not any(old_base.iterdir()): old_base.rmdir()
+            if new_root.exists() or new_root.is_symlink():
+                raise SystemExit(f"cannot relocate {deb}: payload collision at {new_root}")
+            new_root.parent.mkdir(parents=True, exist_ok=True)
+            old_root.rename(new_root)
+            # Drop the legacy ancestors, stopping at one shared with the new root.
+            directory = old_root.parent
+            while directory != extracted and not any(directory.iterdir()):
+                directory.rmdir()
+                directory = directory.parent
         for path in extracted.rglob("*"):
             rewrite_payload_file(path)
         conffiles = extracted / "DEBIAN/conffiles"
         if conffiles.exists():
             kept = []
-            for line in conffiles.read_bytes().splitlines(keepends=True):
-                ending = b"\n" if line.endswith(b"\n") else b""
-                value = line[:-1] if ending else line
+            for line in conffiles.read_bytes().splitlines():
+                value = line.strip()
+                if not value:
+                    continue
                 target = extracted / value.lstrip(b"/").decode("utf-8", errors="strict")
                 if target.exists() or target.is_symlink():
-                    kept.append(line)
+                    kept.append(value + b"\n")
             conffiles.write_bytes(b"".join(kept))
         subprocess.run(["dpkg-deb", "--build", "--root-owner-group", str(extracted), str(rebuilt)], check=True, stdout=subprocess.DEVNULL)
         shutil.copy2(rebuilt, deb)
