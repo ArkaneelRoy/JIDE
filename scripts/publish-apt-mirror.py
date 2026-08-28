@@ -18,7 +18,7 @@ import tempfile
 from pathlib import Path
 
 UPSTREAM = "https://packages.androidide.com/apt/termux-main"
-BASE_PACKAGES = {"apt", "ca-certificates", "jq", "tar", "git", "openssh", "libcurl"}
+BASE_PACKAGES = {"apt", "ca-certificates", "jq", "tar", "git", "openssh", "libcurl", "openjdk-17", "openjdk-21"}
 ARCHES = {"aarch64": "aarch64", "arm": "arm", "x86_64": "x86_64"}
 BOOTSTRAP_PROVIDED = {"termux-keyring", "termux-licenses", "termux-tools"}
 LEGACY_PACKAGE = b"com.itsaky.androidide"
