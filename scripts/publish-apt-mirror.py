@@ -75,6 +75,12 @@ def relocate_deb_prefix(deb: Path):
                 directory = directory.parent
         for path in extracted.rglob("*"):
             rewrite_payload_file(path)
+        debian_dir = extracted / "DEBIAN"
+        if debian_dir.exists():
+            for script in ["postinst", "preinst", "postrm", "prerm"]:
+                target = debian_dir / script
+                if target.exists():
+                    os.chmod(target, 0o755)
         conffiles = extracted / "DEBIAN/conffiles"
         if conffiles.exists():
             kept = []
