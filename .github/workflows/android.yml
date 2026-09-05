@@ -1,0 +1,75 @@
+name: Build AndroidIDE Fork
+
+on:
+  push:
+    branches: [ "**" ] # Triggers on any branch in your fork
+  workflow_dispatch:   # Lets you click "Run workflow" manually
+
+jobs:
+  build_apk:
+    name: Build Debug APKs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Android SDK
+        uses: ./.github/actions/setup-android-sdk
+
+      - name: Change Gradle wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Restore Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Assemble Debug APK
+        run: ./gradlew :core:app:assembleDebug
+
+      - name: Copy APKs to dist directory
+        run: |
+          set -Eeuo pipefail
+          mkdir -p dist
+          output_dir="core/app/build/outputs/apk/debug"
+          for abi in arm64-v8a armeabi-v7a x86_64; do
+            apk="${output_dir}/app-${abi}-debug.apk"
+            if [[ ! -f "${apk}" ]]; then
+              mapfile -t matches < <(find "${output_dir}" -maxdepth 1 -type f -name "*${abi}*debug*.apk" -print | sort)
+              [[ "${#matches[@]}" -eq 1 ]] || { echo "Unable to resolve ${abi} APK" >&2; find "${output_dir}" -maxdepth 1 -type f -name '*.apk' -print >&2; exit 1; }
+              apk="${matches[0]}"
+            fi
+            cp -- "${apk}" "dist/app-${abi}-debug.apk"
+          done
+
+      - name: Upload arm64-v8a APK (Phones/Tablets)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-arm64-v8a-debug
+          path: dist/app-arm64-v8a-debug.apk
+
+      - name: Upload armeabi-v7a APK (Older 32-bit devices)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-armeabi-v7a-debug
+          path: dist/app-armeabi-v7a-debug.apk
+
+      - name: Upload x86_64 APK (Emulators/x86 devices)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-x86_64-debug
+          path: dist/app-x86_64-debug.apk
